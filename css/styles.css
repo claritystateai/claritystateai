@@ -931,8 +931,9 @@ img, svg {
 
 /* ---- Navbar logo imagen ---- */
 .navbar-logo img {
-  height: 36px;
+  height: 44px;
   width: auto;
+  max-width: 200px;
   filter: var(--logo-filter);
   transition: filter var(--transition);
 }
@@ -945,17 +946,19 @@ img, svg {
 }
 
 .hero-logo img {
-  height: 64px;
+  height: 80px;
   width: auto;
+  max-width: 360px;
   filter: var(--logo-filter);
   transition: filter var(--transition);
 }
 
 /* ---- Footer logo imagen ---- */
 .footer-logo img {
-  height: 32px;
+  height: 40px;
   width: auto;
-  opacity: 0.9;
+  max-width: 180px;
+  opacity: 0.85;
   filter: var(--logo-filter);
   transition: filter var(--transition);
 }
