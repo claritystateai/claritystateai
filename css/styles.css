@@ -743,56 +743,105 @@ img, svg {
   color: var(--text-muted);
 }
 
-/* ---- RESPONSIVE ---- */
+/* ============================================
+   RESPONSIVE — TABLET (≤768px)
+   ============================================ */
 @media (max-width: 768px) {
-  .section {
-    padding: 72px 0;
-  }
+  /* Secciones */
+  .section { padding: 64px 0; }
 
-  .hero {
-    padding: 100px 0 64px;
-  }
+  /* Hero */
+  .hero { padding: 160px 0 56px; }
+  .hero-title { font-size: 2.2rem; }
+  .hero-subtitle { font-size: 0.95rem; }
+  .hero-social-proof { gap: 24px; margin-top: 48px; }
+  .proof-number { font-size: 1.5rem; }
 
-  .hero-social-proof {
-    gap: 32px;
-  }
+  /* Navbar */
+  .navbar-cta .btn-outline { display: none; }
+  .navbar-logo img,
+  .navbar-logo .logo-img { height: 140px; max-width: 380px; }
+  .theme-toggle { padding: 5px 10px; font-size: 0.75rem; }
 
-  .sobre-mi-inner {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
+  /* Grids */
+  .problema-grid { grid-template-columns: 1fr 1fr; gap: 14px; }
+  .solucion-steps { grid-template-columns: 1fr; gap: 20px; }
+  .magnets-grid { grid-template-columns: 1fr; }
 
-  .avatar-placeholder {
-    margin: 0 auto;
-  }
+  /* Sobre mí */
+  .sobre-mi-inner { grid-template-columns: 1fr; text-align: center; }
+  .profile-photo { margin: 0 auto; width: 130px; height: 130px; }
+  .social-links { justify-content: center; }
+  .formado-con-list { justify-content: center; }
 
-  .social-links {
-    justify-content: center;
-  }
+  /* Agenda */
+  .agenda-inner { padding: 0 8px; }
+  .calendly-wrapper { margin: 24px 0 16px; }
 
-  .navbar-cta .btn-outline {
-    display: none;
-  }
+  /* Modal */
+  .modal-box { padding: 28px 20px; }
+  .modal-overlay { padding: 16px; }
 
-  .modal-box {
-    padding: 32px 24px;
-  }
+  /* Footer */
+  .footer-logo img,
+  .footer-logo .logo-img { height: 100px; }
+  .footer-links { gap: 16px; }
 }
 
+/* ============================================
+   RESPONSIVE — MOBILE (≤480px)
+   ============================================ */
 @media (max-width: 480px) {
-  .hero-buttons {
-    flex-direction: column;
-    align-items: center;
-  }
+  /* Contenedor */
+  .container { padding: 0 16px; }
 
-  .hero-buttons .btn {
-    width: 100%;
-    justify-content: center;
-  }
+  /* Hero */
+  .hero { padding: 180px 0 48px; }
+  .hero-title { font-size: 1.9rem; line-height: 1.15; }
+  .hero-eyebrow { font-size: 0.7rem; }
+  .hero-buttons { flex-direction: column; align-items: stretch; }
+  .hero-buttons .btn { width: 100%; justify-content: center; }
+  .hero-social-proof { flex-direction: column; gap: 20px; align-items: center; }
 
-  .proof-number {
-    font-size: 1.6rem;
-  }
+  /* Navbar */
+  .navbar-logo img,
+  .navbar-logo .logo-img { height: 100px; max-width: 280px; }
+  .theme-toggle span:last-of-type { display: none; } /* oculta label texto */
+
+  /* Grids */
+  .problema-grid { grid-template-columns: 1fr; }
+  .solucion-steps { grid-template-columns: 1fr; }
+
+  /* Steps */
+  .step-number { font-size: 2.5rem; }
+
+  /* Cards */
+  .magnet-card { padding: 24px 20px; }
+  .magnet-mockup { height: 140px; }
+
+  /* Sobre mí */
+  .profile-photo { width: 110px; height: 110px; }
+  .sobre-mi-text h2 { font-size: 1.3rem; }
+  .formado-item { font-size: 0.75rem; }
+  .formado-sep { margin: 0 6px; }
+
+  /* Agenda */
+  .calendly-inline-widget { min-width: unset !important; }
+
+  /* Footer */
+  .footer-logo img,
+  .footer-logo .logo-img { height: 80px; }
+  .footer-links { flex-direction: column; gap: 10px; align-items: center; }
+  .footer-copy { font-size: 0.72rem; }
+
+  /* Modal */
+  .modal-box { padding: 24px 16px; }
+  .btn { padding: 12px 20px; font-size: 0.9rem; }
+
+  /* WhatsApp widget */
+  .wa-widget { bottom: 16px; right: 12px; }
+  .wa-bubble { width: 48px; height: 48px; }
+  .wa-bubble svg { width: 26px; height: 26px; }
 }
 
 /* ---- Foto de perfil real ---- */
