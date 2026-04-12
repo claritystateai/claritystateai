@@ -25,8 +25,8 @@
   --radius-sm: 8px;
   --transition: 0.2s ease;
   --container: 1100px;
-  /* Logo: negro → blanco en dark mode */
-  --logo-filter: brightness(0) invert(1);
+  /* Logo PNG con colores reales — sin filter */
+  --logo-filter: none;
 }
 
 /* ---- Variables — Light mode ---- */
@@ -43,7 +43,7 @@
   --text-muted: #64748b;
   --border: rgba(0, 0, 0, 0.08);
   --border-accent: rgba(37, 99, 235, 0.25);
-  /* Logo: negro ya se ve sobre fondo claro */
+  /* Logo PNG con colores reales — sin filter */
   --logo-filter: none;
 }
 
