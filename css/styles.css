@@ -8,17 +8,18 @@
 
 /* ---- Variables ---- */
 :root {
-  --bg-primary: #080c10;
-  --bg-secondary: #0d1117;
-  --bg-card: #111820;
-  --accent: #6c63ff;
-  --accent-light: #8b85ff;
-  --accent-glow: rgba(108, 99, 255, 0.15);
-  --accent-glow-strong: rgba(108, 99, 255, 0.3);
+  --bg-primary: #0a0a0f;
+  --bg-secondary: #0e1117;
+  --bg-card: #121a24;
+  --accent: #3b82f6;
+  --accent-light: #60a5fa;
+  --accent-dark: #1e3a5f;
+  --accent-glow: rgba(59, 130, 246, 0.12);
+  --accent-glow-strong: rgba(59, 130, 246, 0.28);
   --text-primary: #f0f4f8;
   --text-muted: #8892a4;
   --border: rgba(255, 255, 255, 0.07);
-  --border-accent: rgba(108, 99, 255, 0.25);
+  --border-accent: rgba(59, 130, 246, 0.22);
   --font: 'Inter', sans-serif;
   --radius: 12px;
   --radius-sm: 8px;
@@ -234,7 +235,7 @@ img, svg {
   transform: translateX(-50%);
   width: 800px;
   height: 800px;
-  background: radial-gradient(ellipse at center, rgba(108, 99, 255, 0.12) 0%, transparent 70%);
+  background: radial-gradient(ellipse at center, rgba(59, 130, 246, 0.12) 0%, transparent 70%);
   pointer-events: none;
 }
 
@@ -432,7 +433,7 @@ img, svg {
 .magnet-mockup {
   width: 100%;
   height: 180px;
-  background: linear-gradient(135deg, rgba(108,99,255,0.15) 0%, rgba(8,12,16,0.8) 100%);
+  background: linear-gradient(135deg, rgba(59,130,246,0.12) 0%, rgba(8,12,16,0.8) 100%);
   border: 1px solid var(--border-accent);
   border-radius: var(--radius-sm);
   display: flex;
@@ -581,7 +582,7 @@ img, svg {
   width: 140px;
   height: 140px;
   border-radius: 50%;
-  background: linear-gradient(135deg, rgba(108,99,255,0.3) 0%, rgba(8,12,16,0.9) 100%);
+  background: linear-gradient(135deg, rgba(59,130,246,0.25) 0%, rgba(8,12,16,0.9) 100%);
   border: 2px solid var(--border-accent);
   display: flex;
   align-items: center;
@@ -772,4 +773,163 @@ img, svg {
   .proof-number {
     font-size: 1.6rem;
   }
+}
+
+/* ---- Foto de perfil real ---- */
+.profile-photo {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--border-accent);
+  flex-shrink: 0;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .profile-photo {
+    margin: 0 auto;
+  }
+}
+
+/* ---- Sección "Formado con" ---- */
+.formado-con {
+  margin-top: 28px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+}
+
+.formado-con-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 10px;
+  display: block;
+}
+
+.formado-con-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 0;
+  align-items: center;
+}
+
+.formado-item {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.formado-sep {
+  margin: 0 10px;
+  color: var(--border-accent);
+  font-size: 0.8rem;
+}
+
+/* ---- Mockups ebook mejorados ---- */
+.magnet-mockup {
+  width: 100%;
+  height: 180px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--border-accent);
+}
+
+.magnet-mockup-1 {
+  background: linear-gradient(135deg, #0e1f38 0%, #1e3a5f 60%, #0a0a0f 100%);
+}
+
+.magnet-mockup-2 {
+  background: linear-gradient(135deg, #0f2030 0%, #0d2d4a 60%, #0a0a0f 100%);
+}
+
+.magnet-mockup-3 {
+  background: linear-gradient(135deg, #0c1a2e 0%, #162d4a 60%, #0a0a0f 100%);
+}
+
+.magnet-mockup::before {
+  content: '';
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  width: 100px;
+  height: 100px;
+  background: radial-gradient(circle, rgba(59,130,246,0.18) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.magnet-mockup-icon {
+  font-size: 2.4rem;
+  line-height: 1;
+  position: relative;
+  z-index: 1;
+}
+
+.magnet-mockup-title {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: rgba(255,255,255,0.5);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  position: relative;
+  z-index: 1;
+}
+
+/* ---- Calendly embed ---- */
+.calendly-wrapper {
+  margin: 36px 0 24px;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+
+.calendly-inline-widget {
+  width: 100% !important;
+}
+
+.agenda-cta-direct {
+  display: inline-block;
+  margin-top: 4px;
+  font-size: 0.85rem;
+  color: var(--accent-light);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color var(--transition);
+}
+
+.agenda-cta-direct:hover {
+  color: var(--text-primary);
+}
+
+/* ---- Navbar logo imagen ---- */
+.navbar-logo img {
+  height: 36px;
+  width: auto;
+}
+
+/* ---- Hero logo ---- */
+.hero-logo {
+  margin: 0 auto 32px;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-logo img {
+  height: 64px;
+  width: auto;
+}
+
+/* ---- Footer logo imagen ---- */
+.footer-logo img {
+  height: 32px;
+  width: auto;
+  opacity: 0.9;
 }
