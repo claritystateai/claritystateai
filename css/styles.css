@@ -204,14 +204,14 @@ img, svg {
   left: 0;
   right: 0;
   z-index: 100;
-  padding: 20px 0;
+  padding: 12px 0;
   transition: background var(--transition), padding var(--transition);
 }
 
 .navbar.scrolled {
   background: rgba(8, 12, 16, 0.95);
   backdrop-filter: blur(12px);
-  padding: 14px 0;
+  padding: 8px 0;
   border-bottom: 1px solid var(--border);
 }
 
@@ -932,9 +932,9 @@ img, svg {
 /* ---- Navbar logo imagen ---- */
 .navbar-logo img,
 .navbar-logo .logo-img {
-  height: 96px;
+  height: 200px;
   width: auto;
-  max-width: 400px;
+  max-width: 600px;
   filter: var(--logo-filter);
   transition: filter var(--transition);
 }
@@ -948,9 +948,9 @@ img, svg {
 
 .hero-logo img,
 .hero-logo .logo-img {
-  height: 160px;
+  height: 280px;
   width: auto;
-  max-width: 640px;
+  max-width: 800px;
   filter: var(--logo-filter);
   transition: filter var(--transition);
 }
@@ -958,9 +958,9 @@ img, svg {
 /* ---- Footer logo imagen ---- */
 .footer-logo img,
 .footer-logo .logo-img {
-  height: 80px;
+  height: 140px;
   width: auto;
-  max-width: 340px;
+  max-width: 500px;
   opacity: 0.85;
   filter: var(--logo-filter);
   transition: filter var(--transition);
