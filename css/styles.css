@@ -930,10 +930,11 @@ img, svg {
 }
 
 /* ---- Navbar logo imagen ---- */
-.navbar-logo img {
-  height: 56px;
+.navbar-logo img,
+.navbar-logo .logo-img {
+  height: 96px;
   width: auto;
-  max-width: 260px;
+  max-width: 400px;
   filter: var(--logo-filter);
   transition: filter var(--transition);
 }
@@ -945,19 +946,21 @@ img, svg {
   justify-content: center;
 }
 
-.hero-logo img {
-  height: 110px;
+.hero-logo img,
+.hero-logo .logo-img {
+  height: 160px;
   width: auto;
-  max-width: 480px;
+  max-width: 640px;
   filter: var(--logo-filter);
   transition: filter var(--transition);
 }
 
 /* ---- Footer logo imagen ---- */
-.footer-logo img {
-  height: 52px;
+.footer-logo img,
+.footer-logo .logo-img {
+  height: 80px;
   width: auto;
-  max-width: 240px;
+  max-width: 340px;
   opacity: 0.85;
   filter: var(--logo-filter);
   transition: filter var(--transition);
