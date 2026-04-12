@@ -1,12 +1,12 @@
 /* ============================================
    CLARITY STATE AI — Landing Page Styles
-   Dark mode premium | Inter font
+   Dark / Light mode | Inter font
    ============================================ */
 
 /* ---- Google Fonts ---- */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 
-/* ---- Variables ---- */
+/* ---- Variables — Dark mode (default) ---- */
 :root {
   --bg-primary: #0a0a0f;
   --bg-secondary: #0e1117;
@@ -25,6 +25,26 @@
   --radius-sm: 8px;
   --transition: 0.2s ease;
   --container: 1100px;
+  /* Logo: negro → blanco en dark mode */
+  --logo-filter: brightness(0) invert(1);
+}
+
+/* ---- Variables — Light mode ---- */
+[data-theme="light"] {
+  --bg-primary: #f8fafc;
+  --bg-secondary: #f1f5f9;
+  --bg-card: #ffffff;
+  --accent: #2563eb;
+  --accent-light: #3b82f6;
+  --accent-dark: #1e3a5f;
+  --accent-glow: rgba(37, 99, 235, 0.10);
+  --accent-glow-strong: rgba(37, 99, 235, 0.22);
+  --text-primary: #0f172a;
+  --text-muted: #64748b;
+  --border: rgba(0, 0, 0, 0.08);
+  --border-accent: rgba(37, 99, 235, 0.25);
+  /* Logo: negro ya se ve sobre fondo claro */
+  --logo-filter: none;
 }
 
 /* ---- Reset ---- */
@@ -913,6 +933,8 @@ img, svg {
 .navbar-logo img {
   height: 36px;
   width: auto;
+  filter: var(--logo-filter);
+  transition: filter var(--transition);
 }
 
 /* ---- Hero logo ---- */
@@ -925,6 +947,8 @@ img, svg {
 .hero-logo img {
   height: 64px;
   width: auto;
+  filter: var(--logo-filter);
+  transition: filter var(--transition);
 }
 
 /* ---- Footer logo imagen ---- */
@@ -932,4 +956,122 @@ img, svg {
   height: 32px;
   width: auto;
   opacity: 0.9;
+  filter: var(--logo-filter);
+  transition: filter var(--transition);
+}
+
+/* ---- Ajustes light mode específicos ---- */
+[data-theme="light"] .navbar.scrolled {
+  background: rgba(248, 250, 252, 0.95);
+  border-bottom: 1px solid var(--border);
+}
+
+[data-theme="light"] .hero-spotlight {
+  background: radial-gradient(ellipse at center, rgba(37, 99, 235, 0.08) 0%, transparent 70%);
+}
+
+[data-theme="light"] .step-card:hover {
+  box-shadow: 0 0 32px rgba(37,99,235,0.12);
+}
+
+[data-theme="light"] .modal-overlay {
+  background: rgba(15, 23, 42, 0.6);
+}
+
+[data-theme="light"] .wa-tooltip {
+  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+}
+
+/* ---- Toggle dark/light mode ---- */
+.theme-toggle {
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 6px 12px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all var(--transition);
+  font-family: var(--font);
+  white-space: nowrap;
+}
+
+.theme-toggle:hover {
+  border-color: var(--accent);
+  color: var(--text-primary);
+}
+
+.theme-toggle .icon-dark { display: inline; }
+.theme-toggle .icon-light { display: none; }
+[data-theme="light"] .theme-toggle .icon-dark { display: none; }
+[data-theme="light"] .theme-toggle .icon-light { display: inline; }
+
+/* ---- Widget flotante de WhatsApp ---- */
+.wa-widget {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 150;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+.wa-bubble {
+  background: #25D366;
+  border-radius: 50%;
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+  transition: transform var(--transition), box-shadow var(--transition);
+  text-decoration: none;
+}
+
+.wa-bubble:hover {
+  transform: scale(1.08);
+  box-shadow: 0 6px 28px rgba(37, 211, 102, 0.55);
+}
+
+.wa-bubble svg {
+  width: 30px;
+  height: 30px;
+  fill: #fff;
+}
+
+.wa-tooltip {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 10px 14px;
+  font-size: 0.82rem;
+  color: var(--text-primary);
+  white-space: nowrap;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+  animation: fadeInUp 0.3s ease both;
+  display: none;
+}
+
+.wa-widget:hover .wa-tooltip {
+  display: block;
+}
+
+@media (max-width: 480px) {
+  .wa-widget {
+    bottom: 20px;
+    right: 16px;
+  }
+
+  .wa-bubble {
+    width: 50px;
+    height: 50px;
+  }
 }

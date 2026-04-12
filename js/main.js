@@ -3,6 +3,29 @@
    Vanilla JS, sin dependencias externas
    ============================================ */
 
+/* ---- Dark / Light mode toggle ---- */
+const htmlEl = document.documentElement;
+const themeToggle = document.getElementById('theme-toggle');
+const themeLabel = document.getElementById('theme-label');
+
+function applyTheme(theme) {
+  htmlEl.setAttribute('data-theme', theme);
+  localStorage.setItem('csa-theme', theme);
+  if (themeLabel) {
+    themeLabel.textContent = theme === 'light' ? 'Modo oscuro' : 'Modo claro';
+  }
+}
+
+// Cargar preferencia guardada o del sistema
+const saved = localStorage.getItem('csa-theme');
+const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+applyTheme(saved || (prefersDark ? 'dark' : 'light'));
+
+themeToggle?.addEventListener('click', () => {
+  const current = htmlEl.getAttribute('data-theme');
+  applyTheme(current === 'light' ? 'dark' : 'light');
+});
+
 /* ---- Navbar scroll effect ---- */
 const navbar = document.querySelector('.navbar');
 window.addEventListener('scroll', () => {
