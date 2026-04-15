@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Configura Claude Code desde cero — Clarity State AI</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Montserrat:wght@400;500;600;700&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 10.5pt; }
+body {
+  font-family: 'Montserrat', 'Inter', sans-serif;
+  color: #1F2937;
+  background: #EAECEF;
+  line-height: 1.72;
+}
+
+@page {
+  size: A4;
+  margin: 0 0 13mm 0;
+}
+@page:first {
+  margin: 0;
+}
+@page {
+  @bottom-center {
+    content: "Página " counter(page) " de " counter(pages);
+    font-family: 'Inter', sans-serif;
+    font-size: 8pt;
+    color: #9CA3AF;
+    padding-bottom: 4mm;
+  }
+}
+@page:first {
+  @bottom-center {
+    content: none;
+  }
+}
+
+@media print {
+  .page-break { page-break-after: always; break-after: page; }
+  .no-break { page-break-inside: avoid; break-inside: avoid; }
+  body { font-size: 10pt; background: white; }
+  .watermark { opacity: 0.04 !important; }
+  a { color: inherit; text-decoration: none; }
+  img { max-width: 100% !important; height: auto !important; }
+  .page { min-height: 0 !important; }
+  .content-page { min-height: 0 !important; padding: 2cm 1.8cm 2cm 1.8cm; }
+  .cover-page {
+    width: 210mm !important; height: 297mm !important;
+    padding: 0 !important; margin: 0 !important;
+    position: relative !important; overflow: hidden !important;
+    page-break-after: always; break-after: page;
+    print-color-adjust: exact; -webkit-print-color-adjust: exact;
+  }
+}
+
+.watermark {
+  position: fixed; top: 50%; left: 50%;
+  transform: translate(-50%,-50%) rotate(-35deg);
+  font-family: 'Inter',sans-serif; font-size: 70pt; font-weight: 900;
+  color: #0066CC; opacity: 0.035; pointer-events: none; z-index: 0;
+  white-space: nowrap; letter-spacing: 6px; user-select: none;
+}
+
+.page {
+  position: relative; background: white;
+  box-shadow: 0 2px 8px rgba(0,0,0,.12);
+  max-width: 210mm; margin: 0 auto 2mm;
+  min-height: 297mm;
+  overflow: visible;
+}
+.page-content { position: relative; z-index: 1; }
+
+.cover-page {
+  background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  min-height: 297mm;
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+}
+
+.cover-body {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 0 40px;
+}
+
+.cover-badge {
+  font-size: 11pt;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: rgba(255,255,255,.8);
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.cover-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 44pt;
+  font-weight: 800;
+  line-height: 1.15;
+  color: white;
+  margin-bottom: 24px;
+}
+
+.cover-sub {
+  font-size: 14pt;
+  color: rgba(255,255,255,.95);
+  margin-bottom: 40px;
+  line-height: 1.5;
+}
+
+h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 28pt;
+  font-weight: 800;
+  color: #0066CC;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+h2 {
+  font-family: 'Inter', sans-serif;
+  font-size: 18pt;
+  font-weight: 700;
+  color: #1F2937;
+  margin-top: 24px;
+  margin-bottom: 12px;
+}
+
+p {
+  margin-bottom: 12px;
+  line-height: 1.8;
+}
+
+.highlight {
+  background: #FEF3C7;
+  padding: 0 4px;
+  border-radius: 2px;
+  font-weight: 600;
+  color: #92400E;
+}
+
+.cta-box {
+  background: #FFFBEB;
+  border-left: 4px solid #F59E0B;
+  padding: 16px 18px;
+  margin: 20px 0;
+  border-radius: 4px;
+}
+
+.cta-box strong {
+  color: #F59E0B;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.step-box {
+  background: #F9FAFB;
+  border: 1px solid #E5E7EB;
+  padding: 14px;
+  margin: 16px 0;
+  border-radius: 6px;
+  border-left: 4px solid #F59E0B;
+  font-family: 'Inter', monospace;
+  font-size: 9pt;
+}
+
+.step-num {
+  display: inline-block;
+  background: #F59E0B;
+  color: white;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 24px;
+  font-weight: 700;
+  margin-right: 8px;
+}
+
+footer {
+  text-align: center;
+  font-size: 8pt;
+  color: #9CA3AF;
+  margin-top: 30px;
+  padding-top: 15px;
+  border-top: 1px solid #E5E7EB;
+}
+  </style>
+</head>
+<body>
+
+<div class="watermark">CLARITY STATE AI</div>
+
+<!-- ===== PORTADA ===== -->
+<div class="page cover-page">
+  <div class="cover-body">
+    <div class="cover-badge">GUÍA PASO A PASO</div>
+    <h1 class="cover-title">Configura Claude Code<br>desde cero</h1>
+    <p class="cover-sub">Sin programación. Sin complejidad.<br>Instala tu asistente de IA en 30 minutos.</p>
+    <footer style="border: none; margin-top: 50px;">
+      <strong>Clarity State AI</strong><br>
+      Por Juan Manuel Plazas<br>
+      2026
+    </footer>
+  </div>
+</div>
+
+<!-- ===== INTRODUCCIÓN ===== -->
+<div class="page">
+  <div class="page-content content-page">
+    <h1>Introducción</h1>
+
+    <p>Claude Code es una herramienta que te permite trabajar directamente con IA para automatizar tareas en tu computador. Sin copypaste. Sin conversaciones. Puro trabajo ejecutado.</p>
+
+    <p><span class="highlight">No necesitas saber programación.</span> Solo debes seguir 5 pasos.</p>
+
+    <p>En esta guía encontrarás:</p>
+    <ul style="margin-left: 24px; margin-bottom: 16px;">
+      <li><strong>Qué es Claude Code</strong> (y por qué no es ChatGPT)</li>
+      <li><strong>Los 5 pasos de instalación</strong> (30 minutos)</li>
+      <li><strong>Las 3 primeras tareas</strong> que deberías automatizar</li>
+      <li><strong>Casos de uso reales</strong> en tu empresa</li>
+      <li><strong>Troubleshooting</strong> si algo falla</li>
+    </ul>
+
+    <div class="cta-box">
+      <strong>💻 Ahorra 5-10 horas mensuales</strong>
+      Después de completar esto, tendrás un asistente que trabaja mientras tú haces otras cosas.
+    </div>
+  </div>
+</div>
+
+<!-- ===== CAPÍTULO 1 ===== -->
+<div class="page">
+  <div class="page-content content-page page-break">
+    <h1>Capítulo 1<br>¿Qué es Claude Code?</h1>
+
+    <p>Claude Code es la interfaz CLI (línea de comandos) de Claude AI que corre EN TU COMPUTADOR, no en el navegador.</p>
+
+    <h2>Diferencias clave vs ChatGPT</h2>
+
+    <p><strong>ChatGPT:</strong> Abres el navegador, escribes, copias la respuesta, la pegas en Excel. Fricción manual.</p>
+
+    <p><strong>Claude Code:</strong> "Automatiza esto" → Se ejecuta directamente en tu PC. Crea archivos, edita documentos, procesa datos. Cero copypaste.</p>
+
+    <p><span class="highlight">La diferencia = no esperas, ejecutas.</span></p>
+
+    <h2>¿Qué puedo hacer?</h2>
+    <ul style="margin-left: 24px;">
+      <li>Procesar 500 filas Excel y generar un informe PDF</li>
+      <li>Crear carpetas, renombrar archivos, organizar documentos</li>
+      <li>Buscar información en tus documentos y crear resúmenes</li>
+      <li>Automatizar emails, mensajes, tareas repetitivas</li>
+      <li>Analizar datos en tiempo real y generar gráficos</li>
+    </ul>
+
+    <div class="cta-box">
+      <strong>✨ Lo importante:</strong> No necesitas saber programación. Claude lo hace por ti.
+    </div>
+  </div>
+</div>
+
+<!-- ===== CAPÍTULO 2 ===== -->
+<div class="page">
+  <div class="page-content content-page page-break">
+    <h1>Capítulo 2<br>5 pasos de instalación</h1>
+
+    <h2><span class="step-num">1</span> Descarga Claude Code</h2>
+    <p>Ve a claude.com/claude-code. Descarga la versión para tu sistema operativo (Windows, Mac o Linux).</p>
+
+    <div class="step-box">Nota: Si eres usuario macOS, también puedes instalar vía terminal: <br/>brew install claude-code</div>
+
+    <h2><span class="step-num">2</span> Abre una carpeta de trabajo</h2>
+    <p>Crea una carpeta en tu computador donde guardarás tus proyectos. Ejemplo: ~/Proyectos/IA-Automaciones</p>
+
+    <h2><span class="step-num">3</span> Abre Claude Code en esa carpeta</h2>
+    <p>Dentro de la carpeta, ejecuta: <code>claude-code</code></p>
+
+    <p>Se abrirá una interfaz en tu terminal. Ya estás dentro.</p>
+
+    <h2><span class="step-num">4</span> Conecta tu cuenta de Claude</h2>
+    <p>Sigue el prompt de autenticación. Inicia sesión con tu email de Anthropic.</p>
+
+    <h2><span class="step-num">5</span> ¡Listo! Tu primera tarea</h2>
+    <p>Escribe: "crea un archivo README.md con mi nombre"</p>
+
+    <p>Si ves un archivo README.md creado en tu carpeta → ¡Funcionó!</p>
+
+    <div class="cta-box">
+      <strong>✅ Success:</strong> Acabas de automatizar tu primera tarea.
+    </div>
+  </div>
+</div>
+
+<!-- ===== CAPÍTULO 3 ===== -->
+<div class="page">
+  <div class="page-content content-page page-break">
+    <h1>Capítulo 3<br>3 tareas para empezar</h1>
+
+    <h2>Tarea 1: Organizar una carpeta desordenada</h2>
+    <div class="step-box"><strong>Instrucción:</strong><br/>
+    "Tengo 200 archivos en ~/Descargas. Crea subcarpetas por tipo (PDFs, Excel, Imágenes, Otros) y mueve cada archivo a su carpeta."</div>
+
+    <h2>Tarea 2: Extraer datos de Excel</h2>
+    <div class="step-box"><strong>Instrucción:</strong><br/>
+    "Tengo clientes.xlsx. Extrae nombres + emails + teléfono. Crea un CSV limpio. Elimina duplicados."</div>
+
+    <h2>Tarea 3: Generar un informe PDF</h2>
+    <div class="step-box"><strong>Instrucción:</strong><br/>
+    "Toma los datos de mis ventas (archivo: ventas.csv). Crea un informe PDF con gráficos de ingresos por mes y resumen ejecutivo."</div>
+
+    <p style="margin-top: 20px;">Con estas 3 tareas, habrás ahorrado 5-8 horas la primera semana.</p>
+  </div>
+</div>
+
+<!-- ===== CIERRE ===== -->
+<div class="page">
+  <div class="page-content content-page">
+    <h1>Próximos pasos</h1>
+
+    <p>1. Descarga Claude Code ahora: claude.com/claude-code</p>
+    <p>2. Crea tu carpeta de trabajo</p>
+    <p>3. Completa la instalación (5 pasos, 10 minutos)</p>
+    <p>4. Ejecuta una de las 3 tareas arriba</p>
+    <p>5. Piensa en TUS procesos manuales y automatiza los top 3</p>
+
+    <div class="cta-box">
+      <strong>🚀 Bonus avanzado:</strong> Una vez configurado, conecta Claude Code con tus Google Sheets, Notion, o cualquier API. Las posibilidades son infinitas. Más en claritystateai.com
+    </div>
+
+    <footer style="margin-top: 60px;">
+      © 2026 Clarity State AI. Powered by Claude AI.<br>
+      Más en claritystateai.com
+    </footer>
+  </div>
+</div>
+
+</body>
+</html>

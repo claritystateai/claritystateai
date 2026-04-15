@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Migra tu cerebro de ChatGPT a Claude — Clarity State AI</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Montserrat:wght@400;500;600;700&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 10.5pt; }
+body {
+  font-family: 'Montserrat', 'Inter', sans-serif;
+  color: #1F2937;
+  background: #EAECEF;
+  line-height: 1.72;
+}
+
+/* ===== CSS PAGED MEDIA — números de página nativos ===== */
+@page {
+  size: A4;
+  margin: 0 0 13mm 0;
+}
+@page:first {
+  margin: 0;
+}
+@page {
+  @bottom-center {
+    content: "Página " counter(page) " de " counter(pages);
+    font-family: 'Inter', sans-serif;
+    font-size: 8pt;
+    color: #9CA3AF;
+    padding-bottom: 4mm;
+  }
+}
+@page:first {
+  @bottom-center {
+    content: none;
+  }
+}
+
+@media print {
+  .page-break { page-break-after: always; break-after: page; }
+  .no-break { page-break-inside: avoid; break-inside: avoid; }
+  body { font-size: 10pt; background: white; }
+  .watermark { opacity: 0.04 !important; }
+  a { color: inherit; text-decoration: none; }
+  img { max-width: 100% !important; height: auto !important; }
+  .page { min-height: 0 !important; }
+  .content-page { min-height: 0 !important; padding: 2cm 1.8cm 2cm 1.8cm; }
+  .cover-page {
+    width: 210mm !important; height: 297mm !important;
+    padding: 0 !important; margin: 0 !important;
+    position: relative !important; overflow: hidden !important;
+    page-break-after: always; break-after: page;
+    print-color-adjust: exact; -webkit-print-color-adjust: exact;
+  }
+  .cover-img {
+    position: absolute !important; top: 0 !important; left: 0 !important;
+    width: 100% !important; height: 100% !important;
+    object-fit: cover !important; object-position: center !important;
+    filter: brightness(1.25) !important;
+  }
+}
+
+.watermark {
+  position: fixed; top: 50%; left: 50%;
+  transform: translate(-50%,-50%) rotate(-35deg);
+  font-family: 'Inter',sans-serif; font-size: 70pt; font-weight: 900;
+  color: #0066CC; opacity: 0.035; pointer-events: none; z-index: 0;
+  white-space: nowrap; letter-spacing: 6px; user-select: none;
+}
+
+/* ===== PAGES ===== */
+.page {
+  position: relative; background: white;
+  box-shadow: 0 2px 8px rgba(0,0,0,.12);
+  max-width: 210mm; margin: 0 auto 2mm;
+  min-height: 297mm;
+  overflow: visible;
+}
+.page-content { position: relative; z-index: 1; }
+
+/* ===== COVER ===== */
+.cover-page {
+  background: linear-gradient(135deg, #0066CC 0%, #003D7A 100%);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  min-height: 297mm;
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+}
+
+.cover-body {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 60px 50px;
+}
+
+.cover-badge {
+  display: inline-block;
+  background: rgba(255,255,255,0.2);
+  color: white;
+  font-family: 'Inter',sans-serif;
+  font-size: 9pt;
+  font-weight: 700;
+  padding: 6px 16px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+  border-radius: 24px;
+}
+
+.cover-title {
+  font-family: 'Inter',sans-serif;
+  font-size: 48pt;
+  font-weight: 900;
+  color: white;
+  line-height: 1.1;
+  margin-bottom: 20px;
+  letter-spacing: -1px;
+}
+
+.cover-sub {
+  font-family: 'Inter',sans-serif;
+  font-size: 14pt;
+  font-weight: 500;
+  color: rgba(255,255,255,0.9);
+  margin-bottom: 40px;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ===== CONTENT PAGES ===== */
+.content-page {
+  padding: 2cm 1.8cm 2cm 1.8cm;
+  min-height: 297mm;
+}
+
+h1 {
+  font-family: 'Inter', sans-serif;
+  font-size: 28pt;
+  font-weight: 900;
+  color: #0066CC;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+h2 {
+  font-family: 'Inter', sans-serif;
+  font-size: 18pt;
+  font-weight: 700;
+  color: #1F2937;
+  margin-top: 24px;
+  margin-bottom: 12px;
+}
+
+p {
+  margin-bottom: 12px;
+  line-height: 1.8;
+}
+
+.highlight {
+  background: #FEF3C7;
+  padding: 0 4px;
+  border-radius: 2px;
+  font-weight: 600;
+}
+
+.cta-box {
+  background: #EFF6FF;
+  border-left: 4px solid #0066CC;
+  padding: 16px 18px;
+  margin: 20px 0;
+  border-radius: 4px;
+}
+
+.cta-box strong {
+  color: #0066CC;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.prompt-box {
+  background: #F9FAFB;
+  border: 1px solid #E5E7EB;
+  padding: 14px;
+  margin: 16px 0;
+  border-radius: 6px;
+  font-family: 'Inter', monospace;
+  font-size: 9pt;
+  line-height: 1.6;
+}
+
+.page-break {
+  page-break-after: always;
+  break-after: page;
+}
+
+footer {
+  text-align: center;
+  font-size: 8pt;
+  color: #9CA3AF;
+  margin-top: 30px;
+  padding-top: 15px;
+  border-top: 1px solid #E5E7EB;
+}
+  </style>
+</head>
+<body>
+
+<div class="watermark">CLARITY STATE AI</div>
+
+<!-- ===== PORTADA ===== -->
+<div class="page cover-page">
+  <div class="cover-body">
+    <div class="cover-badge">GUÍA GRATUITA</div>
+    <h1 class="cover-title">Migra tu cerebro<br>de ChatGPT a Claude</h1>
+    <p class="cover-sub">Toma mejores decisiones más rápido.<br>Centraliza tu información empresarial con IA.</p>
+    <footer style="border: none; margin-top: 50px;">
+      <strong>Clarity State AI</strong><br>
+      Por Juan Manuel Plazas<br>
+      2026
+    </footer>
+  </div>
+</div>
+
+<!-- ===== INTRODUCCIÓN ===== -->
+<div class="page">
+  <div class="page-content content-page">
+    <h1>Introducción</h1>
+
+    <p>No es un curso. No es teoría. Esto es un mapa práctico de por qué tus decisiones siguen siendo lentas incluso con ChatGPT, y cómo cambiar eso en 48 horas.</p>
+
+    <p>Hace 3 meses, un CEO colombiano llevaba años en ChatGPT. Sentía que no le sacaba jugo. Las decisiones seguían siendo lentas. La información estaba en 5 lugares diferentes. El análisis que le tomaba 3 horas con un asesor externo, Claude lo hacía en 10 minutos.</p>
+
+    <p><span class="highlight">La diferencia no es la herramienta. Es cómo se estructura el cerebro operativo.</span></p>
+
+    <p>En esta guía encontrarás:</p>
+    <ul style="margin-left: 24px; margin-bottom: 16px;">
+      <li><strong>Qué hace Claude diferente</strong> (razonamiento extendido, contexto largo, memoria)</li>
+      <li><strong>Cómo centralizar tu información</strong> (Drive → Claude → decisiones)</li>
+      <li><strong>Los 5 prompts que todo CEO debería usar</strong> (análisis, diagnóstico, decisiones)</li>
+      <li><strong>Estructura de tu Cerebro Operativo</strong> (paso a paso)</li>
+      <li><strong>De usuario a constructor</strong> (automatizar tus propios flujos)</li>
+    </ul>
+
+    <div class="cta-box">
+      <strong>⚡ Cómo usar esta guía</strong>
+      Léela completa primero. Luego, elige 1 prompt y úsalo con Claude.ai esta semana. El cambio empieza en la siguiente decisión que tomes.
+    </div>
+  </div>
+</div>
+
+<!-- ===== CAPÍTULO 1 ===== -->
+<div class="page">
+  <div class="page-content content-page page-break">
+    <h1>Capítulo 1<br>Por qué tus decisiones siguen siendo lentas</h1>
+
+    <p>ChatGPT fue revolucionario en 2023. Pero 2 años después, sus limitaciones se notan:</p>
+
+    <h2>El problema de ChatGPT</h2>
+    <p><strong>Sin contexto:</strong> Cada conversación empieza de cero. Le preguntas sobre tu empresa, repites el contexto cada vez. Gasto de energía mental inútil.</p>
+
+    <p><strong>Respuestas genéricas:</strong> Porque no entiende TU negocio, TU estructura, TUS restricciones. Los consejos que te da podrían aplicar a cualquiera.</p>
+
+    <p><strong>No recuerda:</strong> Resumes una conversación 3 días después y tienes que empezar de nuevo. Cero continuidad.</p>
+
+    <p><strong>Sin análisis profundo:</strong> Es un chat bonito, pero no analiza un documento de 20 páginas en profundidad. Te da un resumen superficial.</p>
+
+    <h2>La brecha que abrió Claude</h2>
+    <p>Claude es distinto:</p>
+    <ul style="margin-left: 24px;">
+      <li>Razonamiento extendido (puede analizar un problema desde múltiples ángulos)</li>
+      <li>Contexto largo (puedes pegarlo TODO: tu empresa, documentos, planes, decisiones previas)</li>
+      <li>Memoria de proyecto (recuerda conversaciones en el mismo proyecto)</li>
+      <li>Análisis profundo (entiende matices, ve riesgos que otros no ven)</li>
+    </ul>
+
+    <div class="cta-box">
+      <strong>La verdad incómoda:</strong> Si sigues usando ChatGPT para decisiones importantes, estás perdiendo velocidad y profundidad que tu competencia ya tiene.
+    </div>
+  </div>
+</div>
+
+<!-- ===== CAPÍTULO 2 ===== -->
+<div class="page">
+  <div class="page-content content-page page-break">
+    <h1>Capítulo 2<br>Qué hace Claude diferente</h1>
+
+    <h2>Razonamiento extendido</h2>
+    <p>Claude puede "pensar más profundo" sobre un problema. No solo te da una respuesta, sino que te muestra el proceso de razonamiento. Es útil cuando necesitas ENTENDER por qué algo es riesgoso, no solo la conclusión.</p>
+
+    <h2>Contexto de 200K tokens</h2>
+    <p>Imagina poder pegar en una conversación:</p>
+    <ul style="margin-left: 24px;">
+      <li>Tu plan estratégico completo (50 páginas)</li>
+      <li>Datos de tus últimas 3 decisiones</li>
+      <li>Documentación de tu operación</li>
+      <li>Estado del mercado actual</li>
+      <li>Competidores y su posicionamiento</li>
+    </ul>
+    <p>Y que Claude entienda TODO eso en el contexto de tu pregunta. Es como tener un asesor que revisó tu carpeta antes de la reunión.</p>
+
+    <h2>Proyectos (Claude Projects)</h2>
+    <p>Creas un "Proyecto" para tu empresa. Ese proyecto mantiene contexto entre conversaciones. Cada pregunta que hagas tiene la memoria de todo lo anterior.</p>
+
+    <h2>Por qué importa para un ejecutivo</h2>
+    <p>Las decisiones de calidad dependen de información completa. Si tu herramienta olvida contexto, tus decisiones serán mediocres. Claude no olvida.</p>
+  </div>
+</div>
+
+<!-- ===== CAPÍTULO 3 ===== -->
+<div class="page">
+  <div class="page-content content-page page-break">
+    <h1>Capítulo 3<br>Los 5 prompts que todo CEO debería usar</h1>
+
+    <h2>Prompt #1: Análisis ejecutivo de un documento</h2>
+    <p><strong>Problema que resuelve:</strong> Llega un PDF de 20 páginas, necesitas decisión en 2 horas.</p>
+
+    <div class="prompt-box">
+      "Actúa como asesor de negocios. Analiza este documento y dame:
+      1. Resumen ejecutivo (máximo 200 palabras)
+      2. Las 3 decisiones clave que necesito tomar
+      3. Los riesgos que no veo
+      4. Mi siguiente paso"
+    </div>
+
+    <h2>Prompt #2: Diagnóstico rápido de un proceso operativo</h2>
+    <p><strong>Problema que resuelve:</strong> "Algo en mi operación no funciona, pero no sé qué"</p>
+
+    <div class="prompt-box">
+      "Soy CEO de [tu empresa]. Mi [área] tiene estos síntomas:
+      - [síntoma 1]
+      - [síntoma 2]
+      - [síntoma 3]
+
+      ¿Cuál es la raíz del problema? ¿Qué preguntas debo hacer?"
+    </div>
+
+    <h2>Prompt #3: Preparación de una decisión estratégica</h2>
+    <p><strong>Problema que resuelve:</strong> Tengo que elegir entre 2 opciones, quiero ver todos los ángulos.</p>
+
+    <div class="prompt-box">
+      "Necesito decidir entre:
+      Opción A: [describe]
+      Opción B: [describe]
+
+      Mi constraints son:
+      - [constraint 1]
+      - [constraint 2]
+
+      Analiza ambas y dame: pros, contras, riesgos ocultos, y tu recomendación."
+    </div>
+
+    <h2>Prompt #4: Automatización de un proceso</h2>
+    <p><strong>Problema que resuelve:</strong> Gasto 3h/semana en una tarea manual.</p>
+
+    <div class="prompt-box">
+      "Mi equipo gasta [X] horas/semana en: [describe tarea].
+      El resultado final que necesitamos es: [especifica output].
+
+      ¿Cómo automatizamos esto? ¿Qué herramientas? ¿Cuánto tiempo me ahorraría?"
+    </div>
+
+    <h2>Prompt #5: Preparación de una conversación difícil</h2>
+    <p><strong>Problema que resuelve:</strong> Voy a tener una conversación incómoda, quiero estar preparado.</p>
+
+    <div class="prompt-box">
+      "Tengo que hablar con [persona] sobre [tema].
+      La conversación es difícil porque [razón].
+      Mi objetivo es [resultado que busco].
+
+      ¿Qué preguntas debo hacer? ¿Cómo empiezo? ¿Qué respuestas anticipo?"
+    </div>
+  </div>
+</div>
+
+<!-- ===== CAPÍTULO 4 ===== -->
+<div class="page">
+  <div class="page-content content-page page-break">
+    <h1>Capítulo 4<br>Estructura de tu Cerebro Operativo</h1>
+
+    <p>Un Cerebro Operativo no es solo "usar Claude". Es una estructura:</p>
+
+    <h2>Paso 1: Organiza tu información</h2>
+    <p>Crea una carpeta en Google Drive: "Cerebro Operativo". Dentro, guarda:</p>
+    <ul style="margin-left: 24px;">
+      <li>Tu plan estratégico</li>
+      <li>Datos de ventas/financieros actuales</li>
+      <li>Documentación de procesos clave</li>
+      <li>Decisiones previas (y por qué las tomaste)</li>
+    </ul>
+
+    <h2>Paso 2: Crea un Proyecto en Claude</h2>
+    <p>En Claude.ai, crea un "Proyecto" para tu empresa. Pega el contexto de tu Drive en la descripción del proyecto.</p>
+
+    <h2>Paso 3: Úsalo para decisiones reales</h2>
+    <p>Cada decisión importante, primero pasa por Claude. El análisis que te toma 3 horas, ahora toma 10 minutos. Las decisiones mediocres se convierten en buenas decisiones.</p>
+
+    <h2>Paso 4: Documenta el aprendizaje</h2>
+    <p>Cada decisión que tomaste con Claude, guarda el análisis. Es tu memoria empresarial.</p>
+
+    <div class="cta-box">
+      <strong>⚡ Empieza hoy:</strong> Copia tu plan estratégico a Claude.ai, crea un Proyecto, y haz una pregunta. Verás la diferencia en 10 minutos.
+    </div>
+  </div>
+</div>
+
+<!-- ===== CAPÍTULO 5 ===== -->
+<div class="page">
+  <div class="page-content content-page page-break">
+    <h1>Capítulo 5<br>De usuario a constructor</h1>
+
+    <p>Una vez que entiendas cómo Claude te ayuda a TOMAR decisiones, el siguiente nivel es usarlo para CONSTRUIR cosas:</p>
+
+    <h2>Automatizar tu información</h2>
+    <p>Claude Code (la extensión de Claude) puede:</p>
+    <ul style="margin-left: 24px;">
+      <li>Leer tus Sheets de datos automáticamente</li>
+      <li>Generar reportes sin que hagas nada</li>
+      <li>Alertarte si algo sale de rango</li>
+      <li>Responder preguntas frecuentes sin tu intervención</li>
+    </ul>
+
+    <h2>Construir herramientas personalizadas</h2>
+    <p>¿Necesitas un app para gestionar algo específico de tu negocio? Claude Code puede hacerlo. En 2 horas tienes una herramienta funcional.</p>
+
+    <h2>Escalar sin sumar personas</h2>
+    <p>Es el verdadero Cerebro Operativo: información fluye automáticamente, decisiones salen de datos en tiempo real, tu equipo gana 10 horas/semana.</p>
+
+    <div class="cta-box">
+      <strong>📌 Próximo paso:</strong> Si esto te interesa, te enviamos la guía avanzada sobre Claude Code y cómo construir tu infraestructura de IA.
+    </div>
+  </div>
+</div>
+
+<!-- ===== CIERRE ===== -->
+<div class="page">
+  <div class="page-content content-page page-break">
+    <h1>Próximo paso</h1>
+
+    <p>No necesitas saber programar. No necesitas ser "tech-savvy". Solo necesitas entender que:</p>
+
+    <p style="font-weight: 700; color: #0066CC; font-size: 12pt;">El CEO que toma mejores decisiones más rápido es el que gana.</p>
+
+    <p>Y la herramienta que te permite eso no es ChatGPT. Es Claude.</p>
+
+    <p style="margin-top: 30px;">Ahora que entiendes cómo funciona, el siguiente paso es implementarlo. </p>
+
+    <div class="cta-box">
+      <strong>→ Agendar demostración gratuita</strong><br>
+      Te mostramos en vivo cómo los CEOs que conozco lo están usando.<br>
+      Limitado a 5 slots/mes.
+    </div>
+
+    <p style="margin-top: 40px; font-size: 9pt; color: #6B7280;">
+      <strong>Clarity State AI</strong><br>
+      Toma mejores decisiones más rápido.<br>
+      <br>
+      Por Juan Manuel Plazas<br>
+      juanm.plazasg@gmail.com
+    </p>
+  </div>
+</div>
+
+</body>
+</html>
