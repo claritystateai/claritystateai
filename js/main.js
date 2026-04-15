@@ -89,15 +89,69 @@ document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') closeModal();
 });
 
-/* ---- Formulario de captura ---- */
+/* ---- Formulario de captura + Systeme.io webhook ---- */
 const captureForm = document.getElementById('capture-form');
-captureForm?.addEventListener('submit', (e) => {
+captureForm?.addEventListener('submit', async (e) => {
   e.preventDefault();
-  // TODO: Reemplazar con integración Systeme.io
-  // Por ahora muestra mensaje de confirmación
+
+  // Datos del formulario
+  const name = document.getElementById('field-name').value;
+  const email = document.getElementById('field-email').value;
+  const whatsapp = document.getElementById('field-whatsapp').value;
+  const blocker = document.getElementById('field-blocker').value;
   const btn = captureForm.querySelector('button[type="submit"]');
-  btn.textContent = '¡Enviado! Revisa tu email.';
+
+  // Validar
+  if (!name || !email) {
+    alert('Por favor completa nombre y email');
+    return;
+  }
+
+  // Mostrar loading
+  const originalText = btn.textContent;
+  btn.textContent = 'Enviando...';
   btn.disabled = true;
-  btn.style.background = '#25D366';
-  setTimeout(() => closeModal(), 2000);
+
+  try {
+    // Enviar a Systeme.io webhook
+    // La URL será reemplazada en Sesión #2 cuando configures Systeme.io
+    const webhookUrl = 'https://hook.systeme.io/api/contacts'; // URL temporal
+
+    const payload = {
+      first_name: name,
+      email: email,
+      phone: whatsapp,
+      tags: [blocker, 'clarity-state-ai'],
+      custom_fields: {
+        blocker: blocker
+      }
+    };
+
+    const response = await fetch(webhookUrl, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(payload)
+    });
+
+    if (response.ok) {
+      btn.textContent = '✅ ¡Enviado! Revisa tu email en 5 minutos.';
+      btn.style.background = '#25D366';
+      // Limpiar form y cerrar modal
+      captureForm.reset();
+      setTimeout(() => closeModal(), 2500);
+    } else {
+      throw new Error('Error en envío');
+    }
+  } catch (error) {
+    console.error('Error:', error);
+    btn.textContent = '❌ Error. Intenta de nuevo.';
+    btn.disabled = false;
+    btn.style.background = '#EF4444';
+    setTimeout(() => {
+      btn.textContent = originalText;
+      btn.style.background = '';
+    }, 3000);
+  }
 });
