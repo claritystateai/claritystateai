@@ -1252,6 +1252,30 @@ img, svg {
   color: var(--text-primary);
 }
 
+.footer-nav {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.78rem;
+}
+
+.footer-nav-link {
+  color: var(--text-muted);
+  transition: color var(--transition);
+  text-decoration: none;
+}
+
+.footer-nav-link:hover {
+  color: var(--accent);
+}
+
+.footer-nav-sep {
+  color: var(--text-muted);
+  opacity: 0.5;
+}
+
 .footer-copy {
   font-size: 0.78rem;
   color: var(--text-muted);
