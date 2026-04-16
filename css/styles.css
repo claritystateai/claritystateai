@@ -9,7 +9,7 @@
 /* ---- Variables — Dark mode (default) ---- */
 :root {
   --bg-primary: #0a0a0f;
-  --bg-secondary: #0e1117;
+  --bg-secondary: #0f1219;
   --bg-card: #121a24;
   --accent: #3b82f6;
   --accent-light: #60a5fa;
@@ -450,6 +450,68 @@ img, svg {
 
 .solucion-cta {
   margin-top: 48px;
+  text-align: center;
+}
+
+/* ---- SERVICIOS ---- */
+.servicios-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 28px;
+  margin-top: 56px;
+}
+
+.servicio-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 40px 32px;
+  text-align: center;
+  position: relative;
+  transition: border-color var(--transition), box-shadow var(--transition), transform var(--transition);
+  overflow: hidden;
+}
+
+.servicio-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 0%, rgba(59, 130, 246, 0.1) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.servicio-card:hover {
+  border-color: var(--border-accent);
+  box-shadow: 0 0 32px var(--accent-glow);
+  transform: translateY(-4px);
+}
+
+.servicio-number {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: var(--accent);
+  opacity: 0.25;
+  line-height: 1;
+  margin-bottom: 16px;
+  letter-spacing: -0.04em;
+}
+
+.servicio-card h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 16px;
+  color: var(--text-primary);
+}
+
+.servicio-card p {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.servicios-cta {
+  margin-top: 56px;
   text-align: center;
 }
 
