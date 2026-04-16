@@ -33,12 +33,23 @@
       </a>
       <div class="navbar-cta">
         <button class="theme-toggle" id="theme-toggle" aria-label="Cambiar tema">
-          <span class="icon-dark">☀️</span>
-          <span class="icon-light">🌙</span>
-          <span class="theme-label-dark" id="theme-label">Modo claro</span>
+          <svg class="icon-dark" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg class="icon-light" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
         </button>
-        <a href="#lead-magnets" class="btn btn-outline">Guía gratis</a>
-        <a href="#agenda" class="btn btn-primary">Agenda una demo</a>
+        <a href="#lead-magnets" class="btn btn-outline">Recursos gratuitos</a>
+        <a href="#agenda" class="btn btn-primary">Agenda demo</a>
       </div>
     </div>
   </nav>
@@ -48,44 +59,49 @@
     <div class="hero-spotlight" aria-hidden="true"></div>
     <div class="container">
       <div class="hero-content">
-        <span class="hero-eyebrow">Cerebro Operativo IA</span>
-        <h1 class="hero-title">
-          Toma mejores decisiones más rápido.<br />
-          <span class="highlight">Instala un Cerebro Operativo</span> con IA.
-        </h1>
-        <p class="hero-subtitle">
-          Centralizamos el conocimiento de tu equipo, automatizamos
-          procesos y te damos datos claros para decidir mejor.
-          Sin contratar más gente.
-        </p>
-        <div class="hero-buttons">
-          <a href="https://wa.me/573134925711?text=Hola,%20quiero%20saber%20m%C3%A1s%20sobre%20el%20Cerebro%20Operativo%20IA" target="_blank" rel="noopener" class="btn btn-whatsapp">
-            📱 Habla conmigo por WhatsApp
-          </a>
-          <a href="#lead-magnets" class="btn btn-outline">
-            📘 Descarga la guía gratis
-          </a>
+        <!-- LEFT: Texto -->
+        <div class="hero-text">
+          <span class="hero-eyebrow">Cerebro Operativo IA</span>
+          <h1 class="hero-title">
+            Domina la IA para tu negocio.<br />
+            <span class="highlight">Instala un Cerebro Operativo</span> que trabaje por ti.
+          </h1>
+          <p class="hero-subtitle">
+            Automatizaciones, dashboards, centrales de datos y soluciones con IA
+            implementadas en tu empresa. Para CEOs que quieren resultados reales.
+          </p>
+
+          <!-- CTAs principal -->
+          <div class="hero-buttons">
+            <a href="#agenda" class="btn btn-primary btn-lg">Agenda una demo gratuita</a>
+            <a href="#lead-magnets" class="btn btn-outline">Ver recursos gratuitos</a>
+          </div>
+
+          <!-- Urgencia -->
+          <div class="hero-urgency fade-in">
+            <p style="font-size: 0.875rem; color: var(--text-muted); margin-bottom: 12px;">⚡ <strong>Limitado a 5 slots de demo por mes</strong> — Agenda ahora mientras hay disponibilidad</p>
+          </div>
+
+          <!-- Social proof - alineado a izquierda -->
+          <div class="hero-social-proof fade-in">
+            <div class="proof-item">
+              <div class="proof-number">+3 años</div>
+              <div class="proof-label">implementando IA en negocios reales</div>
+            </div>
+            <div class="proof-item">
+              <div class="proof-number">+$20K USD</div>
+              <div class="proof-label">invertidos en formación con los mejores de LATAM y Europa</div>
+            </div>
+            <div class="proof-item">
+              <div class="proof-number">Múltiples áreas</div>
+              <div class="proof-label">comercial, mercadeo, finanzas, operaciones</div>
+            </div>
+          </div>
         </div>
 
-        <!-- Urgencia + trust signals -->
-        <div class="hero-urgency fade-in">
-          <p style="font-size: 0.875rem; color: var(--text-muted); margin-bottom: 12px;">⚡ <strong>Limitado a 5 slots de demo por mes</strong> — Agenda ahora mientras hay disponibilidad</p>
-        </div>
-
-        <!-- Social proof -->
-        <div class="hero-social-proof fade-in">
-          <div class="proof-item">
-            <div class="proof-number">+3 años</div>
-            <div class="proof-label">implementando IA en negocios reales</div>
-          </div>
-          <div class="proof-item">
-            <div class="proof-number">+$20K USD</div>
-            <div class="proof-label">invertidos en formación con los mejores de LATAM y Europa</div>
-          </div>
-          <div class="proof-item">
-            <div class="proof-number">Múltiples áreas</div>
-            <div class="proof-label">comercial, mercadeo, finanzas, operaciones</div>
-          </div>
+        <!-- RIGHT: Imagen -->
+        <div class="hero-image">
+          <img src="assets/images/profile-photo.jpg" alt="Juan Manuel Plazas" />
         </div>
       </div>
     </div>
