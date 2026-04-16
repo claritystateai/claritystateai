@@ -461,60 +461,193 @@ img, svg {
   color: var(--accent-light);
 }
 
-/* ---- SOLUCIÓN ---- */
-.solucion-steps {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 32px;
-  margin-top: 56px;
-  position: relative;
-}
+/* ---- SOLUCIÓN (Rediseño Finmark style) ---- */
 
-.step-card {
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 36px 28px;
+/* BLOQUE A: Qué es */
+.solucion-bloque-a {
+  margin-bottom: 64px;
   text-align: center;
-  position: relative;
-  transition: border-color var(--transition), box-shadow var(--transition);
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.step-card:hover {
-  border-color: var(--border-accent);
-  box-shadow: 0 0 32px var(--accent-glow);
+.solucion-headline {
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  margin-bottom: 24px;
+  color: var(--text-primary);
 }
 
-.step-number {
-  font-size: 3.5rem;
+.solucion-description {
+  font-size: 1rem;
+  color: var(--text-muted);
+  line-height: 1.8;
+  margin: 0;
+}
+
+/* BLOQUE B: Cómo funciona (vertical Finmark style) */
+.solucion-bloque-b {
+  margin-bottom: 64px;
+}
+
+.solucion-subheader {
+  font-size: 1.3rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 48px;
+  color: var(--text-primary);
+}
+
+.solucion-steps-vertical {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.step-vertical {
+  display: flex;
+  gap: 28px;
+  align-items: flex-start;
+  padding: 32px;
+  border-left: 3px solid var(--accent);
+  background: var(--bg-card);
+  border-radius: var(--radius-sm);
+  transition: box-shadow var(--transition), transform var(--transition);
+}
+
+.step-vertical:hover {
+  box-shadow: 0 0 24px var(--accent-glow);
+  transform: translateX(4px);
+}
+
+.step-vertical-number {
+  font-size: 2.5rem;
   font-weight: 800;
   color: var(--accent);
   opacity: 0.25;
   line-height: 1;
-  margin-bottom: 8px;
-  letter-spacing: -0.04em;
+  flex-shrink: 0;
 }
 
-.step-icon {
+.step-vertical-icon {
   font-size: 2rem;
-  margin-bottom: 16px;
+  line-height: 1;
+  flex-shrink: 0;
 }
 
-.step-card h3 {
-  font-size: 0.75rem;
+.step-vertical h4 {
+  font-size: 1.1rem;
   font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: 12px;
+  color: var(--text-primary);
+  margin-bottom: 10px;
+  line-height: 1.3;
 }
 
-.step-card p {
+.step-vertical p {
   font-size: 0.95rem;
   color: var(--text-muted);
   line-height: 1.6;
+  margin: 0;
 }
 
+/* BLOQUE C: Por qué funciona */
+.solucion-bloque-c {
+  margin-bottom: 64px;
+}
+
+.solucion-reasons {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 28px;
+  margin-top: 40px;
+}
+
+.reason-item {
+  padding: 32px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  text-align: center;
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+.reason-item:hover {
+  border-color: var(--border-accent);
+  box-shadow: 0 0 24px var(--accent-glow);
+}
+
+.reason-icon {
+  font-size: 2.2rem;
+  line-height: 1;
+  margin-bottom: 16px;
+  display: block;
+}
+
+.reason-item h4 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+  line-height: 1.3;
+}
+
+.reason-item p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* BLOQUE D: Social proof */
+.solucion-bloque-d {
+  margin-bottom: 56px;
+  padding: 40px 36px;
+  border: 1px solid var(--border-accent);
+  border-radius: var(--radius);
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.05) 0%, rgba(8, 12, 16, 0.3) 100%);
+  text-align: center;
+}
+
+.solucion-proof-box {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 32px;
+  margin-bottom: 24px;
+}
+
+.proof-stat {
+  text-align: center;
+}
+
+.proof-number {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--accent);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  margin-bottom: 8px;
+}
+
+.proof-label {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.proof-note {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin: 0;
+  font-style: italic;
+}
+
+/* CTA */
 .solucion-cta {
   margin-top: 48px;
   text-align: center;
@@ -937,6 +1070,21 @@ img, svg {
   .failure-text { font-size: 0.9rem; }
   .contrast-bridge { font-size: 0.9rem; }
 
+  /* Solución responsive */
+  .solucion-bloque-a { margin-bottom: 48px; }
+  .solucion-headline { font-size: 1.4rem; }
+  .solucion-description { font-size: 0.95rem; }
+  .solucion-subheader { font-size: 1.1rem; margin-bottom: 32px; }
+  .solucion-steps-vertical { gap: 28px; }
+  .step-vertical { gap: 16px; padding: 24px; }
+  .step-vertical-number { font-size: 1.8rem; }
+  .step-vertical-icon { font-size: 1.6rem; }
+  .solucion-reasons { gap: 20px; }
+  .reason-item { padding: 24px; }
+  .reason-icon { font-size: 1.8rem; }
+  .solucion-bloque-d { padding: 28px 20px; margin-bottom: 40px; }
+  .solucion-proof-box { gap: 24px; }
+
   /* Sobre mí */
   .sobre-mi-inner { grid-template-columns: 1fr; text-align: center; }
   .profile-photo { margin: 0 auto; width: 130px; height: 130px; }
@@ -1006,6 +1154,17 @@ img, svg {
   /* Modal */
   .modal-box { padding: 24px 16px; }
   .btn { padding: 12px 20px; font-size: 0.9rem; }
+
+  /* Solución mobile */
+  .solucion-headline { font-size: 1.2rem; line-height: 1.25; }
+  .solucion-description { font-size: 0.9rem; }
+  .solucion-steps-vertical { gap: 20px; }
+  .step-vertical { gap: 12px; padding: 20px; flex-direction: column; align-items: center; text-align: center; border-left: none; border-top: 3px solid var(--accent); }
+  .step-vertical-number { font-size: 1.4rem; }
+  .solucion-reasons { grid-template-columns: 1fr; gap: 16px; }
+  .reason-item { padding: 20px; }
+  .reason-icon { margin-bottom: 12px; }
+  .proof-number { font-size: 1.6rem; }
 
   /* WhatsApp widget */
   .wa-widget { bottom: 16px; right: 12px; }
