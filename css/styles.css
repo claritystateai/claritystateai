@@ -204,14 +204,14 @@ img, svg {
   left: 0;
   right: 0;
   z-index: 100;
-  padding: 12px 0;
+  padding: 6px 0;
   transition: background var(--transition), padding var(--transition);
 }
 
 .navbar.scrolled {
   background: rgba(8, 12, 16, 0.95);
   backdrop-filter: blur(12px);
-  padding: 8px 0;
+  padding: 4px 0;
   border-bottom: 1px solid var(--border);
 }
 
@@ -248,6 +248,17 @@ img, svg {
   padding: 120px 0 80px;
 }
 
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle, rgba(59, 130, 246, 0.07) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+  z-index: 0;
+}
+
 .hero-spotlight {
   position: absolute;
   top: -200px;
@@ -255,7 +266,7 @@ img, svg {
   transform: translateX(-50%);
   width: 800px;
   height: 800px;
-  background: radial-gradient(ellipse at center, rgba(59, 130, 246, 0.12) 0%, transparent 70%);
+  background: radial-gradient(ellipse at center, rgba(59, 130, 246, 0.14) 0%, transparent 70%);
   pointer-events: none;
 }
 
@@ -277,14 +288,42 @@ img, svg {
 .hero-image {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
 }
 
-.hero-image img {
+.hero-image-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.hero-image-wrapper::before {
+  content: '';
+  position: absolute;
+  inset: -40px;
+  background: radial-gradient(ellipse at center, rgba(59, 130, 246, 0.18) 0%, rgba(96, 165, 250, 0.06) 40%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero-image-wrapper::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 80% 20%, rgba(59, 130, 246, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 20% 80%, rgba(96, 165, 250, 0.06) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 0;
+  border-radius: 20px;
+}
+
+.hero-image-wrapper img {
+  position: relative;
+  z-index: 1;
   width: 100%;
-  max-width: 420px;
-  border-radius: 16px;
-  box-shadow: 0 20px 60px rgba(59, 130, 246, 0.15);
+  max-width: 320px;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(59, 130, 246, 0.2), 0 0 0 1px rgba(59, 130, 246, 0.1);
 }
 
 .hero-eyebrow {
@@ -299,6 +338,7 @@ img, svg {
   color: var(--accent);
   background: var(--accent-glow);
   margin-bottom: 24px;
+  margin-top: 48px;
   width: fit-content;
 }
 
@@ -1289,20 +1329,20 @@ img, svg {
   .section { padding: 64px 0; }
 
   /* Hero */
-  .hero { padding: 160px 0 56px; }
+  .hero { padding: 100px 0 56px; }
   .hero-content { grid-template-columns: 1fr; gap: 40px; }
-  .hero-image { order: -1; }
+  .hero-image { order: 1; }
+  .hero-text { order: 0; }
   .hero-title { font-size: 2.2rem; text-align: left; }
   .hero-subtitle { font-size: 0.95rem; text-align: left; }
   .hero-buttons { justify-content: flex-start; }
-  .hero-social-proof { gap: 24px; margin-top: 32px; justify-content: flex-start; }
-  .proof-number { font-size: 1.5rem; }
-  .hero-image img { max-width: 100%; }
+  .hero-eyebrow { margin-top: 0; }
+  .hero-image-wrapper img { max-width: 100%; }
 
   /* Navbar */
   .navbar-cta .btn-outline { display: none; }
   .navbar-logo img,
-  .navbar-logo .logo-img { height: 140px; max-width: 380px; }
+  .navbar-logo .logo-img { height: 32px; max-width: 180px; }
   .theme-toggle { padding: 5px 10px; font-size: 0.75rem; }
 
   /* Grids */
@@ -1391,7 +1431,7 @@ img, svg {
 
   /* Navbar */
   .navbar-logo img,
-  .navbar-logo .logo-img { height: 100px; max-width: 280px; }
+  .navbar-logo .logo-img { height: 28px; max-width: 160px; }
   .theme-toggle span:last-of-type { display: none; } /* oculta label texto */
 
   /* Grids */
@@ -1605,9 +1645,9 @@ img, svg {
 /* ---- Navbar logo imagen ---- */
 .navbar-logo img,
 .navbar-logo .logo-img {
-  height: 200px;
+  height: 36px;
   width: auto;
-  max-width: 600px;
+  max-width: 200px;
   filter: var(--logo-filter);
   transition: filter var(--transition);
 }
@@ -1929,4 +1969,316 @@ img, svg {
     width: 50px;
     height: 50px;
   }
+}
+
+/* ============================================
+   R2 UPDATES — 2026-04-20
+   PROBLEMA, PROCESO, POR QUÉ FUNCIONA, SOBRE MÍ
+   ============================================ */
+
+/* ---- PROBLEMA R2: ícono SVG ---- */
+.problema-icon-svg {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--accent-glow);
+  border: 1px solid var(--border-accent);
+  border-radius: 12px;
+  margin-bottom: 18px;
+  color: var(--accent);
+  flex-shrink: 0;
+}
+
+/* ---- PROCESO R2: grid 3 tarjetas tipo Uppit ---- */
+.proceso-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 56px;
+  margin-bottom: 72px;
+}
+
+.proceso-card {
+  background: #1e293b;
+  border: 1px solid rgba(59, 130, 246, 0.15);
+  border-radius: var(--radius);
+  padding: 36px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  transition: border-color var(--transition), box-shadow var(--transition), transform var(--transition);
+}
+
+.proceso-card:hover {
+  border-color: var(--border-accent);
+  box-shadow: 0 0 32px var(--accent-glow);
+  transform: translateY(-3px);
+}
+
+[data-theme="light"] .proceso-card {
+  background: #ffffff;
+  border: 1px solid rgba(37, 99, 235, 0.12);
+  box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+}
+
+.proceso-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 4px;
+}
+
+.proceso-icon-wrapper {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--accent-glow);
+  border: 1px solid var(--border-accent);
+  border-radius: 10px;
+  color: var(--accent);
+}
+
+[data-theme="light"] .proceso-icon-wrapper {
+  background: rgba(37, 99, 235, 0.08);
+}
+
+.proceso-num {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--accent);
+  opacity: 0.18;
+  letter-spacing: -0.04em;
+  line-height: 1;
+}
+
+.proceso-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.3;
+  margin: 0;
+}
+
+[data-theme="light"] .proceso-title {
+  color: #0f172a;
+}
+
+.proceso-subtitle {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--accent);
+  margin: 0;
+  line-height: 1.4;
+}
+
+.proceso-bullets {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.proceso-bullets li {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  padding-left: 16px;
+  position: relative;
+}
+
+[data-theme="light"] .proceso-bullets li {
+  color: #475569;
+}
+
+.proceso-bullets li::before {
+  content: '·';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 1.1rem;
+  line-height: 1.4;
+}
+
+/* ---- POR QUÉ FUNCIONA R2: compact cards ---- */
+.por-que-section {
+  margin-bottom: 64px;
+  padding-top: 56px;
+  border-top: 1px solid var(--border);
+}
+
+.por-que-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-align: center;
+  color: var(--text-primary);
+  margin-bottom: 36px;
+  letter-spacing: -0.01em;
+}
+
+.por-que-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.por-que-card {
+  background: #1e293b;
+  border: 1px solid rgba(59, 130, 246, 0.12);
+  border-radius: var(--radius);
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: center;
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+.por-que-card:hover {
+  border-color: var(--border-accent);
+  box-shadow: 0 0 20px var(--accent-glow);
+}
+
+[data-theme="light"] .por-que-card {
+  background: #f8fafc;
+  border: 1px solid rgba(37, 99, 235, 0.10);
+}
+
+.por-que-icon {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--accent-glow);
+  border: 1px solid var(--border-accent);
+  border-radius: 8px;
+  color: var(--accent);
+  margin: 0 auto 4px;
+}
+
+.por-que-card h4 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.3;
+  margin: 0;
+}
+
+[data-theme="light"] .por-que-card h4 {
+  color: #0f172a;
+}
+
+.por-que-card p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* CTA text por encima del botón */
+.solucion-cta-text {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 20px;
+}
+
+/* ---- SOBRE MÍ R2: layout founder tipo Nate Herk ---- */
+.sobre-mi-headline {
+  font-size: clamp(1.8rem, 4vw, 2.4rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  color: var(--text-primary);
+  margin: 0 0 48px;
+  text-align: center;
+}
+
+.sobre-mi-layout {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 48px;
+  align-items: flex-start;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.sobre-mi-foto {
+  display: flex;
+  justify-content: center;
+}
+
+.foto-circular {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center top;
+  border: 2px solid var(--border-accent);
+  box-shadow: 0 0 32px var(--accent-glow-strong);
+  flex-shrink: 0;
+}
+
+.sobre-mi-content {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+/* ---- RESPONSIVE R2 ---- */
+@media (max-width: 900px) {
+  .proceso-grid { grid-template-columns: 1fr; gap: 20px; }
+  .por-que-grid { grid-template-columns: 1fr; gap: 16px; }
+}
+
+@media (max-width: 768px) {
+  /* Proceso */
+  .proceso-card { padding: 28px 24px; }
+  .proceso-num { font-size: 1.4rem; }
+  .proceso-bullets li { font-size: 0.85rem; }
+
+  /* Por qué funciona */
+  .por-que-section { padding-top: 40px; margin-bottom: 48px; }
+  .por-que-grid { grid-template-columns: 1fr; gap: 14px; }
+  .por-que-card { padding: 20px; flex-direction: row; text-align: left; gap: 14px; align-items: flex-start; }
+  .por-que-icon { flex-shrink: 0; margin: 0; }
+
+  /* Sobre mí R2 */
+  .sobre-mi-layout {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    text-align: center;
+  }
+  .sobre-mi-foto { justify-content: center; }
+  .foto-circular { width: 150px; height: 150px; }
+  .sobre-mi-content { align-items: flex-start; }
+  .formado-con-list { justify-content: flex-start; }
+
+  /* Problema R2 */
+  .problema-grid { grid-template-columns: 1fr 1fr; }
+  .problema-contrast { padding: 28px 20px; }
+  .contrast-title { font-size: 0.95rem; }
+}
+
+@media (max-width: 480px) {
+  /* Proceso */
+  .proceso-card { padding: 24px 20px; }
+
+  /* Por qué funciona */
+  .por-que-card { flex-direction: column; text-align: center; }
+  .por-que-icon { margin: 0 auto; }
+
+  /* Sobre mí R2 */
+  .foto-circular { width: 130px; height: 130px; }
+  .sobre-mi-headline { font-size: 1.6rem; margin-bottom: 32px; }
+
+  /* Problema R2 */
+  .problema-grid { grid-template-columns: 1fr; }
 }
