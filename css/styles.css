@@ -2351,6 +2351,19 @@ img, svg {
     height: 102px;
     max-width: 570px;
   }
+
+  /* Sobre mí tablet */
+  .sobre-mi-layout {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .sobre-mi-fotos {
+    flex-direction: row;
+    gap: 16px;
+  }
+  .about-photo {
+    flex: 1;
+  }
 }
 
 @media (max-width: 480px) {
@@ -2361,9 +2374,13 @@ img, svg {
   }
 
   /* Sobre mí R3 mobile */
+  .sobre-mi-layout {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
   .sobre-mi-fotos {
     flex-direction: row;
-    gap: 10px;
+    gap: 12px;
   }
   .about-photo {
     flex: 1;
