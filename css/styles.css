@@ -2364,11 +2364,12 @@ img, svg {
     gap: 40px;
   }
   .sobre-mi-fotos {
-    flex-direction: row;
-    gap: 16px;
+    flex-direction: column;
+    gap: 12px;
   }
   .about-photo {
-    flex: 1;
+    flex: none;
+    width: 100%;
   }
 }
 
