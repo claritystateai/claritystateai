@@ -1358,7 +1358,8 @@ img, svg {
   .hero-buttons { justify-content: flex-start; }
   .hero-eyebrow { margin-top: 0; }
   .hero-image-wrapper img { max-width: 100%; }
-  .hero-spotlight { width: 700px; height: 700px; }
+  .hero::after { width: 50%; right: 0; }
+  .hero-spotlight { width: 500px; height: 500px; }
 
   /* Navbar */
   .navbar-cta .btn-outline { display: none; }
@@ -1449,7 +1450,8 @@ img, svg {
   .hero-buttons { flex-direction: column; align-items: stretch; }
   .hero-buttons .btn { width: 100%; justify-content: center; }
   .hero-social-proof { flex-direction: column; gap: 20px; align-items: center; }
-  .hero-spotlight { width: 600px; height: 600px; }
+  .hero::after { width: 40%; right: 0; opacity: 0.6; }
+  .hero-spotlight { width: 400px; height: 400px; opacity: 0.7; }
 
   /* Navbar */
   .navbar { padding: 12px 0; }
