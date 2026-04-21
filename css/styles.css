@@ -2386,11 +2386,12 @@ img, svg {
     gap: 28px;
   }
   .sobre-mi-fotos {
-    flex-direction: row;
+    flex-direction: column;
     gap: 12px;
   }
   .about-photo {
-    flex: 1;
-    aspect-ratio: 1 / 1;
+    flex: none;
+    width: 100%;
+    aspect-ratio: auto;
   }
 }
