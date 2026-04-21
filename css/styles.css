@@ -1360,7 +1360,7 @@ img, svg {
   /* Navbar */
   .navbar-cta .btn-outline { display: none; }
   .navbar-logo img,
-  .navbar-logo .logo-img { height: 51px; max-width: 288px; }
+  .navbar-logo .logo-img { height: 96px; max-width: 540px; }
   .theme-toggle { padding: 5px 10px; font-size: 0.75rem; }
 
   /* Grids */
@@ -1449,7 +1449,7 @@ img, svg {
 
   /* Navbar */
   .navbar-logo img,
-  .navbar-logo .logo-img { height: 45px; max-width: 256px; }
+  .navbar-logo .logo-img { height: 84px; max-width: 480px; }
   .theme-toggle span:last-of-type { display: none; } /* oculta label texto */
 
   /* Grids */
@@ -1663,9 +1663,9 @@ img, svg {
 /* ---- Navbar logo imagen ---- */
 .navbar-logo img,
 .navbar-logo .logo-img {
-  height: 64px;
+  height: 120px;
   width: auto;
-  max-width: 352px;
+  max-width: 660px;
   filter: var(--logo-filter);
   transition: filter var(--transition);
 }
@@ -2343,16 +2343,16 @@ img, svg {
 @media (max-width: 768px) {
   .navbar-logo img,
   .navbar-logo .logo-img {
-    height: 54px;
-    max-width: 304px;
+    height: 102px;
+    max-width: 570px;
   }
 }
 
 @media (max-width: 480px) {
   .navbar-logo img,
   .navbar-logo .logo-img {
-    height: 48px;
-    max-width: 272px;
+    height: 90px;
+    max-width: 510px;
   }
 
   /* Sobre mí R3 mobile */
