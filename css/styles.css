@@ -2232,10 +2232,10 @@ img, svg {
 
 .sobre-mi-layout {
   display: grid;
-  grid-template-columns: 200px 1fr;
-  gap: 48px;
+  grid-template-columns: 1fr;
+  gap: 40px;
   align-items: flex-start;
-  max-width: 900px;
+  max-width: 860px;
   margin: 0 auto;
 }
 
