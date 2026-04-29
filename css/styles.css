@@ -977,10 +977,10 @@ img, svg {
 /* Layout 2-columnas: texto izq (55-60%), fotos der (40-45%) */
 .sobre-mi-layout {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 64px;
+  grid-template-columns: 1fr;
+  gap: 40px;
   align-items: flex-start;
-  max-width: 1200px;
+  max-width: 900px;
   margin: 0 auto;
 }
 
@@ -2317,59 +2317,12 @@ img, svg {
    Sobre mí fotos secundarias
    ============================================ */
 
-/* ---- SOBRE MÍ R3: layout con 2 fotos ---- */
-.sobre-mi-layout {
-  grid-template-columns: 220px 1fr;
-}
-
-.sobre-mi-fotos {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-}
-
-.about-photo {
-  width: 100%;
-  border-radius: 12px;
-  object-fit: cover;
-  border: 1px solid var(--border-accent);
-  box-shadow: 0 8px 24px rgba(59, 130, 246, 0.10);
-  transition: transform var(--transition), box-shadow var(--transition);
-}
-
-.about-photo:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 12px 32px rgba(59, 130, 246, 0.18);
-}
-
-.about-photo-1 {
-  aspect-ratio: 4 / 3;
-}
-
-.about-photo-2 {
-  aspect-ratio: 16 / 9;
-}
-
 /* ---- NAVBAR R3: logo mobile ajustado ---- */
 @media (max-width: 768px) {
   .navbar-logo img,
   .navbar-logo .logo-img {
     height: 102px;
     max-width: 570px;
-  }
-
-  /* Sobre mí tablet */
-  .sobre-mi-layout {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-  .sobre-mi-fotos {
-    flex-direction: column;
-    gap: 12px;
-  }
-  .about-photo {
-    flex: none;
-    width: 100%;
   }
 }
 
@@ -2378,20 +2331,5 @@ img, svg {
   .navbar-logo .logo-img {
     height: 90px;
     max-width: 510px;
-  }
-
-  /* Sobre mí R3 mobile */
-  .sobre-mi-layout {
-    grid-template-columns: 1fr;
-    gap: 28px;
-  }
-  .sobre-mi-fotos {
-    flex-direction: column;
-    gap: 12px;
-  }
-  .about-photo {
-    flex: none;
-    width: 100%;
-    aspect-ratio: auto;
   }
 }
