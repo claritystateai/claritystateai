@@ -1,157 +1,80 @@
 /* ============================================
    CLARITY STATE AI — main.js
-   Vanilla JS, sin dependencias externas
+   Vanilla JS, sin dependencias externas.
+
+   2026-05-15: Webhook del CRM legacy eliminado (modelo viejo,
+   descartado en el pivote 2026-05-05). El embudo único del sprint
+   es WhatsApp Business (D-14 CONTEXT.md v2 03.1). El modal de
+   captura y los handlers de ebook también quedaron fuera porque
+   la web v1 del sprint no expone lead magnets.
    ============================================ */
 
-/* ---- Dark / Light mode toggle ---- */
-const htmlEl = document.documentElement;
-const themeToggle = document.getElementById('theme-toggle');
-const themeLabel = document.getElementById('theme-label');
-
-function applyTheme(theme) {
-  htmlEl.setAttribute('data-theme', theme);
-  localStorage.setItem('csa-theme', theme);
-  if (themeLabel) {
-    themeLabel.textContent = theme === 'light' ? 'Modo oscuro' : 'Modo claro';
-  }
-}
-
-// Cargar preferencia guardada o del sistema
-const saved = localStorage.getItem('csa-theme');
-const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-applyTheme(saved || (prefersDark ? 'dark' : 'light'));
-
-themeToggle?.addEventListener('click', () => {
-  const current = htmlEl.getAttribute('data-theme');
-  applyTheme(current === 'light' ? 'dark' : 'light');
-});
-
-/* ---- Navbar scroll effect ---- */
+/* ---- Navbar scroll effect ----
+   Añade la clase .scrolled al pasar 40px — el CSS la usa para el
+   fondo semitransparente con blur del navbar fijo. */
 const navbar = document.querySelector('.navbar');
-window.addEventListener('scroll', () => {
-  if (window.scrollY > 40) {
-    navbar.classList.add('scrolled');
-  } else {
-    navbar.classList.remove('scrolled');
-  }
-}, { passive: true });
-
-/* ---- Fade-in con IntersectionObserver ---- */
-const fadeEls = document.querySelectorAll('.fade-in');
-const observer = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
-      }
-    });
-  },
-  { threshold: 0.12 }
-);
-fadeEls.forEach((el) => observer.observe(el));
-
-/* ---- Modal de formulario ---- */
-const modalOverlay = document.getElementById('modal-overlay');
-const modalTitle = document.getElementById('modal-ebook-title');
-const modalSubtitle = document.getElementById('modal-ebook-subtitle');
-
-function openModal(ebookTitle, ebookSubtitle) {
-  if (!modalOverlay) return;
-  modalTitle.textContent = ebookTitle;
-  modalSubtitle.textContent = ebookSubtitle;
-  modalOverlay.classList.add('open');
-  document.body.style.overflow = 'hidden';
+if (navbar) {
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 40) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
+    }
+  }, { passive: true });
 }
 
-function closeModal() {
-  if (!modalOverlay) return;
-  modalOverlay.classList.remove('open');
-  document.body.style.overflow = '';
-}
-
-// Botones de ebook
-document.querySelectorAll('[data-ebook]').forEach((btn) => {
-  btn.addEventListener('click', (e) => {
+/* ---- Smooth scroll para anclas internas ----
+   Mantiene la navegación del navbar suave hacia las secciones del
+   sketch v1 (#manifiesto, #sectores, #prueba-social, #cta-final). */
+document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+  anchor.addEventListener('click', (e) => {
+    const targetId = anchor.getAttribute('href');
+    if (!targetId || targetId === '#') return;
+    const target = document.querySelector(targetId);
+    if (!target) return;
     e.preventDefault();
-    const title = btn.dataset.ebookTitle || 'Descarga tu guía gratis';
-    const subtitle = btn.dataset.ebookSubtitle || 'Completa tus datos y recibirás la guía en tu email.';
-    openModal(title, subtitle);
+    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
   });
 });
 
-// Cierre del modal
-document.getElementById('modal-close-btn')?.addEventListener('click', closeModal);
-modalOverlay?.addEventListener('click', (e) => {
-  if (e.target === modalOverlay) closeModal();
-});
-document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape') closeModal();
-});
+/* ---- Fade-in con IntersectionObserver ----
+   Conservado del v1. Activa la transición visible cuando un elemento
+   con clase .fade-in entra al viewport. No se usa en el HTML actual
+   pero queda disponible para no romper futuras secciones. */
+const fadeEls = document.querySelectorAll('.fade-in');
+if (fadeEls.length) {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.12 }
+  );
+  fadeEls.forEach((el) => observer.observe(el));
+}
 
-/* ---- Formulario de captura + Systeme.io webhook ---- */
-const captureForm = document.getElementById('capture-form');
-captureForm?.addEventListener('submit', async (e) => {
-  e.preventDefault();
-
-  // Datos del formulario
-  const name = document.getElementById('field-name').value;
-  const email = document.getElementById('field-email').value;
-  const whatsapp = document.getElementById('field-whatsapp').value;
-  const blocker = document.getElementById('field-blocker').value;
-  const btn = captureForm.querySelector('button[type="submit"]');
-
-  // Validar
-  if (!name || !email) {
-    alert('Por favor completa nombre y email');
-    return;
-  }
-
-  // Mostrar loading
-  const originalText = btn.textContent;
-  btn.textContent = 'Enviando...';
-  btn.disabled = true;
-
-  try {
-    // Enviar a Systeme.io webhook
-    // La URL será reemplazada en Sesión #2 cuando configures Systeme.io
-    const webhookUrl = 'https://hook.systeme.io/api/contacts'; // URL temporal
-
-    const payload = {
-      first_name: name,
-      email: email,
-      phone: whatsapp,
-      tags: [blocker, 'clarity-state-ai'],
-      custom_fields: {
-        blocker: blocker
-      }
-    };
-
-    const response = await fetch(webhookUrl, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(payload)
-    });
-
-    if (response.ok) {
-      btn.textContent = '✅ ¡Enviado! Revisa tu email en 5 minutos.';
-      btn.style.background = '#25D366';
-      // Limpiar form y cerrar modal
-      captureForm.reset();
-      setTimeout(() => closeModal(), 2500);
-    } else {
-      throw new Error('Error en envío');
+/* ---- Mailing list — fallback mailto ----
+   Mínimo viable para el sprint. JMP puede conectarlo a una herramienta
+   real después del checkpoint (mailing tool, CRM, etc.). Por ahora,
+   el form abre el cliente de correo con la dirección de contacto
+   pre-llenada para que JMP procese la suscripción manualmente. */
+const mailingForm = document.getElementById('mailing-form');
+if (mailingForm) {
+  mailingForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const emailInput = mailingForm.querySelector('input[type="email"]');
+    const email = emailInput ? emailInput.value.trim() : '';
+    if (!email) {
+      emailInput?.focus();
+      return;
     }
-  } catch (error) {
-    console.error('Error:', error);
-    btn.textContent = '❌ Error. Intenta de nuevo.';
-    btn.disabled = false;
-    btn.style.background = '#EF4444';
-    setTimeout(() => {
-      btn.textContent = originalText;
-      btn.style.background = '';
-    }, 3000);
-  }
-});
+    const subject = 'Suscripción al brief Clarity';
+    const body = `Quiero suscribirme al brief de Clarity State.\n\nMi correo: ${email}`;
+    const mailto = `mailto:juanm.plazasg@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.location.href = mailto;
+  });
+}
