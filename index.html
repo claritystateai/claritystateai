@@ -3,23 +3,24 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Clarity State AI — Cerebro Operativo IA para tu empresa</title>
-  <meta name="description" content="Centralizamos el conocimiento de tu equipo, automatizamos procesos y te damos datos claros para decidir mejor. Sin contratar más gente." />
+  <title>Clarity State AI — El cerebro de tu empresa, con memoria viva</title>
+  <meta name="description" content="Implantamos el cerebro de tu empresa: una memoria viva que conecta cada área y le da a tu equipo directivo la claridad para decidir el rumbo. La primera semilla operando en 90 días." />
 
   <!-- Favicon (SVG inline como data URI) -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%230a0a0f'/><circle cx='16' cy='13' r='5' fill='none' stroke='%233b82f6' stroke-width='2'/><rect x='14' y='16' width='4' height='7' rx='2' fill='%233b82f6'/><circle cx='16' cy='19' r='1.5' fill='%230a0a0f'/></svg>" />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Clarity State AI — Cerebro Operativo IA" />
-  <meta property="og:description" content="Instala un cerebro operativo con IA en tu empresa. Sin contratar más gente." />
+  <meta property="og:title" content="Clarity State AI — El cerebro de tu empresa, con memoria viva" />
+  <meta property="og:description" content="Implantamos el cerebro de tu empresa: una memoria viva que conecta cada área y le da a tu equipo directivo la claridad para decidir el rumbo. En 90 días, la primera semilla operando." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://claritystateai.com" />
+  <!-- TODO post-checkpoint: regenerar og-image alineada al CVP nuevo (headline + paleta navy/cian). La actual quedó del modelo viejo. -->
   <meta property="og:image" content="https://claritystateai.com/assets/images/og-image.png" />
 
-  <!-- Google Fonts -->
+  <!-- Google Fonts: Inter (sans body) + Fraunces (serif display) — BRAND-GUIDELINES §3 -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="css/styles.css" />
 </head>
@@ -28,28 +29,18 @@
   <!-- ============ NAVBAR ============ -->
   <nav class="navbar" aria-label="Navegación principal">
     <div class="container">
-      <a href="#" class="navbar-logo">
+      <a href="#inicio" class="navbar-logo">
         <img src="assets/img/logo.svg" alt="Clarity State AI" class="logo-img" />
       </a>
+      <div class="navbar-links" aria-label="Secciones del sitio">
+        <a href="#metodologia" class="navbar-link">Metodología</a>
+        <a href="#sectores" class="navbar-link">Sectores</a>
+        <a href="#prueba-social" class="navbar-link">Caso</a>
+        <a href="#cta-final" class="navbar-link">Contacto</a>
+      </div>
       <div class="navbar-cta">
-        <button class="theme-toggle" id="theme-toggle" aria-label="Cambiar tema">
-          <svg class="icon-dark" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <circle cx="12" cy="12" r="5"></circle>
-            <line x1="12" y1="1" x2="12" y2="3"></line>
-            <line x1="12" y1="21" x2="12" y2="23"></line>
-            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-            <line x1="1" y1="12" x2="3" y2="12"></line>
-            <line x1="21" y1="12" x2="23" y2="12"></line>
-            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-          </svg>
-          <svg class="icon-light" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-          </svg>
-        </button>
-        <a href="#lead-magnets" class="btn btn-outline">Recursos gratuitos</a>
-        <a href="#agenda" class="btn btn-primary">Agenda demo</a>
+        <!-- TODO checkpoint Tarea 4: JMP sustituir <TODO:NUMERO_WHATSAPP_JMP> por su número de WhatsApp Business en formato internacional (ej. 573001234567) antes del go-live -->
+        <a href="https://wa.me/<TODO:NUMERO_WHATSAPP_JMP>?text=Hola%20Juan%20Manuel%2C%20vi%20la%20web%20de%20Clarity%20State%20y%20me%20gustar%C3%ADa%20agendar%20un%20diagn%C3%B3stico%20de%2030%20minutos." class="btn btn-primary" target="_blank" rel="noopener">Diagnóstico 30 min</a>
       </div>
     </div>
   </nav>
@@ -61,664 +52,406 @@
       <div class="hero-content">
         <!-- LEFT: Texto -->
         <div class="hero-text">
-          <span class="hero-eyebrow">Cerebro Operativo IA</span>
-          <h1 class="hero-title">
-            Domina la IA para tu negocio.<br />
-            <span class="highlight">Instala un Cerebro Operativo</span> que trabaje por ti.
-          </h1>
+          <span class="eyebrow">Clarity State AI</span>
+          <h1 class="hero-title">El cerebro de tu empresa, con memoria viva.</h1>
           <p class="hero-subtitle">
-            Automatizaciones, dashboards, centrales de datos y soluciones con IA
-            implementadas en tu empresa. Para CEOs que quieren resultados reales.
+            Es lo que tu equipo directivo necesita para operar: cada área conectada, las
+            decisiones más rápidas y la claridad para fijar el rumbo del negocio. En solo
+            90 días, la primera semilla operando.
           </p>
 
-          <!-- CTAs principal -->
           <div class="hero-buttons">
-            <a href="#agenda" class="btn btn-primary btn-lg">Agenda una demo gratuita</a>
-            <a href="#lead-magnets" class="btn btn-outline">Ver recursos gratuitos</a>
+            <!-- TODO checkpoint Tarea 4: reemplazar <TODO:NUMERO_WHATSAPP_JMP> por el número real de WhatsApp Business -->
+            <a href="https://wa.me/<TODO:NUMERO_WHATSAPP_JMP>?text=Hola%20Juan%20Manuel%2C%20vi%20la%20web%20de%20Clarity%20State%20y%20me%20gustar%C3%ADa%20agendar%20un%20diagn%C3%B3stico%20de%2030%20minutos." class="btn btn-primary btn-lg" target="_blank" rel="noopener">Iniciar diagnóstico de 30 min</a>
+            <a href="#mailing-list" class="btn btn-outline">Suscribirme al brief</a>
           </div>
         </div>
 
-        <!-- RIGHT: Imagen -->
+        <!-- RIGHT: Foto editorial b/n de JMP -->
         <div class="hero-image">
           <div class="hero-image-wrapper">
-            <img src="assets/img/Foto Perfil Juan Plazas_mascerca.jpg" alt="Juan Manuel Plazas" />
+            <img src="assets/img/Foto Perfil Juan Plazas_mascerca.jpg" alt="Juan Manuel Plazas, fundador de Clarity State AI" />
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ============ SECCIÓN 2: SERVICIOS ============ -->
-  <section class="section section-alt" id="servicios">
+  <!-- ============ 01 — PUNTO DE PARTIDA ============ -->
+  <section class="section section-narrative" id="punto-de-partida">
     <div class="container">
-      <div class="text-center fade-in">
-        <p class="section-label">Lo que podemos construir juntos</p>
-        <h2 class="section-title">Soluciones con IA para tu empresa</h2>
-        <p class="section-subtitle">
-          Cuatro pilares que transforman cómo opera tu negocio.
+      <p class="eyebrow">01 — Punto de partida</p>
+      <h2 class="section-headline">Tu empresa funciona con herramientas sueltas. Y el conocimiento vive en cabezas, no en sistemas.</h2>
+
+      <div class="narrative-body">
+        <p>
+          Hay un CRM por aquí, una hoja de cálculo por allá, un chat con las decisiones
+          importantes y un par de personas que sostienen el negocio entero porque saben
+          dónde está cada cosa. Eso funcionó para llegar hasta acá. Pero el siguiente
+          tramo —decidir más rápido, sostener el crecimiento, no depender de personas
+          clave— pide otra capa.
         </p>
-      </div>
+        <p>
+          La mayoría de las empresas no necesita más inteligencia artificial. Necesita
+          dejar de perder la que ya tiene: el oficio del equipo, las decisiones pasadas,
+          el contexto del cliente, lo que se aprendió en cada temporada. Esa memoria es
+          el activo más caro de reconstruir cuando se pierde y el más invisible mientras
+          existe.
+        </p>
+        <p>
+          Lo que hacemos es ponerle un cerebro a ese activo: una capa que recuerda,
+          conecta y entrega contexto a quien decide. No reemplaza al equipo —lo libera
+          de cargar la memoria del negocio en la cabeza.
+        </p>
 
-      <div class="servicios-grid">
-        <div class="servicio-card fade-in">
-          <div class="servicio-number">01</div>
-          <h3>Cerebros Operativos</h3>
-          <p>
-            Instalamos un sistema central con IA que organiza el conocimiento
-            de tu empresa y lo convierte en capacidad ejecutable.
-          </p>
-        </div>
-
-        <div class="servicio-card fade-in">
-          <div class="servicio-number">02</div>
-          <h3>Automatizaciones</h3>
-          <p>
-            Procesos repetitivos que hoy te roban horas, automatizados
-            con flujos inteligentes que trabajan 24/7.
-          </p>
-        </div>
-
-        <div class="servicio-card fade-in">
-          <div class="servicio-number">03</div>
-          <h3>Agentes de IA</h3>
-          <p>
-            Asistentes virtuales entrenados con el conocimiento de tu negocio
-            que responden, ejecutan y toman decisiones por ti.
-          </p>
-        </div>
-
-        <div class="servicio-card fade-in">
-          <div class="servicio-number">04</div>
-          <h3>Dashboards & Data</h3>
-          <p>
-            Centrales de datos y paneles de medición para que veas tu negocio
-            claro y tomes decisiones basadas en información real.
-          </p>
-        </div>
-      </div>
-
-      <div class="servicios-cta fade-in">
-        <a href="#agenda" class="btn btn-primary btn-lg">Agenda una sesión sin costo</a>
+        <blockquote class="pull-quote">
+          Tu empresa no necesita más herramientas. Necesita memoria, criterio compartido
+          y claridad para decidir.
+        </blockquote>
       </div>
     </div>
   </section>
 
-  <!-- ============ SECCIÓN 3: PROBLEMA ============ -->
-  <section class="section" id="problema">
+  <!-- ============ 02 — MANIFIESTO + 4 PILARES ============ -->
+  <section class="section section-alt" id="manifiesto">
     <div class="container">
-      <div class="text-center fade-in">
-        <p class="section-label">El punto de partida</p>
-        <h2 class="section-title">Antes de escalar, la mayoría de empresas operan así.</h2>
-        <p class="section-subtitle">
-          No es falta de talento ni de esfuerzo. Es falta de un sistema que trabaje
-          a la velocidad que tu empresa necesita.
-        </p>
+      <p class="eyebrow">02 — Manifiesto Clarity</p>
+      <h2 class="section-headline">El humano decide. El cerebro le da claridad para fijar el rumbo.</h2>
+
+      <p class="section-lead">
+        Clarity no compite por automatizar tu negocio. Compite por darle a tu equipo
+        directivo el contexto que necesita para decidir el rumbo con más oficio. La IA
+        nunca decide por ti: te da memoria, conexión y claridad. Las palancas siguen en
+        manos de quien sabe operar tu empresa.
+      </p>
+
+      <div class="pilares-grid">
+        <article class="pilar-card">
+          <h3 class="pilar-title">Memoria operativa.</h3>
+          <p class="pilar-desc">El conocimiento del negocio deja de vivir solo en las personas y pasa a ser un activo consultable.</p>
+        </article>
+
+        <article class="pilar-card">
+          <h3 class="pilar-title">Decisión asistida.</h3>
+          <p class="pilar-desc">Quien decide tiene a la mano el contexto, los datos y la historia para decidir mejor y más rápido.</p>
+        </article>
+
+        <article class="pilar-card">
+          <h3 class="pilar-title">Procesos vivos.</h3>
+          <p class="pilar-desc">Los procesos dejan de ser documentos muertos y se vuelven parte del cerebro que opera con la empresa.</p>
+        </article>
+
+        <article class="pilar-card">
+          <h3 class="pilar-title">Implantación + alianza.</h3>
+          <p class="pilar-desc">No entregamos una caja y nos vamos. Implantamos contigo y acompañamos la evolución del sistema.</p>
+        </article>
       </div>
 
-      <div class="problema-grid">
-        <div class="problema-card fade-in">
-          <div class="problema-icon-svg">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
-            </svg>
-          </div>
-          <h3>Recupera tu tiempo para lo que importa</h3>
-          <p>
-            El CEO deja de ser el cuello de botella. Con un sistema que opera por ti,
-            te enfocas en crecer — no en apagar incendios ni supervisar cada detalle.
-          </p>
-        </div>
-        <div class="problema-card fade-in">
-          <div class="problema-icon-svg">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
-            </svg>
-          </div>
-          <h3>Tu equipo con la misma información, en tiempo real</h3>
-          <p>
-            Área comercial, administración y operaciones con los mismos datos.
-            Sin depender de quién sabe qué o dónde está el archivo correcto.
-          </p>
-        </div>
-        <div class="problema-card fade-in">
-          <div class="problema-icon-svg">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/>
-            </svg>
-          </div>
-          <h3>Tú y tu equipo decidiendo con datos, no con instinto</h3>
-          <p>
-            Dashboards que muestran qué funciona, qué no, y dónde está la oportunidad —
-            para ti y para cada área de tu empresa. Sin adivinar.
-          </p>
-        </div>
-        <div class="problema-card fade-in">
-          <div class="problema-icon-svg">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/>
-            </svg>
-          </div>
-          <h3>Haz más con lo que ya tienes</h3>
-          <p>
-            Automatiza lo repetitivo, reduce costos operativos y escala sin multiplicar
-            tu nómina. Cada peso invertido en el sistema rinde más que un nuevo empleado.
-          </p>
-        </div>
-      </div>
-
-      <!-- Bloque de contraste -->
-      <div class="problema-contrast fade-in">
-        <p class="contrast-title">
-          La diferencia entre una empresa que crece con fricción y una que escala con sistema es una sola decisión.
-        </p>
-        <p class="contrast-bridge">
-          Las que escalan primero no son las más grandes ni las que tienen más capital.<br />
-          Son las que <strong>sistematizan antes</strong>.
-        </p>
-      </div>
+      <p class="manifiesto-cierre">
+        No vendemos herramientas: implantamos un cerebro. Una memoria viva que conecta
+        cada área y le da a tu equipo directivo el contexto para decidir el rumbo.
+      </p>
     </div>
   </section>
 
-  <!-- ============ SECCIÓN 4: SOLUCIÓN / PROCESO ============ -->
-  <section class="section section-alt" id="solucion">
+  <!-- ============ 03 — EL CEREBRO EN ACCIÓN ============ -->
+  <section class="section" id="cerebro-accion">
     <div class="container">
-      <!-- ENCABEZADO -->
-      <div class="text-center fade-in">
-        <p class="section-label">Nuestro proceso</p>
-        <h2 class="section-title">Así instalamos un Cerebro Operativo en tu empresa</h2>
-        <p class="section-subtitle">
-          Un enfoque metódico que empieza por entender tu negocio — no por vender herramientas.
-        </p>
-      </div>
+      <p class="eyebrow">03 — El cerebro en acción</p>
+      <h2 class="section-headline">Preguntas que tu cerebro debería poder responder hoy.</h2>
 
-      <!-- 3 TARJETAS DE PROCESO (estilo Uppit) -->
-      <div class="proceso-grid">
-        <div class="proceso-card fade-in">
-          <div class="proceso-header">
-            <div class="proceso-icon-wrapper">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
-              </svg>
-            </div>
-            <span class="proceso-num">01</span>
-          </div>
-          <h3 class="proceso-title">Descubrimos tu operación</h3>
-          <p class="proceso-subtitle">Entender primero. Automatizar después.</p>
-          <ul class="proceso-bullets">
-            <li>Mapeamos cómo funciona realmente tu empresa: procesos, flujos, decisiones y cuellos de botella.</li>
-            <li>Identificamos dónde vive la información hoy: CRMs, Excel, WhatsApp, cabezas de personas clave.</li>
-            <li>Auditamos qué se puede automatizar, qué necesita un agente de IA, y qué debe quedarse como está.</li>
-          </ul>
+      <p class="section-lead">
+        No son ejemplos de marketing: son las preguntas reales que un equipo directivo
+        hace todas las semanas y que se quedan en silencio mientras alguien rebusca
+        archivos o llama a la persona que "sabe". El cerebro de tu empresa las responde
+        en segundos, con la historia y el contexto que tomaron años de oficio acumular.
+      </p>
+
+      <div class="preguntas-grid">
+        <div class="pregunta-card">
+          <span class="pregunta-mark">▸</span>
+          <p>¿Cuál fue el último presupuesto que le enviamos a este cliente y bajo qué condiciones?</p>
         </div>
-
-        <div class="proceso-card fade-in">
-          <div class="proceso-header">
-            <div class="proceso-icon-wrapper">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
-              </svg>
-            </div>
-            <span class="proceso-num">02</span>
-          </div>
-          <h3 class="proceso-title">Diseñamos y construimos tu sistema</h3>
-          <p class="proceso-subtitle">Soluciones a medida, probadas antes del lanzamiento.</p>
-          <ul class="proceso-bullets">
-            <li>Priorizamos las oportunidades de mayor impacto y definimos dónde la IA realmente resuelve — y dónde no.</li>
-            <li>Construimos flujos, automatizaciones, dashboards y agentes de IA con el conocimiento real de tu empresa.</li>
-            <li>Probamos en un entorno controlado antes del lanzamiento para garantizar que funciona en tu operación real.</li>
-          </ul>
+        <div class="pregunta-card">
+          <span class="pregunta-mark">▸</span>
+          <p>¿Por qué decidimos cambiar de proveedor en marzo del año pasado y cómo nos fue con el cambio?</p>
         </div>
-
-        <div class="proceso-card fade-in">
-          <div class="proceso-header">
-            <div class="proceso-icon-wrapper">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/>
-              </svg>
-            </div>
-            <span class="proceso-num">03</span>
-          </div>
-          <h3 class="proceso-title">Lanzamos, medimos y optimizamos</h3>
-          <p class="proceso-subtitle">Mejora continua, no un proyecto de una sola vez.</p>
-          <ul class="proceso-bullets">
-            <li>Lanzamos el sistema con métricas claras de éxito y protocolos de seguimiento definidos.</li>
-            <li>Monitoreamos el rendimiento, recogemos feedback de tu equipo y resolvemos ajustes rápido.</li>
-            <li>Refinamos continuamente: prompts, lógica, modelos y flujos para que el sistema mejore conforme crece tu negocio.</li>
-          </ul>
+        <div class="pregunta-card">
+          <span class="pregunta-mark">▸</span>
+          <p>¿Qué pasó la última vez que intentamos vender a este sector y qué nos detuvo?</p>
+        </div>
+        <div class="pregunta-card">
+          <span class="pregunta-mark">▸</span>
+          <p>¿Cuál es el costo real de producción del producto X esta temporada, con la materia prima de hoy?</p>
+        </div>
+        <div class="pregunta-card">
+          <span class="pregunta-mark">▸</span>
+          <p>¿Quién es el dueño operativo de este proceso si la persona clave no está disponible esta semana?</p>
+        </div>
+        <div class="pregunta-card">
+          <span class="pregunta-mark">▸</span>
+          <p>¿Qué clientes nos compraron en los últimos doce meses, en qué frecuencia y con qué margen real?</p>
+        </div>
+        <div class="pregunta-card">
+          <span class="pregunta-mark">▸</span>
+          <p>¿Cuál es la lección que ya aprendimos y que no estamos aplicando a esta nueva negociación?</p>
+        </div>
+        <div class="pregunta-card">
+          <span class="pregunta-mark">▸</span>
+          <p>¿Cómo resolvimos esta misma queja la última vez y qué prometimos al cliente para cerrarla?</p>
+        </div>
+        <div class="pregunta-card">
+          <span class="pregunta-mark">▸</span>
+          <p>¿Qué tiene en común el equipo que más rota y qué señales aparecen antes de que alguien se vaya?</p>
+        </div>
+        <div class="pregunta-card">
+          <span class="pregunta-mark">▸</span>
+          <p>¿Qué decisiones tomamos en la última junta y cuáles quedaron sin dueño ni fecha de revisión?</p>
         </div>
       </div>
 
-      <!-- POR QUÉ FUNCIONA (compacto) -->
-      <div class="por-que-section fade-in">
-        <h3 class="por-que-title">Por qué funciona el Cerebro Operativo</h3>
-        <div class="por-que-grid">
-          <div class="por-que-card fade-in">
-            <div class="por-que-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
-              </svg>
-            </div>
-            <h4>Basado en tu operación real</h4>
-            <p>Se construye con el conocimiento de tu empresa — no es un template genérico.</p>
-          </div>
-          <div class="por-que-card fade-in">
-            <div class="por-que-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                <polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 .49-3.75"/>
-              </svg>
-            </div>
-            <h4>Funciona 24/7 sin depender de personas</h4>
-            <p>Automatizaciones y agentes que operan mientras tú descansas.</p>
-          </div>
-          <div class="por-que-card fade-in">
-            <div class="por-que-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/>
-              </svg>
-            </div>
-            <h4>Escalable sin contratar más gente</h4>
-            <p>Crece tu operación sin multiplicar tu nómina. Cada peso invertido rinde más.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- CTA FINAL -->
-      <div class="solucion-cta fade-in">
-        <p class="solucion-cta-text">¿Listo para ver cómo funcionaría en tu empresa?</p>
-        <a href="#agenda" class="btn btn-primary btn-lg">Agenda tu sesión gratuita</a>
-      </div>
+      <p class="preguntas-cierre">
+        Son preguntas de oficio. No las responden agendas ni dashboards sueltos: las
+        responde un cerebro que recuerda el negocio.
+      </p>
     </div>
   </section>
 
-  <!-- ============ SECCIÓN 5: FIT / ¿ES PARA TI? ============ -->
-  <section class="section" id="fit">
+  <!-- ============ 04 — IMPLANTACIÓN EN 90 DÍAS ============ -->
+  <section class="section section-alt" id="metodologia">
     <div class="container">
-      <!-- BLOQUE A: HEADLINE + NUBE DE ÁREAS -->
-      <div class="fit-bloque-a fade-in">
-        <p class="section-label">¿Es para ti?</p>
-        <h2 class="fit-headline">
-          Sin importar tu industria o el tamaño de tu empresa.
-        </h2>
-        <p class="fit-subtitle">
-          Si tienes un equipo, tienes procesos, y tomas decisiones todos los días —
-          un Cerebro Operativo puede transformar cómo operas.
+      <p class="eyebrow">04 — Implantación en 90 días</p>
+      <h2 class="section-headline">Semilla → árbol. En 90 días, la primera semilla operando.</h2>
+
+      <div class="metodologia-body">
+        <p>
+          A un cerebro no se le instala: se le cultiva. En 90 días dejamos la primera
+          semilla operando dentro de tu empresa —una capa del cerebro funcionando con
+          datos reales, con tu equipo encima, generando contexto y decisiones útiles
+          desde el primer mes—. No es "todo terminado en 90 días". Es la pieza que
+          arranca el sistema y que cada trimestre crece con el negocio.
         </p>
 
-        <!-- Nube de tags de industrias y áreas -->
-        <div class="fit-tags-cloud">
-          <span class="fit-tag">Comercio</span>
-          <span class="fit-tag">Salud</span>
-          <span class="fit-tag">Manufactura</span>
-          <span class="fit-tag">Servicios</span>
-          <span class="fit-tag">Logística</span>
-          <span class="fit-tag">Retail</span>
-          <span class="fit-tag">Alimentos</span>
-          <span class="fit-tag">Construcción</span>
-          <span class="fit-tag">Consultoría</span>
-          <span class="fit-tag">Educación</span>
-          <span class="fit-tag">Área comercial</span>
-          <span class="fit-tag">Finanzas</span>
-          <span class="fit-tag">Mercadeo</span>
-          <span class="fit-tag">Operaciones</span>
-          <span class="fit-tag">RRHH</span>
-          <span class="fit-tag">Atención al cliente</span>
-          <span class="fit-tag">Compras</span>
-          <span class="fit-tag">Dirección general</span>
-        </div>
-
-        <p class="fit-closing">
-          <strong>Cualquier empresa que dependa de personas para operar</strong> puede
-          instalar un Cerebro Operativo con IA.
-        </p>
-      </div>
-
-      <!-- BLOQUE B: 4 PERFILES QUE ENCAJAN -->
-      <div class="fit-bloque-b">
-        <div class="fit-profile fade-in">
-          <div class="fit-profile-icon">✔</div>
-          <h3>Eres CEO y tu negocio depende de ti para todo</h3>
-          <p>
-            Quieres delegar operación sin perder control. Necesitas un sistema que
-            trabaje por ti mientras tú haces crecer la empresa.
-          </p>
-        </div>
-
-        <div class="fit-profile fade-in">
-          <div class="fit-profile-icon">✔</div>
-          <h3>Tienes equipo pero la información no fluye</h3>
-          <p>
-            Cada persona tiene su forma de hacer las cosas. El conocimiento está
-            fragmentado y se pierde cuando alguien se va.
-          </p>
-        </div>
-
-        <div class="fit-profile fade-in">
-          <div class="fit-profile-icon">✔</div>
-          <h3>Quieres implementar IA pero no sabes por dónde empezar</h3>
-          <p>
-            Sabes que la IA puede ayudarte pero todo suena complejo. Necesitas a
-            alguien que lo implemente de verdad en tu empresa.
-          </p>
-        </div>
-
-        <div class="fit-profile fade-in">
-          <div class="fit-profile-icon">✔</div>
-          <h3>Tomas decisiones sin datos claros</h3>
-          <p>
-            Operas por intuición. Quieres dashboards, métricas y un sistema que te
-            diga qué está pasando en tu negocio en tiempo real.
-          </p>
-        </div>
-      </div>
-
-      <!-- CTA FINAL -->
-      <div class="fit-cta fade-in">
-        <a href="#agenda" class="btn btn-primary btn-lg">Hablemos de tu empresa</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ SECCIÓN 6: LEAD MAGNETS ============ -->
-  <section class="section section-alt" id="lead-magnets">
-    <div class="container">
-      <div class="text-center fade-in">
-        <p class="section-label">Empieza hoy</p>
-        <h2 class="section-title">Empieza a implementar IA en tu negocio hoy — sin costo.</h2>
-        <p class="section-subtitle">
-          Estas guías son las mismas herramientas que usamos con nuestros clientes.
-          Descárgalas y empieza a ver resultados antes de tu primera sesión.
-        </p>
-      </div>
-
-      <div class="magnets-grid">
-        <!-- Ebook 1 -->
-        <div class="magnet-card fade-in">
-          <div class="magnet-mockup magnet-mockup-1">
-            <span class="magnet-mockup-icon">📘</span>
-            <span class="magnet-mockup-title">Guía práctica</span>
+        <div class="metodologia-fases">
+          <div class="fase-card">
+            <span class="fase-num">Fase 1 · días 1–30</span>
+            <h3 class="fase-title">Lectura del negocio</h3>
+            <p>Mapeamos cómo se decide hoy: dónde vive la información, quiénes son los dueños operativos, qué procesos cargan más memoria, qué preguntas se repiten sin respuesta clara.</p>
           </div>
-          <span class="magnet-tag">Guía práctica — 30 min de lectura</span>
-          <h3>Cómo migrar tu cerebro de ChatGPT a Claude</h3>
-          <p>
-            La herramienta que usan los CEOs que van en serio con IA.
-            Paso a paso para que hagas la transición hoy.
-          </p>
-          <a
-            href="#"
-            class="btn btn-primary"
-            data-ebook
-            data-ebook-title="Guía: Migra de ChatGPT a Claude"
-            data-ebook-subtitle="Completa tus datos y te enviamos la guía a tu email ahora."
-          >
-            Descargar gratis
-          </a>
-          <!-- PEGAR AQUÍ EL EMBED DE SYSTEME.IO PARA ESTE LEAD MAGNET -->
-          <div id="systeme-form-1" style="display:none;"></div>
+          <div class="fase-card">
+            <span class="fase-num">Fase 2 · días 31–60</span>
+            <h3 class="fase-title">Primera semilla del cerebro</h3>
+            <p>Construimos la primera capa del cerebro con el conocimiento real del negocio. La conectamos a las fuentes vivas (CRM, hojas, conversaciones) y se la entregamos al equipo directivo en uso diario.</p>
+          </div>
+          <div class="fase-card">
+            <span class="fase-num">Fase 3 · días 61–90</span>
+            <h3 class="fase-title">Cerebro operando</h3>
+            <p>Acompañamos al equipo en el uso real, ajustamos lo que pide la operación y dejamos el sistema corriendo con criterios claros para que crezca. El cerebro queda andando contigo.</p>
+          </div>
         </div>
 
-        <!-- Ebook 2 -->
-        <div class="magnet-card fade-in">
-          <div class="magnet-mockup magnet-mockup-2">
-            <span class="magnet-mockup-icon">📅</span>
-            <span class="magnet-mockup-title">Plantilla + método</span>
-          </div>
-          <span class="magnet-tag">Plantilla + método — 10 min setup</span>
-          <h3>Organiza tu semana en 10 minutos con IA</h3>
+        <div class="metodologia-evolucion">
+          <h3 class="evolucion-title">Lo que sigue lo construimos contigo.</h3>
           <p>
-            La misma plantilla que uso para planificar mi semana.
-            Configura tu calendario con IA y recupera horas cada día.
+            Una vez la primera semilla está viva, el sistema crece según el negocio:
+            capa C-suite para que cada gerente tenga su lente del cerebro, módulos por
+            área, desarrollos específicos, recurrencia. No es una caja cerrada: es una
+            alianza larga con tu empresa.
           </p>
-          <a
-            href="#"
-            class="btn btn-primary"
-            data-ebook
-            data-ebook-title="Plantilla: Organiza tu semana con IA"
-            data-ebook-subtitle="Completa tus datos y te enviamos la plantilla a tu email ahora."
-          >
-            Descargar gratis
-          </a>
-          <!-- PEGAR AQUÍ EL EMBED DE SYSTEME.IO PARA ESTE LEAD MAGNET -->
-          <div id="systeme-form-2" style="display:none;"></div>
-        </div>
-
-        <!-- Ebook 3 -->
-        <div class="magnet-card fade-in">
-          <div class="magnet-mockup magnet-mockup-3">
-            <span class="magnet-mockup-icon">💻</span>
-            <span class="magnet-mockup-title">Setup paso a paso</span>
-          </div>
-          <span class="magnet-tag">Setup paso a paso — 45 min</span>
-          <h3>Cómo configurar Claude Code desde cero</h3>
-          <p>
-            Tu propia IA trabajando en tu computador.
-            Sin programar. Setup completo paso a paso.
-          </p>
-          <a
-            href="#"
-            class="btn btn-primary"
-            data-ebook
-            data-ebook-title="Guía: Configura Claude Code desde cero"
-            data-ebook-subtitle="Completa tus datos y te enviamos la guía a tu email ahora."
-          >
-            Descargar gratis
-          </a>
-          <!-- PEGAR AQUÍ EL EMBED DE SYSTEME.IO PARA ESTE LEAD MAGNET -->
-          <div id="systeme-form-3" style="display:none;"></div>
-        </div>
-      </div>
-
-      <!-- BLOQUE DE CIERRE: Transición a Cerebro Operativo -->
-      <div class="magnets-closing fade-in">
-        <p class="magnets-closing-text">
-          Y si quieres el sistema completo implementado en tu empresa...
-        </p>
-        <a href="#agenda" class="btn btn-primary btn-lg">Agenda tu sesión gratuita →</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ SECCIÓN 7: SOBRE MÍ / FOUNDER ============ -->
-  <section class="section section-alt" id="sobre-mi">
-    <div class="container">
-      <div class="text-center fade-in">
-        <p class="section-label">Sobre mí</p>
-        <h2 class="sobre-mi-headline">Empecé dirigiendo una empresa.</h2>
-      </div>
-
-      <!-- LAYOUT FOUNDER: solo texto -->
-      <div class="sobre-mi-layout fade-in">
-
-        <!-- Texto -->
-        <div class="sobre-mi-content">
-          <div class="sobre-mi-story">
-            <p>
-              Mi nombre es Juan Manuel Plazas. Llevo más de tres años dirigiendo
-              <a href="https://elsolaragencia.co/" target="_blank" rel="noopener" class="inline-link">El Solar CG</a>,
-              una agencia consultora de Mercadeo Digital en Colombia. Conozco de primera mano
-              lo que sufren diferentes negocios, donde se toman decisiones sin conocer los datos,
-              donde se va todo el tiempo en resolver problemas y no en lo que importa, estabilizar y crecer.
-            </p>
-            <p>
-              Hace 3 años descubrí que la inteligencia artificial podía cambiar por completo
-              cómo se opera una empresa. No desde la teoría — desde la implementación real
-              y empecé en mis propios negocios.
-            </p>
-            <p>
-              Hoy, con Clarity State AI, ayudo a ejecutivos C-Level y dueños de empresa a
-              instalar Cerebros Operativos y sistemas con IA que los ayudan a adaptarse frente
-              a los cambios, a ir más rápido y tomar mejores decisiones. Sin depender de más
-              gente. Sin depender de la suerte.
-            </p>
-          </div>
-
-          <!-- Formado con -->
-          <div class="formado-con">
-            <span class="formado-con-label">Formado con los mejores en IA y negocios digitales</span>
-            <div class="formado-con-list">
-              <span class="formado-item">Víctor Pérez — Vystral / MonetizIA Masters</span>
-              <span class="formado-sep">·</span>
-              <span class="formado-item">Agus Nievas</span>
-              <span class="formado-sep">·</span>
-              <span class="formado-item">SYK Consultores</span>
-              <span class="formado-sep">·</span>
-              <span class="formado-item">Finmark Academy</span>
-            </div>
-          </div>
-
-          <a href="#agenda" class="btn btn-primary">Agenda tu sesión gratuita</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ============ SECCIÓN 8: AGENDA DEMO ============ -->
-  <section class="section" id="agenda">
+  <!-- ============ 05 — PRUEBA SOCIAL ============ -->
+  <section class="section" id="prueba-social">
     <div class="container">
-      <div class="agenda-inner fade-in">
-        <p class="section-label">El siguiente paso</p>
-        <h2 class="section-title">El siguiente paso es una conversación.</h2>
-        <p class="section-subtitle">
-          20 minutos. Te muestro exactamente cómo funcionaría
-          un Cerebro Operativo en tu empresa específica.
+      <p class="eyebrow">05 — Prueba</p>
+      <h2 class="section-headline">Cuatro evidencias de que esto opera, no solo se dice.</h2>
+
+      <div class="prueba-grid">
+        <article class="prueba-card prueba-card--principal">
+          <span class="prueba-tag">Caso vivo · Agroexportación</span>
+          <h3 class="prueba-title">Una empresa con 40 años de oficio, montando el cerebro con nosotros.</h3>
+          <p>
+            Más de un millón de tallos al año, equipo establecido, cliente B2B en mercados
+            internacionales. Está montando el cerebro de su operación con Clarity: una
+            memoria viva que recoge lo que el equipo carga hoy en la cabeza y se lo deja
+            consultable al equipo directivo. Caso anonimizado por acuerdo; se revela con
+            permiso firmado.
+          </p>
+
+          <blockquote class="pull-quote pull-quote--testimonio">
+            "Lo que más tranquilidad me da: si mañana la gente que sostiene esto no está,
+            alguien más toma esa memoria y la empresa sigue caminando igual."
+            <cite>— Gerente General, exportador colombiano de flores (40 años de oficio)</cite>
+          </blockquote>
+        </article>
+
+        <article class="prueba-card">
+          <span class="prueba-tag">Caso interno · Salud</span>
+          <h3 class="prueba-title">MCW: un mini-Clarity puertas adentro.</h3>
+          <p>
+            Medical Care World se convierte en el caso interno de adopción de IA para
+            Clarity State. Un mini-Clarity aplicado a la operación de MCW: cerebro,
+            memoria viva y procesos vivos para el día a día del negocio.
+          </p>
+        </article>
+
+        <article class="prueba-card">
+          <span class="prueba-tag">Operación 100% apalancada en IA</span>
+          <h3 class="prueba-title">El Solar: una agencia que opera con IA todos los días.</h3>
+          <p>
+            Agencia de marketing digital colombiana que opera 100% apalancada en
+            inteligencia artificial. Operación real y diaria, no demo. Es el laboratorio
+            donde Clarity prueba sus criterios antes de implantarlos en cliente.
+          </p>
+        </article>
+
+        <article class="prueba-card prueba-card--sobre-jmp">
+          <span class="prueba-tag">Sobre JMP</span>
+          <div class="sobre-jmp-layout">
+            <div class="sobre-jmp-foto">
+              <img src="assets/img/Foto Perfil Juan Plazas_mascerca.jpg" alt="Retrato editorial de Juan Manuel Plazas" />
+            </div>
+            <div class="sobre-jmp-body">
+              <h3 class="prueba-title">Operador, no fundador-héroe.</h3>
+              <p>
+                Clarity State es la firma de implementación de IA fundada por Juan Manuel
+                Plazas, con el respaldo de un programa internacional de implementación
+                de inteligencia artificial en empresas. JMP viene de operar negocios
+                reales y eso es lo que trae a la mesa cuando implanta el cerebro en una
+                empresa establecida.
+              </p>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 06 — SECTORES EN EXPLORACIÓN ============ -->
+  <section class="section section-alt" id="sectores">
+    <div class="container">
+      <p class="eyebrow">06 — Sectores en exploración</p>
+      <h2 class="section-headline">Dónde estamos buscando.</h2>
+
+      <p class="sectores-disclaimer">
+        <em>Hipótesis en validación. No descartamos sectores que se ganen su sitio por evidencia.</em>
+      </p>
+
+      <p class="sectores-intro">
+        Trabajamos con empresas establecidas que ya tienen oficio y un equipo que sostiene
+        la operación. No hacemos IA para principiantes: hacemos infraestructura de criterio
+        para negocios que ya operan.
+      </p>
+
+      <div class="sectores-grid">
+        <article class="sector-card">
+          <h3 class="sector-title">Ciberseguridad.</h3>
+          <p>Empresas de seguridad ofensiva, SOC y consultoras que viven de criterio acumulado y rotación de talento — el cerebro preserva el oficio y libera al líder técnico.</p>
+        </article>
+
+        <article class="sector-card">
+          <h3 class="sector-title">Energía.</h3>
+          <p>Petróleo, renovables y eléctricas. Operaciones con histórico denso, decisiones de alto costo y equipos que cargan la memoria del activo en la cabeza.</p>
+        </article>
+
+        <article class="sector-card">
+          <h3 class="sector-title">Logística gigante.</h3>
+          <p>Navieras y empresas de envíos con miles de movimientos diarios. El cerebro conecta operación, comercial y dirección sin depender del despachador de turno.</p>
+        </article>
+
+        <article class="sector-card">
+          <h3 class="sector-title">Salud / Medical.</h3>
+          <p>Operadores médicos que sostienen procesos clínicos y administrativos en paralelo. La memoria del paciente, del proceso y del criterio queda al alcance de quien decide.</p>
+        </article>
+
+        <article class="sector-card sector-card--caso">
+          <h3 class="sector-title">Agroexportación.</h3>
+          <p>Exportadores B2B con temporadas largas, redes de clientes internacionales y oficio acumulado. <strong>Caso vivo</strong> ya montando el cerebro con nosotros.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 07 — CTA FINAL ============ -->
+  <section class="section section-cta" id="cta-final">
+    <div class="container">
+      <p class="eyebrow">07 — Conversemos</p>
+      <h2 class="section-headline">Si te resuena, el primer paso es un diagnóstico de 30 minutos.</h2>
+
+      <p class="cta-lead">
+        Si quieres entender cómo se vería el cerebro de tu empresa, escríbenos por
+        WhatsApp. La conversación es directa con Juan Manuel, sin formularios ni
+        embudos. En 30 minutos sabemos si tiene sentido seguir.
+      </p>
+
+      <div class="cta-buttons">
+        <!-- TODO checkpoint Tarea 4: reemplazar <TODO:NUMERO_WHATSAPP_JMP> por el número real de WhatsApp Business -->
+        <a href="https://wa.me/<TODO:NUMERO_WHATSAPP_JMP>?text=Hola%20Juan%20Manuel%2C%20vi%20la%20web%20de%20Clarity%20State%20y%20me%20gustar%C3%ADa%20agendar%20un%20diagn%C3%B3stico%20de%2030%20minutos." class="btn btn-primary btn-xl" target="_blank" rel="noopener">Iniciar diagnóstico de 30 min</a>
+      </div>
+
+      <div class="mailing-list" id="mailing-list">
+        <h3 class="mailing-title">¿Prefieres recibir nuestro brief antes?</h3>
+        <p class="mailing-desc">
+          Una nota corta cuando publicamos algo que vale la pena leer. Sin spam, sin
+          embudos. Te puedes dar de baja cuando quieras.
         </p>
-
-        <!-- Calendly embed real -->
-        <div class="calendly-wrapper">
-          <div
-            class="calendly-inline-widget"
-            data-url="https://calendly.com/juanm-plazasg/30min"
-            style="min-width:320px;height:700px;"
-          ></div>
-          <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
-        </div>
-
-        <a
-          href="https://calendly.com/juanm-plazasg/30min"
-          target="_blank"
-          rel="noopener"
-          class="agenda-cta-direct"
-        >
-          Abrir Calendly en una nueva pestaña →
-        </a>
-
-        <!-- Alternativa WhatsApp prominente -->
-        <div class="agenda-divider">o si prefieres algo más directo</div>
-
-        <a
-          href="https://wa.me/573134925711?text=Hola,%20quiero%20saber%20m%C3%A1s%20sobre%20el%20Cerebro%20Operativo%20IA"
-          target="_blank"
-          rel="noopener"
-          class="btn btn-whatsapp btn-lg"
-        >
-          📱 Escríbeme por WhatsApp
-        </a>
-
-        <!-- Bloque de FAQ mini — Elimina últimas objeciones -->
-        <div class="agenda-faq fade-in">
-          <h3 class="agenda-faq-title">Preguntas frecuentes</h3>
-
-          <div class="faq-item">
-            <div class="faq-question">¿Tiene costo la sesión?</div>
-            <div class="faq-answer">No. Es completamente gratuita y sin compromiso. Solo quiero conocer tu empresa.</div>
-          </div>
-
-          <div class="faq-item">
-            <div class="faq-question">¿Qué necesito preparar?</div>
-            <div class="faq-answer">Nada. Solo cuéntame un poco sobre tu empresa, tus desafíos principales y cómo operas hoy.</div>
-          </div>
-
-          <div class="faq-item">
-            <div class="faq-question">¿Cuánto tarda ver resultados?</div>
-            <div class="faq-answer">Depende del tamaño de tu operación. Pero el primer resultado concreto se ve en semanas, no meses.</div>
-          </div>
-        </div>
+        <form id="mailing-form" class="mailing-form" aria-label="Suscripción al brief Clarity">
+          <label for="mailing-email" class="visually-hidden">Tu correo</label>
+          <input type="email" id="mailing-email" name="email" placeholder="tu@correo.com" required aria-required="true" />
+          <button type="submit" class="btn btn-outline">Suscribirme al brief</button>
+        </form>
+        <p class="mailing-note">El brief llega al correo. En el sprint inicial el envío se gestiona manualmente; pronto se conecta a la lista oficial.</p>
       </div>
     </div>
   </section>
 
   <!-- ============ FOOTER ============ -->
-  <footer class="footer">
+  <footer class="footer" role="contentinfo">
     <div class="container">
       <div class="footer-inner">
-        <div class="footer-logo">
-          <img src="assets/img/logo.svg" alt="Clarity State AI" class="logo-img" />
+        <div class="footer-brand-block">
+          <img src="assets/img/logo.svg" alt="Clarity State AI" class="logo-img footer-logo-img" />
+          <p class="footer-tagline">Implementación de IA con criterio para empresas establecidas.</p>
         </div>
-        <div class="footer-links">
-          <a href="https://www.instagram.com/plazas.ia" target="_blank" rel="noopener" class="footer-link">Instagram</a>
-          <a href="https://www.tiktok.com/@plazas_ia" target="_blank" rel="noopener" class="footer-link">TikTok</a>
-          <a href="https://www.linkedin.com/in/juan-manuel-plazas-gomez/" target="_blank" rel="noopener" class="footer-link">LinkedIn</a>
+
+        <div class="footer-cols">
+          <div class="footer-col">
+            <span class="footer-col-title">Compliance</span>
+            <ul>
+              <li><a href="#" class="footer-link">NDA disponible</a></li>
+              <li><a href="#" class="footer-link">Roadmap SOC2</a></li>
+              <li><a href="#" class="footer-link">Política de datos</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <span class="footer-col-title">Sitio</span>
+            <ul>
+              <li><a href="#manifiesto" class="footer-link">Metodología</a></li>
+              <li><a href="#sectores" class="footer-link">Sectores</a></li>
+              <li><a href="#prueba-social" class="footer-link">Caso</a></li>
+              <li><a href="#cta-final" class="footer-link">Contacto</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <span class="footer-col-title">Encuéntranos</span>
+            <ul>
+              <li><a href="https://www.linkedin.com/in/juan-manuel-plazas-gomez/" target="_blank" rel="noopener" class="footer-link">LinkedIn</a></li>
+              <li><a href="https://www.instagram.com/plazas.ia" target="_blank" rel="noopener" class="footer-link">Instagram</a></li>
+              <li><a href="https://www.tiktok.com/@plazas_ia" target="_blank" rel="noopener" class="footer-link">TikTok</a></li>
+            </ul>
+          </div>
         </div>
-        <div class="footer-nav">
-          <a href="#inicio" class="footer-nav-link">Servicios</a>
-          <span class="footer-nav-sep">|</span>
-          <a href="#sobre-mi" class="footer-nav-link">Sobre Mí</a>
-          <span class="footer-nav-sep">|</span>
-          <a href="#lead-magnets" class="footer-nav-link">Recursos</a>
-          <span class="footer-nav-sep">|</span>
-          <a href="#agenda" class="footer-nav-link">Agenda demo</a>
-        </div>
-        <p class="footer-copy">
-          © 2026 Clarity State AI.
-        </p>
       </div>
+
+      <p class="footer-copy">© 2026 Clarity State AI. Todos los derechos reservados.</p>
     </div>
   </footer>
-
-  <!-- ============ MODAL DE FORMULARIO ============ -->
-  <div class="modal-overlay" id="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title-label">
-    <div class="modal-box">
-      <button class="modal-close" id="modal-close-btn" aria-label="Cerrar">✕</button>
-      <h3 class="modal-title" id="modal-title-label" id="modal-ebook-title">Descarga tu guía</h3>
-      <p class="modal-subtitle" id="modal-ebook-subtitle">Completa tus datos y recibirás la guía en tu email.</p>
-
-      <!-- Formulario HTML estático — reemplazar con embed Systeme.io cuando esté listo -->
-      <form id="capture-form" autocomplete="on">
-        <div class="form-group">
-          <label for="field-name">Nombre *</label>
-          <input type="text" id="field-name" name="name" placeholder="Tu nombre" required />
-        </div>
-        <div class="form-group">
-          <label for="field-email">Email *</label>
-          <input type="email" id="field-email" name="email" placeholder="tu@email.com" required />
-        </div>
-        <div class="form-group">
-          <label for="field-whatsapp">WhatsApp <span style="color:var(--text-muted); font-weight:400;">(opcional)</span></label>
-          <input type="tel" id="field-whatsapp" name="whatsapp" placeholder="+57 300 000 0000" />
-        </div>
-        <div class="form-group">
-          <label for="field-blocker">¿Cuál es tu mayor bloqueador? *</label>
-          <select id="field-blocker" name="blocker" required>
-            <option value="">Selecciona una opción</option>
-            <option value="falta-tiempo">Falta de tiempo</option>
-            <option value="procesos-manuales">Procesos manuales</option>
-            <option value="no-se-empezar">No sé por dónde empezar</option>
-          </select>
-        </div>
-        <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center; margin-top:8px;">
-          Envíame la guía →
-        </button>
-        <p class="form-note">Sin spam. Puedes darte de baja cuando quieras.</p>
-      </form>
-    </div>
-  </div>
-
-  <!-- ============ WIDGET FLOTANTE WHATSAPP ============ -->
-  <div class="wa-widget">
-    <div class="wa-tooltip">¿Tienes dudas? Escríbeme ahora</div>
-    <a
-      href="https://wa.me/573134925711?text=Hola,%20quiero%20saber%20m%C3%A1s%20sobre%20el%20Cerebro%20Operativo%20IA"
-      target="_blank"
-      rel="noopener"
-      class="wa-bubble"
-      aria-label="Contactar por WhatsApp"
-    >
-      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-      </svg>
-    </a>
-  </div>
 
   <script src="js/main.js"></script>
 </body>
 </html>
-<!-- deploy test Sun Apr 12 16:33:12 HPS 2026 -->
