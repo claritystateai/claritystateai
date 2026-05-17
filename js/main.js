@@ -2,11 +2,10 @@
    CLARITY STATE AI — main.js
    Vanilla JS, sin dependencias externas.
 
-   2026-05-15: Webhook del CRM legacy eliminado (modelo viejo,
-   descartado en el pivote 2026-05-05). El embudo único del sprint
-   es WhatsApp Business (D-14 CONTEXT.md v2 03.1). El modal de
-   captura y los handlers de ebook también quedaron fuera porque
-   la web v1 del sprint no expone lead magnets.
+   2026-05-17: v1.5 — repivot tras feedback JMP.
+     - Sección Sectores + form mailing list eliminados.
+     - Embudo único = WhatsApp Business (widget flotante + 3 CTAs).
+     - Particle field reemplaza foto JMP en el hero (referente aaru.com).
    ============================================ */
 
 /* ---- Navbar scroll effect ----
@@ -25,7 +24,10 @@ if (navbar) {
 
 /* ---- Smooth scroll para anclas internas ----
    Mantiene la navegación del navbar suave hacia las secciones del
-   sketch v1 (#manifiesto, #sectores, #prueba-social, #cta-final). */
+   sitio (#manifiesto, #prueba-social, #quienes-somos, #cta-final).
+   Trabaja en conjunto con el `scroll-behavior: smooth` declarado en
+   CSS — este handler solo previene el salto duro del default browser
+   y respeta el scroll-padding del navbar fijo. */
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   anchor.addEventListener('click', (e) => {
     const targetId = anchor.getAttribute('href');
@@ -39,8 +41,8 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
 
 /* ---- Fade-in con IntersectionObserver ----
    Conservado del v1. Activa la transición visible cuando un elemento
-   con clase .fade-in entra al viewport. No se usa en el HTML actual
-   pero queda disponible para no romper futuras secciones. */
+   con clase .fade-in entra al viewport. Disponible para futuras
+   secciones aunque no se use en el HTML actual. */
 const fadeEls = document.querySelectorAll('.fade-in');
 if (fadeEls.length) {
   const observer = new IntersectionObserver(
@@ -57,24 +59,140 @@ if (fadeEls.length) {
   fadeEls.forEach((el) => observer.observe(el));
 }
 
-/* ---- Mailing list — fallback mailto ----
-   Mínimo viable para el sprint. JMP puede conectarlo a una herramienta
-   real después del checkpoint (mailing tool, CRM, etc.). Por ahora,
-   el form abre el cliente de correo con la dirección de contacto
-   pre-llenada para que JMP procese la suscripción manualmente. */
-const mailingForm = document.getElementById('mailing-form');
-if (mailingForm) {
-  mailingForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const emailInput = mailingForm.querySelector('input[type="email"]');
-    const email = emailInput ? emailInput.value.trim() : '';
-    if (!email) {
-      emailInput?.focus();
+/* ============================================================
+   Particle field del hero — patrón inspirado en aaru.com.
+   Canvas 2D vanilla, sin librerías. Respeta prefers-reduced-motion.
+   ============================================================ */
+(function heroParticleField() {
+  const canvas = document.getElementById('hero-particles');
+  if (!canvas) return;
+
+  const ctx = canvas.getContext('2d');
+  const wrapper = canvas.parentElement;
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* --- Estado --- */
+  let particles = [];
+  let width = 0;
+  let height = 0;
+  let dpr = 1;
+  let rafId = null;
+  let isMobile = false;
+
+  /* --- Configuración --- */
+  const LINK_DISTANCE = 120; // px en CSS, no en backing store
+  const PARTICLE_COLOR = 'rgba(255, 255, 255, 0.85)';
+  const LINK_COLOR_RGB = '59, 130, 246'; // cian de marca
+
+  /* --- Crear partículas según viewport --- */
+  function makeParticles() {
+    const count = isMobile ? 50 : 90;
+    particles = [];
+    for (let i = 0; i < count; i++) {
+      particles.push({
+        x: Math.random() * width,
+        y: Math.random() * height,
+        vx: (Math.random() - 0.5) * 0.5, // rango ±0.25
+        vy: (Math.random() - 0.5) * 0.5,
+        radius: 1.5 + Math.random(),     // 1.5–2.5
+      });
+    }
+  }
+
+  /* --- Redimensionar canvas con DPR (nitidez retina) --- */
+  function resize() {
+    const rect = wrapper.getBoundingClientRect();
+    dpr = Math.min(window.devicePixelRatio || 1, 2);
+    width = rect.width;
+    height = rect.height;
+    isMobile = width < 420;
+
+    canvas.width = Math.round(width * dpr);
+    canvas.height = Math.round(height * dpr);
+    canvas.style.width = width + 'px';
+    canvas.style.height = height + 'px';
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+    makeParticles();
+  }
+
+  /* --- Un frame de dibujo --- */
+  function draw() {
+    ctx.clearRect(0, 0, width, height);
+
+    // Partículas
+    for (let i = 0; i < particles.length; i++) {
+      const p = particles[i];
+
+      // Mover
+      p.x += p.vx;
+      p.y += p.vy;
+
+      // Bounce en bordes
+      if (p.x < 0 || p.x > width) p.vx *= -1;
+      if (p.y < 0 || p.y > height) p.vy *= -1;
+
+      // Dibujar partícula
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+      ctx.fillStyle = PARTICLE_COLOR;
+      ctx.fill();
+    }
+
+    // Líneas entre pares cercanos
+    for (let i = 0; i < particles.length; i++) {
+      for (let j = i + 1; j < particles.length; j++) {
+        const a = particles[i];
+        const b = particles[j];
+        const dx = a.x - b.x;
+        const dy = a.y - b.y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        if (dist < LINK_DISTANCE) {
+          const opacity = (1 - dist / LINK_DISTANCE) * 0.5;
+          ctx.beginPath();
+          ctx.moveTo(a.x, a.y);
+          ctx.lineTo(b.x, b.y);
+          ctx.strokeStyle = `rgba(${LINK_COLOR_RGB}, ${opacity})`;
+          ctx.lineWidth = 1;
+          ctx.stroke();
+        }
+      }
+    }
+  }
+
+  /* --- Loop de animación --- */
+  function tick() {
+    if (document.hidden) {
+      rafId = null;
       return;
     }
-    const subject = 'Suscripción al brief Clarity';
-    const body = `Quiero suscribirme al brief de Clarity State.\n\nMi correo: ${email}`;
-    const mailto = `mailto:juanm.plazasg@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    window.location.href = mailto;
+    draw();
+    rafId = requestAnimationFrame(tick);
+  }
+
+  /* --- Bootstrap --- */
+  resize();
+
+  if (reducedMotion) {
+    // Una frame estática y listo
+    draw();
+    return;
+  }
+
+  // ResizeObserver para mantener el canvas alineado al wrapper
+  if (typeof ResizeObserver !== 'undefined') {
+    const ro = new ResizeObserver(() => resize());
+    ro.observe(wrapper);
+  } else {
+    window.addEventListener('resize', resize);
+  }
+
+  // Pausa cuando la pestaña no es visible
+  document.addEventListener('visibilitychange', () => {
+    if (!document.hidden && !rafId) {
+      rafId = requestAnimationFrame(tick);
+    }
   });
-}
+
+  rafId = requestAnimationFrame(tick);
+})();
