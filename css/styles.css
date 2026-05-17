@@ -2739,7 +2739,30 @@ h1, h2 {
   margin-bottom: 0;
 }
 
-/* --- Sectores en exploración (sección 06) --- */
+/* --- Quiénes somos (sección 07) --- */
+.quienes-layout {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 48px;
+  align-items: center;
+  margin-top: 32px;
+}
+
+.quienes-foto img {
+  width: 100%;
+  border-radius: var(--r-md);
+  filter: grayscale(100%) contrast(1.05);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.25);
+  display: block;
+}
+
+.quienes-body p {
+  font-size: 1.08rem;
+  line-height: 1.7;
+  margin-bottom: 0;
+}
+
+/* --- Sectores en exploración (sección 06) [DEPRECATED v1.5 — clases huérfanas, sección eliminada en T1] --- */
 .sectores-disclaimer {
   font-family: var(--f-serif);
   font-style: italic;
@@ -2989,6 +3012,8 @@ h1, h2 {
   .footer-cols { grid-template-columns: repeat(2, 1fr); }
   .sobre-jmp-layout { grid-template-columns: 1fr; }
   .sobre-jmp-foto img { max-width: 180px; }
+  .quienes-layout { grid-template-columns: 1fr; gap: 28px; }
+  .quienes-foto img { max-width: 220px; margin: 0 auto; }
   .pull-quote { font-size: 1.2rem; padding: 24px 0; margin: 32px auto; }
   .section-headline { font-size: 1.7rem; }
 }
