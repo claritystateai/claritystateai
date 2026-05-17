@@ -84,9 +84,14 @@ if (fadeEls.length) {
   const PARTICLE_COLOR = 'rgba(255, 255, 255, 0.85)';
   const LINK_COLOR_RGB = '59, 130, 246'; // cian de marca
 
-  /* --- Crear partículas según viewport --- */
+  /* --- Crear partículas por densidad de área ---
+     v1.5: el canvas es full-bleed (cubre todo el hero), así que un count
+     fijo se ve disperso en pantallas grandes. Densidad ~1 partícula por
+     14000 px² da textura sin saturar, clamp [50, 180]. */
   function makeParticles() {
-    const count = isMobile ? 50 : 90;
+    const area = width * height;
+    const target = isMobile ? 11000 : 14000;
+    const count = Math.max(50, Math.min(180, Math.round(area / target)));
     particles = [];
     for (let i = 0; i < count; i++) {
       particles.push({
@@ -105,7 +110,7 @@ if (fadeEls.length) {
     dpr = Math.min(window.devicePixelRatio || 1, 2);
     width = rect.width;
     height = rect.height;
-    isMobile = width < 420;
+    isMobile = width < 768;
 
     canvas.width = Math.round(width * dpr);
     canvas.height = Math.round(height * dpr);

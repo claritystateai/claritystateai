@@ -254,34 +254,12 @@ img, svg {
   width: 100%;
 }
 
-/* Grid sutil */
-.hero::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image:
-    radial-gradient(circle, rgba(59, 130, 246, 0.09) 1px, transparent 1px);
-  background-size: 36px 36px;
-  pointer-events: none;
-  z-index: 0;
-  mask-image: radial-gradient(ellipse 80% 80% at 60% 40%, black 30%, transparent 80%);
-  -webkit-mask-image: radial-gradient(ellipse 80% 80% at 60% 40%, black 30%, transparent 80%);
-}
-
-/* Neblina/dust azul concentrada en la derecha */
-.hero::after {
-  content: '';
-  position: absolute;
-  top: -10%;
-  right: -5%;
-  width: 65%;
-  height: 120%;
-  background:
-    radial-gradient(ellipse 70% 60% at 70% 40%, rgba(59, 130, 246, 0.13) 0%, transparent 65%),
-    radial-gradient(ellipse 50% 50% at 85% 70%, rgba(96, 165, 250, 0.08) 0%, transparent 60%);
-  pointer-events: none;
-  z-index: 0;
-}
+/* Decoraciones del hero v1 desactivadas en v1.5 — el particle field
+   full-bleed (.hero-canvas-wrapper) es ahora el wallpaper del hero.
+   Mantenerlas creaba una "línea divisoria" visible y una zona "más azul"
+   asimétrica en el lado derecho. */
+.hero::before { content: none; }
+.hero::after  { content: none; }
 
 .hero-spotlight {
   position: absolute;
@@ -300,15 +278,17 @@ img, svg {
   position: relative;
   z-index: 1;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: 60px;
   align-items: center;
   animation: fadeInUp 0.8s ease both;
+  z-index: 2;
 }
 
 .hero-text {
   display: flex;
   flex-direction: column;
+  max-width: 600px;
 }
 
 .hero-image {
@@ -1359,16 +1339,11 @@ img, svg {
 
   /* Hero */
   .hero { padding: 80px 0 48px; }
-  .hero::before { opacity: 0.4; }
   .hero-content { grid-template-columns: 1fr; gap: 32px; }
-  .hero-image { order: 1; }
-  .hero-text { order: 0; }
   .hero-title { font-size: 2.2rem; text-align: left; }
   .hero-subtitle { font-size: 0.95rem; text-align: left; }
   .hero-buttons { justify-content: flex-start; }
   .hero-eyebrow { margin-top: 0; }
-  .hero-image-wrapper img { max-width: 100%; }
-  .hero::after { width: 50%; right: 0; }
   .hero-spotlight { width: 500px; height: 500px; }
 
   /* Navbar */
@@ -1455,8 +1430,6 @@ img, svg {
 
   /* Hero */
   .hero { padding: 140px 0 40px; }
-  .hero::before { display: none !important; }
-  .hero::after { display: none !important; }
   .hero-content { grid-template-columns: 1fr; gap: 24px; }
   .hero-title { font-size: 1.9rem; line-height: 1.15; }
   .hero-eyebrow { font-size: 0.7rem; }
@@ -3184,26 +3157,45 @@ h1, h2 {
    Sustituye al retrato editorial del v1. La foto JMP se reusa
    en la nueva sección Quiénes somos (#07).
    ============================================================ */
+/* Wallpaper full-bleed del hero — el particle field cubre toda la sección,
+   sin background propio ni border-radius. El texto va encima con z-index. */
 .hero-canvas-wrapper {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 1 / 1;
-  max-width: 520px;
-  justify-self: center;
-  border-radius: 12px;
-  overflow: hidden;
-  background: radial-gradient(ellipse at center, rgba(59, 130, 246, 0.08), transparent 70%);
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: transparent;
+  pointer-events: none;
 }
-
 #hero-particles {
   display: block;
   width: 100%;
   height: 100%;
 }
 
+/* Gradient overlay para legibilidad del texto sobre las partículas.
+   Desktop: oscurece la mitad izquierda (donde va el texto), se desvanece
+   a transparente a la derecha. Mobile: oscurece arriba y se aclara abajo. */
+.hero-text-shade {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(
+    90deg,
+    rgba(10, 10, 15, 0.92) 0%,
+    rgba(10, 10, 15, 0.78) 25%,
+    rgba(10, 10, 15, 0.45) 50%,
+    rgba(10, 10, 15, 0.15) 70%,
+    rgba(10, 10, 15, 0.0) 90%
+  );
+}
 @media (max-width: 768px) {
-  .hero-canvas-wrapper {
-    max-width: 400px;
-    aspect-ratio: 1 / 1;
+  .hero-text-shade {
+    background: linear-gradient(
+      180deg,
+      rgba(10, 10, 15, 0.88) 0%,
+      rgba(10, 10, 15, 0.65) 50%,
+      rgba(10, 10, 15, 0.25) 100%
+    );
   }
 }
