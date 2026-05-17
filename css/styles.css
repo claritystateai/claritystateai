@@ -3023,3 +3023,118 @@ h1, h2 {
   .hero-buttons .btn { width: 100%; justify-content: center; }
   .cta-buttons .btn { width: 100%; }
 }
+
+/* ============================================================
+   PALETA CLARA v1.5 — alternancia O-O-C-O-C-O-C-O
+   Tokens nuevos + clase .section-light con overrides exhaustivos
+   sobre los hardcodes blancos del sistema v2.
+   Contraste WCAG AA verificado: text-on-light (#0a0a0f) sobre
+   bg-light (#f4f1ea) supera 17:1 — texto muted #4a4a55 supera 7:1.
+   ============================================================ */
+:root {
+  --bg-light: #f4f1ea;
+  --text-on-light: #0a0a0f;
+  --text-on-light-muted: #4a4a55;
+  --border-on-light: rgba(10, 10, 15, 0.12);
+  --border-on-light-strong: rgba(10, 10, 15, 0.22);
+  --accent-on-light: #1d4ed8;
+  --card-on-light: rgba(10, 10, 15, 0.04);
+}
+
+.section-light {
+  background: var(--bg-light);
+  color: var(--text-on-light);
+}
+
+/* Headers: override de los #fff hardcoded */
+.section-light .section-headline,
+.section-light h2,
+.section-light h3,
+.section-light .pilar-title,
+.section-light .fase-title,
+.section-light .evolucion-title,
+.section-light .prueba-title {
+  color: var(--text-on-light);
+}
+
+/* Eyebrows: el cian original (#60a5fa) pierde contraste sobre crema;
+   usamos el accent-on-light más profundo. */
+.section-light .eyebrow,
+.section-light .prueba-tag,
+.section-light .fase-num {
+  color: var(--accent-on-light);
+}
+
+/* Body / leads / párrafos */
+.section-light p,
+.section-light .section-lead,
+.section-light .narrative-body p,
+.section-light .pilar-desc,
+.section-light .fase-card p,
+.section-light .metodologia-body > p,
+.section-light .metodologia-evolucion p,
+.section-light .pregunta-card p,
+.section-light .prueba-card p,
+.section-light .quienes-body p {
+  color: var(--text-on-light-muted);
+}
+
+.section-light .preguntas-cierre,
+.section-light .manifiesto-cierre {
+  color: var(--text-on-light-muted);
+}
+
+/* Cards: fondo translúcido oscuro sobre crema, no blanco puro
+   (contraste suave, mantiene la jerarquía visual). */
+.section-light .pilar-card,
+.section-light .fase-card,
+.section-light .pregunta-card,
+.section-light .prueba-card {
+  background: var(--card-on-light);
+  border-color: var(--border-on-light);
+}
+
+.section-light .pilar-card:hover {
+  border-color: var(--accent-on-light);
+}
+
+.section-light .prueba-card--principal {
+  background: rgba(10, 10, 15, 0.06);
+  border-color: var(--accent-on-light);
+}
+
+/* Fase-card y evolucion: el border-left azul sigue válido pero más profundo */
+.section-light .fase-card,
+.section-light .metodologia-evolucion {
+  border-left-color: var(--accent-on-light);
+}
+
+.section-light .metodologia-evolucion {
+  background: rgba(29, 78, 216, 0.06);
+}
+
+/* Pregunta-mark: cian más profundo */
+.section-light .pregunta-mark {
+  color: var(--accent-on-light);
+}
+
+/* Pull-quote sobre fondo claro */
+.section-light .pull-quote {
+  color: var(--text-on-light);
+  border-top-color: var(--border-on-light-strong);
+  border-bottom-color: var(--border-on-light-strong);
+}
+
+.section-light .pull-quote cite {
+  color: var(--text-on-light-muted);
+}
+
+/* Pull-quote testimonio dentro de prueba-card--principal en light */
+.section-light .pull-quote--testimonio {
+  border-top-color: var(--border-on-light-strong);
+}
+
+/* Quiénes somos: foto, sombra ajustada para fondo claro */
+.section-light .quienes-foto img {
+  box-shadow: 0 12px 36px rgba(10, 10, 15, 0.18);
+}
