@@ -2689,6 +2689,31 @@ h1, h2 {
   line-height: 1.25;
 }
 
+.prueba-title a {
+  color: inherit;
+  text-decoration: none;
+  display: inline;
+  transition: color 0.18s ease;
+}
+
+.prueba-title a:hover .prueba-arrow,
+.prueba-title a:focus-visible .prueba-arrow {
+  transform: translateX(4px);
+}
+
+.prueba-title a:hover,
+.prueba-title a:focus-visible {
+  color: var(--c-cyan-400);
+}
+
+.prueba-arrow {
+  display: inline-block;
+  margin-left: 0.25em;
+  transition: transform 0.18s ease;
+  font-weight: 400;
+  opacity: 0.85;
+}
+
 .prueba-card p {
   font-size: 0.98rem;
   line-height: 1.65;
