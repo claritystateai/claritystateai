@@ -2388,6 +2388,17 @@ h1, h2 {
   margin-bottom: 28px;
 }
 
+/* --- Hero kicker: espejo de dolor sobre el H1 (message-match con el correo frío) --- */
+.hero-kicker {
+  font-family: var(--f-sans);
+  font-size: clamp(1.05rem, 2.2vw, 1.3rem);
+  font-weight: 600;
+  line-height: 1.4;
+  color: rgba(255, 255, 255, 0.92);
+  margin-bottom: 20px;
+  max-width: 560px;
+}
+
 .hero-subtitle {
   font-size: 1.1rem;
   color: var(--c-text);
