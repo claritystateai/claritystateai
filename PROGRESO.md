@@ -54,10 +54,25 @@ Bitácora viva de la sesión nocturna. Cada bloque se cierra con un commit local
 - [ ] **Rasterizar `assets/og-image.svg` → `og-image.png` 1200×630** antes de desplegar (WhatsApp/LinkedIn/Facebook no renderizan SVG en OG). Opciones: abrir el SVG en navegador y exportar, o `rsvg-convert`/Chrome headless cuando esté disponible.
 - [ ] Antes de cualquier push: `gh auth switch --user juanmplazasg-lgtm` (nunca cuenta Solar).
 
-## Ola 3 / polish (no bloqueante, no ejecutado esta noche — fuera del alcance pedido)
-- `assets/img/logo.svg` pesa 2.2 MB y ahora se carga en navbar + footer de las 8 páginas. Optimizar (hay `Clarity-State-AI-Logo-_-AI-limpio-.svg` de 31 KB como candidato, validar que se vea igual antes de cambiar). Es el item #1 de LCP.
-- URLs limpias: hoy los enlaces usan `.html` (funciona local y en Netlify). Si se quieren `/operacion` sin extensión, agregar redirects en `netlify.toml`. Opcional.
-- Resend: el formulario de contacto está cableado como Netlify Forms (funciona sin backend). Si se prefiere Resend, requiere una función serverless.
+## ✅ Ola 3 — Polish cinematográfico + deuda técnica (sesión noche 2)
+- [x] **logo.svg optimizado: 2.26 MB → 187 KB (~92%, 12×).** Los 2 PNG embebidos (4916²) se reescalaron a 1000px y se reincrustaron en el MISMO svg con un decodificador/encoder PNG en Node puro (zlib). Render idéntico (los `<image>` escalan por sus atributos del viewBox). Verificado VISUALMENTE: wordmark cromado intacto. Original recuperable por git. Footer logo con `loading="lazy"`.
+- [x] **CSS consolidado: styles.css 3237 → 1507 líneas** (~32 KB). Eliminado CSS muerto del modelo viejo (modal captura, mailing, sectores, magnets, fit/proceso/por-que huérfanos, footer v1, theme-toggle, hero v1). Verificación: 119/119 clases usadas conservan definición, 0 regresiones.
+- [x] **Showcase de producto** (`#showcase` en Home): glassmorphism + tarjeta pregunta/respuesta simulada + cifra 90.2%. Clases `.showcase-*` en multipagina.css.
+- [x] **Grid de credibilidad ejecutiva** (`#quien-responde` en Home): foto fundador (JMP) + cargo + trusted-by ANONIMIZADO (chips por sector, versión nombrada en comentario). Clases `.cred-*`.
+- Nota de diseño: la alternancia oscuro/claro tiene 2 adyacencias suaves inevitables (`cerebro-accion`+`showcase` oscuros; `quien-responde`+`metodologia` claros) porque showcase exige fondo oscuro (glass) y credibilidad/FAQ/confían exigen su fondo por los tokens de sus tarjetas. Es intencional, no un bug.
+
+## Validación de producción (sesión noche 2)
+- NO existe build ni type-check: el sitio es estático puro (`publish="."`, sin package.json/tsconfig). "Apto a producción" se validó sobre los artefactos reales:
+  - Sintaxis JS OK (`node --check` en main.js y main-multipagina.js).
+  - `<div>` y `<section>` balanceados en las 8 páginas.
+  - logo.svg y og-image.svg XML bien formados.
+  - 119/119 clases CSS usadas tienen definición.
+  - Enlaces internos íntegros; compliance limpio.
+
+## Pendientes opcionales (no bloqueante)
+- URLs limpias: hoy los enlaces usan `.html` (funciona local y en Netlify). Para `/operacion` sin extensión, agregar redirects en `netlify.toml`.
+- Resend: el formulario de contacto está cableado como Netlify Forms (sin backend). Resend requeriría una función serverless.
+- `assets/img/` tiene JPGs legacy SIN usar (about-team, about-work, foto para landing, Foto de Juan Plazas, etc., ~5 MB). Solo se usa `Foto Perfil Juan Plazas_mascerca.jpg`. Se pueden borrar para aligerar el deploy (no afecta el render).
 
 ## Decisiones de revisión humana sugeridas (cuando JMP retome)
 - Revisar el copy de las 3 páginas de producto y validar tono/cifras.
