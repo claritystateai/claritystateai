@@ -415,3 +415,266 @@ a.pilar-card:hover {
   .nav-overlay { display: none; }
   .nav-toggle { display: none; }
 }
+
+/* ============================================================
+   COMPONENTE 1 — SHOWCASE DE PRODUCTO (techo cinematográfico, estilo Aaru)
+   "El producto en acción". Fondo oscuro. Glassmorphism por capas.
+   ============================================================ */
+.showcase {
+  position: relative;
+  margin-top: 48px;
+  display: flex;
+  justify-content: center;
+}
+
+/* Glow de acento detrás del panel de vidrio */
+.showcase-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: min(560px, 80%);
+  height: 320px;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(ellipse at center, var(--accent-glow-strong) 0%, transparent 70%);
+  filter: blur(48px);
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Panel de vidrio (profundidad por capas) */
+.showcase-glass {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 760px;
+  padding: 30px;
+  border-radius: 18px;
+  background: rgba(18, 26, 36, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow:
+    0 24px 60px rgba(0, 0, 0, 0.45),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+/* Barra superior tipo ventana (puntos) */
+.showcase-bar {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-bottom: 22px;
+}
+.showcase-bar span {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.16);
+}
+.showcase-bar small {
+  margin-left: auto;
+  font-size: 0.74rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+/* Tarjeta de respuesta del cerebro */
+.showcase-card {
+  display: grid;
+  gap: 16px;
+}
+.showcase-q {
+  position: relative;
+  padding: 16px 18px 16px 44px;
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border);
+  font-size: 1.02rem;
+  line-height: 1.5;
+  color: var(--text-primary);
+}
+.showcase-q::before {
+  content: "?";
+  position: absolute;
+  left: 14px;
+  top: 14px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--accent-light);
+  background: var(--accent-glow);
+  border: 1px solid var(--border-accent);
+}
+.showcase-a {
+  position: relative;
+  padding: 18px 20px 18px 44px;
+  border-radius: var(--radius);
+  background: var(--bg-card);
+  border: 1px solid var(--border-accent);
+  border-left: 3px solid var(--accent);
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text-primary);
+}
+.showcase-a::before {
+  content: "";
+  position: absolute;
+  left: 16px;
+  top: 20px;
+  width: 16px;
+  height: 16px;
+  border-radius: 5px;
+  background: var(--accent);
+  box-shadow: 0 0 14px var(--accent-glow-strong);
+}
+.showcase-a strong { color: var(--accent-light); font-weight: 600; }
+.showcase-meta {
+  margin-top: 4px;
+  font-size: 0.8rem;
+  font-style: italic;
+  color: var(--text-muted);
+}
+
+/* Destacado de cifra dentro del showcase */
+.showcase-stat {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  margin-top: 4px;
+  padding-top: 18px;
+  border-top: 1px solid var(--border);
+}
+.showcase-stat .showcase-stat-num {
+  font-family: var(--f-serif, 'Fraunces', Georgia, serif);
+  font-weight: 600;
+  font-size: clamp(2rem, 5vw, 2.8rem);
+  line-height: 1;
+  color: var(--accent-light);
+}
+.showcase-stat .showcase-stat-label {
+  font-size: 0.9rem;
+  line-height: 1.45;
+  color: var(--text-muted);
+}
+
+@media (max-width: 600px) {
+  .showcase-glass { padding: 22px 18px; }
+  .showcase-stat { flex-direction: column; gap: 6px; }
+}
+
+/* ============================================================
+   COMPONENTE 2 — GRID DE CREDIBILIDAD EJECUTIVA (estilo Arkham)
+   "Quién responde". Fondo claro (section-light). Fundador + trusted by.
+   ============================================================ */
+.cred-grid {
+  margin-top: 40px;
+  display: grid;
+  gap: 32px;
+}
+
+/* Bloque de fundador */
+.cred-founder {
+  display: grid;
+  grid-template-columns: 132px 1fr;
+  gap: 26px;
+  align-items: center;
+  padding: 28px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  border-left: 3px solid var(--accent);
+}
+.cred-photo {
+  width: 132px;
+  height: 132px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid var(--border-accent);
+}
+.cred-founder-name {
+  font-family: var(--f-serif, 'Fraunces', Georgia, serif);
+  font-weight: 600;
+  font-size: 1.4rem;
+  line-height: 1.15;
+  color: var(--text-primary);
+  margin: 0 0 4px;
+}
+.cred-founder-role {
+  display: block;
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent-light);
+  margin-bottom: 12px;
+}
+.cred-founder-line {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+  margin: 0;
+  max-width: 560px;
+}
+
+/* Wrapper de texto del fundador (columna derecha de .cred-founder) */
+.cred-founder-body { min-width: 0; }
+
+/* Bloque "trusted by" (segundo item del grid) */
+.cred-trust-block {
+  padding: 26px 28px;
+  background: var(--card-on-light, rgba(10, 10, 15, 0.04));
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+/* Fila trusted by anonimizada */
+.cred-trust-label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 14px;
+}
+.cred-trust {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.cred-chip {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.88rem;
+  font-weight: 500;
+  line-height: 1.3;
+  color: var(--text-primary);
+  padding: 10px 16px;
+  border-radius: 999px;
+  background: var(--card-on-light, rgba(10, 10, 15, 0.04));
+  border: 1px solid var(--border-accent);
+}
+
+@media (max-width: 600px) {
+  .cred-founder {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    text-align: center;
+  }
+  .cred-founder-line { max-width: none; }
+}
+
+/* prefers-reduced-motion: desactivar cualquier transición/animación añadida */
+@media (prefers-reduced-motion: reduce) {
+  .showcase-glass,
+  .showcase-a::before,
+  .cred-founder,
+  .cred-chip {
+    transition: none !important;
+    animation: none !important;
+  }
+}
