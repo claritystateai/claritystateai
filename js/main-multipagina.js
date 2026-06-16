@@ -73,3 +73,35 @@
     else if (href.includes('calendly.com')) track('calendly', a);
   }, { capture: true });
 })();
+
+/* ---------- 3) Scroll-reveal sutil ----------
+   Añade .cs-rv al contenido de cada sección (salvo el hero, que está arriba del
+   pliegue) y revela con IntersectionObserver. El estado oculto vive en premium.css
+   bajo <html class="cs-reveal">, que SOLO se activa aquí: sin JS, todo queda visible.
+   Respeta prefers-reduced-motion (no se activa el efecto). */
+(function scrollReveal() {
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduced || !('IntersectionObserver' in window)) return;
+
+  const sections = document.querySelectorAll('section.section');
+  if (!sections.length) return;
+
+  document.documentElement.classList.add('cs-reveal');
+
+  const targets = [];
+  sections.forEach((s) => {
+    const c = s.querySelector('.container');
+    if (c) { c.classList.add('cs-rv'); targets.push(c); }
+  });
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e) => {
+      if (e.isIntersecting) { e.target.classList.add('is-visible'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+
+  targets.forEach((t) => io.observe(t));
+
+  // Salvaguarda: si algo falla, revelar todo tras 1.2s
+  setTimeout(() => targets.forEach((t) => t.classList.add('is-visible')), 1200);
+})();

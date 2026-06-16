@@ -1,0 +1,122 @@
+/* ============================================================
+   CLARITY STATE AI — premium.css
+   ADITIVO. Se carga DESPUÉS de styles.css y multipagina.css en todas
+   las páginas. Capa de refinamiento editorial (nivel Aaru / Arkham):
+   - Monospace para datos y eyebrows (move de Arkham).
+   - Tracking negativo + text-wrap balance en display.
+   - Ritmo, profundidad y micro-interacciones.
+   - Scroll-reveal sutil (respeta prefers-reduced-motion; no-JS = visible).
+   No modifica styles.css ni multipagina.css.
+   2026-06-16 — fase de corrección.
+   ============================================================ */
+
+:root {
+  --f-mono: 'IBM Plex Mono', ui-monospace, 'SF Mono', 'Cascadia Code', monospace;
+}
+
+/* ---------- Tipografía editorial ---------- */
+/* Display: tracking negativo + balance de línea (evita viudas) */
+.hero-title,
+.page-hero-title,
+.section-headline,
+.cred-founder-name,
+.recurso-card h3 {
+  text-wrap: balance;
+  letter-spacing: -0.02em;
+}
+.hero-title { letter-spacing: -0.025em; }
+
+/* Cuerpo: text-wrap pretty (remate de líneas más parejo) */
+.hero-subtitle,
+.page-hero-lede,
+.section-lead,
+.cta-lead,
+.narrative-body p,
+.pilar-desc,
+.faq-answer,
+.trust-card p,
+.cred-founder-line { text-wrap: pretty; }
+
+/* ---------- Monospace para DATOS y EYEBROWS (Arkham) ---------- */
+.eyebrow,
+.prueba-tag,
+.trust-tag,
+.fase-num,
+.cred-trust-label,
+.showcase-bar small,
+.recurso-tag {
+  font-family: var(--f-mono);
+  font-weight: 500;
+  letter-spacing: 0.16em;
+}
+.eyebrow { font-size: 0.72rem; }
+
+/* Cifras grandes en mono tabular: se leen como dato medido, no marketing */
+.stat-num,
+.showcase-stat-num {
+  font-family: var(--f-mono);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---------- Risk-reversal microcopy bajo los CTA ---------- */
+.cta-reassure {
+  display: block;
+  margin-top: 14px;
+  font-family: var(--f-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+}
+.cta-reassure b { color: var(--text-primary); font-weight: 600; }
+.hero-buttons + .cta-reassure { margin-top: 18px; }
+
+/* ---------- Profundidad / detalle caro ---------- */
+/* Hairline superior en secciones oscuras consecutivas, para ritmo */
+.section + .section { position: relative; }
+
+/* Micro-interacción consistente en tarjetas-enlace */
+.trust-card,
+.recurso-card,
+a.pilar-card { transition: border-color var(--transition), transform var(--transition), box-shadow var(--transition); }
+
+/* Tarjetas de los 3 frentes: realce de jerarquía con número de orden */
+.pilares-grid--3 .pilar-card { position: relative; }
+
+/* Acento de subrayado editorial en enlaces de texto del cuerpo */
+.narrative-body a { text-decoration-color: var(--accent); text-underline-offset: 3px; }
+
+/* ---------- Scroll-reveal (sutil) ----------
+   El estado oculto SOLO aplica cuando <html> tiene .cs-reveal (la pone el JS).
+   Sin JS, todo queda visible (sin FOUC, SEO-safe). */
+.cs-reveal .cs-rv {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+.cs-reveal .cs-rv.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cs-reveal .cs-rv { opacity: 1 !important; transform: none !important; transition: none !important; }
+}
+
+/* ---------- Pulido fino de jerarquía ---------- */
+/* Más aire bajo el eyebrow para el ritmo "una idea por pantalla" */
+.section-headline { margin-bottom: 32px; }
+
+/* Cita editorial: que respire como en Aaru/Arkham */
+.pull-quote--testimonio { letter-spacing: -0.01em; }
+
+/* Botón primario: foco accesible visible (teclado) */
+.btn-primary:focus-visible,
+.btn-text:focus-visible,
+.nav-toggle:focus-visible {
+  outline: 2px solid var(--accent-light);
+  outline-offset: 3px;
+}
