@@ -1,0 +1,102 @@
+/* ============================================================================
+   CLARITY · capa de sitio sobre Crisálida
+   Vocabulario de la home (nav, sección, grids, statblock, footer) — SOLO tokens.
+   Requiere: crisalida/tokens/{primitives,semantic,themes}.css + components/hero/hero.css
+   Signature move Clarity: el "tick" de acento + hairline en cada eyebrow (el pulso).
+   ============================================================================ */
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0; background: var(--bg); color: var(--text);
+  font-family: var(--font-body); font-size: var(--text-base); line-height: var(--leading-body);
+  -webkit-font-smoothing: antialiased;
+}
+.container { width: min(72rem, 100% - 2 * var(--space-5)); margin-inline: auto; }
+a { color: inherit; }
+img { max-width: 100%; display: block; }
+
+/* ---------------- NAVBAR ---------------- */
+.cs-nav {
+  position: sticky; top: 0; z-index: 50;
+  background: color-mix(in oklch, var(--bg) 72%, transparent);
+  backdrop-filter: blur(14px) saturate(1.1);
+  border-bottom: var(--border-width) solid var(--border);
+}
+.cs-nav__inner { display: flex; align-items: center; justify-content: space-between; gap: var(--space-5); padding: var(--space-3) 0; }
+.cs-nav__logo { font-family: var(--font-display); font-weight: 600; font-size: var(--text-lg); letter-spacing: var(--tracking-tight); text-decoration: none; }
+.cs-nav__logo b { color: var(--accent); }
+.cs-nav__links { display: flex; gap: var(--space-5); }
+.cs-nav__link { font-size: var(--text-sm); color: var(--text-muted); text-decoration: none; transition: color var(--dur-fast) var(--ease-out); }
+.cs-nav__link:hover { color: var(--text); }
+@media (max-width: 760px) { .cs-nav__links { display: none; } }
+
+/* ---------------- SECCIÓN ---------------- */
+.cs-section { padding: calc(var(--space-12) * var(--density)) 0; position: relative; }
+.cs-section--light { background: var(--bg-elev); }
+.cs-eyebrow {
+  display: inline-flex; align-items: center; gap: var(--space-3);
+  font-size: var(--text-sm); letter-spacing: var(--tracking-wide);
+  text-transform: var(--eyebrow-transform); color: var(--accent-hi);
+  margin: 0 0 var(--space-4);
+}
+.cs-eyebrow::before { /* SIGNATURE Clarity: tick de acento + hairline */
+  content: ""; width: var(--space-6); height: var(--border-width);
+  background: linear-gradient(90deg, var(--accent), transparent);
+  box-shadow: -8px 0 0 0 var(--accent);
+}
+.cs-headline {
+  font-family: var(--font-display); font-weight: var(--title-weight);
+  font-size: var(--text-3xl); line-height: var(--leading-snug);
+  letter-spacing: var(--title-tracking); text-transform: var(--title-transform);
+  text-wrap: balance; margin: 0 0 var(--space-5); max-width: 34ch;
+}
+.cs-headline em { color: var(--accent); font-style: normal; }
+.cs-lede { font-size: var(--text-lg); color: var(--text-muted); max-width: 60ch; text-wrap: pretty; }
+
+/* ---------------- GRID DE TARJETAS (pilares / preguntas / fases) ---------------- */
+.cs-grid { display: grid; gap: var(--space-5); margin-top: var(--space-8); }
+.cs-grid--4 { grid-template-columns: repeat(4, 1fr); }
+.cs-grid--3 { grid-template-columns: repeat(3, 1fr); }
+.cs-grid--2 { grid-template-columns: repeat(2, 1fr); }
+@media (max-width: 900px) { .cs-grid--4, .cs-grid--3 { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) { .cs-grid { grid-template-columns: 1fr !important; } }
+
+.cs-card {
+  background: var(--surface); border: var(--border-width) solid var(--border);
+  border-radius: var(--radius); padding: var(--space-5);
+  display: grid; gap: var(--space-3); align-content: start;
+  transition: translate var(--dur-base) var(--ease-out), border-color var(--dur-base) var(--ease-out);
+}
+.cs-card:hover { translate: 0 calc(-1 * var(--hover-lift)); border-color: var(--border-strong); }
+.cs-card__kicker { font-family: var(--font-mono); font-size: var(--text-xs); color: var(--accent-hi); letter-spacing: var(--tracking-wide); }
+.cs-card__title { font-family: var(--font-display); font-weight: var(--title-weight); font-size: var(--text-lg); margin: 0; }
+.cs-card__desc { color: var(--text-muted); font-size: var(--text-base); margin: 0; }
+.cs-card__mark { color: var(--accent); font-size: var(--text-lg); line-height: 1; }
+
+/* ---------------- STATBLOCK (la cifra irrefutable) ---------------- */
+.cs-stat {
+  display: grid; gap: var(--space-2); padding: var(--space-5);
+  border-left: 3px solid var(--accent); background: var(--surface-2); border-radius: var(--radius);
+}
+.cs-stat__num { font-family: var(--font-display); font-weight: 600; font-size: var(--text-4xl); line-height: 1; color: var(--accent); letter-spacing: var(--tracking-tight); }
+.cs-stat__label { font-size: var(--text-base); color: var(--text); }
+.cs-stat__source { font-family: var(--font-mono); font-size: var(--text-xs); color: var(--text-subtle); }
+
+/* ---------------- QUOTE ---------------- */
+.cs-quote { border-left: 3px solid var(--border-strong); padding: var(--space-4) var(--space-5); margin: var(--space-5) 0 0; font-size: var(--text-lg); color: var(--text); }
+.cs-quote cite { display: block; margin-top: var(--space-3); font-size: var(--text-sm); color: var(--text-subtle); font-style: normal; }
+
+/* ---------------- FOOTER ---------------- */
+.cs-footer { background: var(--bg-elev); border-top: var(--border-width) solid var(--border); padding: var(--space-10) 0 var(--space-6); }
+.cs-footer__grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: var(--space-6); }
+@media (max-width: 760px) { .cs-footer__grid { grid-template-columns: 1fr 1fr; } }
+.cs-footer__tagline { color: var(--text-muted); max-width: 30ch; font-size: var(--text-sm); }
+.cs-footer__col-title { font-size: var(--text-xs); text-transform: uppercase; letter-spacing: var(--tracking-wide); color: var(--text-subtle); margin: 0 0 var(--space-3); }
+.cs-footer__col ul { list-style: none; padding: 0; margin: 0; display: grid; gap: var(--space-2); }
+.cs-footer__col a { font-size: var(--text-sm); color: var(--text-muted); text-decoration: none; }
+.cs-footer__col a:hover { color: var(--text); }
+.cs-footer__copy { margin-top: var(--space-8); padding-top: var(--space-5); border-top: var(--border-width) solid var(--border); font-size: var(--text-xs); color: var(--text-subtle); }
+
+/* ---------------- WHATSAPP FLOTANTE ---------------- */
+.cs-wa { position: fixed; right: var(--space-5); bottom: var(--space-5); z-index: 60; width: 56px; height: 56px; display: grid; place-items: center; border-radius: var(--radius-full); background: var(--accent); color: var(--on-accent); box-shadow: var(--shadow-md); transition: translate var(--dur-fast) var(--ease-out); }
+.cs-wa:hover { translate: 0 -3px; }

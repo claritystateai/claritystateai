@@ -1,0 +1,79 @@
+/* ============================================================================
+   CRISÁLIDA · Capa 1 — PRIMITIVOS
+   Valores crudos, agnósticos de rol y de tema. NUNCA usar directo en componentes;
+   se consumen solo desde la capa semántica. (patrón: ilikescience/design-tokens-skill)
+   ============================================================================ */
+:root {
+  /* ---- Familias tipográficas (por cliente; el tema activa el par correcto) ---- */
+  --font-clarity-display: "Fraunces", "Iowan Old Style", Georgia, serif;
+  --font-clarity-body:    "Inter", system-ui, -apple-system, sans-serif;
+  --font-joli-display:    "Fraunces", Georgia, serif;        /* TODO: confirmar brand Joli con Mario */
+  --font-joli-body:       "Inter", system-ui, sans-serif;
+  --font-27rl-display:    "Montserrat", system-ui, sans-serif;
+  --font-27rl-body:       "Montserrat", system-ui, sans-serif;
+  --font-mono:            "JetBrains Mono", ui-monospace, "SF Mono", monospace;
+
+  /* ---- Escala tipográfica fluida (clamp · ratio ~1.25) ---- */
+  --text-xs:   clamp(0.72rem, 0.69rem + 0.15vw, 0.80rem);
+  --text-sm:   clamp(0.83rem, 0.79rem + 0.20vw, 0.94rem);
+  --text-base: clamp(1.00rem, 0.95rem + 0.25vw, 1.13rem);
+  --text-lg:   clamp(1.20rem, 1.12rem + 0.40vw, 1.42rem);
+  --text-xl:   clamp(1.44rem, 1.32rem + 0.62vw, 1.80rem);
+  --text-2xl:  clamp(1.73rem, 1.54rem + 0.95vw, 2.40rem);
+  --text-3xl:  clamp(2.07rem, 1.78rem + 1.45vw, 3.20rem);
+  --text-4xl:  clamp(2.49rem, 2.03rem + 2.30vw, 4.40rem);
+  --text-5xl:  clamp(2.99rem, 2.27rem + 3.60vw, 6.00rem);
+  --leading-tight: 1.05;
+  --leading-snug:  1.20;
+  --leading-body:  1.6;
+  --tracking-tight: -0.02em;
+  --tracking-wide:  0.06em;
+
+  /* ---- Espaciado (base 4px, escala compatible con Tailwind) ---- */
+  --space-1: 0.25rem;  --space-2: 0.5rem;   --space-3: 0.75rem;  --space-4: 1rem;
+  --space-5: 1.5rem;   --space-6: 2rem;     --space-8: 3rem;     --space-10: 4rem;
+  --space-12: 6rem;    --space-16: 8rem;    --space-20: 12rem;
+
+  /* ---- Radios · sombras · blur ---- */
+  --radius-sm: 0.375rem; --radius-md: 0.625rem; --radius-lg: 1rem; --radius-xl: 1.5rem; --radius-full: 999px;
+  --shadow-sm:  0 1px 2px oklch(0 0 0 / 0.20);
+  --shadow-md:  0 8px 24px -8px oklch(0 0 0 / 0.35);
+  --shadow-lg:  0 24px 64px -16px oklch(0 0 0 / 0.45);
+  --blur-glow: 80px;
+
+  /* ---- Movimiento (no-motion-first: duraciones cortas, curvas sobrias) ---- */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-fast: 160ms; --dur-base: 280ms; --dur-slow: 520ms;
+
+  /* ---- Rampa NEUTRA en OKLCH (tinte frío leve; el tema decide claro/oscuro) ---- */
+  --neutral-50:  oklch(0.98 0.004 255);
+  --neutral-100: oklch(0.95 0.006 255);
+  --neutral-200: oklch(0.89 0.008 255);
+  --neutral-300: oklch(0.80 0.010 255);
+  --neutral-400: oklch(0.68 0.012 255);
+  --neutral-500: oklch(0.56 0.013 255);
+  --neutral-600: oklch(0.45 0.014 256);
+  --neutral-700: oklch(0.34 0.014 257);
+  --neutral-800: oklch(0.25 0.014 258);
+  --neutral-900: oklch(0.18 0.013 259);
+  --neutral-950: oklch(0.13 0.012 260);
+  --neutral-1000:oklch(0.09 0.010 260);
+
+  /* ---- Rampas de ACENTO por cliente (raw; el tema elige cuál es --accent) ---- */
+  /* clarity · cian/azul ejecutivo (#3b82f6) */
+  --accent-clarity-300: oklch(0.78 0.115 252);
+  --accent-clarity-500: oklch(0.62 0.190 256);
+  --accent-clarity-700: oklch(0.50 0.170 258);
+  /* joli · morado (#473a7e) */
+  --accent-joli-300: oklch(0.64 0.110 295);
+  --accent-joli-500: oklch(0.48 0.140 292);
+  --accent-joli-700: oklch(0.38 0.105 290);
+  /* 27rl · naranja sobre negro (#DE692F) */
+  --accent-27rl-300: oklch(0.80 0.115 56);
+  --accent-27rl-500: oklch(0.67 0.170 47);
+  --accent-27rl-700: oklch(0.55 0.160 43);
+
+  /* ---- Textura ---- */
+  --grain-opacity: 0.045;
+}

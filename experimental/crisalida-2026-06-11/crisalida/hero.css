@@ -1,0 +1,96 @@
+/* ============================================================================
+   CRISÁLIDA · Componente <Hero> — Tier 1 (CSS-only, default + móvil)
+   Fondo cinematográfico sin JS ni imágenes: mesh OKLCH + glow + grano + viñeta.
+   Solo consume tokens semánticos. Tier 2 (shaders) y Tier 3 (Three.js) son opt-in.
+   ============================================================================ */
+.crisalida-hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  min-height: clamp(560px, 86vh, 900px);
+  display: grid;
+  place-items: center;
+  padding: calc(var(--space-10) * var(--density)) var(--space-5);
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* Capa 1 — mesh de gradientes radiales (la profundidad) */
+.crisalida-hero::before {
+  content: "";
+  position: absolute; inset: -20%;
+  z-index: -2;
+  background:
+    radial-gradient(42% 50% at 18% 22%, var(--mesh-2) 0%, transparent 60%),
+    radial-gradient(46% 54% at 82% 30%, var(--mesh-1) 0%, transparent 62%),
+    radial-gradient(60% 60% at 50% 100%, color-mix(in oklch, var(--glow) 28%, transparent) 0%, transparent 70%),
+    var(--bg);
+  filter: saturate(1.05);
+  animation: crisalida-drift calc(24s * var(--hero-drift)) var(--ease-in-out) infinite alternate;
+}
+
+/* Capa 2 — grano (feTurbulence inline; sin red, sin imagen) + viñeta */
+.crisalida-hero::after {
+  content: "";
+  position: absolute; inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(120% 120% at 50% 35%, transparent 55%, var(--vignette) 100%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: cover, 160px 160px;
+  opacity: 1;
+}
+.crisalida-hero::after { /* el grano modula su intensidad por token */
+  --_grain: var(--grain-opacity);
+}
+
+/* halo de acento detrás del titular */
+.crisalida-hero__glow {
+  position: absolute; z-index: -1;
+  width: min(620px, 80%); aspect-ratio: 1;
+  top: 22%; left: 50%; translate: -50% 0;
+  background: radial-gradient(circle, color-mix(in oklch, var(--glow) 55%, transparent), transparent 65%);
+  filter: blur(var(--blur-glow));
+  opacity: 0.55;
+}
+
+/* contenido */
+.crisalida-hero__inner { max-width: 64rem; text-align: center; display: grid; gap: var(--space-5); }
+.crisalida-hero__eyebrow {
+  font-family: var(--font-body); font-size: var(--text-sm);
+  letter-spacing: var(--tracking-wide); text-transform: var(--eyebrow-transform);
+  color: var(--accent-hi); justify-self: center;
+  display: inline-flex; align-items: center; gap: var(--space-2);
+  padding: var(--space-2) var(--space-4);
+  border: var(--border-width) solid var(--border-strong); border-radius: var(--radius-pill);
+  background: color-mix(in oklch, var(--surface) 60%, transparent);
+  backdrop-filter: blur(8px);
+}
+.crisalida-hero__title {
+  font-family: var(--font-display); font-weight: var(--title-weight);
+  font-size: var(--text-5xl); line-height: var(--leading-tight);
+  letter-spacing: var(--title-tracking); text-transform: var(--title-transform); text-wrap: balance;
+}
+.crisalida-hero__title em { color: var(--accent); font-style: normal; }
+.crisalida-hero__lede {
+  font-family: var(--font-body); font-size: var(--text-lg);
+  line-height: var(--leading-body); color: var(--text-muted);
+  max-width: 44rem; justify-self: center; text-wrap: pretty;
+}
+
+/* CTA */
+.crisalida-hero__cta { display: flex; gap: var(--space-3); justify-content: center; flex-wrap: wrap; margin-top: var(--space-2); }
+.crisalida-btn {
+  font-family: var(--font-body); font-size: var(--text-base); font-weight: 600;
+  padding: var(--space-3) var(--space-5); border-radius: var(--radius);
+  border: var(--border-width) solid transparent; cursor: pointer; text-decoration: none;
+  transition: translate var(--dur-fast) var(--ease-out), background var(--dur-fast) var(--ease-out);
+}
+.crisalida-btn--primary { background: var(--accent); color: var(--on-accent); }
+.crisalida-btn--primary:hover { translate: 0 calc(-1 * var(--hover-lift)); background: var(--accent-lo); }
+.crisalida-btn--ghost { background: transparent; color: var(--text); border-color: var(--border-strong); }
+.crisalida-btn--ghost:hover { translate: 0 calc(-1 * var(--hover-lift)); background: var(--surface); }
+.crisalida-btn:focus-visible { outline: 2px solid var(--ring); outline-offset: 3px; }
+
+@keyframes crisalida-drift { from { transform: scale(1) translate(0,0); } to { transform: scale(1.08) translate(1.5%, -1%); } }

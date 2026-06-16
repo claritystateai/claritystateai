@@ -1,0 +1,72 @@
+/* ============================================================================
+   CRISÁLIDA · Capa 3 — TEMAS  (modo {oscuro,claro} × cliente {clarity,joli,27rl})
+   Remapea SOLO tokens semánticos. Activar con atributos en <html> o cualquier
+   contenedor:   <html data-client="joli" data-mode="light">
+   El default (sin atributos) ya es clarity·oscuro (definido en semantic.css).
+   ============================================================================ */
+
+/* ---------- MODO CLARO (neutro; el cliente sobrescribe el acento) ---------- */
+[data-mode="light"] {
+  --bg:          var(--neutral-50);
+  --bg-elev:     oklch(1 0 0);
+  --surface:     var(--neutral-100);
+  --surface-2:   var(--neutral-200);
+  --text:        var(--neutral-950);
+  --text-muted:  var(--neutral-700);
+  --text-subtle: var(--neutral-500);
+  --border:        oklch(0 0 0 / 0.10);
+  --border-strong: oklch(0 0 0 / 0.20);
+  --on-accent:   oklch(0.99 0 0);
+  --vignette:    oklch(0.80 0.01 260 / 0.45);
+  --grain-opacity: 0.025;
+}
+
+/* ============================ CLIENTE: CLARITY ============================= */
+[data-client="clarity"] {
+  --accent: var(--accent-clarity-500); --accent-hi: var(--accent-clarity-300); --accent-lo: var(--accent-clarity-700);
+  --ring: var(--accent-clarity-500); --glow: var(--accent-clarity-500);
+  --font-display: var(--font-clarity-display); --font-body: var(--font-clarity-body);
+  /* personalidad: EDITORIAL / refinada — serif, redondeado, aireado, respira */
+  --radius: var(--radius-lg); --radius-pill: var(--radius-full); --border-width: 1px;
+  --title-weight: 500; --title-tracking: var(--tracking-tight); --title-transform: none;
+  --eyebrow-transform: uppercase; --density: 1; --hover-lift: 2px; --hero-drift: 1;
+}
+[data-client="clarity"][data-mode="dark"]  { --mesh-1: oklch(0.20 0.04 258); --mesh-2: oklch(0.16 0.05 285); }
+[data-client="clarity"][data-mode="light"] { --mesh-1: oklch(0.93 0.03 252); --mesh-2: oklch(0.95 0.02 285); --glow: var(--accent-clarity-300); }
+
+/* ============================== CLIENTE: JOLI ============================= */
+[data-client="joli"] {
+  --accent: var(--accent-joli-500); --accent-hi: var(--accent-joli-300); --accent-lo: var(--accent-joli-700);
+  --ring: var(--accent-joli-500); --glow: var(--accent-joli-500);
+  --font-display: var(--font-joli-display); --font-body: var(--font-joli-body);
+  /* personalidad: SUAVE / contemporánea — muy redondeado, aireado (placeholder hasta brand real de Mario) */
+  --radius: var(--radius-xl); --radius-pill: var(--radius-full); --border-width: 1px;
+  --title-weight: 500; --title-tracking: var(--tracking-tight); --title-transform: none;
+  --eyebrow-transform: none; --density: 1.08; --hover-lift: 3px; --hero-drift: 1;
+}
+[data-client="joli"][data-mode="dark"] {
+  --bg: oklch(0.12 0.02 292); --bg-elev: oklch(0.15 0.025 292); --surface: oklch(0.19 0.03 292); --surface-2: oklch(0.24 0.035 292);
+  --mesh-1: oklch(0.22 0.06 292); --mesh-2: oklch(0.18 0.05 320);
+}
+[data-client="joli"][data-mode="light"] { --mesh-1: oklch(0.92 0.04 292); --mesh-2: oklch(0.94 0.03 320); --glow: var(--accent-joli-300); }
+
+/* ============================== CLIENTE: 27RL ============================= */
+[data-client="27rl"] {
+  --accent: var(--accent-27rl-500); --accent-hi: var(--accent-27rl-300); --accent-lo: var(--accent-27rl-700);
+  --ring: var(--accent-27rl-500); --glow: var(--accent-27rl-500);
+  --font-display: var(--font-27rl-display); --font-body: var(--font-27rl-body);
+  /* personalidad: INDUSTRIAL / audaz — sans pesada, filo (2px), compacto, líneas duras, estático */
+  --radius: 2px; --radius-pill: 3px; --border-width: 2px;
+  --title-weight: 800; --title-tracking: 0.005em; --title-transform: uppercase;
+  --eyebrow-transform: uppercase; --density: 0.82; --hover-lift: 0px; --hero-drift: 0;
+}
+[data-client="27rl"][data-mode="dark"] {
+  --bg: oklch(0.13 0.004 40); --bg-elev: oklch(0.16 0.005 40); --surface: oklch(0.20 0.006 40); --surface-2: oklch(0.25 0.008 40);
+  --mesh-1: oklch(0.22 0.05 50); --mesh-2: oklch(0.18 0.04 30);
+}
+[data-client="27rl"][data-mode="light"] { --mesh-1: oklch(0.93 0.04 56); --mesh-2: oklch(0.95 0.03 36); --glow: var(--accent-27rl-300); }
+
+/* ---------- Accesibilidad: respetar reduced-motion a nivel global ---------- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; }
+}

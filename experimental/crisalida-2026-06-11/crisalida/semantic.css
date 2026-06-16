@@ -1,0 +1,53 @@
+/* ============================================================================
+   CRISÁLIDA · Capa 2 — SEMÁNTICOS (roles)
+   Lo ÚNICO que un componente debe consumir. Apuntan a primitivos.
+   El :root define el default = CLARITY · OSCURO (funciona sin atributos).
+   themes.css remapea estos mismos nombres por [data-client]/[data-mode].
+   ============================================================================ */
+:root {
+  /* superficies (de atrás hacia adelante) */
+  --bg:          var(--neutral-1000);
+  --bg-elev:     var(--neutral-950);
+  --surface:     var(--neutral-900);
+  --surface-2:   var(--neutral-800);
+
+  /* texto */
+  --text:        var(--neutral-50);
+  --text-muted:  var(--neutral-300);
+  --text-subtle: var(--neutral-500);
+
+  /* bordes / líneas */
+  --border:        oklch(1 0 0 / 0.08);
+  --border-strong: oklch(1 0 0 / 0.16);
+
+  /* acento (el dial de cliente) */
+  --accent:       var(--accent-clarity-500);
+  --accent-hi:    var(--accent-clarity-300);
+  --accent-lo:    var(--accent-clarity-700);
+  --on-accent:    oklch(0.99 0 0);
+  --ring:         var(--accent-clarity-500);
+
+  /* tipografía activa */
+  --font-display: var(--font-clarity-display);
+  --font-body:    var(--font-clarity-body);
+
+  /* ---- EJES DE MARCA (personalidad; el tema los reescribe por cliente) ----
+     Esto es lo que hace que dos clientes se vean como marcas distintas, no como
+     el mismo template con otro color. */
+  --radius:          var(--radius-lg);     /* lenguaje de forma: redondeado vs filo */
+  --radius-pill:     var(--radius-full);
+  --border-width:    1px;                  /* peso de las líneas */
+  --title-weight:    500;                  /* personalidad del titular */
+  --title-tracking:  var(--tracking-tight);
+  --title-transform: none;
+  --eyebrow-transform: uppercase;
+  --density:         1;                    /* aire (1 = base, <1 compacto, >1 aireado) */
+  --hover-lift:      2px;                  /* personalidad del movimiento */
+  --hero-drift:      1;                    /* 1 = mesh respira; 0 = estático/industrial */
+
+  /* fondos cinematográficos (hero) */
+  --glow:        var(--accent-clarity-500);
+  --mesh-1:      oklch(0.20 0.04 258);
+  --mesh-2:      oklch(0.16 0.05 285);
+  --vignette:    oklch(0.05 0.01 260 / 0.85);
+}
