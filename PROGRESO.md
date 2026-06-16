@@ -53,3 +53,13 @@ Bitácora viva de la sesión nocturna. Cada bloque se cierra con un commit local
 - [ ] Decisión de Pablo: atribuir 90.2% a Plazoleta o mantener anónimo.
 - [ ] **Rasterizar `assets/og-image.svg` → `og-image.png` 1200×630** antes de desplegar (WhatsApp/LinkedIn/Facebook no renderizan SVG en OG). Opciones: abrir el SVG en navegador y exportar, o `rsvg-convert`/Chrome headless cuando esté disponible.
 - [ ] Antes de cualquier push: `gh auth switch --user juanmplazasg-lgtm` (nunca cuenta Solar).
+
+## Ola 3 / polish (no bloqueante, no ejecutado esta noche — fuera del alcance pedido)
+- `assets/img/logo.svg` pesa 2.2 MB y ahora se carga en navbar + footer de las 8 páginas. Optimizar (hay `Clarity-State-AI-Logo-_-AI-limpio-.svg` de 31 KB como candidato, validar que se vea igual antes de cambiar). Es el item #1 de LCP.
+- URLs limpias: hoy los enlaces usan `.html` (funciona local y en Netlify). Si se quieren `/operacion` sin extensión, agregar redirects en `netlify.toml`. Opcional.
+- Resend: el formulario de contacto está cableado como Netlify Forms (funciona sin backend). Si se prefiere Resend, requiere una función serverless.
+
+## Decisiones de revisión humana sugeridas (cuando JMP retome)
+- Revisar el copy de las 3 páginas de producto y validar tono/cifras.
+- Decidir si se despliega ya `index.anonimizado.html` como parche de compliance del sitio en vivo, o se espera al nuevo Home multi-página.
+- Probar en navegador real: hamburguesa móvil, dropdown Servicios, hero de páginas interiores, formulario de contacto.
