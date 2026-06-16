@@ -64,3 +64,49 @@ densidad y conversión en frío. No requería rediseño.
 - Rasterizar `assets/og-image.svg` → PNG 1200×630 antes de desplegar.
 - Permisos por escrito de clientes para activar nombres/logos reales.
 - Aprobación de despliegue por JMP. Antes de push: `gh auth switch --user juanmplazasg-lgtm`.
+
+---
+
+# Adenda — Feedback Home 8 AM (16 jun 2026)
+
+Aplicado todo el brief `FEEDBACK-HOME-2026-06-16.md`, en orden de prioridad.
+
+## 1. Bugs de contraste (P0) — RESUELTOS
+`premium.css` añade overrides `section-light` para los componentes nuevos que quedaban ilegibles:
+- `.stat-*` (la cifra 90,2% sobre fondo claro).
+- `.includes-list` ("cómo trabajamos" / "cómo se entrega").
+- `.cred-founder` (card del fundador ahora superficie clara con texto oscuro) y `.cred-trust-block`.
+- Formulario: `.form-label`, `.form-input`, `.form-textarea` legibles sobre fondo claro.
+
+## 2. Hero + botones
+- Quitado el kicker del hero (texto largo); reubicado y reescrito en "Punto de partida".
+- Hero reenfocado a velocidad (título y subtítulo se mantienen).
+- Botones: solo "Iniciar diagnóstico de 30 minutos" (primario) + "Contáctanos" (ancla a #contacto-form).
+- Quitado el microcopy "sin costo, sin compromiso..." (`.cta-reassure`) en todo el sitio.
+
+## 3. Formulario (crítico)
+- Formulario con campos claros y etiquetados (nombre, empresa, correo, WhatsApp, mensaje) **también en el Home** (última sección, #contacto-form).
+- En contacto.html la sección del formulario recibió `id="form"`.
+
+## 4. Cerebro en acción + nombres de producto
+- "El cerebro en acción" convertido en **carrusel de 3 ejecuciones** (Operación / Riesgo / Gestión comercial), mostrando que el cerebro habilita la decisión. Se fusionó con el antiguo "showcase" (se quitó la etiqueta "producto en acción").
+- Nombres de producto por frente (estilo Aaru): **Núcleo** (operación), **Continuidad** (riesgo, con 27 Risk Lab), **Cartera** (gestión comercial). Aplicados en marco, nav, footer y eyebrows de las páginas de producto. (Propuestos; reversibles si JMP prefiere otros.)
+- "Punto de partida": cifras 82%/6% sin atribución de fuente, reescrito a velocidad.
+- "La prueba": headline reescrito sin tono informal ni comparativo.
+
+## 5. Alianza 27 Risk Lab + equipo
+- Nueva sección "Alianza" (#alianza) con 27 Risk Lab para continuidad/crisis y monitoreo del entorno. Placeholder para el logo oficial de 27RL (pendiente de asset).
+- "Quién responde": **eliminado WAT** (no es metodología propia) en todo el sitio, reemplazado por método de entrega propio (diagnóstico, diseño, implementación, medición). Lenguaje de EQUIPO, no de fundador solo.
+
+## 6. Otros
+- "Recursos" retirado del nav (queda en el footer). 
+- Ecuación de valor en "Cómo se entrega" (qué entrega · tiempo · inversión desde USD $10.000).
+
+## QA (verde)
+0 clases sin definición en las 7 páginas · cero comparativos · em-dash solo en title/cite/meta · cero WAT · Recursos fuera del nav · balance OK · enlaces internos resuelven · preview HTTP 200.
+
+## Pendiente (no bloqueante / humano)
+- Logo oficial de 27 Risk Lab para la sección de alianza (`assets/img/27risklab-logo.svg`).
+- Sistema visual del Hub de JPP (brief #12): no aplicado en esta ventana (requiere el design-system externo); el look premium actual queda serio.
+- Validar los nombres de producto (Núcleo / Continuidad / Cartera) con JMP.
+- Rasterizar og-image.svg → PNG; aprobación de despliegue por JMP.
