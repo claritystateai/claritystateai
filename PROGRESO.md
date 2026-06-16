@@ -83,3 +83,11 @@ Bitácora viva de la sesión nocturna. Cada bloque se cierra con un commit local
 - Revisar el copy de las 3 páginas de producto y validar tono/cifras.
 - Decidir si se despliega ya `index.anonimizado.html` como parche de compliance del sitio en vivo, o se espera al nuevo Home multi-página.
 - Probar en navegador real: hamburguesa móvil, dropdown Servicios, hero de páginas interiores, formulario de contacto.
+
+## ✅ Fase de corrección (16 jun 2026) — nivel premium Aaru/Arkham
+- Capa `css/premium.css` (aditiva): mono (IBM Plex Mono) en datos/eyebrows/cifras, tracking display, text-wrap balance, scroll-reveal, focus-visible.
+- Conversión en frío: risk-reversal (`.cta-reassure`) bajo cada CTA de las 7 páginas; hero answer-first; productización (duración/entregables/inversión) en las 3 páginas de producto.
+- Credibilidad diferenciada y anónima: `#confian` con resultados por caso; `#quien-responde` con método WAT (chips de sector eliminados); pregunta del showcase deduplicada y única.
+- Diferenciación vs AztecLab: tipografía con personalidad + mono en datos, oscuro estratificado + un acento, cero stock, una sola CTA.
+- QA verde: 118/118 clases con definición, compliance limpio, cero comparativas, em-dash solo en title/cite/meta, balance OK, JS válido, preview HTTP 200.
+- Preview: http://127.0.0.1:8123/index.html (local, .html). Detalle en CHANGELOG-CORRECCION.md.
