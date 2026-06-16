@@ -23,18 +23,19 @@
   </script>
 
   <title>Clarity State AI — El cerebro de tu empresa, con una memoria viva</title>
-  <meta name="description" content="Implantamos el cerebro de tu empresa: una memoria viva que conecta cada área y le da a tu equipo directivo la claridad para decidir el rumbo. La primera semilla operando en 90 días." />
+  <meta name="description" content="Clarity instala memoria viva en los tres frentes que gestiona un gerente: la operación, el riesgo y el cliente. Decisiones en segundos, continuidad ante crisis. La primera capa operando en 90 días." />
 
   <!-- Favicon (SVG inline como data URI) -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%230a0a0f'/><circle cx='16' cy='13' r='5' fill='none' stroke='%233b82f6' stroke-width='2'/><rect x='14' y='16' width='4' height='7' rx='2' fill='%233b82f6'/><circle cx='16' cy='19' r='1.5' fill='%230a0a0f'/></svg>" />
 
   <!-- Open Graph -->
   <meta property="og:title" content="Clarity State AI — El cerebro de tu empresa, con una memoria viva" />
-  <meta property="og:description" content="Implantamos el cerebro de tu empresa: una memoria viva que conecta cada área y le da a tu equipo directivo la claridad para decidir el rumbo. En 90 días, la primera semilla operando." />
+  <meta property="og:description" content="Memoria viva para la operación, el riesgo y el cliente. Decisiones en segundos, continuidad ante crisis. La primera capa operando en 90 días." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://claritystateai.com" />
-  <!-- TODO post-checkpoint: regenerar og-image alineada al CVP nuevo (headline + paleta navy/cian). La actual quedó del modelo viejo. -->
-  <meta property="og:image" content="https://claritystateai.com/assets/images/og-image.png" />
+  <!-- og-image: fuente editable en assets/og-image.svg. PENDIENTE rasterizar a og-image.png (1200x630) antes de desplegar; WhatsApp/LinkedIn/Facebook no renderizan SVG en OG. -->
+  <meta property="og:image" content="https://claritystateai.com/assets/og-image.svg" />
+  <meta name="twitter:card" content="summary_large_image" />
 
   <!-- Google Fonts: Inter (sans body) + Fraunces (serif display) — BRAND-GUIDELINES §3 -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -42,23 +43,34 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/multipagina.css" />
 </head>
 <body>
 
   <!-- ============ NAVBAR ============ -->
   <nav class="navbar" aria-label="Navegación principal">
     <div class="container">
-      <a href="#inicio" class="navbar-logo">
+      <a href="index.html" class="navbar-logo">
         <img src="assets/img/logo.svg" alt="Clarity State AI" class="logo-img" />
       </a>
-      <div class="navbar-links" aria-label="Secciones del sitio">
-        <a href="#metodologia" class="navbar-link">Metodología</a>
-        <a href="#prueba-social" class="navbar-link">Caso</a>
-        <a href="#quienes-somos" class="navbar-link">Quiénes somos</a>
-        <a href="#cta-final" class="navbar-link">Contacto</a>
+      <div class="navbar-links" id="navbar-links" aria-label="Secciones del sitio">
+        <div class="navbar-item navbar-item--dropdown">
+          <a href="#tres-frentes" class="navbar-link">Servicios</a>
+          <div class="navbar-dropdown">
+            <a href="operacion.html">Memoria de la operación <small>El conocimiento del negocio</small></a>
+            <a href="riesgo.html">Memoria del riesgo <small>Continuidad y crisis</small></a>
+            <a href="cliente.html">Memoria del cliente <small>La relación comercial</small></a>
+          </div>
+        </div>
+        <a href="nosotros.html" class="navbar-link">Nosotros</a>
+        <a href="recursos.html" class="navbar-link">Recursos</a>
+        <a href="contacto.html" class="navbar-link">Contacto</a>
       </div>
       <div class="navbar-cta">
-        <a href="https://wa.me/573134925711?text=Hola%20Juan%20Manuel%2C%20vi%20la%20web%20de%20Clarity%20State%20y%20me%20gustar%C3%ADa%20agendar%20un%20diagn%C3%B3stico%20de%2030%20minutos." class="btn btn-primary" target="_blank" rel="noopener">Diagnóstico 30 min</a>
+        <a href="https://wa.me/573134925711?text=Hola%20Juan%20Manuel%2C%20vi%20la%20web%20de%20Clarity%20State%20y%20me%20gustar%C3%ADa%20agendar%20un%20diagn%C3%B3stico%20de%2030%20minutos." class="btn btn-primary" data-loc="navbar" target="_blank" rel="noopener">Diagnóstico 30 min</a>
+        <button class="nav-toggle" aria-label="Abrir menú" aria-controls="navbar-links" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
       </div>
     </div>
   </nav>
@@ -77,61 +89,59 @@
           <p class="hero-kicker">El conocimiento de tu negocio vive en cabezas, no en sistemas. Y cuando rota una persona, se va con ella.</p>
           <h1 class="hero-title">El cerebro de tu empresa, con una memoria viva.</h1>
           <p class="hero-subtitle">
-            Es lo que tu equipo directivo necesita para operar: cada área conectada, las
-            decisiones más rápidas y la claridad para fijar el rumbo del negocio. En solo
-            90 días, la primera semilla operando.
+            Clarity convierte el conocimiento disperso de tu empresa en un sistema que
+            recuerda, responde y anticipa. Decides en segundos y resistes las crisis.
+            En 90 días, la primera capa operando.
           </p>
 
           <div class="hero-buttons">
-            <a href="https://wa.me/573134925711?text=Hola%20Juan%20Manuel%2C%20vi%20la%20web%20de%20Clarity%20State%20y%20me%20gustar%C3%ADa%20agendar%20un%20diagn%C3%B3stico%20de%2030%20minutos." class="btn btn-primary btn-lg" target="_blank" rel="noopener">Iniciar diagnóstico de 30 min</a>
-            <a href="https://calendly.com/juanmanuelplazas-claritystateai/30min" class="btn btn-outline btn-lg" target="_blank" rel="noopener">O agenda directo en mi calendario →</a>
+            <a href="https://wa.me/573134925711?text=Hola%20Juan%20Manuel%2C%20vi%20la%20web%20de%20Clarity%20State%20y%20me%20gustar%C3%ADa%20agendar%20un%20diagn%C3%B3stico%20de%2030%20minutos." class="btn btn-primary btn-lg" data-loc="hero" target="_blank" rel="noopener">Iniciar diagnóstico de 30 min</a>
+            <a href="https://calendly.com/juanmanuelplazas-claritystateai/30min" class="btn-text" data-loc="hero" target="_blank" rel="noopener">o agenda directo en mi calendario →</a>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ============ PUNTO DE PARTIDA ============ -->
+  <!-- ============ PUNTO DE PARTIDA (gancho con datos) ============ -->
   <section class="section section-narrative" id="punto-de-partida">
     <div class="container">
       <p class="eyebrow">Punto de partida</p>
-      <h2 class="section-headline">Tu empresa funciona con herramientas sueltas. Y el conocimiento vive en cabezas, no en sistemas.</h2>
-
+      <h2 class="section-headline">Mucho presupuesto de IA, poco valor real.</h2>
       <div class="narrative-body">
         <p>
-          En la era de la IA, decide más rápido la empresa que aprende más rápido. Sin
-          una capa que conecte y recuerde, tu equipo va a ese ritmo a media máquina.
+          El 82% de las grandes empresas colombianas va a subir su presupuesto de IA.
+          Solo el 6% de las empresas en Latinoamérica reporta un impacto real. La
+          diferencia no está en la herramienta: está en la memoria que conecta el
+          conocimiento del negocio con quien decide.
         </p>
+        <p class="form-hint" style="margin-top:14px">Fuentes: Microsoft-IDC 2024 · McKinsey 2025.</p>
       </div>
     </div>
   </section>
 
-  <!-- ============ MANIFIESTO + 4 PILARES ============ -->
-  <section class="section section-light" id="manifiesto">
+  <!-- ============ LOS TRES FRENTES (el marco) ============ -->
+  <section class="section section-light" id="tres-frentes">
     <div class="container">
-      <p class="eyebrow">Manifiesto Clarity</p>
-      <h2 class="section-headline">El humano decide. El cerebro le da claridad.</h2>
+      <p class="eyebrow">El marco</p>
+      <h2 class="section-headline">Un gerente gestiona tres frentes. Clarity instala memoria viva en los tres.</h2>
 
-      <div class="pilares-grid">
-        <article class="pilar-card">
-          <h3 class="pilar-title">Memoria operativa.</h3>
-          <p class="pilar-desc">El conocimiento del negocio deja de vivir solo en las personas.</p>
-        </article>
-
-        <article class="pilar-card">
-          <h3 class="pilar-title">Decisión asistida.</h3>
-          <p class="pilar-desc">Quien decide tiene el contexto a la mano.</p>
-        </article>
-
-        <article class="pilar-card">
-          <h3 class="pilar-title">Procesos vivos.</h3>
-          <p class="pilar-desc">Dejan de ser documentos muertos.</p>
-        </article>
-
-        <article class="pilar-card">
-          <h3 class="pilar-title">Implantación + alianza.</h3>
-          <p class="pilar-desc">No entregamos una caja: acompañamos.</p>
-        </article>
+      <div class="pilares-grid pilares-grid--3">
+        <a class="pilar-card" href="operacion.html">
+          <span class="prueba-tag">Adentro</span>
+          <h3 class="pilar-title">Memoria de la operación.</h3>
+          <p class="pilar-desc">El conocimiento que tu empresa ya produce vuelto una memoria que responde en segundos. Ver más →</p>
+        </a>
+        <a class="pilar-card" href="riesgo.html">
+          <span class="prueba-tag">Lo inesperado</span>
+          <h3 class="pilar-title">Memoria del riesgo.</h3>
+          <p class="pilar-desc">Tu empresa sigue operando el día que algo salga de control. Comité y plan de crisis, con 27 Risk Lab. Ver más →</p>
+        </a>
+        <a class="pilar-card" href="cliente.html">
+          <span class="prueba-tag">Afuera</span>
+          <h3 class="pilar-title">Memoria del cliente.</h3>
+          <p class="pilar-desc">El sistema comercial que recuerda a cada cliente: propuestas, portal y seguimiento. Ver más →</p>
+        </a>
       </div>
     </div>
   </section>
@@ -160,101 +170,132 @@
           <p>¿Qué decisiones tomamos en la última junta y cuáles quedaron sin dueño ni fecha?</p>
         </div>
       </div>
+
+      <div style="text-align:center;margin-top:40px">
+        <a href="https://wa.me/573134925711?text=Hola%20Juan%20Manuel%2C%20vi%20la%20web%20de%20Clarity%20State%20y%20me%20gustar%C3%ADa%20agendar%20un%20diagn%C3%B3stico%20de%2030%20minutos." class="btn btn-primary" data-loc="cerebro-accion" target="_blank" rel="noopener">Quiero que mi empresa responda esto en segundos</a>
+      </div>
     </div>
   </section>
 
-  <!-- ============ IMPLANTACIÓN EN 90 DÍAS ============ -->
+  <!-- ============ PRUEBA (cifra honesta, anónima) ============ -->
+  <section class="section section-light" id="prueba">
+    <div class="container">
+      <p class="eyebrow">La prueba</p>
+      <h2 class="section-headline">No hablamos de IA: la operamos a diario en empresas que se la juegan.</h2>
+
+      <p class="section-lead" style="max-width:720px">
+        En un exportador agroindustrial B2B de cerca de 40 años, el cerebro clasifica el
+        proceso operativo crítico con alta precisión, validada fuera de muestra. Decisiones
+        que tomaban de 15 a 20 días se resuelven en minutos.
+      </p>
+
+      <div class="stat">
+        <span class="stat-num">90,2%</span>
+        <span class="stat-label">de precisión del núcleo de clasificación del cerebro, en datos que el sistema nunca vio durante el entrenamiento.</span>
+        <span class="stat-source">Validación interna Clarity, muestra fuera de entrenamiento (out-of-sample). La cifra es creíble porque declara su frontera.</span>
+      </div>
+
+      <blockquote class="pull-quote pull-quote--testimonio">
+        "Lo que más tranquilidad me da: si mañana la gente que sostiene esto no está,
+        alguien más toma esa memoria y la empresa sigue caminando igual."
+        <cite>— Gerente General, exportador agroindustrial B2B (~40 años de oficio)</cite>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- ============ CONFÍAN EN NOSOTROS (anónimo por compliance) ============ -->
+  <section class="section" id="confian">
+    <div class="container">
+      <p class="eyebrow">Confían en nosotros</p>
+      <h2 class="section-headline">Empresas reales, operando con Clarity hoy.</h2>
+
+      <!--
+        VERSIÓN ANONIMIZADA (compliance). Sin nombres ni logos de clientes
+        hasta tener permiso por escrito (Medical Care Well, Flores de la Plazoleta,
+        27 Risk Lab). Al llegar los permisos, reemplazar cada trust-card por la
+        versión nombrada (nombre + logo + foto/cargo real, estilo Arkham).
+      -->
+      <div class="trust-grid">
+        <article class="trust-card">
+          <span class="trust-tag">Agroexportación B2B</span>
+          <h3>Exportador con ~40 años de oficio</h3>
+          <p>Montando el cerebro de su operación: una memoria viva que deja consultable lo que hoy vive en la cabeza del equipo.</p>
+        </article>
+        <article class="trust-card">
+          <span class="trust-tag">Distribución médica</span>
+          <h3>Distribuidor con ~18 años de operación</h3>
+          <p>Cerebro de productividad y de decisiones comerciales sobre una operación de logística y facturación complejas.</p>
+        </article>
+        <article class="trust-card">
+          <span class="trust-tag">Gestión de crisis</span>
+          <h3>Alianza con un laboratorio de riesgo corporativo</h3>
+          <p>Memoria del riesgo para que la empresa siga operando el día que algo salga de control.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ QUÉ INCLUYE / 90 DÍAS ============ -->
   <section class="section section-light" id="metodologia">
     <div class="container">
-      <p class="eyebrow">Implantación en 90 días</p>
-      <h2 class="section-headline">Semilla → árbol. La primera capa operando.</h2>
+      <p class="eyebrow">Cómo se entrega</p>
+      <h2 class="section-headline">La primera capa operando en 90 días.</h2>
 
-      <div class="metodologia-body">
-        <div class="metodologia-fases">
-          <div class="fase-card">
-            <span class="fase-num">Días 1–30</span>
-            <h3 class="fase-title">Lectura</h3>
-            <p>Mapeamos cómo se decide hoy.</p>
-          </div>
-          <div class="fase-card">
-            <span class="fase-num">Días 31–60</span>
-            <h3 class="fase-title">Semilla</h3>
-            <p>Construimos la primera capa con datos reales.</p>
-          </div>
-          <div class="fase-card">
-            <span class="fase-num">Días 61–90</span>
-            <h3 class="fase-title">En operación</h3>
-            <p>Tu equipo la usa todos los días.</p>
-          </div>
+      <div class="metodologia-fases">
+        <div class="fase-card">
+          <span class="fase-num">Días 1–30</span>
+          <h3 class="fase-title">Lectura</h3>
+          <p>Mapeamos cómo se decide hoy.</p>
         </div>
-
-        <div class="metodologia-evolucion">
-          <p><em>Cada trimestre, el cerebro crece contigo.</em></p>
+        <div class="fase-card">
+          <span class="fase-num">Días 31–60</span>
+          <h3 class="fase-title">Semilla</h3>
+          <p>Construimos la primera capa con datos reales.</p>
+        </div>
+        <div class="fase-card">
+          <span class="fase-num">Días 61–90</span>
+          <h3 class="fase-title">En operación</h3>
+          <p>Tu equipo la usa todos los días.</p>
         </div>
       </div>
+
+      <ul class="includes-list">
+        <li>Ingesta del conocimiento crítico de un proceso concreto del negocio.</li>
+        <li>De 10 a 15 consultas ejecutivas listas para usar.</li>
+        <li>Un asistente que responde con la memoria de la empresa.</li>
+        <li>Integración con las herramientas que ya usas.</li>
+        <li>Capacitación al equipo, manual y soporte.</li>
+      </ul>
+
+      <p class="section-lead" style="margin-top:28px">
+        Inversión desde USD $10.000. Aproximadamente 90 días. ROI medible. Cada
+        trimestre, el cerebro crece contigo.
+      </p>
     </div>
   </section>
 
-  <!-- ============ PRUEBA SOCIAL ============ -->
-  <section class="section" id="prueba-social">
+  <!-- ============ FAQ / OBJECIONES ============ -->
+  <section class="section" id="faq">
     <div class="container">
-      <p class="eyebrow">Prueba</p>
-      <h2 class="section-headline">No hablamos de IA: la operamos a diario en empresas que se la juegan en esta era.</h2>
+      <p class="eyebrow">Antes de la llamada</p>
+      <h2 class="section-headline">Lo que un gerente suele preguntar.</h2>
 
-      <div class="prueba-grid">
-        <article class="prueba-card prueba-card--principal">
-          <span class="prueba-tag">Caso vivo · Agroexportación</span>
-          <h3 class="prueba-title"><a href="https://laplazoleta.com/" target="_blank" rel="noopener">Una empresa con 40 años de oficio, montando el cerebro con nosotros. <span class="prueba-arrow" aria-hidden="true">→</span></a></h3>
-          <p>
-            Más de un millón de tallos al año, equipo establecido, cliente B2B en mercados
-            internacionales. Está montando el cerebro de su operación con Clarity: una
-            memoria viva que recoge lo que el equipo carga hoy en la cabeza y se lo deja
-            consultable al equipo directivo.
-          </p>
-
-          <blockquote class="pull-quote pull-quote--testimonio">
-            "Lo que más tranquilidad me da: si mañana la gente que sostiene esto no está,
-            alguien más toma esa memoria y la empresa sigue caminando igual."
-            <cite>— Gerente General, exportador colombiano de flores (40 años de oficio)</cite>
-          </blockquote>
-        </article>
-
-        <article class="prueba-card">
-          <span class="prueba-tag">Caso interno · Distribución médica</span>
-          <h3 class="prueba-title"><a href="https://www.medicalcarewell.com/" target="_blank" rel="noopener">MCW: cerebro para decisiones comerciales en una operación logística. <span class="prueba-arrow" aria-hidden="true">→</span></a></h3>
-          <p>Distribuidor médico con 18 años de operación. Montamos el cerebro de productividad del equipo y de decisiones comerciales sobre una operación de logística y facturación complejas.</p>
-        </article>
-
-        <article class="prueba-card">
-          <span class="prueba-tag">Aliado · Marketing digital</span>
-          <h3 class="prueba-title"><a href="https://elsolaragencia.co/" target="_blank" rel="noopener">El Solar: agencia colombiana que opera apalancada en IA. <span class="prueba-arrow" aria-hidden="true">→</span></a></h3>
-          <p>Marketing digital con inteligencia artificial integrada en su día a día. Clarity acompaña las implementaciones de IA en sus procesos de mercadeo.</p>
-        </article>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ QUIÉNES SOMOS ============ -->
-  <section class="section section-light" id="quienes-somos">
-    <div class="container">
-      <p class="eyebrow">Quiénes somos</p>
-      <h2 class="section-headline">Quiénes somos</h2>
-
-      <div class="quienes-layout">
-        <div class="quienes-foto">
-          <img src="assets/img/Foto Perfil Juan Plazas_mascerca.jpg" alt="Retrato editorial de Juan Manuel Plazas" />
+      <div class="faq-list">
+        <div class="faq-item">
+          <p class="faq-question">¿Esto reemplaza a mi gente?</p>
+          <p class="faq-answer">No. El humano decide. El cerebro le da el contexto para decidir mejor y más rápido. Tu equipo deja de buscar entre correos y carpetas, y se dedica a analizar.</p>
         </div>
-        <div class="quienes-body">
-          <p>
-            Trabajamos para que las empresas que ya operan sean más rápidas, más
-            competitivas y tomen mejores decisiones en la era de la inteligencia
-            artificial. Implantamos cerebros operativos: una memoria viva que conecta
-            cada área y le entrega al equipo directivo el contexto para fijar el rumbo
-            del negocio. Nuestra metodología viene de un programa internacional de
-            implementación de IA en empresas establecidas. La probamos en operación
-            real antes de llevarla a un cliente.
-          </p>
+        <div class="faq-item">
+          <p class="faq-question">¿Qué pasa con la seguridad de mis datos?</p>
+          <p class="faq-answer">Trabajamos con acuerdo de confidencialidad (NDA) desde el inicio, una política clara de datos y un roadmap de seguridad. Tus datos son tuyos.</p>
+        </div>
+        <div class="faq-item">
+          <p class="faq-question">¿Y si no funciona en mi empresa?</p>
+          <p class="faq-answer">Por eso el primer paso es un diagnóstico de 30 minutos. En esa conversación sabemos si tiene sentido seguir, sin compromiso.</p>
+        </div>
+        <div class="faq-item">
+          <p class="faq-question">¿Cuánto cuesta?</p>
+          <p class="faq-answer">Los engagements arrancan desde USD $10.000, con un alcance acordado y entregables tangibles en cerca de 90 días.</p>
         </div>
       </div>
     </div>
@@ -268,14 +309,13 @@
 
       <p class="cta-lead">
         Si quieres entender cómo se vería el cerebro de tu empresa, escríbenos por
-        WhatsApp o agenda directo en el calendario. La conversación es directa con
-        Juan Manuel, sin formularios ni embudos. En 30 minutos sabemos si tiene
-        sentido seguir.
+        WhatsApp. La conversación es directa con Juan Manuel, sin formularios ni embudos.
+        En 30 minutos sabemos si tiene sentido seguir.
       </p>
 
       <div class="cta-buttons">
-        <a href="https://wa.me/573134925711?text=Hola%20Juan%20Manuel%2C%20vi%20la%20web%20de%20Clarity%20State%20y%20me%20gustar%C3%ADa%20agendar%20un%20diagn%C3%B3stico%20de%2030%20minutos." class="btn btn-primary btn-xl" target="_blank" rel="noopener">Iniciar diagnóstico de 30 min</a>
-        <a href="https://calendly.com/juanmanuelplazas-claritystateai/30min" class="btn btn-outline btn-xl" target="_blank" rel="noopener">O agenda directo en mi calendario →</a>
+        <a href="https://wa.me/573134925711?text=Hola%20Juan%20Manuel%2C%20vi%20la%20web%20de%20Clarity%20State%20y%20me%20gustar%C3%ADa%20agendar%20un%20diagn%C3%B3stico%20de%2030%20minutos." class="btn btn-primary btn-xl" data-loc="cta-final" target="_blank" rel="noopener">Iniciar diagnóstico de 30 min</a>
+        <a href="https://calendly.com/juanmanuelplazas-claritystateai/30min" class="btn-text" data-loc="cta-final" target="_blank" rel="noopener">o agenda directo en mi calendario →</a>
       </div>
     </div>
   </section>
@@ -291,21 +331,20 @@
 
         <div class="footer-cols">
           <div class="footer-col">
-            <span class="footer-col-title">Compliance</span>
+            <span class="footer-col-title">Servicios</span>
             <ul>
-              <li><a href="#" class="footer-link">NDA disponible</a></li>
-              <li><a href="#" class="footer-link">Roadmap SOC2</a></li>
-              <li><a href="#" class="footer-link">Política de datos</a></li>
+              <li><a href="operacion.html" class="footer-link">Memoria de la operación</a></li>
+              <li><a href="riesgo.html" class="footer-link">Memoria del riesgo</a></li>
+              <li><a href="cliente.html" class="footer-link">Memoria del cliente</a></li>
             </ul>
           </div>
 
           <div class="footer-col">
             <span class="footer-col-title">Sitio</span>
             <ul>
-              <li><a href="#manifiesto" class="footer-link">Metodología</a></li>
-              <li><a href="#prueba-social" class="footer-link">Caso</a></li>
-              <li><a href="#quienes-somos" class="footer-link">Quiénes somos</a></li>
-              <li><a href="#cta-final" class="footer-link">Contacto</a></li>
+              <li><a href="nosotros.html" class="footer-link">Nosotros</a></li>
+              <li><a href="recursos.html" class="footer-link">Recursos</a></li>
+              <li><a href="contacto.html" class="footer-link">Contacto</a></li>
             </ul>
           </div>
 
@@ -320,13 +359,14 @@
         </div>
       </div>
 
-      <p class="footer-copy">© 2026 Clarity State AI. Todos los derechos reservados.</p>
+      <p class="footer-copy">© 2026 Clarity State AI. NDA y política de datos disponibles bajo solicitud en la conversación de diagnóstico.</p>
     </div>
   </footer>
 
   <!-- Widget WhatsApp flotante (esquina inferior derecha, persistente) -->
   <a href="https://wa.me/573134925711?text=Hola%20Juan%20Manuel%2C%20vi%20la%20web%20de%20Clarity%20State%20y%20me%20gustar%C3%ADa%20agendar%20un%20diagn%C3%B3stico%20de%2030%20minutos."
      class="whatsapp-floating"
+     data-loc="widget-flotante"
      target="_blank"
      rel="noopener"
      aria-label="Escribir por WhatsApp a Clarity State">
@@ -336,5 +376,6 @@
   </a>
 
   <script src="js/main.js"></script>
+  <script src="js/main-multipagina.js"></script>
 </body>
 </html>

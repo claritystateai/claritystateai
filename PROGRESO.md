@@ -22,20 +22,22 @@ Bitácora viva de la sesión nocturna. Cada bloque se cierra con un commit local
 - Decisión: era un refactor a CSS modular (rediseño) → contra la decisión LOCKED. Se archiva como referencia, no se borra.
 - Único activo rescatado para producción: el bloque de cifra (`cs-stat` con el 90.2%) se reimplementa en `css/multipagina.css` como `.stat-*`.
 
-### ⏳ Ola 1 — Arreglos técnicos
-- [ ] og-image (no hay rasterizador SVG→PNG en el entorno: creo `assets/og-image.svg` + nota de conversión)
-- [ ] Hamburguesa móvil
-- [ ] Reconectar 3 ebooks (CTA dentro + enlazados desde el sitio)
-- [ ] Jerarquizar CTA (WhatsApp primaria sólida, Calendly como enlace de texto)
-- [ ] Enlaces muertos del footer
-- [ ] Eventos de conversión GA4 (clic WhatsApp / Calendly)
+### 🔄 Ola 1 — Arreglos técnicos
+- [x] og-image → `assets/og-image.svg` creado + meta actualizada. PENDIENTE rasterizar a PNG (humano).
+- [x] Hamburguesa móvil → `css/multipagina.css` + `js/main-multipagina.js` (accesible: aria, ESC, overlay).
+- [ ] Reconectar 3 ebooks (subagente, en curso)
+- [x] Jerarquizar CTA → WhatsApp = botón primario; Calendly = `.btn-text` (enlace de texto).
+- [x] Enlaces muertos del footer → reemplazados por Servicios/Sitio reales; compliance movido al copy del footer.
+- [x] Eventos de conversión GA4 → `contacto_click` + `generate_lead` con `data-loc` (delegación de clics).
 
-### ⏳ Ola 2 — Multi-página
-- [ ] Home (index.html) reconstruida sobre styles.css
-- [ ] /operacion /riesgo /cliente /nosotros /contacto
+### 🔄 Ola 2 — Multi-página
+- [x] Home (index.html) reconstruida sobre styles.css (+ multipagina.css). Marco 3 frentes, cifra 90.2% anónima, trust grid, entregables, FAQ, 1 CTA.
+- [ ] /operacion /riesgo /cliente /nosotros /contacto (subagentes, en curso)
+- [ ] recursos.html
 
-### ⏳ Compliance — index anonimizado
-- [ ] `index.anonimizado.html` listo (NO desplegar)
+### ✅ Compliance — index anonimizado
+- [x] `index.anonimizado.html` listo (drop-in del diseño actual sin clientes). NO desplegado.
+- [x] El nuevo Home también nace anonimizado (trust grid sin nombres + bloque nombrado en comentario para activar con permisos).
 
 ## Pendientes humanos (bloqueados, no los puedo resolver yo)
 - [ ] Permisos por escrito: Medical Care Well · Flores de la Plazoleta · 27 Risk Lab (nombre/logo).
