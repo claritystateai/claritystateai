@@ -95,7 +95,7 @@ Aplicado todo el brief `FEEDBACK-HOME-2026-06-16.md`, en orden de prioridad.
 - "La prueba": headline reescrito sin tono informal ni comparativo.
 
 ## 5. Alianza 27 Risk Lab + equipo
-- Nueva sección "Alianza" (#alianza) con 27 Risk Lab para continuidad/crisis y monitoreo del entorno. Placeholder para el logo oficial de 27RL (pendiente de asset).
+- Nueva sección "Alianza" (#alianza) con 27 Risk Lab para continuidad/crisis y monitoreo del entorno. Logo oficial REAL de 27 Risk Lab (assets/logo-27rl.webp, copiado del portal 27rl) sobre un grid de fondo sutil.
 - "Quién responde": **eliminado WAT** (no es metodología propia) en todo el sitio, reemplazado por método de entrega propio (diagnóstico, diseño, implementación, medición). Lenguaje de EQUIPO, no de fundador solo.
 
 ## 6. Otros
@@ -106,7 +106,7 @@ Aplicado todo el brief `FEEDBACK-HOME-2026-06-16.md`, en orden de prioridad.
 0 clases sin definición en las 7 páginas · cero comparativos · em-dash solo en title/cite/meta · cero WAT · Recursos fuera del nav · balance OK · enlaces internos resuelven · preview HTTP 200.
 
 ## Pendiente (no bloqueante / humano)
-- Logo oficial de 27 Risk Lab para la sección de alianza (`assets/img/27risklab-logo.svg`).
+- (HECHO) Logo oficial real de 27 Risk Lab insertado en la sección de alianza (assets/logo-27rl.webp).
 - Sistema visual del Hub de JPP (brief #12): no aplicado en esta ventana (requiere el design-system externo); el look premium actual queda serio.
 - Validar los nombres de producto (Núcleo / Continuidad / Cartera) con JMP.
 - Rasterizar og-image.svg → PNG; aprobación de despliegue por JMP.

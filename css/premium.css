@@ -247,25 +247,42 @@ a.pilar-card { transition: border-color var(--transition), transform var(--trans
 @media (max-width: 820px) { .alianza-grid { grid-template-columns: 1fr; } }
 .alianza-body .includes-list { margin-top: 20px; }
 .alianza-mark {
+  position: relative;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 8px;
-  min-height: 180px;
-  padding: 32px;
+  gap: 14px;
+  min-height: 220px;
+  padding: 36px;
   border-radius: 16px;
-  background: radial-gradient(ellipse at center, rgba(59,130,246,0.10), rgba(18,26,36,0.5));
+  background: radial-gradient(ellipse at center, rgba(59,130,246,0.10), rgba(18,26,36,0.55));
   border: 1px solid var(--border-accent);
 }
-.alianza-mark-name {
-  font-family: 'Fraunces', Georgia, serif;
-  font-weight: 600;
-  font-size: 2rem;
-  letter-spacing: -0.02em;
-  color: var(--text-primary);
+/* Grid de fondo sutil (eco del particle field), detrás del logo */
+.alianza-grid-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+  background-size: 28px 28px;
+  -webkit-mask-image: radial-gradient(ellipse at center, #000 35%, transparent 78%);
+  mask-image: radial-gradient(ellipse at center, #000 35%, transparent 78%);
+}
+.alianza-logo {
+  position: relative;
+  z-index: 1;
+  width: min(200px, 62%);
+  height: auto;
+  filter: drop-shadow(0 6px 18px rgba(0, 0, 0, 0.35));
 }
 .alianza-mark-tag {
+  position: relative;
+  z-index: 1;
   font-family: var(--f-mono);
   font-size: 0.74rem;
   letter-spacing: 0.14em;
