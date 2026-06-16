@@ -120,3 +120,37 @@ a.pilar-card { transition: border-color var(--transition), transform var(--trans
   outline: 2px solid var(--accent-light);
   outline-offset: 3px;
 }
+
+/* ============================================================
+   FIX DE CONTRASTE — componentes nuevos dentro de section-light
+   (2026-06-16). Los overrides de section-light en styles.css no
+   cubrían .stat, .includes-list ni .cred-*; quedaban ilegibles.
+   premium.css carga al final, así que estas reglas ganan por orden.
+   ============================================================ */
+
+/* La prueba (#prueba): cifra y textos sobre fondo claro */
+.section-light .stat-label { color: var(--text-on-light); }
+.section-light .stat-source { color: var(--text-on-light-muted); }
+.section-light .stat-num { color: var(--accent-on-light); }
+
+/* Lista de entregables / "cómo trabajamos" sobre fondo claro */
+.section-light .includes-list li { color: var(--text-on-light); }
+.section-light .includes-list li::before {
+  background: rgba(29, 78, 216, 0.10);
+  border-color: var(--accent-on-light);
+}
+.section-light .includes-list li::after { color: var(--accent-on-light); }
+
+/* Quién responde (#quien-responde): card del fundador como superficie clara */
+.section-light .cred-founder {
+  background: var(--card-on-light);
+  border-color: var(--border-on-light);
+}
+.section-light .cred-founder { border-left-color: var(--accent-on-light); }
+.section-light .cred-founder-role { color: var(--accent-on-light); }
+.section-light .cred-photo { border-color: var(--border-on-light-strong); }
+.section-light .cred-trust-block {
+  background: var(--card-on-light);
+  border-color: var(--border-on-light);
+}
+.section-light .cred-trust-label { color: var(--text-on-light-muted); }
