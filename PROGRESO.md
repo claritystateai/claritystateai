@@ -69,10 +69,15 @@ Bitácora viva de la sesión nocturna. Cada bloque se cierra con un commit local
   - 119/119 clases CSS usadas tienen definición.
   - Enlaces internos íntegros; compliance limpio.
 
+## ✅ Pulido seguro (sesión noche 3)
+- [x] **Limpieza de assets:** borrados 8 JPG/JPEG legacy sin usar (about-team, about-work, foto para landing, Foto de Juan Plazas, Foto de Perfil, Sin título, favicon.jpg, profile-photo.jpg). Sitio servible: 13 MB → 7.8 MB. Conservados los usados (logo.svg, Foto Perfil Juan Plazas_mascerca.jpg) y los SVG vectoriales de marca.
+- [x] **URLs limpias en netlify.toml:** rewrites 200 para /operacion · /riesgo · /cliente · /nosotros · /contacto · /recursos (sirven el .html con la barra limpia). Los enlaces internos siguen con .html (sin hop extra). SIN desplegar.
+- [x] **QA final de copy (todas las páginas + ebooks):** cero comparativas "no es X sino Y" en todo el sitio; em-dash solo en `<title>`/`<cite>`/comentarios (convención de marca); cero vocabulario-humo. Corregidos 3 encabezados y 1 comparativa en ebooks.
+- [x] **og:image del anonimizado** corregido (apuntaba a un PNG inexistente) → ahora `assets/og-image.svg`.
+
 ## Pendientes opcionales (no bloqueante)
-- URLs limpias: hoy los enlaces usan `.html` (funciona local y en Netlify). Para `/operacion` sin extensión, agregar redirects en `netlify.toml`.
 - Resend: el formulario de contacto está cableado como Netlify Forms (sin backend). Resend requeriría una función serverless.
-- `assets/img/` tiene JPGs legacy SIN usar (about-team, about-work, foto para landing, Foto de Juan Plazas, etc., ~5 MB). Solo se usa `Foto Perfil Juan Plazas_mascerca.jpg`. Se pueden borrar para aligerar el deploy (no afecta el render).
+- Canónico de URLs: si se quiere forzar /operacion.html → /operacion (301), agregar redirects inversos en netlify.toml (hoy ambos funcionan).
 
 ## Decisiones de revisión humana sugeridas (cuando JMP retome)
 - Revisar el copy de las 3 páginas de producto y validar tono/cifras.

@@ -13,3 +13,39 @@
   from = "/home"
   to = "/"
   status = 301
+
+# URLs limpias (sin .html). Rewrite 200: la barra del navegador queda limpia
+# (/operacion) y se sirve el archivo .html. Los enlaces internos del sitio usan
+# .html y siguen sirviéndose directo, sin salto extra de redirect.
+# Nota: no se fuerza canónico .html -> clean para evitar un hop en cada
+# navegación interna; si se quiere canónico, agregar redirects 301 inversos.
+
+[[redirects]]
+  from = "/operacion"
+  to = "/operacion.html"
+  status = 200
+
+[[redirects]]
+  from = "/riesgo"
+  to = "/riesgo.html"
+  status = 200
+
+[[redirects]]
+  from = "/cliente"
+  to = "/cliente.html"
+  status = 200
+
+[[redirects]]
+  from = "/nosotros"
+  to = "/nosotros.html"
+  status = 200
+
+[[redirects]]
+  from = "/contacto"
+  to = "/contacto.html"
+  status = 200
+
+[[redirects]]
+  from = "/recursos"
+  to = "/recursos.html"
+  status = 200
