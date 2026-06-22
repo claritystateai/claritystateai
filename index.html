@@ -22,14 +22,14 @@
     gtag('config', 'G-PSBH885840');
   </script>
 
-  <title>Clarity State AI — El cerebro de tu empresa, con una memoria viva</title>
+  <title>Clarity State AI — Una memoria viva para tu empresa</title>
   <meta name="description" content="En la era de la IA gana la empresa que decide más rápido. Clarity instala una memoria viva que conecta el conocimiento del negocio con quien dirige. La primera capa operando en 90 días." />
 
   <!-- Favicon (SVG inline como data URI) -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%230a0a0f'/><circle cx='16' cy='13' r='5' fill='none' stroke='%233b82f6' stroke-width='2'/><rect x='14' y='16' width='4' height='7' rx='2' fill='%233b82f6'/><circle cx='16' cy='19' r='1.5' fill='%230a0a0f'/></svg>" />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Clarity State AI — El cerebro de tu empresa, con una memoria viva" />
+  <meta property="og:title" content="Clarity State AI — Una memoria viva para tu empresa" />
   <meta property="og:description" content="En la era de la IA gana la empresa que decide más rápido. Una memoria viva que conecta el conocimiento del negocio con quien dirige. La primera capa operando en 90 días." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://claritystateai.com" />
@@ -37,14 +37,16 @@
   <meta property="og:image" content="https://claritystateai.com/assets/og-image.png" />
   <meta name="twitter:card" content="summary_large_image" />
 
-  <!-- Google Fonts: Inter (sans body) + Fraunces (serif display) + IBM Plex Mono (datos) -->
+  <!-- Google Fonts: Inter (sans body) + Spectral (serif display) + IBM Plex Mono (datos) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Spectral:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="css/styles.css" />
   <link rel="stylesheet" href="css/multipagina.css" />
   <link rel="stylesheet" href="css/premium.css" />
+  <link rel="stylesheet" href="css/hero-overlay.css" />
+  <link rel="stylesheet" href="css/frente-mockups.css" />
 </head>
 <body>
 
@@ -58,9 +60,9 @@
         <div class="navbar-item navbar-item--dropdown">
           <a href="#tres-frentes" class="navbar-link">Servicios</a>
           <div class="navbar-dropdown">
-            <a href="operacion.html">Núcleo <small>La operación</small></a>
-            <a href="riesgo.html">Continuidad <small>El riesgo, con 27 Risk Lab</small></a>
-            <a href="cliente.html">Cartera <small>La gestión comercial</small></a>
+            <a href="operacion.html">Núcleo operativo <small>La operación</small></a>
+            <a href="riesgo.html">Resiliencia corporativa <small>El riesgo, con 27 Risk Lab</small></a>
+            <a href="cliente.html">Motor comercial <small>La gestión comercial</small></a>
           </div>
         </div>
         <a href="nosotros.html" class="navbar-link">Nosotros</a>
@@ -76,20 +78,22 @@
   </nav>
 
   <!-- ============ HERO ============ -->
-  <section class="hero" id="inicio">
-    <div class="hero-spotlight" aria-hidden="true"></div>
-    <div class="hero-canvas-wrapper" aria-hidden="true">
-      <canvas id="hero-particles"></canvas>
-    </div>
-    <div class="hero-text-shade" aria-hidden="true"></div>
+  <section class="hero hero--video" id="inicio">
+    <video id="hero-vid" class="hero-video" autoplay loop muted playsinline poster="assets/hero/hero-poster.jpg" aria-hidden="true">
+      <source src="assets/hero/hero-roughcut.mp4" type="video/mp4" />
+    </video>
+    <div class="hero-shade-grad" aria-hidden="true"></div>
+    <div class="hero-shade-vig" aria-hidden="true"></div>
+    <div class="hero-shade-top" aria-hidden="true"></div>
+    <canvas id="hero-net" aria-hidden="true"></canvas>
+    <div id="hero-card" aria-hidden="true"></div>
     <div class="container">
       <div class="hero-content">
         <div class="hero-text">
           <span class="eyebrow">Clarity State AI</span>
-          <h1 class="hero-title">El cerebro de tu empresa, con una memoria viva.</h1>
+          <h1 class="hero-title">Convertimos el conocimiento disperso de tu operación en una memoria viva.</h1>
           <p class="hero-subtitle">
-            Tu equipo decide en segundos lo que hoy toma días: una memoria viva que conecta
-            el conocimiento del negocio con quien dirige. La primera capa operando en 90 días.
+            Responde, anticipa, monitorea y recomienda, para que en la era de la IA tu empresa decida más rápido.
           </p>
 
           <div class="hero-buttons">
@@ -101,76 +105,645 @@
     </div>
   </section>
 
-  <!-- ============ PUNTO DE PARTIDA (velocidad + liberar tiempo) ============ -->
-  <section class="section section-narrative" id="punto-de-partida">
+  <!-- ============ CONFÍAN EN NOSOTROS (logos, estilo "Trusted by") ============ -->
+  <!--
+    PENDIENTE ANTES DE PUBLICAR: (1) OK por escrito de los 3 (MCW, Flores de la Plazoleta,
+    27 Risk Lab — sobre todo JPP) y (2) los logos reales de Plazoleta y MCW.
+    Hasta entonces, placeholders con borde punteado (NO inventar logos).
+  -->
+  <section class="section-trust" id="confian">
     <div class="container">
-      <p class="eyebrow">Punto de partida</p>
-      <h2 class="section-headline">En la era de la IA, gana la empresa que decide más rápido.</h2>
+      <p class="trust-eyebrow">Confían en nosotros · empresas reales operando con Clarity hoy</p>
+      <div class="trust-logos">
+        <div class="trust-logo trust-logo--27rl"><img src="assets/logo-27rl.webp" alt="27 Risk Lab" /></div>
+        <div class="trust-logo"><img src="assets/img/logo-plazoleta.webp" alt="Flores de la Plazoleta" /></div>
+        <div class="trust-logo"><img src="assets/img/logo-mcw.png" alt="Medical Care Well" /></div>
+      </div>
+    </div>
+  </section>
 
-      <div class="narrative-body">
-        <p>
-          El 82% de las grandes empresas en Colombia va a aumentar su presupuesto de IA.
-          Solo el 6% en Latinoamérica reporta un impacto real. La ventaja está en conectar
-          el conocimiento del negocio con quien decide, para que cada decisión tome minutos.
-        </p>
-        <p>
-          Hoy ese conocimiento vive en la cabeza del equipo y se va cuando alguien rota. El equipo pierde horas buscando entre correos y carpetas. Una memoria viva libera ese tiempo: tu gente lo dedica a analizar y a decidir.
-        </p>
+  <!-- ============ PUNTO DE PARTIDA (velocidad + liberar tiempo) ============ -->
+  <section class="section section-light section-light--white" id="punto-de-partida">
+    <div class="container">
+      <div class="partida-grid">
+        <div class="partida-lead">
+          <p class="eyebrow">Punto de partida</p>
+          <h2 class="section-headline">El conocimiento de tu empresa, con inteligencia artificial al servicio de cada decisión.</h2>
+        </div>
+
+        <ul class="partida-bullets">
+          <li>
+            <span class="bullet-label">Velocidad</span>
+            <h3 class="bullet-title">El análisis que tomaba de 15 a 20 días, en minutos</h3>
+            <p class="bullet-desc">Tu gente lo pide y la memoria lo entrega al instante, con su fuente.</p>
+          </li>
+          <li>
+            <span class="bullet-label">Eficiencia</span>
+            <h3 class="bullet-title">Más resultado con el mismo equipo</h3>
+            <p class="bullet-desc">Todo el conocimiento de la empresa, trabajando unido para cada decisión. Tu gente rinde más sin crecer en número.</p>
+          </li>
+          <li>
+            <span class="bullet-label">Tiempo</span>
+            <h3 class="bullet-title">El tiempo de tu empresa, de vuelta a lo que importa</h3>
+            <p class="bullet-desc">Las horas que hoy se van buscando y repitiendo, recuperadas: semanas de trabajo al año por cada persona clave.</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CÓMO FUNCIONA (el motor en 3 pasos) ============ -->
+  <section class="section section-light como-funciona" id="como-funciona">
+    <div class="container">
+      <p class="eyebrow">Cómo funciona</p>
+      <h2 class="section-headline">Capturamos lo que tu empresa ya sabe, lo volvemos memoria y la ponemos a decidir.</h2>
+
+      <div class="pasos-grid">
+        <div class="paso">
+          <span class="paso-label">01 · Capturar</span>
+          <h3 class="paso-title">Reunimos lo disperso</h3>
+          <p class="paso-desc">Correos, Excel, ERP, actas y la experiencia de tu gente, en un solo lugar.</p>
+        </div>
+        <div class="paso">
+          <span class="paso-label">02 · Estructurar</span>
+          <h3 class="paso-title">Lo volvemos una memoria que responde</h3>
+          <p class="paso-desc">Consultable en lenguaje natural, en segundos y siempre con su fuente.</p>
+        </div>
+        <div class="paso">
+          <span class="paso-label">03 · Activar</span>
+          <h3 class="paso-title">Anticipa, monitorea y recomienda</h3>
+          <p class="paso-desc">Sobre tus tres frentes: operación, riesgo y cliente.</p>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- ============ LOS TRES FRENTES (el marco) ============ -->
-  <section class="section section-light" id="tres-frentes">
+  <section class="section section-light section-light--white frentes" id="tres-frentes">
     <div class="container">
-      <p class="eyebrow">El marco</p>
-      <h2 class="section-headline">Un gerente gestiona tres frentes. Clarity instala memoria viva en los tres.</h2>
+      <p class="eyebrow">Los tres frentes</p>
+      <h2 class="section-headline">Toda empresa opera sobre tres frentes. Clarity instala memoria viva en los tres.</h2>
 
-      <div class="pilares-grid pilares-grid--3">
-        <a class="pilar-card" href="operacion.html">
-          <span class="prueba-tag">Operación</span>
-          <h3 class="pilar-title">Núcleo.</h3>
-          <p class="pilar-desc">El conocimiento de tu operación, consultable en segundos. Tu equipo decide más rápido y con mejor contexto. Ver más →</p>
-        </a>
-        <a class="pilar-card" href="riesgo.html">
-          <span class="prueba-tag">Riesgo · alianza 27 Risk Lab</span>
-          <h3 class="pilar-title">Continuidad.</h3>
-          <p class="pilar-desc">Tu empresa sigue operando el día que algo se sale de control. Comité y plan de crisis, en alianza con 27 Risk Lab. Ver más →</p>
-        </a>
-        <a class="pilar-card" href="cliente.html">
-          <span class="prueba-tag">Gestión comercial</span>
-          <h3 class="pilar-title">Cartera.</h3>
-          <p class="pilar-desc">El sistema que recuerda a cada cliente: propuestas, seguimiento y respuestas en segundos. Ver más →</p>
-        </a>
+      <div class="frentes-tabs" role="tablist" aria-label="Los tres frentes">
+        <button class="frente-tab is-active" data-frente="operacion" role="tab" aria-selected="true">Núcleo operativo</button>
+        <button class="frente-tab" data-frente="riesgo" role="tab" aria-selected="false">Resiliencia corporativa</button>
+        <button class="frente-tab" data-frente="cliente" role="tab" aria-selected="false">Motor comercial</button>
       </div>
+
+      <div class="frentes-panels">
+        <div class="frente-panel is-active" data-frente="operacion" role="tabpanel">
+          <div class="frente-info">
+            <span class="frente-tag">El día a día de tu operación</span>
+            <h3 class="frente-title">Responde en segundos lo que hoy toma días</h3>
+            <ul class="frente-bullets">
+              <li>El conocimiento de tu operación, consultable en lenguaje natural.</li>
+              <li>Cada respuesta, con su fuente.</li>
+              <li>El saber queda en la empresa, aunque la gente rote.</li>
+            </ul>
+            <a class="frente-link" href="operacion.html">Ver Núcleo operativo →</a>
+          </div>
+          <div class="frente-visual" aria-hidden="true">
+            <div class="fm-carousel">
+              <div class="fm-slide is-active">
+                <div class="fm-portal">
+                  <div class="fm-portal-bar">
+                    <div class="fm-portal-brand">
+                      <span class="fm-portal-acc"></span>
+                      <span class="fm-portal-brand-label">Memoria viva</span>
+                    </div>
+                    <span class="fm-portal-module">Consola de conocimiento</span>
+                  </div>
+                  <div class="fm-portal-body">
+                    <div class="fm-console">
+                      <div class="fm-console-q">
+                        <span class="fm-console-q-mark">?</span>
+                        <p class="fm-console-q-text">¿Por qué subió el costo de producción en marzo?</p>
+                      </div>
+                      <div class="fm-console-a">
+                        <span class="fm-console-a-mark">C</span>
+                        <p class="fm-console-a-text">Subió <b>8%</b> por el alza del empaque (proveedor Cartón&nbsp;S.A.).</p>
+                      </div>
+                      <div class="fm-evidence">
+                        <div class="fm-evidence-head">
+                          <span class="fm-evidence-doc">
+                            <svg width="11" height="13" viewBox="0 0 11 13" fill="none" aria-hidden="true"><path d="M1 1.5A.5.5 0 0 1 1.5 1H6l4 4v6.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5V1.5Z" stroke="#4a4a55" stroke-width="1" fill="rgba(10,10,15,0.03)"/><path d="M6 1v4h4" stroke="#4a4a55" stroke-width="1"/></svg>
+                            Fuente · Informe de costos, marzo
+                          </span>
+                          <span class="fm-chip fm-chip--blue"><span class="fm-chip-dot"></span>Citado</span>
+                        </div>
+                        <div class="fm-evidence-body">
+                          <table class="fm-evtable">
+                            <thead>
+                              <tr><th>Componente</th><th>Var.</th></tr>
+                            </thead>
+                            <tbody>
+                              <tr><td>Materia prima</td><td class="fm-evnum">+1%</td></tr>
+                              <tr class="is-cited"><td>Empaque (Cartón&nbsp;S.A.)</td><td class="fm-evnum fm-evdelta">+8%</td></tr>
+                              <tr><td>Mano de obra</td><td class="fm-evnum">+2%</td></tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="fm-slide">
+                <div class="fm-portal">
+                  <div class="fm-portal-bar">
+                    <div class="fm-portal-brand">
+                      <span class="fm-portal-acc"></span>
+                      <span class="fm-portal-brand-label">Memoria viva</span>
+                    </div>
+                    <span class="fm-portal-module">Consola de conocimiento</span>
+                  </div>
+                  <div class="fm-portal-body">
+                    <div class="fm-console">
+                      <div class="fm-console-q">
+                        <span class="fm-console-q-mark">?</span>
+                        <p class="fm-console-q-text">¿Cuál es el procedimiento para un despacho urgente?</p>
+                      </div>
+                      <div class="fm-console-a">
+                        <span class="fm-console-a-mark">C</span>
+                        <p class="fm-console-a-text"><b>3 pasos:</b> validar inventario, aprobar con planta y generar guía.</p>
+                      </div>
+                      <div class="fm-evidence">
+                        <div class="fm-evidence-head">
+                          <span class="fm-evidence-doc">
+                            <svg width="11" height="13" viewBox="0 0 11 13" fill="none" aria-hidden="true"><path d="M1 1.5A.5.5 0 0 1 1.5 1H6l4 4v6.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5V1.5Z" stroke="#4a4a55" stroke-width="1" fill="rgba(10,10,15,0.03)"/><path d="M6 1v4h4" stroke="#4a4a55" stroke-width="1"/></svg>
+                            Fuente · Manual de operaciones, v4
+                          </span>
+                          <span class="fm-chip fm-chip--blue"><span class="fm-chip-dot"></span>Citado</span>
+                        </div>
+                        <div class="fm-evidence-body">
+                          <ol class="fm-evsteps">
+                            <li>Validar inventario disponible en bodega.</li>
+                            <li>Aprobar la salida con jefe de planta.</li>
+                            <li>Generar la guía de despacho en el sistema.</li>
+                          </ol>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="fm-slide">
+                <div class="fm-portal">
+                  <div class="fm-portal-bar">
+                    <div class="fm-portal-brand">
+                      <span class="fm-portal-acc"></span>
+                      <span class="fm-portal-brand-label">Memoria viva</span>
+                    </div>
+                    <span class="fm-portal-module">Consola de conocimiento</span>
+                  </div>
+                  <div class="fm-portal-body">
+                    <div class="fm-console">
+                      <div class="fm-console-q">
+                        <span class="fm-console-q-mark">?</span>
+                        <p class="fm-console-q-text">¿Qué acordamos con Cartón&nbsp;S.A. en 2023?</p>
+                      </div>
+                      <div class="fm-console-a">
+                        <span class="fm-console-a-mark">C</span>
+                        <p class="fm-console-a-text">Descuento del <b>12%</b> por volumen en pedidos sobre 5.000 unidades.</p>
+                      </div>
+                      <div class="fm-evidence">
+                        <div class="fm-evidence-head">
+                          <span class="fm-evidence-doc">
+                            <svg width="11" height="13" viewBox="0 0 11 13" fill="none" aria-hidden="true"><path d="M1 1.5A.5.5 0 0 1 1.5 1H6l4 4v6.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5V1.5Z" stroke="#4a4a55" stroke-width="1" fill="rgba(10,10,15,0.03)"/><path d="M6 1v4h4" stroke="#4a4a55" stroke-width="1"/></svg>
+                            Fuente · Acta de negociación, oct 2023
+                          </span>
+                          <span class="fm-chip fm-chip--blue"><span class="fm-chip-dot"></span>Citado</span>
+                        </div>
+                        <div class="fm-evidence-body">
+                          <p class="fm-evclause">
+                            <span class="fm-evclause-no">Cláusula 4 · Condiciones comerciales</span>
+                            "El proveedor otorgará un <mark>descuento del 12% por volumen</mark> sobre pedidos que superen las <mark>5.000 unidades</mark> por orden de compra."
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="fm-dots">
+                <button type="button" class="fm-dot-btn is-active" aria-label="Caso 1"></button>
+                <button type="button" class="fm-dot-btn" aria-label="Caso 2"></button>
+                <button type="button" class="fm-dot-btn" aria-label="Caso 3"></button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="frente-panel" data-frente="riesgo" role="tabpanel">
+          <div class="frente-info">
+            <span class="frente-tag">Para tu continuidad · 27 Risk Lab</span>
+            <h3 class="frente-title">Sigue operando el día que algo se sale de control</h3>
+            <ul class="frente-bullets">
+              <li>Alertas tempranas sobre desviaciones en costos, inventario y cumplimiento.</li>
+              <li>Protocolo de respuesta y escalada, listos antes del incidente.</li>
+              <li>Respaldado por la experiencia de 27 Risk Lab.</li>
+            </ul>
+            <a class="frente-link" href="riesgo.html">Ver Resiliencia corporativa →</a>
+          </div>
+          <div class="frente-visual" aria-hidden="true">
+            <div class="fm-carousel">
+              <div class="fm-slide is-active">
+                <div class="fm-portal">
+                  <div class="fm-portal-bar">
+                    <div class="fm-portal-brand">
+                      <span class="fm-portal-acc fm-portal-acc--amber"></span>
+                      <span class="fm-portal-brand-label">Memoria viva</span>
+                    </div>
+                    <span class="fm-portal-module">Tablero de monitoreo</span>
+                  </div>
+                  <div class="fm-portal-body">
+                    <div class="fm-monitor">
+                      <div class="fm-tiles">
+                        <div class="fm-tile is-alert">
+                          <div class="fm-tile-head"><span class="fm-tile-dot fm-tile-dot--red"></span><span class="fm-tile-label">Operación</span></div>
+                          <span class="fm-tile-value fm-tile-value--red">Crítico</span>
+                        </div>
+                        <div class="fm-tile">
+                          <div class="fm-tile-head"><span class="fm-tile-dot"></span><span class="fm-tile-label">Cumplimiento</span></div>
+                          <span class="fm-tile-value">OK</span>
+                        </div>
+                        <div class="fm-tile">
+                          <div class="fm-tile-head"><span class="fm-tile-dot"></span><span class="fm-tile-label">Continuidad</span></div>
+                          <span class="fm-tile-value">OK</span>
+                        </div>
+                      </div>
+                      <div class="fm-alert2">
+                        <div class="fm-alert2-head">
+                          <span class="fm-alert2-title"><span class="fm-tile-dot fm-tile-dot--red"></span>Inventario crítico</span>
+                          <span class="fm-alert2-sev">Severidad alta</span>
+                        </div>
+                        <div class="fm-alert2-body">
+                          <div class="fm-alert2-trend">
+                            <svg class="fm-trend" viewBox="0 0 220 46" preserveAspectRatio="none" role="presentation">
+                              <defs>
+                                <linearGradient id="fmTrendRed1" x1="0" y1="0" x2="0" y2="1">
+                                  <stop offset="0%" stop-color="rgba(185,28,28,0.20)"/>
+                                  <stop offset="100%" stop-color="rgba(185,28,28,0)"/>
+                                </linearGradient>
+                              </defs>
+                              <path d="M0,12 L31,14 L62,11 L93,18 L124,22 L155,28 L186,36 L220,42 L220,46 L0,46 Z" fill="url(#fmTrendRed1)"/>
+                              <path d="M0,12 L31,14 L62,11 L93,18 L124,22 L155,28 L186,36 L220,42" fill="none" stroke="#b91c1c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                              <circle cx="220" cy="42" r="3.5" fill="#b91c1c"/>
+                            </svg>
+                          </div>
+                          <div class="fm-alert2-metric">
+                            <span class="fm-alert2-metric-value">−18%</span>
+                            <span class="fm-alert2-metric-label">vs. objetivo</span>
+                          </div>
+                        </div>
+                        <div class="fm-alert2-foot">
+                          <span class="fm-alert2-proto">Reposición prioritaria notificada a planta.</span>
+                          <span class="fm-chip fm-chip--amber"><span class="fm-chip-dot"></span>Protocolo activado</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="fm-slide">
+                <div class="fm-portal">
+                  <div class="fm-portal-bar">
+                    <div class="fm-portal-brand">
+                      <span class="fm-portal-acc fm-portal-acc--amber"></span>
+                      <span class="fm-portal-brand-label">Memoria viva</span>
+                    </div>
+                    <span class="fm-portal-module">Tablero de monitoreo</span>
+                  </div>
+                  <div class="fm-portal-body">
+                    <div class="fm-monitor">
+                      <div class="fm-tiles">
+                        <div class="fm-tile">
+                          <div class="fm-tile-head"><span class="fm-tile-dot"></span><span class="fm-tile-label">Operación</span></div>
+                          <span class="fm-tile-value">OK</span>
+                        </div>
+                        <div class="fm-tile is-warn">
+                          <div class="fm-tile-head"><span class="fm-tile-dot fm-tile-dot--amber"></span><span class="fm-tile-label">Cumplimiento</span></div>
+                          <span class="fm-tile-value fm-tile-value--amber">Atención</span>
+                        </div>
+                        <div class="fm-tile">
+                          <div class="fm-tile-head"><span class="fm-tile-dot"></span><span class="fm-tile-label">Continuidad</span></div>
+                          <span class="fm-tile-value">OK</span>
+                        </div>
+                      </div>
+                      <div class="fm-alert2">
+                        <div class="fm-alert2-head">
+                          <span class="fm-alert2-title"><span class="fm-tile-dot fm-tile-dot--amber"></span>Certificación ISO 9001</span>
+                          <span class="fm-alert2-sev fm-alert2-sev--amber">Severidad media</span>
+                        </div>
+                        <div class="fm-alert2-body">
+                          <div class="fm-alert2-trend">
+                            <span class="fm-alert2-proto" style="display:block;margin-bottom:6px">Vencimiento en</span>
+                            <div class="fm-countbar"><div class="fm-countbar-fill" style="width:12%"></div></div>
+                          </div>
+                          <div class="fm-alert2-metric">
+                            <span class="fm-alert2-metric-value fm-alert2-metric-value--amber">30 días</span>
+                            <span class="fm-alert2-metric-label">para renovar</span>
+                          </div>
+                        </div>
+                        <div class="fm-alert2-foot">
+                          <span class="fm-alert2-proto">Inicio de auditoría de renovación recomendado.</span>
+                          <span class="fm-chip fm-chip--amber"><span class="fm-chip-dot"></span>Acción requerida</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="fm-slide">
+                <div class="fm-portal">
+                  <div class="fm-portal-bar">
+                    <div class="fm-portal-brand">
+                      <span class="fm-portal-acc fm-portal-acc--amber"></span>
+                      <span class="fm-portal-brand-label">Memoria viva</span>
+                    </div>
+                    <span class="fm-portal-module">Tablero de monitoreo</span>
+                  </div>
+                  <div class="fm-portal-body">
+                    <div class="fm-monitor">
+                      <div class="fm-tiles">
+                        <div class="fm-tile">
+                          <div class="fm-tile-head"><span class="fm-tile-dot"></span><span class="fm-tile-label">Operación</span></div>
+                          <span class="fm-tile-value">OK</span>
+                        </div>
+                        <div class="fm-tile">
+                          <div class="fm-tile-head"><span class="fm-tile-dot"></span><span class="fm-tile-label">Continuidad</span></div>
+                          <span class="fm-tile-value">OK</span>
+                        </div>
+                        <div class="fm-tile is-warn">
+                          <div class="fm-tile-head"><span class="fm-tile-dot fm-tile-dot--amber"></span><span class="fm-tile-label">Costos</span></div>
+                          <span class="fm-tile-value fm-tile-value--amber">Atención</span>
+                        </div>
+                      </div>
+                      <div class="fm-alert2">
+                        <div class="fm-alert2-head">
+                          <span class="fm-alert2-title"><span class="fm-tile-dot fm-tile-dot--amber"></span>Costo logístico</span>
+                          <span class="fm-alert2-sev fm-alert2-sev--amber">Severidad media</span>
+                        </div>
+                        <div class="fm-alert2-body">
+                          <div class="fm-alert2-trend">
+                            <svg class="fm-trend" viewBox="0 0 220 46" preserveAspectRatio="none" role="presentation">
+                              <defs>
+                                <linearGradient id="fmTrendAmber3" x1="0" y1="0" x2="0" y2="1">
+                                  <stop offset="0%" stop-color="rgba(217,119,6,0.22)"/>
+                                  <stop offset="100%" stop-color="rgba(217,119,6,0)"/>
+                                </linearGradient>
+                              </defs>
+                              <path d="M0,36 L31,34 L62,30 L93,28 L124,23 L155,18 L186,12 L220,7 L220,46 L0,46 Z" fill="url(#fmTrendAmber3)"/>
+                              <path d="M0,36 L31,34 L62,30 L93,28 L124,23 L155,18 L186,12 L220,7" fill="none" stroke="#d97706" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                              <circle cx="220" cy="7" r="3.5" fill="#d97706"/>
+                            </svg>
+                          </div>
+                          <div class="fm-alert2-metric">
+                            <span class="fm-alert2-metric-value fm-alert2-metric-value--amber">+14%</span>
+                            <span class="fm-alert2-metric-label">vs. mes anterior</span>
+                          </div>
+                        </div>
+                        <div class="fm-alert2-foot">
+                          <span class="fm-alert2-proto">Revisión de tarifas con transportistas sugerida.</span>
+                          <span class="fm-chip fm-chip--amber"><span class="fm-chip-dot"></span>Revisión sugerida</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="fm-dots">
+                <button type="button" class="fm-dot-btn is-active" aria-label="Caso 1"></button>
+                <button type="button" class="fm-dot-btn" aria-label="Caso 2"></button>
+                <button type="button" class="fm-dot-btn" aria-label="Caso 3"></button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="frente-panel" data-frente="cliente" role="tabpanel">
+          <div class="frente-info">
+            <span class="frente-tag">Tu gestión comercial</span>
+            <h3 class="frente-title">Convierte tu historial comercial en decisiones</h3>
+            <ul class="frente-bullets">
+              <li>Anticipa la demanda y el comportamiento de cada cliente.</li>
+              <li>Prioriza pedidos y oportunidades con criterio.</li>
+              <li>Cotizaciones y respuestas en segundos.</li>
+            </ul>
+            <a class="frente-link" href="cliente.html">Ver Motor comercial →</a>
+          </div>
+          <div class="frente-visual" aria-hidden="true">
+            <div class="fm-carousel">
+              <div class="fm-slide is-active">
+                <div class="fm-portal">
+                  <div class="fm-portal-bar">
+                    <div class="fm-portal-brand">
+                      <span class="fm-portal-acc fm-portal-acc--green"></span>
+                      <span class="fm-portal-brand-label">Memoria viva</span>
+                    </div>
+                    <span class="fm-portal-module">Inteligencia comercial</span>
+                  </div>
+                  <div class="fm-portal-body">
+                    <div class="fm-bi">
+                      <div class="fm-bi-head">
+                        <div class="fm-bi-kpi">
+                          <span class="fm-bi-kpi-label">Demanda prevista · próx. semana</span>
+                          <span class="fm-bi-kpi-value fm-bi-kpi-value--green">+12%</span>
+                        </div>
+                        <span class="fm-chip fm-chip--green"><span class="fm-chip-dot"></span>Pronóstico al alza</span>
+                      </div>
+                      <div class="fm-forecast">
+                        <svg class="fm-forecast-chart" viewBox="0 0 240 84" preserveAspectRatio="none" role="presentation">
+                          <defs>
+                            <linearGradient id="fmFcBand1" x1="0" y1="0" x2="0" y2="1">
+                              <stop offset="0%" stop-color="rgba(5,150,105,0.16)"/>
+                              <stop offset="100%" stop-color="rgba(5,150,105,0)"/>
+                            </linearGradient>
+                          </defs>
+                          <path d="M132,30 L168,24 L204,16 L240,6 L240,40 L204,44 L168,50 L132,52 Z" fill="url(#fmFcBand1)"/>
+                          <path d="M0,58 L33,54 L66,60 L99,48 L132,44" fill="none" stroke="#15803d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                          <path d="M132,44 L168,38 L204,30 L240,22" fill="none" stroke="#15803d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="4 4"/>
+                          <circle cx="132" cy="44" r="3" fill="#15803d"/>
+                          <circle cx="240" cy="22" r="3.5" fill="#15803d"/>
+                        </svg>
+                        <div class="fm-forecast-legend">
+                          <span class="fm-leg"><span class="fm-leg-line"></span>Histórico</span>
+                          <span class="fm-leg"><span class="fm-leg-line fm-leg-line--dash"></span>Proyección</span>
+                        </div>
+                      </div>
+                      <div class="fm-automation">
+                        <div class="fm-automation-main">
+                          <span class="fm-automation-icon">
+                            <svg width="13" height="13" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7.5L5.5 11L12 3.5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                          </span>
+                          <span class="fm-automation-txt">
+                            <span class="fm-automation-kicker">Acción de IA</span>
+                            <span class="fm-automation-act">Cotización generada <span>· Cliente A-204</span></span>
+                          </span>
+                        </div>
+                        <span class="fm-automation-state"><span class="fm-chip-dot"></span>Lista</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="fm-slide">
+                <div class="fm-portal">
+                  <div class="fm-portal-bar">
+                    <div class="fm-portal-brand">
+                      <span class="fm-portal-acc fm-portal-acc--green"></span>
+                      <span class="fm-portal-brand-label">Memoria viva</span>
+                    </div>
+                    <span class="fm-portal-module">Inteligencia comercial</span>
+                  </div>
+                  <div class="fm-portal-body">
+                    <div class="fm-bi">
+                      <div class="fm-bi-head">
+                        <div class="fm-bi-kpi">
+                          <span class="fm-bi-kpi-label">Cliente B-118 · riesgo de fuga</span>
+                          <span class="fm-bi-kpi-value fm-bi-kpi-value--amber">Sin compra hace 60 días</span>
+                        </div>
+                        <span class="fm-chip fm-chip--amber"><span class="fm-chip-dot"></span>Riesgo alto</span>
+                      </div>
+                      <div class="fm-breakdown">
+                        <div class="fm-breakdown-row">
+                          <span class="fm-breakdown-label">Probabilidad de fuga estimada</span>
+                          <span class="fm-breakdown-value">78%</span>
+                        </div>
+                        <div class="fm-probbar"><div class="fm-probbar-fill" style="width:78%"></div></div>
+                        <div class="fm-breakdown-row">
+                          <span class="fm-breakdown-label">Frecuencia de compra habitual</span>
+                          <span class="fm-breakdown-label" style="font-family:var(--fm-mono);color:var(--fm-ink);font-weight:600">cada 22 días</span>
+                        </div>
+                      </div>
+                      <div class="fm-automation fm-automation--amber">
+                        <div class="fm-automation-main">
+                          <span class="fm-automation-icon fm-automation-icon--amber">
+                            <svg width="13" height="13" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M7 3.5V7l2.5 1.5" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="7" cy="7" r="5" stroke="#fff" stroke-width="1.4"/></svg>
+                          </span>
+                          <span class="fm-automation-txt">
+                            <span class="fm-automation-kicker">Acción de IA</span>
+                            <span class="fm-automation-act">Reactivación sugerida <span>· Cliente B-118</span></span>
+                          </span>
+                        </div>
+                        <span class="fm-automation-state fm-automation-state--amber"><span class="fm-chip-dot"></span>En cola</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="fm-slide">
+                <div class="fm-portal">
+                  <div class="fm-portal-bar">
+                    <div class="fm-portal-brand">
+                      <span class="fm-portal-acc fm-portal-acc--green"></span>
+                      <span class="fm-portal-brand-label">Memoria viva</span>
+                    </div>
+                    <span class="fm-portal-module">Inteligencia comercial</span>
+                  </div>
+                  <div class="fm-portal-body">
+                    <div class="fm-bi">
+                      <div class="fm-bi-head">
+                        <div class="fm-bi-kpi">
+                          <span class="fm-bi-kpi-label">Venta cruzada · ticket potencial</span>
+                          <span class="fm-bi-kpi-value fm-bi-kpi-value--green">+18%</span>
+                        </div>
+                        <span class="fm-chip fm-chip--green"><span class="fm-chip-dot"></span>Oportunidad</span>
+                      </div>
+                      <div class="fm-forecast">
+                        <svg class="fm-forecast-chart" viewBox="0 0 240 84" preserveAspectRatio="none" role="presentation">
+                          <defs>
+                            <linearGradient id="fmFcBand3" x1="0" y1="0" x2="0" y2="1">
+                              <stop offset="0%" stop-color="rgba(5,150,105,0.16)"/>
+                              <stop offset="100%" stop-color="rgba(5,150,105,0)"/>
+                            </linearGradient>
+                          </defs>
+                          <g fill="rgba(5,150,105,0.18)">
+                            <rect x="6"   y="50" width="26" height="28" rx="3"/>
+                            <rect x="42"  y="44" width="26" height="34" rx="3"/>
+                            <rect x="78"  y="52" width="26" height="26" rx="3"/>
+                            <rect x="114" y="40" width="26" height="38" rx="3"/>
+                          </g>
+                          <g fill="#15803d">
+                            <rect x="150" y="30" width="26" height="48" rx="3"/>
+                            <rect x="186" y="18" width="26" height="60" rx="3"/>
+                          </g>
+                        </svg>
+                        <div class="fm-forecast-legend">
+                          <span class="fm-leg"><span class="fm-leg-line" style="border-color:rgba(5,150,105,0.4)"></span>Línea base</span>
+                          <span class="fm-leg"><span class="fm-leg-line"></span>Con venta cruzada</span>
+                        </div>
+                      </div>
+                      <div class="fm-automation">
+                        <div class="fm-automation-main">
+                          <span class="fm-automation-icon">
+                            <svg width="13" height="13" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 2h5l3 3v7H3V2Z" stroke="#fff" stroke-width="1.3" fill="none" stroke-linejoin="round"/><path d="M5 7h4M5 9.5h4" stroke="#fff" stroke-width="1.2" stroke-linecap="round"/></svg>
+                          </span>
+                          <span class="fm-automation-txt">
+                            <span class="fm-automation-kicker">Acción de IA</span>
+                            <span class="fm-automation-act">Propuesta generada <span>· Cliente C-330</span></span>
+                          </span>
+                        </div>
+                        <span class="fm-automation-state"><span class="fm-chip-dot"></span>Lista</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="fm-dots">
+                <button type="button" class="fm-dot-btn is-active" aria-label="Caso 1"></button>
+                <button type="button" class="fm-dot-btn" aria-label="Caso 2"></button>
+                <button type="button" class="fm-dot-btn" aria-label="Caso 3"></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <script>
+      (function(){
+        var tabs = document.querySelectorAll('#tres-frentes .frente-tab');
+        var panels = document.querySelectorAll('#tres-frentes .frente-panel');
+        tabs.forEach(function(t){
+          t.addEventListener('click', function(){
+            var f = t.getAttribute('data-frente');
+            tabs.forEach(function(x){ var on = x===t; x.classList.toggle('is-active', on); x.setAttribute('aria-selected', on); });
+            panels.forEach(function(p){ p.classList.toggle('is-active', p.getAttribute('data-frente')===f); });
+          });
+        });
+      })();
+      </script>
     </div>
   </section>
 
   <!-- ============ EL CEREBRO EN ACCIÓN (carrusel de ejecuciones) ============ -->
   <section class="section" id="ejecuciones">
     <div class="container">
-      <p class="eyebrow">El cerebro en acción</p>
-      <h2 class="section-headline">Tres momentos donde el cerebro acelera la decisión.</h2>
-      <p class="section-lead" style="max-width:680px">El cerebro guarda el conocimiento del negocio y habilita a quien opera para resolver más rápido y con mejor criterio.</p>
+      <p class="eyebrow">La memoria viva en acción</p>
+      <h2 class="section-headline">Tres momentos donde la memoria viva acelera la decisión.</h2>
+      <p class="section-lead" style="max-width:680px">Reúne el conocimiento del negocio y habilita a quien opera para resolver más rápido y con mejor criterio.</p>
 
-      <div class="exec-carousel" aria-label="Escenarios de ejecución">
-        <article class="exec-card">
-          <span class="exec-area">Operación</span>
-          <p class="exec-sit">"Entra un pedido urgente y no sé si puedo cumplirlo sin frenar el resto."</p>
-          <p class="exec-act">El cerebro cruza inventario, capacidad y compromisos en segundos y propone la ruta que sí cumple.</p>
-          <span class="exec-out">Decisión en minutos, con respaldo.</span>
+      <div class="momentos-grid">
+        <article class="momento">
+          <span class="momento-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5l8.5 4.7-8.5 4.7-8.5-4.7L12 2.5z"/><path d="M3.5 12l8.5 4.7 8.5-4.7"/><path d="M3.5 16.8l8.5 4.7 8.5-4.7"/></svg></span>
+          <span class="momento-area">Núcleo operativo</span>
+          <p class="momento-sit">"Entra un pedido urgente y no sé si puedo cumplirlo sin frenar el resto."</p>
+          <p class="momento-act">La memoria viva cruza inventario, capacidad y compromisos en segundos y propone la ruta que sí cumple.</p>
+          <span class="momento-out">Decisión en minutos, con respaldo.</span>
         </article>
-        <article class="exec-card">
-          <span class="exec-area">Riesgo</span>
-          <p class="exec-sit">"Un cambio regulatorio o un evento del entorno amenaza la operación."</p>
-          <p class="exec-act">El cerebro monitorea el entorno, avisa qué parte del negocio se ve afectada y activa el plan.</p>
-          <span class="exec-out">Te anticipas al problema.</span>
+        <article class="momento">
+          <span class="momento-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5l7.5 3.2v5.1c0 4.6-3.2 7.7-7.5 9.2-4.3-1.5-7.5-4.6-7.5-9.2V5.7L12 2.5z"/><path d="M9 12l2 2 4-4"/></svg></span>
+          <span class="momento-area">Resiliencia corporativa</span>
+          <p class="momento-sit">"Un evento del entorno amenaza la operación."</p>
+          <p class="momento-act">La memoria viva avisa qué parte del negocio se ve afectada y activa el protocolo, en alianza con 27 Risk Lab.</p>
+          <span class="momento-out">Te anticipas al problema.</span>
         </article>
-        <article class="exec-card">
-          <span class="exec-area">Gestión comercial</span>
-          <p class="exec-sit">"Salgo de la reunión y necesito una cotización para este cliente ya."</p>
-          <p class="exec-act">El cerebro arma la cotización con el histórico y las condiciones del cliente, lista para enviar.</p>
-          <span class="exec-out">El cliente recibe respuesta el mismo día.</span>
+        <article class="momento">
+          <span class="momento-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M16 7h5v5"/></svg></span>
+          <span class="momento-area">Motor comercial</span>
+          <p class="momento-sit">"Salgo de la reunión y necesito la cotización para este cliente ya."</p>
+          <p class="momento-act">La memoria viva arma la cotización con el histórico y las condiciones del cliente, lista para enviar.</p>
+          <span class="momento-out">El cliente recibe respuesta el mismo día.</span>
         </article>
       </div>
     </div>
@@ -179,20 +752,28 @@
   <!-- ============ LA PRUEBA (cifra honesta, anónima) ============ -->
   <section class="section section-light" id="prueba">
     <div class="container">
-      <p class="eyebrow">La prueba</p>
-      <h2 class="section-headline">Resultados medidos en una operación real.</h2>
+      <p class="eyebrow">Lo que nos diferencia</p>
+      <h2 class="section-headline">Resultados de alto impacto, medidos en una operación real.</h2>
 
       <p class="section-lead" style="max-width:720px">
-        En un exportador agroindustrial B2B de cerca de 40 años, el cerebro clasifica el
-        proceso operativo crítico con alta precisión, validada fuera de muestra. Decisiones
-        que tomaban de 15 a 20 días se resuelven en minutos.
+        En un exportador agroindustrial B2B de cerca de 40 años, la memoria viva clasifica el proceso operativo crítico con alta precisión, validada fuera de muestra.
       </p>
 
-      <div class="stat">
-        <span class="stat-num">90,2%</span>
-        <span class="stat-label">de precisión del núcleo de clasificación del cerebro, en datos que el sistema nunca vio durante el entrenamiento.</span>
-        <span class="stat-source">Validación interna Clarity, muestra fuera de entrenamiento (out-of-sample). La cifra declara su frontera.</span>
+      <div class="impacto-grid">
+        <div class="impacto-tile">
+          <span class="impacto-num">90,2%</span>
+          <span class="impacto-label">de precisión, en datos que el sistema nunca vio durante el entrenamiento (out-of-sample).</span>
+        </div>
+        <div class="impacto-tile">
+          <span class="impacto-num">Minutos</span>
+          <span class="impacto-label">para decisiones que antes tomaban de 15 a 20 días.</span>
+        </div>
+        <div class="impacto-tile">
+          <span class="impacto-num">90 días</span>
+          <span class="impacto-label">para tener la primera capa operando con tu equipo.</span>
+        </div>
       </div>
+      <p class="stat-source">Validación interna Clarity, muestra fuera de entrenamiento. La cifra declara su frontera.</p>
 
       <blockquote class="pull-quote pull-quote--testimonio">
         "Lo que más tranquilidad me da: si mañana la gente que sostiene esto no está,
@@ -202,43 +783,12 @@
     </div>
   </section>
 
-  <!-- ============ CONFÍAN EN NOSOTROS (anónimo por compliance) ============ -->
-  <section class="section" id="confian">
-    <div class="container">
-      <p class="eyebrow">Confían en nosotros</p>
-      <h2 class="section-headline">Empresas reales, operando con Clarity hoy.</h2>
-
-      <!--
-        VERSIÓN ANONIMIZADA (compliance). Sin nombres ni logos de clientes
-        hasta tener permiso por escrito (Medical Care Well, Flores de la Plazoleta,
-        27 Risk Lab). Al llegar los permisos, reemplazar cada trust-card por la
-        versión nombrada (nombre + logo + foto/cargo real).
-      -->
-      <div class="trust-grid">
-        <article class="trust-card">
-          <span class="trust-tag">Agroexportación B2B</span>
-          <h3>Exportador con ~40 años de oficio</h3>
-          <p>Montando el cerebro de su operación: una memoria viva que deja consultable lo que hoy vive en la cabeza del equipo. Decisiones que tomaban de 15 a 20 días ahora se resuelven en minutos.</p>
-        </article>
-        <article class="trust-card">
-          <span class="trust-tag">Distribución médica</span>
-          <h3>Distribuidor con ~18 años de operación</h3>
-          <p>Cerebro de productividad y de decisiones comerciales sobre una operación de logística y facturación complejas. El equipo comercial consulta en segundos lo que antes exigía abrir varios sistemas.</p>
-        </article>
-        <article class="trust-card">
-          <span class="trust-tag">Gestión de crisis</span>
-          <h3>Alianza con un laboratorio de riesgo corporativo</h3>
-          <p>Memoria del riesgo para que la empresa siga operando el día que algo se sale de control. Comité y plan de crisis listos antes del incidente.</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ QUIÉN RESPONDE (equipo + fundador) ============ -->
+<!-- ============ QUIÉN RESPONDE (equipo + fundador) ============ -->
   <section class="section section-light" id="quien-responde">
     <div class="container">
-      <p class="eyebrow">Quién responde</p>
-      <h2 class="section-headline">Detrás de Clarity hay un equipo que ya operó esto.</h2>
+      <p class="eyebrow">Quiénes somos</p>
+      <h2 class="section-headline">El aliado estratégico de CEOs, CFOs y COOs en la transformación de sus operaciones.</h2>
+      <p class="section-lead" style="max-width:720px">Detrás de Clarity hay un equipo que ya operó esto en empresas reales.</p>
 
       <div class="cred-grid">
         <article class="cred-founder">
@@ -271,14 +821,14 @@
   <section class="section" id="alianza">
     <div class="container">
       <p class="eyebrow">Alianza</p>
-      <h2 class="section-headline">Continuidad y crisis, en alianza con 27 Risk Lab.</h2>
+      <h2 class="section-headline">Resiliencia corporativa, en alianza con 27 Risk Lab.</h2>
 
       <div class="alianza-grid">
         <div class="alianza-body">
           <p class="section-lead">
             En el frente de riesgo, Clarity opera junto a 27 Risk Lab, especialistas en
             gestión corporativa de crisis. Sumamos la memoria viva de la operación a su
-            método de continuidad: el cerebro monitorea el entorno, anticipa lo que puede
+            método de continuidad: la memoria viva monitorea el entorno, anticipa lo que puede
             afectar al negocio y sostiene la operación cuando algo se sale de control.
           </p>
           <ul class="includes-list">
@@ -321,15 +871,13 @@
       </div>
 
       <ul class="includes-list">
-        <li>Ingesta del conocimiento crítico de un proceso concreto del negocio.</li>
-        <li>De 10 a 15 consultas ejecutivas listas para usar.</li>
-        <li>Un asistente que responde con la memoria de la empresa.</li>
-        <li>Integración con las herramientas que ya usas.</li>
-        <li>Capacitación al equipo, manual y soporte.</li>
+        <li>El conocimiento crítico de un proceso, en una memoria consultable.</li>
+        <li>Un asistente que responde con la memoria de tu empresa.</li>
+        <li>Capacitación, integración y soporte.</li>
       </ul>
 
       <div class="value-eq">
-        <div class="value-eq-item"><span class="value-eq-k">Qué entrega</span><span class="value-eq-v">La primera capa del cerebro, operando con tu equipo.</span></div>
+        <div class="value-eq-item"><span class="value-eq-k">Qué entrega</span><span class="value-eq-v">La primera capa de la memoria viva, operando con tu equipo.</span></div>
         <div class="value-eq-item"><span class="value-eq-k">En cuánto tiempo</span><span class="value-eq-v">Aproximadamente 90 días.</span></div>
         <div class="value-eq-item"><span class="value-eq-k">Inversión</span><span class="value-eq-v">Desde USD $10.000. ROI medible.</span></div>
       </div>
@@ -345,7 +893,7 @@
       <div class="faq-list">
         <div class="faq-item">
           <p class="faq-question">¿Esto reemplaza a mi gente?</p>
-          <p class="faq-answer">El humano decide. El cerebro le da el contexto para decidir mejor y más rápido. Tu equipo deja de buscar entre correos y carpetas, y dedica su tiempo a analizar.</p>
+          <p class="faq-answer">El humano decide. La memoria viva le da el contexto para decidir mejor y más rápido. Tu equipo deja de buscar entre correos y carpetas, y dedica su tiempo a analizar.</p>
         </div>
         <div class="faq-item">
           <p class="faq-question">¿Qué pasa con la seguridad de mis datos?</p>
@@ -357,7 +905,7 @@
         </div>
         <div class="faq-item">
           <p class="faq-question">¿Cuánto cuesta?</p>
-          <p class="faq-answer">Los engagements arrancan desde USD $10.000, con un alcance acordado y entregables tangibles en cerca de 90 días.</p>
+          <p class="faq-answer">Los proyectos arrancan desde USD $10.000, con un alcance acordado y entregables tangibles en cerca de 90 días.</p>
         </div>
       </div>
     </div>
@@ -437,9 +985,9 @@
           <div class="footer-col">
             <span class="footer-col-title">Servicios</span>
             <ul>
-              <li><a href="operacion.html" class="footer-link">Núcleo · La operación</a></li>
-              <li><a href="riesgo.html" class="footer-link">Continuidad · El riesgo</a></li>
-              <li><a href="cliente.html" class="footer-link">Cartera · La gestión comercial</a></li>
+              <li><a href="operacion.html" class="footer-link">Núcleo operativo · La operación</a></li>
+              <li><a href="riesgo.html" class="footer-link">Resiliencia corporativa · El riesgo</a></li>
+              <li><a href="cliente.html" class="footer-link">Motor comercial · La gestión comercial</a></li>
             </ul>
           </div>
 
@@ -481,5 +1029,7 @@
 
   <script src="js/main.js"></script>
   <script src="js/main-multipagina.js"></script>
+  <script src="js/hero-overlay.js"></script>
+  <script src="js/frente-carousel.js"></script>
 </body>
 </html>

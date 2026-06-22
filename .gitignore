@@ -6,3 +6,13 @@
 
 # Capturas de bugs / material de trabajo, no se sirve
 para corregir img/
+
+# Material de trabajo del hero — pesado, NO se sirve
+assets/hero/source/
+assets/hero/work/
+assets/hero/prototipo-overlay.html
+research/
+
+# Notas internas de sesión — no se publican
+HERO-VIDEO-Y-ARTICULACION-ARKHAM-2026-06-21.md
+SESION-2026-06-21-CIERRE.md

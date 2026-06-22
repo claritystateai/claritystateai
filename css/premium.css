@@ -210,7 +210,7 @@ a.pilar-card { transition: border-color var(--transition), transform var(--trans
   color: var(--accent-light);
 }
 .exec-sit {
-  font-family: 'Fraunces', Georgia, serif;
+  font-family: 'Spectral', Georgia, serif;
   font-size: 1.12rem;
   line-height: 1.4;
   color: var(--text-primary);

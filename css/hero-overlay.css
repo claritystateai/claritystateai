@@ -1,0 +1,69 @@
+/* ============================================================
+   Hero con video + overlay "memoria viva"
+   Todo aislado bajo .hero--video para no afectar otros heroes.
+   ============================================================ */
+
+/* Padding simétrico para centrar el texto a media altura (como el preview) */
+.hero--video{ padding-top:88px; padding-bottom:88px; }
+
+/* Texto a la izquierda (como el preview): container a todo el ancho, margen ~6vw */
+.hero--video .container{ max-width:none; width:100%; margin:0; padding-left:max(12vw,64px); padding-right:max(6vw,40px); }
+.hero--video .hero-text{ max-width:680px; }
+
+.hero--video .hero-video{
+  position:absolute; inset:0; width:100%; height:100%;
+  object-fit:cover; z-index:0; filter:saturate(.96);
+}
+
+/* Capas de legibilidad */
+.hero--video .hero-shade-grad{
+  position:absolute; inset:0; z-index:1; pointer-events:none;
+  background:linear-gradient(90deg,
+    rgba(6,6,10,.90) 0%, rgba(6,6,10,.62) 34%,
+    rgba(6,6,10,.18) 66%, rgba(6,6,10,.42) 100%);
+}
+.hero--video .hero-shade-vig{
+  position:absolute; inset:0; z-index:1; pointer-events:none;
+  background:radial-gradient(120% 120% at 50% 45%, transparent 56%, rgba(6,6,10,.5) 100%);
+}
+.hero--video .hero-shade-top{
+  position:absolute; inset:0; z-index:1; pointer-events:none;
+  background:linear-gradient(180deg,
+    rgba(6,6,10,.5) 0%, transparent 22%, transparent 80%, rgba(6,6,10,.6) 100%);
+}
+
+.hero--video #hero-net{ position:absolute; inset:0; width:100%; height:100%; z-index:2; pointer-events:none; }
+
+/* El contenido (texto + botones) por encima de todo */
+.hero--video .hero-content{ z-index:5; }
+
+/* Titular en serif (Spectral), igual que el prototipo aprobado */
+.hero--video .hero-title{
+  font-family:var(--f-serif,'Spectral',Georgia,serif);
+  font-weight:700; letter-spacing:-.02em; line-height:1.06;
+}
+
+/* Tarjeta de "memoria viva" (una activa a la vez) */
+.hero--video #hero-card{
+  position:absolute; z-index:3; pointer-events:none; width:330px;
+  border:1px solid rgba(147,197,253,.34); border-radius:16px;
+  background:rgba(8,12,19,.55);
+  backdrop-filter:blur(13px) saturate(1.15); -webkit-backdrop-filter:blur(13px) saturate(1.15);
+  box-shadow:0 14px 60px rgba(0,0,0,.45), inset 0 1px 0 rgba(255,255,255,.08);
+  padding:20px 22px; opacity:0; transition:opacity .12s linear; transform:translate(-50%,-50%);
+}
+.hero--video #hero-card .lbl{font-family:var(--f-mono,'IBM Plex Mono',monospace);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:#93c5fd;display:flex;align-items:center;gap:9px}
+.hero--video #hero-card .lbl::before{content:"";width:15px;height:15px;border-radius:5px;border:1.5px solid #60a5fa;box-shadow:inset 0 0 0 3px rgba(96,165,250,.28);flex:0 0 auto}
+.hero--video #hero-card .val{font-family:var(--f-serif,'Spectral',serif);font-weight:600;font-size:27px;line-height:1.12;color:#fff;margin-top:13px;letter-spacing:-.012em}
+.hero--video #hero-card .det{font-family:var(--f-mono,'IBM Plex Mono',monospace);font-size:12px;color:#9aa6b8;margin-top:13px;line-height:1.45;padding-top:12px;border-top:1px solid rgba(147,197,253,.16)}
+.hero--video #hero-card svg.spark{display:block;margin-top:14px}
+
+/* Móvil: oculta la tarjeta y la red (pendiente diseño responsive dedicado);
+   el degradado pasa a vertical para legibilidad del texto. */
+@media (max-width:768px){
+  .hero--video #hero-card{ display:none; }
+  .hero--video #hero-net{ display:none; }
+  .hero--video .hero-shade-grad{
+    background:linear-gradient(180deg, rgba(6,6,10,.78) 0%, rgba(6,6,10,.5) 55%, rgba(6,6,10,.7) 100%);
+  }
+}

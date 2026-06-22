@@ -125,7 +125,7 @@ a.pilar-card:hover {
 .page-hero .container { position: relative; z-index: 2; max-width: 880px; }
 .page-hero .eyebrow { margin-bottom: 18px; }
 .page-hero-title {
-  font-family: 'Fraunces', Georgia, serif;
+  font-family: 'Spectral', Georgia, serif;
   font-weight: 500;
   font-size: clamp(2.1rem, 5vw, 3.4rem);
   line-height: 1.08;
@@ -164,7 +164,7 @@ a.pilar-card:hover {
 }
 .stat-num {
   display: block;
-  font-family: 'Fraunces', Georgia, serif;
+  font-family: 'Spectral', Georgia, serif;
   font-weight: 600;
   font-size: clamp(2.6rem, 7vw, 4rem);
   line-height: 1;
@@ -316,7 +316,7 @@ a.pilar-card:hover {
   color: var(--accent-light);
   margin-bottom: 14px;
 }
-.recurso-card h3 { font-family: 'Fraunces', Georgia, serif; font-weight: 500; font-size: 1.25rem; color: var(--text-primary); margin: 0 0 10px; }
+.recurso-card h3 { font-family: 'Spectral', Georgia, serif; font-weight: 500; font-size: 1.25rem; color: var(--text-primary); margin: 0 0 10px; }
 .recurso-card p { font-size: 0.92rem; line-height: 1.55; color: var(--text-muted); margin: 0 0 18px; flex: 1; }
 .recurso-card .recurso-cta { font-size: 0.9rem; font-weight: 600; color: var(--accent-light); }
 
@@ -550,7 +550,7 @@ a.pilar-card:hover {
   border-top: 1px solid var(--border);
 }
 .showcase-stat .showcase-stat-num {
-  font-family: var(--f-serif, 'Fraunces', Georgia, serif);
+  font-family: var(--f-serif, 'Spectral', Georgia, serif);
   font-weight: 600;
   font-size: clamp(2rem, 5vw, 2.8rem);
   line-height: 1;
@@ -598,7 +598,7 @@ a.pilar-card:hover {
   border: 2px solid var(--border-accent);
 }
 .cred-founder-name {
-  font-family: var(--f-serif, 'Fraunces', Georgia, serif);
+  font-family: var(--f-serif, 'Spectral', Georgia, serif);
   font-weight: 600;
   font-size: 1.4rem;
   line-height: 1.15;
