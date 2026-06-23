@@ -4,23 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- Microsoft Clarity (heatmaps + grabaciones de sesión) -->
-  <script type="text/javascript">
-    (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "x0ekhl9ur4");
-  </script>
 
-  <!-- Google tag (gtag.js) — GA4 claritystateai.com -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PSBH885840"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-PSBH885840');
-  </script>
 
   <title>Memoria del riesgo — Clarity State AI</title>
   <meta name="description" content="Un programa para seguir operando el día que algo salga de control: un comité de crisis listo y un plan de gestión simple y accionable, sostenidos por una memoria del riesgo de tu operación. En alianza con 27 Risk Lab." />
@@ -33,11 +17,10 @@
   <meta property="og:description" content="Sigue operando el día que algo salga de control: un comité de crisis listo y un plan de gestión simple y accionable, sostenidos por una memoria del riesgo. En alianza con 27 Risk Lab." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://claritystateai.com/riesgo" />
-  <!-- og-image: fuente editable en assets/og-image.png. PENDIENTE rasterizar a og-image.png (1200x630) antes de desplegar; WhatsApp/LinkedIn/Facebook no renderizan SVG en OG. -->
   <meta property="og:image" content="https://claritystateai.com/assets/og-image.png" />
   <meta name="twitter:card" content="summary_large_image" />
 
-  <!-- Google Fonts: Inter (sans body) + Spectral (serif display) — BRAND-GUIDELINES §3 -->
+  <!-- Google Fonts: Inter (sans body) + Spectral (serif display) + IBM Plex Mono (datos) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Spectral:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
@@ -45,6 +28,9 @@
   <link rel="stylesheet" href="css/styles.css" />
   <link rel="stylesheet" href="css/multipagina.css" />
   <link rel="stylesheet" href="css/premium.css" />
+  <link rel="stylesheet" href="css/producto-demo.css" />
+  <link rel="stylesheet" href="css/risk-monitor.css" />
+  <link rel="stylesheet" href="css/hero-console-anim.css" />
 </head>
 <body>
 
@@ -67,7 +53,9 @@
         <a href="contacto.html" class="navbar-link">Contacto</a>
       </div>
       <div class="navbar-cta">
-        <a href="https://wa.me/573134925711?text=Hola%20Juan%20Manuel%2C%20vi%20la%20web%20de%20Clarity%20State%20y%20me%20gustar%C3%ADa%20agendar%20un%20diagn%C3%B3stico%20de%2030%20minutos." class="btn btn-primary" data-loc="navbar" target="_blank" rel="noopener">Diagnóstico 30 min</a>
+        <span class="navbar-divider" aria-hidden="true"></span>
+        <a href="acceso.html" class="navbar-access" target="_blank" rel="noopener">Ingreso</a>
+        <a href="https://wa.me/573134925711?text=Hola%20Juan%20Manuel%2C%20vi%20la%20web%20de%20Clarity%20State%20y%20me%20gustar%C3%ADa%20agendar%20un%20diagn%C3%B3stico%20de%2030%20minutos." class="btn btn-primary" data-loc="navbar" target="_blank" rel="noopener">Pedir demo</a>
         <button class="nav-toggle" aria-label="Abrir menú" aria-controls="navbar-links" aria-expanded="false">
           <span></span><span></span><span></span>
         </button>
@@ -75,90 +63,272 @@
     </div>
   </nav>
 
-  <!-- ============ HERO ============ -->
-  <section class="page-hero">
+  <!-- ============ HERO (showcase + consola animada) ============ -->
+  <section class="page-hero page-hero--showcase">
     <div class="container">
-      <span class="eyebrow">Resiliencia corporativa · El riesgo</span>
-      <h1 class="page-hero-title">Tu empresa sigue operando el día que algo salga de control.</h1>
-      <p class="page-hero-lede">
-        Un programa para preparar a tu empresa ante la crisis: un comité de crisis listo
-        y un plan de gestión simple y accionable, sostenidos por una memoria del riesgo
-        de tu operación.
-      </p>
-      <div class="hero-buttons">
-        <a href="https://wa.me/573134925711?text=Hola%20Juan%20Manuel%2C%20vi%20la%20web%20de%20Clarity%20State%20y%20me%20gustar%C3%ADa%20agendar%20un%20diagn%C3%B3stico%20de%2030%20minutos." class="btn btn-primary btn-lg" data-loc="hero-riesgo" target="_blank" rel="noopener">Iniciar diagnóstico de 30 minutos</a>
-        <a href="contacto.html" class="btn-text" data-loc="hero-riesgo">Contáctanos</a>
+      <div class="page-hero-head">
+        <span class="eyebrow">Resiliencia corporativa · El riesgo</span>
+        <h1 class="page-hero-title">Sigue operando el día que algo salga de control.</h1>
+        <p class="page-hero-lede">Una memoria del riesgo que responde, vigila el entorno y activa el protocolo. En alianza con 27 Risk Lab.</p>
+      </div>
+
+      <div class="hca" aria-hidden="true">
+        <div class="hca-glow"></div>
+        <div class="hca-grid"></div>
+        <div class="hca-window">
+          <div class="hca-bar">
+            <span class="hca-title">Clarity · Resiliencia corporativa</span>
+            <span class="hca-live"><i></i> En línea</span>
+          </div>
+          <div class="hca-tabs" aria-hidden="true">
+            <button class="hca-tab is-active" data-mode="0">Consulta</button>
+            <button class="hca-tab" data-mode="1">Monitoreo</button>
+            <button class="hca-tab" data-mode="2">Protocolo</button>
+          </div>
+          <div class="hca-body">
+
+            <!-- Modo 0 · Consulta -->
+            <div class="hca-mode is-active" data-mode="0">
+              <div class="hca-ask">
+                <span class="hca-ask-icon">?</span>
+                <span class="hca-ask-text" id="hca-q"></span>
+                <span class="hca-caret" id="hca-caret"></span>
+              </div>
+              <div class="hca-answer">
+                <div class="hca-think" id="hca-think"><i></i><i></i><i></i></div>
+                <div class="hca-resp" id="hca-resp">
+                  <p class="hca-resp-text" id="hca-a"></p>
+                  <div id="hca-viz"></div>
+                  <div class="hca-source" id="hca-source">
+                    <span id="hca-src-label">Fuente</span>
+                    <span class="hca-cited">Citado</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Modo 1 · Monitoreo del entorno -->
+            <div class="hca-mode" data-mode="1">
+              <div class="hca-kpis">
+                <div class="hca-kpi">
+                  <div class="hca-kpi-label">Proveedores con plan B</div>
+                  <div class="hca-kpi-val">8/10</div>
+                  <div class="hca-kpi-trend flat">2 sin respaldo</div>
+                </div>
+                <div class="hca-kpi">
+                  <div class="hca-kpi-label">Vencimientos críticos</div>
+                  <div class="hca-kpi-val">2</div>
+                  <div class="hca-kpi-trend up">&#9650; +1</div>
+                </div>
+                <div class="hca-kpi">
+                  <div class="hca-kpi-label">Simulacros al día</div>
+                  <div class="hca-kpi-val">100%</div>
+                  <div class="hca-kpi-trend good">&#9650; OK</div>
+                </div>
+              </div>
+              <div class="hca-alert">
+                <span class="hca-alert-txt"><span class="hca-alert-ic">&#9888;</span><span><b>Certificación ISO 9001</b> vence en 30 días · iniciar auditoría</span></span>
+                <span class="hca-alert-chip">Revisar</span>
+              </div>
+            </div>
+
+            <!-- Modo 2 · Protocolo que se activa -->
+            <div class="hca-mode" data-mode="2">
+              <div class="hca-task">Protocolo de crisis · <b>Parada de planta</b></div>
+              <div class="hca-flow">
+                <div class="hca-fstep"><span class="hca-fic"></span><span>Comité notificado, roles asignados</span></div>
+                <div class="hca-fstep"><span class="hca-fic"></span><span>Operación a plan de respaldo</span></div>
+                <div class="hca-fstep"><span class="hca-fic"></span><span>Comunicación a clientes enviada</span></div>
+              </div>
+              <div class="hca-output"><b>Plan activado</b> · 25 min</div>
+            </div>
+
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- ============ EL DOLOR ============ -->
-  <section class="section">
+  <section class="section section-light">
     <div class="container">
       <p class="eyebrow">El dolor</p>
       <h2 class="section-headline">Una interrupción pone en juego tu operación.</h2>
       <p class="section-lead" style="max-width:720px">
-        Es producto que no sale, clientes que no reciben, y una reputación construida
-        durante años puesta a prueba en horas.
+        Producto que no sale, clientes que no reciben, y una reputación construida
+        durante años puesta a prueba en horas. Y cuando pasa, nadie recuerda dónde está el plan.
       </p>
+
+      <div class="preguntas-grid">
+        <div class="pregunta-card">
+          <span class="pregunta-mark">&#9656;</span>
+          <p>¿Quién activa el comité y a quién llama primero?</p>
+        </div>
+        <div class="pregunta-card">
+          <span class="pregunta-mark">&#9656;</span>
+          <p>¿Cuál fue nuestra respuesta la última vez que paró la operación?</p>
+        </div>
+        <div class="pregunta-card">
+          <span class="pregunta-mark">&#9656;</span>
+          <p>¿Qué proveedores críticos no tienen plan B?</p>
+        </div>
+        <div class="pregunta-card">
+          <span class="pregunta-mark">&#9656;</span>
+          <p>¿Qué decisiones de crisis quedaron sin documentar?</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ EL PRODUCTO EN ACCIÓN (centro de monitoreo de riesgo) ============ -->
+  <section class="section pd-section" id="producto-accion">
+    <div class="container">
+      <p class="eyebrow">El producto en acción</p>
+      <h2 class="section-headline">Vigilamos el entorno y activamos el plan antes de que escale.</h2>
+      <p class="section-lead">
+        Monitoreamos noticias y redes en los frentes que pueden parar tu operación
+        (elecciones, paros, medios, clima) y disparamos el protocolo cuando una señal escala.
+      </p>
+
+      <div class="rm" aria-hidden="true">
+        <div class="rm-bar">
+          <span>Centro de monitoreo · Resiliencia corporativa</span>
+          <span class="rm-live"><i></i> En vivo · 4 frentes vigilados</span>
+        </div>
+
+        <div class="rm-body">
+          <!-- Mapa -->
+          <div class="rm-map">
+            <div class="rm-map-head">
+              <span class="rm-situ" id="rm-situ">Monitoreo electoral</span>
+              <span class="rm-index-wrap">Índice de riesgo<b id="rm-index-val">—</b></span>
+            </div>
+            <div class="rm-map-canvas">
+              <svg class="rm-map-svg" viewBox="0 0 320 410" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+                <path class="rm-country" d="M250 30 L262 48 L244 56 L236 40 L222 66 L194 64 L168 56 L150 74 L120 74 L98 100 L82 94 L72 112 L92 132 L78 170 L86 214 L74 254 L100 302 L124 334 L136 376 L180 396 L208 402 L224 374 L250 344 L274 302 L302 252 L314 200 L306 152 L288 114 L296 74 L272 52 Z"/>
+                <g class="rm-hot" data-hot="barranquilla">
+                  <circle class="rm-hot-ring" cx="190" cy="80" r="4"></circle>
+                  <circle class="rm-hot-core" cx="190" cy="80" r="3.2"></circle>
+                  <text class="rm-hot-label" x="196" y="83">Barranquilla</text>
+                </g>
+                <g class="rm-hot" data-hot="plantaNorte">
+                  <circle class="rm-hot-ring" cx="246" cy="140" r="4"></circle>
+                  <circle class="rm-hot-core" cx="246" cy="140" r="3.2"></circle>
+                  <text class="rm-hot-label" x="252" y="143">Planta Norte</text>
+                </g>
+                <g class="rm-hot" data-hot="medellin">
+                  <circle class="rm-hot-ring" cx="160" cy="174" r="4"></circle>
+                  <circle class="rm-hot-core" cx="160" cy="174" r="3.2"></circle>
+                  <text class="rm-hot-label" x="120" y="177">Medellín</text>
+                </g>
+                <g class="rm-hot" data-hot="corredor">
+                  <circle class="rm-hot-ring" cx="184" cy="197" r="4"></circle>
+                  <circle class="rm-hot-core" cx="184" cy="197" r="3.2"></circle>
+                  <text class="rm-hot-label" x="190" y="200">Corredor vial</text>
+                </g>
+                <g class="rm-hot" data-hot="bogota">
+                  <circle class="rm-hot-ring" cx="208" cy="222" r="4"></circle>
+                  <circle class="rm-hot-core" cx="208" cy="222" r="3.2"></circle>
+                  <text class="rm-hot-label" x="214" y="225">Bogotá</text>
+                </g>
+                <g class="rm-hot" data-hot="cali">
+                  <circle class="rm-hot-ring" cx="148" cy="262" r="4"></circle>
+                  <circle class="rm-hot-core" cx="148" cy="262" r="3.2"></circle>
+                  <text class="rm-hot-label" x="110" y="265">Cali</text>
+                </g>
+              </svg>
+            </div>
+            <div class="rm-index-bar"><span id="rm-index-fill"></span></div>
+          </div>
+
+          <!-- Feed -->
+          <div class="rm-feed">
+            <div class="rm-feed-head"><span>Feed de monitoreo</span><span>Noticias · Redes</span></div>
+            <div class="rm-feed-list" id="rm-feed"></div>
+          </div>
+        </div>
+
+        <!-- Escalamiento → protocolo -->
+        <div class="rm-escala">
+          <div class="rm-alert" id="rm-alert">
+            <span class="rm-alert-ic">&#9888;</span>
+            <span class="rm-alert-txt" id="rm-alert-txt">Señal crítica detectada</span>
+            <span class="rm-alert-chip">Activar protocolo</span>
+          </div>
+          <div class="rm-flow">
+            <div class="hca-fstep"><span class="hca-fic"></span><span>Comité notificado</span></div>
+            <div class="hca-fstep"><span class="hca-fic"></span><span>Operación a respaldo</span></div>
+            <div class="hca-fstep"><span class="hca-fic"></span><span>Comunicación a clientes</span></div>
+          </div>
+          <div class="rm-output-row"><span class="hca-output" id="rm-output"><b>Plan activado</b></span></div>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- ============ QUÉ INCLUYE ============ -->
   <section class="section section-light">
     <div class="container">
-      <p class="eyebrow">Qué incluye</p>
-      <h2 class="section-headline">Un comité y un plan, listos para el día difícil.</h2>
+      <div class="incluye-grid">
+        <div class="incluye-lead">
+          <p class="eyebrow">Qué incluye</p>
+          <h2 class="section-headline">Un comité y un plan, listos para el día difícil.</h2>
+          <p class="incluye-sublead">El plan no se queda en el cajón: se prueba, se mantiene vivo y tu equipo sabe activarlo.</p>
+        </div>
 
-      <ul class="includes-list">
-        <li>Diseño del comité gerencial de crisis (roles, gobernanza, comunicaciones).</li>
-        <li>Plan de gestión de crisis (gobernanza, análisis de riesgos, respuesta, recuperación).</li>
-        <li>Implementación y pruebas.</li>
-        <li>Acompañamiento en eventos de crisis reales.</li>
-      </ul>
+        <ul class="incluye-list">
+          <li class="incluye-item">
+            <span class="incluye-check">&#10003;</span>
+            <span class="incluye-text">Diseño del comité gerencial de crisis: roles, gobernanza y comunicaciones.</span>
+          </li>
+          <li class="incluye-item">
+            <span class="incluye-check">&#10003;</span>
+            <span class="incluye-text">Plan de gestión de crisis: análisis de riesgos, respuesta y recuperación.</span>
+          </li>
+          <li class="incluye-item">
+            <span class="incluye-check">&#10003;</span>
+            <span class="incluye-text">Una <b>memoria del riesgo</b> que monitorea el entorno y avisa antes de que escale.</span>
+          </li>
+          <li class="incluye-item">
+            <span class="incluye-check">&#10003;</span>
+            <span class="incluye-text">Implementación, simulacros y pruebas.</span>
+          </li>
+          <li class="incluye-item">
+            <span class="incluye-check">&#10003;</span>
+            <span class="incluye-text">Acompañamiento en eventos de crisis reales, con 27 Risk Lab.</span>
+          </li>
+        </ul>
+      </div>
 
-      <p class="section-lead" style="margin-top:28px">
-        Inversión desde USD $10.000. Aproximadamente 90 días. ROI medible. El plan no
-        se queda en el cajón: se prueba y se mantiene vivo.
-      </p>
+      <!-- Ecuación de valor -->
+      <div class="valor-eq">
+        <div class="valor-tile">
+          <span class="valor-label">Inversión</span>
+          <span class="valor-val">Desde USD $10.000</span>
+          <span class="valor-note">Alcance acordado desde el inicio, sin sorpresas.</span>
+        </div>
+        <div class="valor-tile">
+          <span class="valor-label">Tiempo</span>
+          <span class="valor-val">90 días al plan operando</span>
+          <span class="valor-note">Comité diseñado, probado y listo para activarse.</span>
+        </div>
+        <div class="valor-tile valor-tile--roi">
+          <span class="valor-label">Retorno</span>
+          <span class="valor-val">Continuidad protegida</span>
+          <span class="valor-note">El costo de una parada sin plan (producto, clientes, reputación) supera con creces la inversión.</span>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- ============ CÓMO SE ENTREGA / LA ALIANZA ============ -->
-  <section class="section">
+  <!-- ============ PRUEBA SLIM (la alianza 27 Risk Lab) ============ -->
+  <section class="section-proof">
     <div class="container">
-      <p class="eyebrow">La alianza</p>
-      <h2 class="section-headline">Lo entregamos con 27 Risk Lab.</h2>
-      <p class="section-lead" style="max-width:720px">
-        En alianza con 27 Risk Lab, especialistas en gestión corporativa de crisis.
-        Sumamos la memoria viva de Clarity a su método de continuidad, para que el plan
-        no quede en un documento muerto.
-      </p>
-    </div>
-  </section>
-
-  <!-- ============ LA MEMORIA DEL RIESGO EN ACCIÓN ============ -->
-  <section class="section section-light">
-    <div class="container">
-      <p class="eyebrow">La memoria del riesgo en acción</p>
-      <h2 class="section-headline">Preguntas que una memoria del riesgo debería responder.</h2>
-
-      <div class="preguntas-grid">
-        <div class="pregunta-card">
-          <span class="pregunta-mark">▸</span>
-          <p>¿Quién activa el comité y a quién llama primero?</p>
-        </div>
-        <div class="pregunta-card">
-          <span class="pregunta-mark">▸</span>
-          <p>¿Cuál fue nuestra respuesta la última vez que paró la operación?</p>
-        </div>
-        <div class="pregunta-card">
-          <span class="pregunta-mark">▸</span>
-          <p>¿Qué proveedores críticos no tienen plan B?</p>
-        </div>
-        <div class="pregunta-card">
-          <span class="pregunta-mark">▸</span>
-          <p>¿Qué decisiones de crisis quedaron sin documentar?</p>
+      <div class="proof-band">
+        <img src="assets/logo-27rl.webp" alt="27 Risk Lab" class="proof-logo" loading="lazy" />
+        <div class="proof-copy">
+          <span class="proof-label">En alianza con <b>27 Risk Lab</b>, especialistas en gestión corporativa de crisis.</span>
+          <span class="proof-note">Sumamos la memoria viva de Clarity a su método de continuidad, con acompañamiento en eventos reales.</span>
         </div>
       </div>
     </div>
@@ -167,7 +337,7 @@
   <!-- ============ FAQ / OBJECIONES ============ -->
   <section class="section">
     <div class="container">
-      <p class="eyebrow">Antes de la llamada</p>
+      <p class="eyebrow">Antes del demo</p>
       <h2 class="section-headline">Lo que un gerente suele preguntar.</h2>
 
       <div class="faq-list">
@@ -177,7 +347,7 @@
         </div>
         <div class="faq-item">
           <p class="faq-question">¿Qué pasa el día de una crisis real?</p>
-          <p class="faq-answer">El comité ya está definido: quién decide, quién comunica y a quién se llama primero. Además contamos con acompañamiento en eventos de crisis reales, para que no estés solo en el momento que más importa.</p>
+          <p class="faq-answer">El comité ya está definido: quién decide, quién comunica y a quién se llama primero. Además contamos con acompañamiento en eventos reales, para que no estés solo en el momento que más importa.</p>
         </div>
         <div class="faq-item">
           <p class="faq-question">¿Sirve si ya tengo un plan?</p>
@@ -191,20 +361,19 @@
     </div>
   </section>
 
-  <!-- ============ CTA FINAL ============ -->
-  <section class="section section-cta">
+  <!-- ============ CTA FINAL (demo, fondo claro) ============ -->
+  <section class="section section-light section-light--white cta-demo">
     <div class="container">
-      <p class="eyebrow">Conversemos</p>
-      <h2 class="section-headline">El primer paso es un diagnóstico de 30 minutos.</h2>
+      <p class="eyebrow">Pide tu demo</p>
+      <h2 class="section-headline">Ve tu plan de crisis en acción, gratis.</h2>
 
       <p class="cta-lead">
-        Si quieres entender cómo preparar a tu empresa para el día que algo salga de
-        control, escríbenos por WhatsApp. La conversación es directa con Juan Manuel,
-        sin formularios ni embudos. En 30 minutos sabemos si tiene sentido seguir.
+        Te mostramos cómo se vería tu comité y tu protocolo activándose, con un caso de
+        tu operación. Una demo corta y directa con Juan Manuel, sin formularios ni embudos.
       </p>
 
       <div class="cta-buttons">
-        <a href="https://wa.me/573134925711?text=Hola%20Juan%20Manuel%2C%20vi%20la%20web%20de%20Clarity%20State%20y%20me%20gustar%C3%ADa%20agendar%20un%20diagn%C3%B3stico%20de%2030%20minutos." class="btn btn-primary btn-xl" data-loc="cta-final-riesgo" target="_blank" rel="noopener">Iniciar diagnóstico de 30 minutos</a>
+        <a href="https://wa.me/573134925711?text=Hola%20Juan%20Manuel%2C%20vi%20la%20web%20de%20Clarity%20State%20y%20me%20gustar%C3%ADa%20pedir%20una%20demo%20de%20Resiliencia%20corporativa." class="btn btn-primary btn-xl" data-loc="cta-final-riesgo" target="_blank" rel="noopener">Pedir mi demo</a>
         <a href="contacto.html" class="btn-text" data-loc="cta-final-riesgo">Contáctanos</a>
       </div>
     </div>
@@ -235,6 +404,7 @@
               <li><a href="nosotros.html" class="footer-link">Nosotros</a></li>
               <li><a href="recursos.html" class="footer-link">Recursos</a></li>
               <li><a href="contacto.html" class="footer-link">Contacto</a></li>
+              <li><a href="privacidad.html" class="footer-link">Aviso de privacidad</a></li>
             </ul>
           </div>
 
@@ -253,7 +423,7 @@
     </div>
   </footer>
 
-  <!-- Widget WhatsApp flotante (esquina inferior derecha, persistente) -->
+  <!-- Widget WhatsApp flotante -->
   <a href="https://wa.me/573134925711?text=Hola%20Juan%20Manuel%2C%20vi%20la%20web%20de%20Clarity%20State%20y%20me%20gustar%C3%ADa%20agendar%20un%20diagn%C3%B3stico%20de%2030%20minutos."
      class="whatsapp-floating"
      data-loc="widget-flotante"
@@ -265,7 +435,22 @@
     </svg>
   </a>
 
+  <!-- Config de la consola del hero (escenario Consulta de riesgo) -->
+  <script>
+    window.HCA_CONFIG = {
+      consulta: {
+        q: '¿Cómo respondimos la última vez que paró la planta?',
+        a: 'El 14-mar el comité se activó en <span class="hl">25 min</span>: operación a respaldo y clientes notificados. Tiempo sin operar: 3,5 h.',
+        src: 'Fuente · Bitácora de crisis, marzo'
+      }
+    };
+  </script>
+
   <script src="js/main.js"></script>
   <script src="js/main-multipagina.js"></script>
+  <script src="js/producto-demo.js"></script>
+  <script src="js/hero-console-anim.js"></script>
+  <script src="js/risk-monitor.js"></script>
+  <script src="/js/cookie-consent.js" defer></script>
 </body>
 </html>

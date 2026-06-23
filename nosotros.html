@@ -4,26 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- Microsoft Clarity (heatmaps + grabaciones de sesión) -->
-  <script type="text/javascript">
-    (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "x0ekhl9ur4");
-  </script>
 
-  <!-- Google tag (gtag.js) — GA4 claritystateai.com -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PSBH885840"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-PSBH885840');
-  </script>
 
   <title>Nosotros — Clarity State AI</title>
-  <meta name="description" content="Quiénes somos en Clarity State AI: operamos IA en empresas reales antes de proponerla. Conoce el método método de entrega propio y por qué creernos." />
+  <meta name="description" content="Quiénes somos en Clarity State AI: operamos IA en empresas reales antes de proponerla. Conoce el método de entrega propio y por qué creernos." />
 
   <!-- Favicon (SVG inline como data URI) -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%230a0a0f'/><circle cx='16' cy='13' r='5' fill='none' stroke='%233b82f6' stroke-width='2'/><rect x='14' y='16' width='4' height='7' rx='2' fill='%233b82f6'/><circle cx='16' cy='19' r='1.5' fill='%230a0a0f'/></svg>" />
@@ -44,8 +28,15 @@
   <link rel="stylesheet" href="css/styles.css" />
   <link rel="stylesheet" href="css/multipagina.css" />
   <link rel="stylesheet" href="css/premium.css" />
+  <link rel="stylesheet" href="css/producto-demo.css" />
+  <link rel="stylesheet" href="css/hero-overlay.css" />
+  <link rel="stylesheet" href="css/hero-console-anim.css" />
 </head>
-<body>
+<body class="page-ainet">
+
+  <!-- Red viva animada de fondo (toda la página) -->
+  <canvas id="ainet" class="ainet-fixed" aria-hidden="true"></canvas>
+  <div class="ainet-scrim" aria-hidden="true"></div>
 
   <!-- ============ NAVBAR ============ -->
   <nav class="navbar" aria-label="Navegación principal">
@@ -66,7 +57,9 @@
         <a href="contacto.html" class="navbar-link">Contacto</a>
       </div>
       <div class="navbar-cta">
-        <a href="https://wa.me/573134925711?text=Hola%20Juan%20Manuel%2C%20vi%20la%20web%20de%20Clarity%20State%20y%20me%20gustar%C3%ADa%20agendar%20un%20diagn%C3%B3stico%20de%2030%20minutos." class="btn btn-primary" data-loc="navbar" target="_blank" rel="noopener">Diagnóstico 30 min</a>
+        <span class="navbar-divider" aria-hidden="true"></span>
+        <a href="acceso.html" class="navbar-access" target="_blank" rel="noopener">Ingreso</a>
+        <a href="https://wa.me/573134925711?text=Hola%20Juan%20Manuel%2C%20vi%20la%20web%20de%20Clarity%20State%20y%20me%20gustar%C3%ADa%20agendar%20un%20diagn%C3%B3stico%20de%2030%20minutos." class="btn btn-primary" data-loc="navbar" target="_blank" rel="noopener">Pedir demo</a>
         <button class="nav-toggle" aria-label="Abrir menú" aria-controls="navbar-links" aria-expanded="false">
           <span></span><span></span><span></span>
         </button>
@@ -74,18 +67,13 @@
     </div>
   </nav>
 
-  <!-- ============ HERO ============ -->
-  <section class="page-hero" id="inicio">
+  <!-- ============ HERO (red viva animada + un solo título de propuesta de valor) ============ -->
+  <section class="hero hero--center" id="inicio">
     <div class="container">
-      <span class="eyebrow">Nosotros</span>
-      <h1 class="page-hero-title">Operamos IA en empresas reales antes de proponerla.</h1>
-      <p class="page-hero-lede">
-        Trabajamos para que las empresas que ya operan sean más rápidas, más
-        competitivas y tomen mejores decisiones en la era de la inteligencia artificial.
-      </p>
-      <div class="hero-buttons">
-        <a href="https://wa.me/573134925711?text=Hola%20Juan%20Manuel%2C%20vi%20la%20web%20de%20Clarity%20State%20y%20me%20gustar%C3%ADa%20agendar%20un%20diagn%C3%B3stico%20de%2030%20minutos." class="btn btn-primary btn-lg" data-loc="hero-nosotros" target="_blank" rel="noopener">Iniciar diagnóstico de 30 minutos</a>
-        <a href="contacto.html" class="btn-text" data-loc="hero-nosotros">Contáctanos</a>
+      <div class="hero-content">
+        <div class="hero-text">
+          <h1 class="hero-title">Operamos la IA en empresas reales para que decidan más rápido y compitan mejor.</h1>
+        </div>
       </div>
     </div>
   </section>
@@ -122,47 +110,10 @@
     </div>
   </section>
 
-  <!-- ============ NUESTRO MÉTODO DE ENTREGA ============ -->
-  <section class="section section-light" id="metodo">
-    <div class="container">
-      <p class="eyebrow">Nuestro método</p>
-      <h2 class="section-headline">Diagnóstico, diseño, implementación y medición.</h2>
-
-      <p class="section-lead" style="max-width:760px">
-        Tenemos un método de entrega propio, claro y probado en operación real. Cada
-        proyecto avanza por cuatro pasos que le dan al equipo directivo decisiones más
-        rápidas y tiempo liberado, con resultados que se pueden medir.
-      </p>
-
-      <div class="pilares-grid" style="margin-top:32px">
-        <div class="pilar-card">
-          <span class="prueba-tag">Paso 1</span>
-          <h3 class="pilar-title">Diagnóstico.</h3>
-          <p class="pilar-desc">Mapeamos cómo decide hoy la empresa y dónde se pierde tiempo.</p>
-        </div>
-        <div class="pilar-card">
-          <span class="prueba-tag">Paso 2</span>
-          <h3 class="pilar-title">Diseño.</h3>
-          <p class="pilar-desc">Definimos la memoria viva y los flujos que aceleran cada decisión.</p>
-        </div>
-        <div class="pilar-card">
-          <span class="prueba-tag">Paso 3</span>
-          <h3 class="pilar-title">Implementación.</h3>
-          <p class="pilar-desc">Construimos la primera capa con datos reales y la conectamos a lo que ya usas.</p>
-        </div>
-        <div class="pilar-card">
-          <span class="prueba-tag">Paso 4</span>
-          <h3 class="pilar-title">Medición.</h3>
-          <p class="pilar-desc">Medimos el tiempo ganado y el ROI, y ajustamos sobre la operación.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ QUIÉN ESTÁ DETRÁS ============ -->
+  <!-- ============ QUIÉNES SOMOS ============ -->
   <section class="section" id="quien-esta-detras">
     <div class="container">
-      <p class="eyebrow">Quién está detrás</p>
+      <p class="eyebrow">Quiénes somos</p>
       <h2 class="section-headline">Un equipo que implementa IA con criterio, liderado por su fundador.</h2>
 
       <div class="quienes-layout">
@@ -175,43 +126,27 @@
             implementa cada proyecto. Partimos de cómo decide hoy la empresa y construimos
             la memoria que falta, con claridad en cada paso. El equipo acompaña la
             implementación de principio a fin, junto al equipo directivo del cliente, y
-            Juan Manuel atiende personalmente el diagnóstico de 30 minutos con el que
-            arranca toda conversación.
+            Juan Manuel atiende personalmente el diagnóstico y demo de 30 minutos con el
+            que arranca toda conversación.
           </p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ============ POR QUÉ CREERNOS ============ -->
-  <section class="section section-light" id="por-que-creernos">
-    <div class="container">
-      <p class="eyebrow">Por qué creernos</p>
-      <h2 class="section-headline">Razones concretas para confiar.</h2>
-
-      <ul class="includes-list">
-        <li>Operamos IA en nuestras propias operaciones antes de proponerla.</li>
-        <li>Método de entrega propio: diagnóstico, diseño, implementación y medición.</li>
-        <li>Entregables tangibles en cerca de 90 días, con capacitación y soporte.</li>
-        <li>Un equipo que acompaña la implementación de principio a fin.</li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- ============ CTA FINAL ============ -->
-  <section class="section section-cta" id="cta-final">
+  <!-- ============ CTA FINAL (demo, fondo claro) ============ -->
+  <section class="section section-light section-light--white cta-demo" id="cta-final">
     <div class="container">
       <p class="eyebrow">Conversemos</p>
-      <h2 class="section-headline">Conversemos en un diagnóstico de 30 minutos.</h2>
+      <h2 class="section-headline">Veamos la memoria viva de tu empresa, gratis.</h2>
 
       <p class="cta-lead">
-        Si quieres entender cómo se vería la memoria viva de tu empresa, escríbenos por
-        WhatsApp. La conversación es directa con Juan Manuel. En 30 minutos sabemos si
-        tiene sentido seguir.
+        Te mostramos cómo se vería en tu operación, tu riesgo o tu gestión comercial.
+        Una conversación corta y directa con Juan Manuel, sin formularios ni embudos.
       </p>
 
       <div class="cta-buttons">
-        <a href="https://wa.me/573134925711?text=Hola%20Juan%20Manuel%2C%20vi%20la%20web%20de%20Clarity%20State%20y%20me%20gustar%C3%ADa%20agendar%20un%20diagn%C3%B3stico%20de%2030%20minutos." class="btn btn-primary btn-xl" data-loc="cta-final-nosotros" target="_blank" rel="noopener">Iniciar diagnóstico de 30 minutos</a>
+        <a href="https://wa.me/573134925711?text=Hola%20Juan%20Manuel%2C%20vi%20la%20web%20de%20Clarity%20State%20y%20me%20gustar%C3%ADa%20pedir%20una%20demo." class="btn btn-primary btn-xl" data-loc="cta-final-nosotros" target="_blank" rel="noopener">Pedir mi demo</a>
         <a href="contacto.html" class="btn-text" data-loc="cta-final-nosotros">Contáctanos</a>
       </div>
     </div>
@@ -242,6 +177,7 @@
               <li><a href="nosotros.html" class="footer-link">Nosotros</a></li>
               <li><a href="recursos.html" class="footer-link">Recursos</a></li>
               <li><a href="contacto.html" class="footer-link">Contacto</a></li>
+              <li><a href="privacidad.html" class="footer-link">Aviso de privacidad</a></li>
             </ul>
           </div>
 
@@ -274,5 +210,7 @@
 
   <script src="js/main.js"></script>
   <script src="js/main-multipagina.js"></script>
+  <script src="js/ainet.js"></script>
+  <script src="/js/cookie-consent.js" defer></script>
 </body>
 </html>

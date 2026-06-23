@@ -814,9 +814,9 @@ h1, h2 {
 .hero-title {
   font-family: var(--f-serif);
   font-weight: 700;
-  font-size: clamp(2.6rem, 5vw, 3.8rem);
+  font-size: clamp(1.8rem, 3.2vw, 2.7rem);
   letter-spacing: -0.015em;
-  line-height: 1.08;
+  line-height: 1.1;
   color: #fff;
   margin-bottom: 28px;
 }
@@ -1585,3 +1585,14 @@ h1, h2 {
     );
   }
 }
+
+/* ---- Acceso separado en el navbar (estilo Arkham): divisor + botón outline ---- */
+.navbar-divider { width: 1px; height: 26px; background: rgba(255, 255, 255, 0.40); flex: 0 0 auto; margin: 0 14px; }
+.navbar-access {
+  display: inline-flex; align-items: center; padding: 14px 26px; border-radius: var(--radius-sm);
+  border: 1px solid rgba(255, 255, 255, 0.55); color: #fff; background: rgba(255, 255, 255, 0.05);
+  font-size: 0.95rem; font-weight: 600; white-space: nowrap; text-decoration: none; margin-right: 6px;
+  transition: border-color 0.2s ease, background 0.2s ease, transform 0.1s ease;
+}
+.navbar-access:hover { border-color: #fff; background: rgba(255, 255, 255, 0.12); transform: translateY(-1px); }
+@media (max-width: 680px) { .navbar-divider, .navbar-access { display: none; } }

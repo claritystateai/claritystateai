@@ -1,0 +1,272 @@
+/* ============================================================
+   Hero "consola Clarity" animada — efecto producto en loop (prefijo hca-)
+   Maqueta idealizada del portal de la operación; se anima sola.
+   Pensada para el hero de operacion.html (y reutilizable).
+   ============================================================ */
+
+/* Hero a dos columnas: texto izq + consola der */
+.page-hero--split .container {
+  display: grid;
+  grid-template-columns: 1fr 1.12fr;
+  gap: 56px;
+  align-items: center;
+}
+.page-hero--split .page-hero-text { max-width: 540px; }
+
+/* Hero "showcase": producto centrado y grande (estilo Arkham), texto mínimo arriba */
+.page-hero--showcase .container { max-width: 1000px; }
+.page-hero--showcase .page-hero-head { max-width: 680px; margin: 0 auto 44px; text-align: center; }
+.page-hero--showcase .hca { text-align: left; }
+.page-hero--showcase .eyebrow { display: block; }
+.page-hero--showcase .page-hero-title {
+  font-size: clamp(1.9rem, 3.6vw, 2.75rem);
+  line-height: 1.12;
+  margin: 14px 0 0;
+}
+.page-hero--showcase .page-hero-lede {
+  max-width: 560px; margin: 16px auto 0;
+  font-size: 1.05rem; color: var(--text-muted);
+}
+.page-hero--showcase .hca { max-width: 880px; margin: 0 auto; }
+
+/* ---- Contenedor de la consola ---- */
+.hca {
+  position: relative;
+  width: 100%;
+  padding: 24px 28px;
+  border-radius: 18px;
+  overflow: hidden;
+  isolation: isolate;
+}
+.hca-glow {
+  position: absolute; inset: -20%;
+  background: radial-gradient(60% 55% at 70% 30%, rgba(59,130,246,0.22) 0%, transparent 60%),
+              radial-gradient(50% 50% at 20% 80%, rgba(96,165,250,0.12) 0%, transparent 60%);
+  z-index: 0; filter: blur(8px);
+  animation: hcaGlow 9s ease-in-out infinite alternate;
+}
+@keyframes hcaGlow { from { opacity: .65; } to { opacity: 1; } }
+.hca-grid {
+  position: absolute; inset: 0; z-index: 0; opacity: .5;
+  background-image: linear-gradient(rgba(147,197,253,0.07) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(147,197,253,0.07) 1px, transparent 1px);
+  background-size: 34px 34px;
+  mask-image: radial-gradient(75% 75% at 60% 40%, #000 30%, transparent 80%);
+  animation: hcaDrift 24s linear infinite;
+}
+@keyframes hcaDrift { from { background-position: 0 0; } to { background-position: 34px 34px; } }
+
+/* ---- Ventana de la app ---- */
+.hca-window {
+  position: relative; width: 100%;
+  z-index: 2;
+  display: flex; flex-direction: column;
+  border: 1px solid rgba(147,197,253,0.20);
+  border-radius: 14px;
+  background: rgba(9,13,20,0.72);
+  backdrop-filter: blur(16px) saturate(1.15);
+  -webkit-backdrop-filter: blur(16px) saturate(1.15);
+  box-shadow: 0 30px 80px rgba(0,0,0,0.55), inset 0 1px 0 rgba(255,255,255,0.07);
+  overflow: hidden;
+}
+.hca-bar {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 11px 16px;
+  border-bottom: 1px solid rgba(147,197,253,0.12);
+  font-family: var(--f-mono); font-size: 10.5px; letter-spacing: 0.12em; text-transform: uppercase;
+}
+.hca-title { color: #93c5fd; }
+.hca-live { display: inline-flex; align-items: center; gap: 7px; color: #8ad6a0; }
+.hca-live i { width: 7px; height: 7px; border-radius: 999px; background: #43d17e; box-shadow: 0 0 0 0 rgba(67,209,126,0.6); animation: hcaPulse 2s ease-out infinite; }
+@keyframes hcaPulse { 0% { box-shadow: 0 0 0 0 rgba(67,209,126,0.55);} 70%{ box-shadow:0 0 0 7px rgba(67,209,126,0);} 100%{ box-shadow:0 0 0 0 rgba(67,209,126,0);} }
+
+.hca-body { flex: 1; padding: 16px; min-height: 340px; display: flex; flex-direction: column; }
+
+/* barra de modos (Consulta · Monitoreo · Automatización) */
+.hca-tabs { display: flex; gap: 2px; padding: 0 14px; border-bottom: 1px solid rgba(147, 197, 253, 0.10); }
+.hca-tab {
+  position: relative; background: none; border: none; cursor: default;
+  font-family: var(--f-mono); font-size: 10px; letter-spacing: 0.07em; text-transform: uppercase;
+  color: #6b7689; padding: 11px 12px; transition: color 0.25s ease;
+}
+.hca-tab.is-active { color: #d2e2f6; }
+.hca-tab.is-active::after {
+  content: ""; position: absolute; left: 12px; right: 12px; bottom: -1px; height: 2px;
+  background: var(--accent); border-radius: 2px;
+}
+
+/* modos */
+.hca-mode { display: none; }
+.hca-mode.is-active { flex: 1; display: flex; flex-direction: column; justify-content: center; gap: 13px; animation: hcaFade .45s ease; }
+@keyframes hcaFade { from { opacity: 0; } to { opacity: 1; } }
+
+/* --- Modo Monitoreo: KPIs + alerta --- */
+.hca-kpis { display: grid; grid-template-columns: repeat(3, 1fr); gap: 9px; }
+.hca-kpi {
+  border: 1px solid rgba(147, 197, 253, 0.14); border-radius: 10px;
+  background: rgba(255, 255, 255, 0.025); padding: 11px 12px;
+  opacity: 0; transform: translateY(8px); transition: opacity .45s ease, transform .45s ease;
+}
+.hca-kpi.on { opacity: 1; transform: none; }
+.hca-kpi-label { font-family: var(--f-mono); font-size: 8.5px; letter-spacing: 0.05em; text-transform: uppercase; color: #8392a4; line-height: 1.3; }
+.hca-kpi-val { color: #fff; font-size: 1.3rem; font-weight: 700; margin-top: 7px; letter-spacing: -0.01em; }
+.hca-kpi-trend { font-family: var(--f-mono); font-size: 10px; margin-top: 5px; }
+.hca-kpi-trend.up { color: #f0a868; }
+.hca-kpi-trend.good { color: #6fcf97; }
+.hca-kpi-trend.flat { color: #8392a4; }
+
+.hca-alert {
+  display: flex; align-items: center; justify-content: space-between; gap: 10px;
+  border: 1px solid rgba(240, 168, 104, 0.32); background: rgba(240, 168, 104, 0.09);
+  border-radius: 10px; padding: 11px 13px;
+  opacity: 0; transform: translateY(8px); transition: opacity .5s ease, transform .5s ease;
+}
+.hca-alert.on { opacity: 1; transform: none; }
+.hca-alert-txt { color: #f3c79a; font-size: 0.85rem; display: flex; align-items: center; gap: 9px; line-height: 1.35; }
+.hca-alert-txt b { color: #fff; }
+.hca-alert-ic { flex: 0 0 auto; font-size: 13px; }
+.hca-alert-chip { flex: 0 0 auto; font-family: var(--f-mono); font-size: 9px; text-transform: uppercase; color: #f0a868; border: 1px solid rgba(240, 168, 104, 0.4); border-radius: 999px; padding: 3px 9px; white-space: nowrap; }
+
+/* --- Modo Automatización: flujo que se ejecuta --- */
+.hca-task { font-family: var(--f-mono); font-size: 10px; letter-spacing: 0.07em; text-transform: uppercase; color: #8392a4; }
+.hca-task b { color: #d2e2f6; }
+.hca-flow { display: flex; flex-direction: column; gap: 8px; margin-top: 2px; }
+.hca-fstep { display: flex; align-items: center; gap: 11px; font-size: 0.9rem; color: #7d8a9c; transition: color 0.3s ease; }
+.hca-fstep .hca-fic {
+  flex: 0 0 auto; width: 22px; height: 22px; border-radius: 7px; display: grid; place-items: center;
+  border: 1px solid rgba(147, 197, 253, 0.18); background: rgba(255, 255, 255, 0.03);
+  color: #60a5fa; font-size: 12px; font-weight: 700;
+}
+.hca-fstep.is-active { color: #c7d2de; }
+.hca-fstep.is-active .hca-fic { border-color: var(--accent); }
+.hca-fstep.is-active .hca-fic::before {
+  content: ""; width: 10px; height: 10px; border-radius: 50%;
+  border: 2px solid rgba(96, 165, 250, 0.3); border-top-color: #60a5fa; animation: hcaSpin .7s linear infinite;
+}
+@keyframes hcaSpin { to { transform: rotate(360deg); } }
+.hca-fstep.is-done { color: #d2e2f6; }
+.hca-fstep.is-done .hca-fic { background: rgba(111, 207, 151, 0.16); border-color: rgba(111, 207, 151, 0.5); color: #6fcf97; }
+.hca-fstep.is-done .hca-fic::before { content: "\2713"; }
+
+.hca-output {
+  align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; margin-top: 4px;
+  border: 1px solid rgba(111, 207, 151, 0.4); background: rgba(111, 207, 151, 0.10); border-radius: 999px;
+  padding: 7px 14px; color: #a9e4c1; font-size: 0.85rem;
+  opacity: 0; transform: translateY(6px); transition: opacity .45s ease, transform .45s ease;
+}
+.hca-output.on { opacity: 1; transform: none; }
+.hca-output b { color: #fff; }
+
+/* barra de "preguntar" */
+.hca-ask {
+  display: flex; align-items: center; gap: 10px;
+  border: 1px solid rgba(147,197,253,0.22);
+  border-radius: 10px;
+  background: rgba(255,255,255,0.03);
+  padding: 11px 13px;
+}
+.hca-ask-icon {
+  flex: 0 0 auto; width: 22px; height: 22px; border-radius: 6px;
+  display: grid; place-items: center; font-family: var(--f-mono); font-size: 12px; font-weight: 600;
+  background: var(--accent); color: #fff;
+}
+.hca-ask-text { color: #e7edf5; font-size: 0.95rem; font-weight: 500; white-space: nowrap; overflow: hidden; }
+.hca-caret { width: 2px; height: 16px; background: #93c5fd; margin-left: 1px; animation: hcaBlink 1s step-end infinite; }
+@keyframes hcaBlink { 50% { opacity: 0; } }
+
+/* zona de respuesta */
+.hca-answer { flex: 1; min-height: 0; }
+.hca-think { display: none; gap: 5px; padding: 6px 2px; }
+.hca-think.on { display: flex; }
+.hca-think i { width: 7px; height: 7px; border-radius: 999px; background: #60a5fa; opacity: .5; animation: hcaThink 1s ease-in-out infinite; }
+.hca-think i:nth-child(2){ animation-delay: .15s; } .hca-think i:nth-child(3){ animation-delay: .3s; }
+@keyframes hcaThink { 0%,100%{ transform: translateY(0); opacity:.4; } 50%{ transform: translateY(-4px); opacity:1; } }
+
+.hca-resp { opacity: 0; transform: translateY(8px); transition: opacity .5s ease, transform .5s ease; }
+.hca-resp.on { opacity: 1; transform: none; }
+.hca-resp-text { color: #c7d2de; font-size: 0.96rem; line-height: 1.5; margin-bottom: 13px; }
+.hca-resp-text b { color: #fff; }
+.hca-resp-text .hl { color: #93c5fd; font-weight: 700; }
+
+/* mini gráfico de barras */
+.hca-chart { display: flex; align-items: flex-end; gap: 12px; height: 88px; padding: 0 2px 4px; }
+.hca-bar-item { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 7px; height: 100%; justify-content: flex-end; }
+.hca-bar-fill { width: 100%; border-radius: 6px 6px 0 0; height: 0; transition: height 0.9s cubic-bezier(.2,.7,.2,1); background: linear-gradient(180deg, #60a5fa, #2f6fd6); }
+.hca-bar-item.hot .hca-bar-fill { background: linear-gradient(180deg, #f6b878, #e08a3c); }
+.hca-bar-cap { font-family: var(--f-mono); font-size: 9.5px; color: #8392a4; text-align: center; line-height: 1.2; }
+.hca-bar-item.hot .hca-bar-cap { color: #f0a868; }
+
+/* pasos (escenario 2) */
+.hca-steps { display: flex; flex-direction: column; gap: 9px; }
+.hca-step { display: flex; align-items: center; gap: 10px; font-size: 0.9rem; color: #c7d2de; opacity: 0; transform: translateX(-6px); transition: opacity .4s ease, transform .4s ease; }
+.hca-step.on { opacity: 1; transform: none; }
+.hca-step b { flex: 0 0 auto; width: 20px; height: 20px; border-radius: 6px; display: grid; place-items: center; font-family: var(--f-mono); font-size: 11px; background: rgba(96,165,250,0.16); color: #93c5fd; }
+
+/* tarjeta fuente */
+.hca-source {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-top: 13px; padding: 9px 13px;
+  border: 1px solid rgba(147,197,253,0.16); border-radius: 9px; background: rgba(255,255,255,0.025);
+  font-family: var(--f-mono); font-size: 10px; letter-spacing: 0.06em; text-transform: uppercase; color: #8392a4;
+  opacity: 0; transform: translateY(6px); transition: opacity .45s ease, transform .45s ease;
+}
+.hca-source.on { opacity: 1; transform: none; }
+.hca-source .hca-cited { color: #93c5fd; border: 1px solid rgba(147,197,253,0.3); border-radius: 999px; padding: 3px 9px; }
+
+/* ---- Responsive ---- */
+@media (max-width: 960px) {
+  .page-hero--split .container { grid-template-columns: 1fr; gap: 36px; }
+  .page-hero--split .page-hero-text { max-width: none; }
+  .hca { max-width: 560px; margin: 0 auto; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hca-glow, .hca-grid, .hca-live i, .hca-caret { animation: none; }
+  .hca-resp, .hca-source, .hca-step { opacity: 1; transform: none; transition: none; }
+}
+
+/* ============================================================
+   Hero de Nosotros: video de fondo + texto centrado, sin overlay
+   ============================================================ */
+.hero--center { min-height: 62vh; }
+.hero--center .container { max-width: var(--container); width: auto; margin: 0 auto; padding: 0 24px; }
+.hero--center .hero-text { max-width: 760px; margin: 0 auto; text-align: center; }
+.hero--center .hero-title,
+.hero--center .hero-subtitle { text-align: center; }
+.hero--center .hero-subtitle { margin-left: auto; margin-right: auto; max-width: 600px; }
+
+/* ============================================================
+   "Red viva" — fondo de nodos animados a TODA la página (Nosotros)
+   ============================================================ */
+.ainet-fixed {
+  position: fixed; inset: 0; width: 100%; height: 100%;
+  z-index: 0; background: #0a0a0f; pointer-events: none;
+}
+.ainet-scrim {
+  position: fixed; inset: 0; z-index: 0; pointer-events: none;
+  background: radial-gradient(130% 90% at 50% 0%, rgba(10,10,15,.30) 0%, rgba(10,10,15,.62) 70%);
+}
+/* el contenido va por encima de la red */
+.page-ainet > section,
+.page-ainet > footer { position: relative; z-index: 1; }
+/* secciones oscuras transparentes para que la red se vea detrás */
+.page-ainet > .section:not(.section-light):not(.section-cta) { background: transparent; }
+
+/* Título manifiesto (Spectral, propuesta de valor) */
+.page-ainet .hero-title {
+  font-family: var(--f-serif, 'Spectral', Georgia, serif);
+  font-weight: 700; letter-spacing: -.015em; line-height: 1.14;
+  font-size: clamp(2rem, 3.6vw, 3rem);
+  color: #fff;
+}
+
+/* Título manifiesto: más ancho para que entre en 2 líneas */
+.page-ainet .hero-text { max-width: 920px; }
+
+/* Mobile: que la consola (KPIs/tabs) no se apriete en pantallas chicas */
+@media (max-width: 520px) {
+  .hca-kpi-val { font-size: 1.04rem; }
+  .hca-kpi { padding: 9px 9px; }
+  .hca-kpi-label { font-size: 8px; }
+  .hca-tab { padding: 11px 8px; font-size: 9px; letter-spacing: .04em; }
+  .pd-console-body { padding: 18px 16px 6px; }
+}

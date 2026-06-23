@@ -4,23 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- Microsoft Clarity (heatmaps + grabaciones de sesión) -->
-  <script type="text/javascript">
-    (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "x0ekhl9ur4");
-  </script>
 
-  <!-- Google tag (gtag.js) — GA4 claritystateai.com -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PSBH885840"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-PSBH885840');
-  </script>
 
   <title>Contacto — Clarity State AI</title>
   <meta name="description" content="Agenda un diagnóstico de 30 minutos directo con Juan Manuel. En 30 minutos sabemos si tiene sentido seguir, sin formularios obligatorios ni embudos." />
@@ -33,7 +17,6 @@
   <meta property="og:description" content="Agenda un diagnóstico de 30 minutos directo con Juan Manuel. En 30 minutos sabemos si tiene sentido seguir." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://claritystateai.com/contacto" />
-  <!-- og-image: fuente editable en assets/og-image.png. PENDIENTE rasterizar a og-image.png (1200x630) antes de desplegar; WhatsApp/LinkedIn/Facebook no renderizan SVG en OG. -->
   <meta property="og:image" content="https://claritystateai.com/assets/og-image.png" />
   <meta name="twitter:card" content="summary_large_image" />
 
@@ -45,6 +28,7 @@
   <link rel="stylesheet" href="css/styles.css" />
   <link rel="stylesheet" href="css/multipagina.css" />
   <link rel="stylesheet" href="css/premium.css" />
+  <link rel="stylesheet" href="css/producto-demo.css" />
 </head>
 <body>
 
@@ -67,7 +51,9 @@
         <a href="contacto.html" class="navbar-link">Contacto</a>
       </div>
       <div class="navbar-cta">
-        <a href="https://wa.me/573134925711?text=Hola%20Juan%20Manuel%2C%20vi%20la%20web%20de%20Clarity%20State%20y%20me%20gustar%C3%ADa%20agendar%20un%20diagn%C3%B3stico%20de%2030%20minutos." class="btn btn-primary" data-loc="navbar" target="_blank" rel="noopener">Diagnóstico 30 min</a>
+        <span class="navbar-divider" aria-hidden="true"></span>
+        <a href="acceso.html" class="navbar-access" target="_blank" rel="noopener">Ingreso</a>
+        <a href="https://wa.me/573134925711?text=Hola%20Juan%20Manuel%2C%20vi%20la%20web%20de%20Clarity%20State%20y%20me%20gustar%C3%ADa%20agendar%20un%20diagn%C3%B3stico%20de%2030%20minutos." class="btn btn-primary" data-loc="navbar" target="_blank" rel="noopener">Pedir demo</a>
         <button class="nav-toggle" aria-label="Abrir menú" aria-controls="navbar-links" aria-expanded="false">
           <span></span><span></span><span></span>
         </button>
@@ -75,37 +61,19 @@
     </div>
   </nav>
 
-  <!-- ============ HERO ============ -->
-  <section class="page-hero">
+  <!-- ============ HERO (= "Lo más rápido") ============ -->
+  <section class="page-hero contacto-hero" id="inicio">
     <div class="container">
-      <span class="eyebrow">Conversemos</span>
-      <h1 class="page-hero-title">Hablemos en un diagnóstico de 30 minutos.</h1>
+      <span class="eyebrow">Lo más rápido</span>
+      <h1 class="page-hero-title">Escríbeme por WhatsApp o agenda directo.</h1>
       <p class="page-hero-lede">
-        La conversación es directa con Juan Manuel, sin formularios obligatorios ni
-        embudos. En 30 minutos sabemos si tiene sentido seguir.
-      </p>
-      <div class="hero-buttons">
-        <a href="https://wa.me/573134925711?text=Hola%20Juan%20Manuel%2C%20vi%20la%20web%20de%20Clarity%20State%20y%20me%20gustar%C3%ADa%20agendar%20un%20diagn%C3%B3stico%20de%2030%20minutos." class="btn btn-primary btn-lg" data-loc="hero-contacto" target="_blank" rel="noopener">Iniciar diagnóstico de 30 minutos</a>
-        <a href="#form" class="btn-text" data-loc="hero-contacto">Contáctanos</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ CANALES DIRECTOS ============ -->
-  <section class="section">
-    <div class="container">
-      <p class="eyebrow">Lo más rápido</p>
-      <h2 class="section-headline">Escríbeme por WhatsApp o agenda directo.</h2>
-
-      <p class="section-lead" style="max-width:720px">
         WhatsApp es la vía más rápida: me escribes, te respondo personalmente y
         coordinamos los 30 minutos sin pasos intermedios. Si prefieres dejar tus datos,
         el formulario de abajo te lleva directo.
       </p>
-
-      <div class="hero-buttons" style="margin-top:32px">
-        <a href="https://wa.me/573134925711?text=Hola%20Juan%20Manuel%2C%20vi%20la%20web%20de%20Clarity%20State%20y%20me%20gustar%C3%ADa%20agendar%20un%20diagn%C3%B3stico%20de%2030%20minutos." class="btn btn-primary" data-loc="contacto-whatsapp" target="_blank" rel="noopener">Escribir por WhatsApp</a>
-        <a href="#form" class="btn-text" data-loc="contacto-form-link">Contáctanos</a>
+      <div class="hero-buttons">
+        <a href="https://wa.me/573134925711?text=Hola%20Juan%20Manuel%2C%20vi%20la%20web%20de%20Clarity%20State%20y%20me%20gustar%C3%ADa%20agendar%20un%20diagn%C3%B3stico%20y%20demo%20de%2030%20minutos." class="btn btn-primary btn-lg" data-loc="hero-contacto-whatsapp" target="_blank" rel="noopener">Escribir por WhatsApp</a>
+        <a href="#form" class="btn-text" data-loc="hero-contacto-form">o déjame tus datos →</a>
       </div>
     </div>
   </section>
@@ -184,21 +152,20 @@
     </div>
   </section>
 
-  <!-- ============ CTA FINAL ============ -->
-  <section class="section section-cta">
+  <!-- ============ EMPECEMOS (CTA demo) ============ -->
+  <section class="section section-light section-light--white cta-demo" id="empecemos">
     <div class="container">
       <p class="eyebrow">Empecemos</p>
-      <h2 class="section-headline">El primer paso es una conversación.</h2>
+      <h2 class="section-headline">Un diagnóstico y demo de 30 minutos.</h2>
 
       <p class="cta-lead">
-        Escríbeme por WhatsApp y coordinamos los 30 minutos. La conversación es
-        directa con Juan Manuel: en media hora sabemos si Clarity tiene sentido
-        para tu empresa.
+        No es solo conversar: te mostramos la consola con un caso de tu empresa y vemos
+        juntos dónde aporta. Directo con Juan Manuel, sin formularios ni embudos.
       </p>
 
       <div class="cta-buttons">
-        <a href="https://wa.me/573134925711?text=Hola%20Juan%20Manuel%2C%20vi%20la%20web%20de%20Clarity%20State%20y%20me%20gustar%C3%ADa%20agendar%20un%20diagn%C3%B3stico%20de%2030%20minutos." class="btn btn-primary btn-xl" data-loc="cta-final-contacto" target="_blank" rel="noopener">Iniciar diagnóstico de 30 minutos</a>
-        <a href="#form" class="btn-text" data-loc="cta-final-contacto">Contáctanos</a>
+        <a href="https://wa.me/573134925711?text=Hola%20Juan%20Manuel%2C%20vi%20la%20web%20de%20Clarity%20State%20y%20me%20gustar%C3%ADa%20pedir%20una%20demo." class="btn btn-primary btn-xl" data-loc="cta-empecemos-contacto" target="_blank" rel="noopener">Pedir mi demo</a>
+        <a href="#form" class="btn-text" data-loc="cta-empecemos-contacto">Déjame tus datos</a>
       </div>
     </div>
   </section>
@@ -228,6 +195,7 @@
               <li><a href="nosotros.html" class="footer-link">Nosotros</a></li>
               <li><a href="recursos.html" class="footer-link">Recursos</a></li>
               <li><a href="contacto.html" class="footer-link">Contacto</a></li>
+              <li><a href="privacidad.html" class="footer-link">Aviso de privacidad</a></li>
             </ul>
           </div>
 
@@ -260,5 +228,6 @@
 
   <script src="js/main.js"></script>
   <script src="js/main-multipagina.js"></script>
+  <script src="/js/cookie-consent.js" defer></script>
 </body>
 </html>

@@ -4,19 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- GA4 -->
+  <title>Aviso de privacidad — Clarity State AI</title>
+  <meta name="description" content="Cómo Clarity State AI trata tus datos personales y el uso de cookies en este sitio." />
 
-  <title>Recursos — Guías prácticas de IA | Clarity State AI</title>
-  <meta name="description" content="Guías prácticas y gratuitas para empezar a operar con IA: configurar Claude, centralizar tu conocimiento y organizar tu semana. Por Clarity State AI." />
-
+  <!-- Favicon (SVG inline como data URI) -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%230a0a0f'/><circle cx='16' cy='13' r='5' fill='none' stroke='%233b82f6' stroke-width='2'/><rect x='14' y='16' width='4' height='7' rx='2' fill='%233b82f6'/><circle cx='16' cy='19' r='1.5' fill='%230a0a0f'/></svg>" />
 
-  <meta property="og:title" content="Recursos — Guías prácticas de IA | Clarity State AI" />
-  <meta property="og:description" content="Guías prácticas y gratuitas para empezar a operar con IA en tu empresa." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://claritystateai.com/recursos" />
-  <meta property="og:image" content="https://claritystateai.com/assets/og-image.png" />
-
+  <!-- Google Fonts: Inter (sans body) + Spectral (serif display) + IBM Plex Mono (datos) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Spectral:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
@@ -24,6 +18,24 @@
   <link rel="stylesheet" href="css/styles.css" />
   <link rel="stylesheet" href="css/multipagina.css" />
   <link rel="stylesheet" href="css/premium.css" />
+
+  <style>
+    .legal-hero { padding: 130px 0 30px; }
+    .legal-hero .eyebrow { color: #93c5fd; }
+    .legal-hero h1 { font-family: var(--f-serif); font-weight: 700; font-size: clamp(2rem, 4vw, 2.9rem); line-height: 1.1; margin: 10px 0 12px; }
+    .legal-updated { font-family: var(--f-mono); font-size: 0.8rem; color: #8392a4; letter-spacing: 0.03em; }
+    .legal-body { max-width: 760px; padding-bottom: 90px; }
+    .legal-body h2 { font-family: var(--f-serif); font-weight: 600; font-size: 1.4rem; margin: 38px 0 12px; color: #e7edf5; }
+    .legal-body p, .legal-body li { font-size: 1rem; line-height: 1.65; color: #c4cdd9; }
+    .legal-body ul { margin: 10px 0 0; padding-left: 20px; }
+    .legal-body li { margin-bottom: 7px; }
+    .legal-body a { color: #7dafff; text-decoration: underline; text-underline-offset: 2px; }
+    .legal-body strong { color: #e7edf5; }
+    .legal-cookiebtn { margin-top: 14px; display: inline-flex; align-items: center; gap: 8px; cursor: pointer;
+      border: 1px solid rgba(147,197,253,0.30); background: rgba(59,130,246,0.08); color: #cfe0f5;
+      border-radius: 10px; padding: 11px 17px; font-size: 0.9rem; font-weight: 600; font-family: inherit; }
+    .legal-cookiebtn:hover { border-color: rgba(147,197,253,0.5); background: rgba(59,130,246,0.14); }
+  </style>
 </head>
 <body>
 
@@ -56,60 +68,72 @@
     </div>
   </nav>
 
-  <!-- ============ HERO ============ -->
-  <section class="page-hero" id="inicio">
+  <!-- ============ CONTENIDO ============ -->
+  <section class="section legal-hero">
     <div class="container">
-      <p class="eyebrow">Recursos</p>
-      <h1 class="page-hero-title">Guías prácticas para empezar a operar con IA.</h1>
-      <p class="page-hero-lede">
-        Material gratuito y directo para dar los primeros pasos hoy. Si después quieres
-        llevar esto a la operación de tu empresa, hablamos en un diagnóstico de 30 minutos.
-      </p>
+      <p class="eyebrow">Legal</p>
+      <h1>Aviso de privacidad</h1>
+      <p class="legal-updated">Última actualización: 23 de junio de 2026</p>
     </div>
   </section>
 
-  <!-- ============ GRID DE RECURSOS ============ -->
-  <section class="section" id="guias">
-    <div class="container">
-      <p class="eyebrow">Guías</p>
-      <h2 class="section-headline">Tres guías para arrancar.</h2>
-
-      <div class="recursos-grid">
-        <a class="recurso-card" href="lead-magnets/ebook-migra-cerebro.html" target="_blank" rel="noopener">
-          <span class="recurso-tag">Guía</span>
-          <h3>Migra tu cerebro de ChatGPT a Claude</h3>
-          <p>Centraliza la información de tu empresa con IA y toma mejores decisiones, más rápido.</p>
-          <span class="recurso-cta">Leer la guía →</span>
-        </a>
-        <a class="recurso-card" href="lead-magnets/ebook-semana-ia.html" target="_blank" rel="noopener">
-          <span class="recurso-tag">Guía + plantilla</span>
-          <h3>Organiza tu semana en 10 minutos con IA</h3>
-          <p>Un método paso a paso para que Claude gestione tu calendario mientras tú te enfocas.</p>
-          <span class="recurso-cta">Leer la guía →</span>
-        </a>
-        <a class="recurso-card" href="lead-magnets/ebook-claude-code-setup.html" target="_blank" rel="noopener">
-          <span class="recurso-tag">Guía paso a paso</span>
-          <h3>Configura Claude Code desde cero</h3>
-          <p>Sin programación y sin complejidad. Instala tu asistente de IA en 30 minutos.</p>
-          <span class="recurso-cta">Leer la guía →</span>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ CTA FINAL ============ -->
-  <section class="section section-cta" id="cta-final">
-    <div class="container">
-      <p class="eyebrow">Conversemos</p>
-      <h2 class="section-headline">¿Listo para llevar la IA a la operación de tu empresa?</h2>
-      <p class="cta-lead">
-        Las guías son el primer paso. El siguiente es un diagnóstico de 30 minutos,
-        directo con Juan Manuel, para ver cómo se vería el cerebro de tu empresa.
+  <section class="section">
+    <div class="container legal-body">
+      <p>
+        Este aviso explica cómo Clarity State AI (en adelante, "Clarity State"), operada por Juan Manuel
+        Plazas, trata los datos personales que recibe a través de este sitio y cómo usamos cookies. Al
+        navegar el sitio o dejarnos tus datos, aceptas lo aquí descrito.
       </p>
-      <div class="cta-buttons">
-        <a href="https://wa.me/573134925711?text=Hola%20Juan%20Manuel%2C%20vi%20la%20web%20de%20Clarity%20State%20y%20me%20gustar%C3%ADa%20agendar%20un%20diagn%C3%B3stico%20de%2030%20minutos." class="btn btn-primary btn-xl" data-loc="cta-final" target="_blank" rel="noopener">Iniciar diagnóstico de 30 minutos</a>
-        <a href="contacto.html" class="btn-text" data-loc="cta-final">Contáctanos</a>
-      </div>
+
+      <h2>Responsable del tratamiento</h2>
+      <p>
+        Clarity State AI. Contacto para temas de datos personales y privacidad:
+        <a href="mailto:juanmanuelplazas@claritystateai.com">juanmanuelplazas@claritystateai.com</a>.
+      </p>
+
+      <h2>Qué datos recogemos</h2>
+      <ul>
+        <li><strong>Datos que nos das tú:</strong> nombre, correo, empresa y mensaje cuando llenas un formulario o solicitas acceso.</li>
+        <li><strong>Datos de uso del sitio:</strong> páginas vistas, origen de la visita e interacción general, de forma agregada, para entender cómo se usa el sitio y mejorarlo.</li>
+      </ul>
+
+      <h2>Cookies y medición</h2>
+      <p>
+        Las cookies son pequeños archivos que se guardan en tu navegador. En este sitio usamos
+        <strong>Microsoft Clarity</strong> para ver mapas de calor y grabaciones anónimas de uso, que nos
+        ayudan a mejorar la experiencia. Esta medición <strong>solo se activa si la aceptas</strong> en el
+        aviso de cookies; si la rechazas, no se cargan estas cookies ni se graba tu sesión.
+      </p>
+      <p>Puedes cambiar tu decisión cuando quieras:</p>
+      <button type="button" class="legal-cookiebtn" onclick="window.csaiOpenCookieSettings && window.csaiOpenCookieSettings()">Cambiar preferencias de cookies</button>
+
+      <h2>Para qué usamos los datos</h2>
+      <ul>
+        <li>Responder tu solicitud y coordinar un diagnóstico o demostración.</li>
+        <li>Mejorar el contenido y el funcionamiento del sitio.</li>
+        <li>Enviarte información relacionada solo si nos diste tu correo para ello.</li>
+      </ul>
+
+      <h2>Con quién se comparten</h2>
+      <p>
+        No vendemos tus datos. Usamos proveedores que procesan información por nosotros, como
+        <strong>Microsoft Clarity</strong> (medición de uso) y <strong>Netlify</strong> (alojamiento del sitio
+        y formularios). Cada uno trata los datos bajo sus propias condiciones de seguridad.
+      </p>
+
+      <h2>Tus derechos</h2>
+      <p>
+        Conforme a la Ley 1581 de 2012 de Colombia, puedes conocer, actualizar, rectificar y suprimir tus
+        datos, así como revocar la autorización que nos diste. Para ejercer estos derechos, escríbenos a
+        <a href="mailto:juanmanuelplazas@claritystateai.com">juanmanuelplazas@claritystateai.com</a> y
+        atenderemos tu solicitud.
+      </p>
+
+      <h2>Cambios a este aviso</h2>
+      <p>
+        Podemos actualizar este aviso para reflejar mejoras o cambios legales. La fecha de la última
+        actualización aparece al inicio de esta página.
+      </p>
     </div>
   </section>
 
@@ -121,6 +145,7 @@
           <img src="assets/img/logo.svg" alt="Clarity State AI" class="logo-img footer-logo-img" loading="lazy" />
           <p class="footer-tagline">Implementación de IA con criterio para empresas establecidas.</p>
         </div>
+
         <div class="footer-cols">
           <div class="footer-col">
             <span class="footer-col-title">Servicios</span>
@@ -130,6 +155,7 @@
               <li><a href="cliente.html" class="footer-link">Memoria del cliente</a></li>
             </ul>
           </div>
+
           <div class="footer-col">
             <span class="footer-col-title">Sitio</span>
             <ul>
@@ -139,6 +165,7 @@
               <li><a href="privacidad.html" class="footer-link">Aviso de privacidad</a></li>
             </ul>
           </div>
+
           <div class="footer-col">
             <span class="footer-col-title">Encuéntranos</span>
             <ul>
@@ -149,17 +176,10 @@
           </div>
         </div>
       </div>
+
       <p class="footer-copy">© 2026 Clarity State AI. NDA y política de datos disponibles bajo solicitud en la conversación de diagnóstico.</p>
     </div>
   </footer>
-
-  <a href="https://wa.me/573134925711?text=Hola%20Juan%20Manuel%2C%20vi%20la%20web%20de%20Clarity%20State%20y%20me%20gustar%C3%ADa%20agendar%20un%20diagn%C3%B3stico%20de%2030%20minutos."
-     class="whatsapp-floating" data-loc="widget-flotante" target="_blank" rel="noopener"
-     aria-label="Escribir por WhatsApp a Clarity State">
-    <svg viewBox="0 0 32 32" width="28" height="28" aria-hidden="true">
-      <path fill="currentColor" d="M16 .4C7.4.4.4 7.4.4 16c0 2.8.7 5.5 2.1 7.9L.4 31.6l7.9-2.1c2.3 1.3 5 2 7.7 2C24.6 31.5 31.6 24.5 31.6 16 31.6 7.4 24.6.4 16 .4zm0 28.4c-2.4 0-4.7-.6-6.7-1.8l-.5-.3-4.7 1.2 1.3-4.6-.3-.5C3.9 20.8 3.2 18.4 3.2 16 3.2 8.9 8.9 3.2 16 3.2c7.1 0 12.8 5.7 12.8 12.8s-5.7 12.8-12.8 12.8zm7.4-9.6c-.4-.2-2.4-1.2-2.7-1.3-.4-.1-.7-.2-.9.2-.3.4-1 1.3-1.3 1.6-.2.3-.5.3-.9.1-2.4-1.2-3.9-2.1-5.5-4.8-.4-.7.4-.6 1.2-2.2.1-.3 0-.5 0-.7-.1-.2-.9-2.2-1.2-3-.3-.8-.6-.7-.9-.7h-.7c-.2 0-.6.1-.9.4-.3.4-1.1 1.1-1.1 2.7s1.1 3.1 1.3 3.3c.2.3 2.2 3.4 5.4 4.7 2 .9 2.8.9 3.8.8.6-.1 1.8-.8 2-1.6.3-.8.3-1.4.2-1.6-.1-.2-.4-.3-.8-.5z"/>
-    </svg>
-  </a>
 
   <script src="js/main.js"></script>
   <script src="js/main-multipagina.js"></script>

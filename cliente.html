@@ -4,23 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- Microsoft Clarity (heatmaps + grabaciones de sesión) -->
-  <script type="text/javascript">
-    (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "x0ekhl9ur4");
-  </script>
 
-  <!-- Google tag (gtag.js) — GA4 claritystateai.com -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PSBH885840"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-PSBH885840');
-  </script>
 
   <title>Memoria del cliente — Clarity State AI</title>
   <meta name="description" content="El sistema comercial que recuerda a cada cliente: propuestas que se arman solas, un portal por prospecto, un asistente que atiende y califica, y seguimiento que te avisa cada movimiento." />
@@ -33,11 +17,10 @@
   <meta property="og:description" content="El sistema comercial que recuerda a cada cliente: propuestas que se arman solas, un portal por prospecto, un asistente que atiende y califica, y seguimiento en tiempo real." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://claritystateai.com/cliente" />
-  <!-- og-image: fuente editable en assets/og-image.png. PENDIENTE rasterizar a og-image.png (1200x630) antes de desplegar; WhatsApp/LinkedIn/Facebook no renderizan SVG en OG. -->
   <meta property="og:image" content="https://claritystateai.com/assets/og-image.png" />
   <meta name="twitter:card" content="summary_large_image" />
 
-  <!-- Google Fonts: Inter (sans body) + Spectral (serif display) — BRAND-GUIDELINES §3 -->
+  <!-- Google Fonts: Inter (sans body) + Spectral (serif display) + IBM Plex Mono (datos) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Spectral:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
@@ -45,6 +28,9 @@
   <link rel="stylesheet" href="css/styles.css" />
   <link rel="stylesheet" href="css/multipagina.css" />
   <link rel="stylesheet" href="css/premium.css" />
+  <link rel="stylesheet" href="css/producto-demo.css" />
+  <link rel="stylesheet" href="css/comercial-motor.css" />
+  <link rel="stylesheet" href="css/hero-console-anim.css" />
 </head>
 <body>
 
@@ -67,7 +53,9 @@
         <a href="contacto.html" class="navbar-link">Contacto</a>
       </div>
       <div class="navbar-cta">
-        <a href="https://wa.me/573134925711?text=Hola%20Juan%20Manuel%2C%20vi%20la%20web%20de%20Clarity%20State%20y%20me%20gustar%C3%ADa%20agendar%20un%20diagn%C3%B3stico%20de%2030%20minutos." class="btn btn-primary" data-loc="navbar" target="_blank" rel="noopener">Diagnóstico 30 min</a>
+        <span class="navbar-divider" aria-hidden="true"></span>
+        <a href="acceso.html" class="navbar-access" target="_blank" rel="noopener">Ingreso</a>
+        <a href="https://wa.me/573134925711?text=Hola%20Juan%20Manuel%2C%20vi%20la%20web%20de%20Clarity%20State%20y%20me%20gustar%C3%ADa%20agendar%20un%20diagn%C3%B3stico%20de%2030%20minutos." class="btn btn-primary" data-loc="navbar" target="_blank" rel="noopener">Pedir demo</a>
         <button class="nav-toggle" aria-label="Abrir menú" aria-controls="navbar-links" aria-expanded="false">
           <span></span><span></span><span></span>
         </button>
@@ -75,100 +63,264 @@
     </div>
   </nav>
 
-  <!-- ============ HERO ============ -->
-  <section class="page-hero">
+  <!-- ============ HERO (showcase + consola animada) ============ -->
+  <section class="page-hero page-hero--showcase">
     <div class="container">
-      <span class="eyebrow">Motor comercial · La gestión comercial</span>
-      <h1 class="page-hero-title">El sistema comercial que recuerda a cada cliente.</h1>
-      <p class="page-hero-lede">
-        Propuestas que se arman solas, un portal para cada prospecto, un asistente que
-        atiende y califica, y seguimiento que te avisa cada movimiento.
-      </p>
+      <div class="page-hero-head">
+        <span class="eyebrow">Motor comercial · La gestión comercial</span>
+        <h1 class="page-hero-title">El sistema comercial que recuerda a cada cliente.</h1>
+        <p class="page-hero-lede">Una memoria del cliente que responde, vigila tu cartera y reactiva oportunidades antes de que se enfríen.</p>
+      </div>
 
-      <div class="hero-buttons">
-        <a href="https://wa.me/573134925711?text=Hola%20Juan%20Manuel%2C%20vi%20la%20web%20de%20Clarity%20State%20y%20me%20gustar%C3%ADa%20agendar%20un%20diagn%C3%B3stico%20de%2030%20minutos." class="btn btn-primary btn-lg" data-loc="hero-cliente" target="_blank" rel="noopener">Iniciar diagnóstico de 30 minutos</a>
-        <a href="contacto.html" class="btn-text" data-loc="hero-cliente">Contáctanos</a>
+      <div class="hca" aria-hidden="true">
+        <div class="hca-glow"></div>
+        <div class="hca-grid"></div>
+        <div class="hca-window">
+          <div class="hca-bar">
+            <span class="hca-title">Clarity · Motor comercial</span>
+            <span class="hca-live"><i></i> En línea</span>
+          </div>
+          <div class="hca-tabs" aria-hidden="true">
+            <button class="hca-tab is-active" data-mode="0">Consulta</button>
+            <button class="hca-tab" data-mode="1">Monitoreo</button>
+            <button class="hca-tab" data-mode="2">Automatización</button>
+          </div>
+          <div class="hca-body">
+
+            <!-- Modo 0 · Consulta -->
+            <div class="hca-mode is-active" data-mode="0">
+              <div class="hca-ask">
+                <span class="hca-ask-icon">?</span>
+                <span class="hca-ask-text" id="hca-q"></span>
+                <span class="hca-caret" id="hca-caret"></span>
+              </div>
+              <div class="hca-answer">
+                <div class="hca-think" id="hca-think"><i></i><i></i><i></i></div>
+                <div class="hca-resp" id="hca-resp">
+                  <p class="hca-resp-text" id="hca-a"></p>
+                  <div id="hca-viz"></div>
+                  <div class="hca-source" id="hca-source">
+                    <span id="hca-src-label">Fuente</span>
+                    <span class="hca-cited">Citado</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Modo 1 · Monitoreo de cartera (tablero de fuga) -->
+            <div class="hca-mode" data-mode="1">
+              <div class="hca-kpis">
+                <div class="hca-kpi">
+                  <div class="hca-kpi-label">Clientes en riesgo de fuga</div>
+                  <div class="hca-kpi-val">7</div>
+                  <div class="hca-kpi-trend up">&#9650; +2</div>
+                </div>
+                <div class="hca-kpi">
+                  <div class="hca-kpi-label">Propuestas sin cierre</div>
+                  <div class="hca-kpi-val">12</div>
+                  <div class="hca-kpi-trend flat">en seguimiento</div>
+                </div>
+                <div class="hca-kpi">
+                  <div class="hca-kpi-label">Ticket promedio</div>
+                  <div class="hca-kpi-val">USD 3,4k</div>
+                  <div class="hca-kpi-trend good">&#9650; +6%</div>
+                </div>
+              </div>
+              <div class="hca-alert">
+                <span class="hca-alert-txt"><span class="hca-alert-ic">&#9888;</span><span><b>Cliente B-118</b> sin compra hace 60 días · 78% de fuga</span></span>
+                <span class="hca-alert-chip">Reactivar</span>
+              </div>
+            </div>
+
+            <!-- Modo 2 · Automatización (reactivación que se dispara) -->
+            <div class="hca-mode" data-mode="2">
+              <div class="hca-task">Acción de IA · <b>Reactivación B-118</b></div>
+              <div class="hca-flow">
+                <div class="hca-fstep"><span class="hca-fic"></span><span>Borrador de oferta generado</span></div>
+                <div class="hca-fstep"><span class="hca-fic"></span><span>Personalizado con su historial</span></div>
+                <div class="hca-fstep"><span class="hca-fic"></span><span>Enviado por WhatsApp</span></div>
+              </div>
+              <div class="hca-output"><b>Reactivación enviada</b> · respuesta en 2 h</div>
+            </div>
+
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- ============ EL DOLOR ============ -->
-  <section class="section">
+  <section class="section section-light">
     <div class="container">
       <p class="eyebrow">El dolor</p>
       <h2 class="section-headline">Las oportunidades se enfrían en el correo.</h2>
       <p class="section-lead" style="max-width:720px">
-        Las oportunidades se enfrían en el correo. Las propuestas tardan días en salir.
-        Y nadie sabe si el cliente abrió, compartió o se interesó.
+        Las propuestas tardan días en salir, nadie sabe si el cliente abrió o se interesó,
+        y los que ya te compraron se van sin que te enteres a tiempo.
       </p>
+
+      <div class="preguntas-grid">
+        <div class="pregunta-card">
+          <span class="pregunta-mark">&#9656;</span>
+          <p>¿Qué le ofrecimos a este cliente la última vez y cómo le fue?</p>
+        </div>
+        <div class="pregunta-card">
+          <span class="pregunta-mark">&#9656;</span>
+          <p>¿Qué clientes están a punto de irse y no lo sabemos?</p>
+        </div>
+        <div class="pregunta-card">
+          <span class="pregunta-mark">&#9656;</span>
+          <p>¿Esta propuesta la abrió, la compartió, o se enfrió?</p>
+        </div>
+        <div class="pregunta-card">
+          <span class="pregunta-mark">&#9656;</span>
+          <p>¿Cuál prospecto está más caliente para llamar hoy?</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ EL PRODUCTO EN ACCIÓN (motor de experiencias comerciales) ============ -->
+  <section class="section pd-section" id="producto-accion">
+    <div class="container">
+      <p class="eyebrow">El producto en acción</p>
+      <h2 class="section-headline">Un motor que gestiona cada relación comercial, de la primera conversación a la cartera viva.</h2>
+      <p class="section-lead">
+        Aquí lo ves en una de sus capacidades: tu agente atiende a un interesado, arma su propuesta a la
+        medida y le asigna un asesor. El mismo motor también gestiona tus clientes, monitorea pedidos y
+        tendencias, y mantiene viva cada relación comercial.
+      </p>
+
+      <div class="cm" aria-hidden="true">
+        <div class="cm-bar">
+          <span>Motor comercial · Atención y propuesta</span>
+          <span class="cm-live"><i></i> En vivo</span>
+        </div>
+
+        <div class="cm-body">
+          <!-- ① Conversación con el agente -->
+          <div class="cm-col cm-col--chat">
+            <div class="cm-col-head"><span class="cm-step-n">1</span> CLARA atiende al interesado</div>
+            <div class="cm-chat" id="cm-chat"></div>
+          </div>
+
+          <!-- ② Bases de datos · memoria viva + ③ Documento -->
+          <div class="cm-col">
+            <div class="cm-col-head"><span class="cm-step-n">2</span> Todo se guarda en tus bases de datos</div>
+            <div class="cm-brain">
+              <div class="cm-brain-top">
+                <span class="cm-brain-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5.5" rx="7" ry="3"/><path d="M5 5.5v13c0 1.66 3.13 3 7 3s7-1.34 7-3v-13"/><path d="M5 12c0 1.66 3.13 3 7 3s7-1.34 7-3"/></svg></span>
+                <span class="cm-brain-title">Memoria comercial viva</span>
+                <span class="cm-brain-sub" id="cm-brain-sub"><i></i> Agentes cruzando datos</span>
+              </div>
+              <div class="cm-chips" id="cm-chips"></div>
+              <div class="cm-brain-load" id="cm-brain-load">
+                <div class="cm-brain-load-track"><span class="cm-brain-load-fill" id="cm-brain-load-fill"></span></div>
+                <span class="cm-brain-load-txt" id="cm-brain-load-txt">Guardando en bases de datos</span>
+              </div>
+            </div>
+
+            <div class="cm-col-head"><span class="cm-step-n">3</span> Propuesta personalizada en minutos</div>
+            <div class="cm-doc">
+              <div class="cm-doc-bar"><span class="cm-doc-dot"></span> Propuesta · <span id="cm-doc-for">su empresa</span></div>
+              <div class="cm-doc-body" id="cm-doc-body"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pie: asesor + cartera viva -->
+        <div class="cm-foot" id="cm-foot">
+          <div class="cm-foot-item" data-foot>
+            <span class="cm-foot-ic">&#9788;</span>
+            <div>
+              <div class="cm-foot-t">Asesor asignado</div>
+              <div class="cm-foot-d">El asesor recibe el contexto completo y contacta al cliente sin volver a preguntar.</div>
+            </div>
+          </div>
+          <div class="cm-foot-item" data-foot>
+            <span class="cm-foot-ic">&#9851;</span>
+            <div>
+              <div class="cm-foot-t">Cartera viva</div>
+              <div class="cm-foot-d">Queda la memoria del cliente: tendencias de compra, volúmenes y montos, lista para consultar.</div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- ============ QUÉ INCLUYE ============ -->
   <section class="section section-light">
     <div class="container">
-      <p class="eyebrow">Qué incluye</p>
-      <h2 class="section-headline">Un sistema comercial completo, listo para operar.</h2>
+      <div class="incluye-grid">
+        <div class="incluye-lead">
+          <p class="eyebrow">Qué incluye</p>
+          <h2 class="section-headline">Un sistema comercial completo, listo para operar.</h2>
+          <p class="incluye-sublead">Cierras más rápido, dedicas tu tiempo a los prospectos que sí avanzan y dejas de perder oportunidades por seguimiento tardío.</p>
+        </div>
 
-      <ul class="includes-list">
-        <li>Propuestas que se arman solas, personalizadas por cliente.</li>
-        <li>Un portal-experiencia por prospecto.</li>
-        <li>Un asistente que atiende, responde y califica al interesado.</li>
-        <li>Monitoreo y alertas (te avisa cuando el cliente abre, comparte o deja su número).</li>
-        <li>Integración con WhatsApp.</li>
-      </ul>
+        <ul class="incluye-list">
+          <li class="incluye-item">
+            <span class="incluye-check">&#10003;</span>
+            <span class="incluye-text">Propuestas que se arman solas, personalizadas por cliente.</span>
+          </li>
+          <li class="incluye-item">
+            <span class="incluye-check">&#10003;</span>
+            <span class="incluye-text">Un portal-experiencia por prospecto.</span>
+          </li>
+          <li class="incluye-item">
+            <span class="incluye-check">&#10003;</span>
+            <span class="incluye-text">Un <b>asistente agéntico</b>: subagentes que atienden, califican y reactivan, desde la memoria de cada cliente.</span>
+          </li>
+          <li class="incluye-item">
+            <span class="incluye-check">&#10003;</span>
+            <span class="incluye-text">Monitoreo de fuga y alertas: te avisa cuando el cliente abre, comparte o se enfría.</span>
+          </li>
+          <li class="incluye-item">
+            <span class="incluye-check">&#10003;</span>
+            <span class="incluye-text">Integración con WhatsApp y tus herramientas comerciales.</span>
+          </li>
+        </ul>
+      </div>
 
-      <p class="section-lead" style="margin-top:28px">
-        El resultado: cierras más rápido, dedicas tu tiempo a los prospectos que sí avanzan
-        y dejas de perder oportunidades por seguimiento tardío.
-      </p>
-
-      <p class="section-lead" style="margin-top:16px">
-        Inversión desde USD $10.000. Aproximadamente 90 días. ROI medible.
-      </p>
+      <!-- Ecuación de valor -->
+      <div class="valor-eq">
+        <div class="valor-tile">
+          <span class="valor-label">Inversión</span>
+          <span class="valor-val">Desde USD $10.000</span>
+          <span class="valor-note">Alcance acordado desde el inicio, sin sorpresas.</span>
+        </div>
+        <div class="valor-tile">
+          <span class="valor-label">Tiempo</span>
+          <span class="valor-val">90 días a la primera capa</span>
+          <span class="valor-note">El sistema comercial operando con tu equipo.</span>
+        </div>
+        <div class="valor-tile valor-tile--roi">
+          <span class="valor-label">Retorno</span>
+          <span class="valor-val">Más cierres, menos fuga</span>
+          <span class="valor-note">Cada oportunidad recuperada por seguimiento a tiempo suele cubrir la inversión.</span>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- ============ LA PRUEBA ============ -->
+  <!-- ============ PRUEBA SLIM (dogfooding: Clarity lo opera) ============ -->
+  <section class="section-proof">
+    <div class="container">
+      <div class="proof-band">
+        <div class="proof-copy">
+          <span class="proof-label">Es el sistema comercial que <b>Clarity construyó y opera hoy</b> para su propia gestión.</span>
+          <span class="proof-note">Propuestas con asistente y seguimiento en tiempo real, probadas en la práctica antes de proponértelas.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FAQ / OBJECIONES ============ -->
   <section class="section">
     <div class="container">
-      <p class="eyebrow">La prueba</p>
-      <h2 class="section-headline">Una propuesta vivida como experiencia guiada.</h2>
-
-      <p class="section-lead" style="max-width:720px">
-        Es lo que Clarity construyó y opera hoy: una propuesta con asistente y seguimiento
-        en tiempo real, que avisa cada movimiento del cliente.
-      </p>
-
-      <div class="pilares-grid pilares-grid--3">
-        <div class="pilar-card">
-          <span class="prueba-tag">Velocidad</span>
-          <h3 class="pilar-title">Propuestas que se arman solas.</h3>
-          <p class="pilar-desc">Cada prospecto recibe una propuesta personalizada en minutos, lista para enviar.</p>
-        </div>
-        <div class="pilar-card">
-          <span class="prueba-tag">Experiencia</span>
-          <h3 class="pilar-title">Portal por prospecto.</h3>
-          <p class="pilar-desc">Un espacio propio donde el cliente vive la propuesta como experiencia guiada.</p>
-        </div>
-        <div class="pilar-card">
-          <span class="prueba-tag">Visibilidad</span>
-          <h3 class="pilar-title">Seguimiento que avisa.</h3>
-          <p class="pilar-desc">Sabes en tiempo real cuándo abre, comparte o deja su número, y actúas a tiempo.</p>
-        </div>
-      </div>
-
-      <div style="text-align:center;margin-top:40px">
-        <a href="https://wa.me/573134925711?text=Hola%20Juan%20Manuel%2C%20vi%20la%20web%20de%20Clarity%20State%20y%20me%20gustar%C3%ADa%20agendar%20un%20diagn%C3%B3stico%20de%2030%20minutos." class="btn btn-primary" data-loc="prueba-cliente" target="_blank" rel="noopener">Ver una demo en vivo</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ FAQ ============ -->
-  <section class="section section-light">
-    <div class="container">
-      <p class="eyebrow">Antes de la llamada</p>
-      <h2 class="section-headline">Lo que sueles preguntar.</h2>
+      <p class="eyebrow">Antes del demo</p>
+      <h2 class="section-headline">Lo que un gerente suele preguntar.</h2>
 
       <div class="faq-list">
         <div class="faq-item">
@@ -191,20 +343,19 @@
     </div>
   </section>
 
-  <!-- ============ CTA FINAL ============ -->
-  <section class="section section-cta">
+  <!-- ============ CTA FINAL (demo, fondo claro) ============ -->
+  <section class="section section-light section-light--white cta-demo">
     <div class="container">
-      <p class="eyebrow">Conversemos</p>
-      <h2 class="section-headline">Pídeme una demo en vivo en 30 minutos.</h2>
+      <p class="eyebrow">Pide tu demo</p>
+      <h2 class="section-headline">Ve tu motor comercial en acción, gratis.</h2>
 
       <p class="cta-lead">
-        Si quieres ver cómo se vería este sistema comercial en tu empresa, escríbeme por
-        WhatsApp. La conversación es directa con Juan Manuel, sin formularios ni embudos.
-        En 30 minutos sabemos si tiene sentido seguir.
+        Te mostramos cómo se arman las propuestas, cómo avisa de cada movimiento del cliente
+        y cómo reactiva oportunidades, con un caso tuyo. Una demo corta y directa con Juan Manuel.
       </p>
 
       <div class="cta-buttons">
-        <a href="https://wa.me/573134925711?text=Hola%20Juan%20Manuel%2C%20vi%20la%20web%20de%20Clarity%20State%20y%20me%20gustar%C3%ADa%20agendar%20un%20diagn%C3%B3stico%20de%2030%20minutos." class="btn btn-primary btn-xl" data-loc="cta-final-cliente" target="_blank" rel="noopener">Pedir una demo en vivo</a>
+        <a href="https://wa.me/573134925711?text=Hola%20Juan%20Manuel%2C%20vi%20la%20web%20de%20Clarity%20State%20y%20me%20gustar%C3%ADa%20pedir%20una%20demo%20de%20Motor%20comercial." class="btn btn-primary btn-xl" data-loc="cta-final-cliente" target="_blank" rel="noopener">Pedir mi demo</a>
         <a href="contacto.html" class="btn-text" data-loc="cta-final-cliente">Contáctanos</a>
       </div>
     </div>
@@ -235,6 +386,7 @@
               <li><a href="nosotros.html" class="footer-link">Nosotros</a></li>
               <li><a href="recursos.html" class="footer-link">Recursos</a></li>
               <li><a href="contacto.html" class="footer-link">Contacto</a></li>
+              <li><a href="privacidad.html" class="footer-link">Aviso de privacidad</a></li>
             </ul>
           </div>
 
@@ -253,7 +405,7 @@
     </div>
   </footer>
 
-  <!-- Widget WhatsApp flotante (esquina inferior derecha, persistente) -->
+  <!-- Widget WhatsApp flotante -->
   <a href="https://wa.me/573134925711?text=Hola%20Juan%20Manuel%2C%20vi%20la%20web%20de%20Clarity%20State%20y%20me%20gustar%C3%ADa%20agendar%20un%20diagn%C3%B3stico%20de%2030%20minutos."
      class="whatsapp-floating"
      data-loc="widget-flotante"
@@ -265,7 +417,22 @@
     </svg>
   </a>
 
+  <!-- Config de la consola del hero (escenario Consulta de cliente) -->
+  <script>
+    window.HCA_CONFIG = {
+      consulta: {
+        q: '¿Cómo va la propuesta que enviamos a B-118?',
+        a: 'La <b>abrió 3 veces</b> y la compartió con 2 personas; sin respuesta hace 4 días. Sugerido: <span class="hl">reactivar</span>.',
+        src: 'Fuente · Seguimiento, propuesta #2231'
+      }
+    };
+  </script>
+
   <script src="js/main.js"></script>
   <script src="js/main-multipagina.js"></script>
+  <script src="js/producto-demo.js"></script>
+  <script src="js/hero-console-anim.js"></script>
+  <script src="js/comercial-motor.js"></script>
+  <script src="/js/cookie-consent.js" defer></script>
 </body>
 </html>

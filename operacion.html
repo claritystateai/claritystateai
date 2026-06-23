@@ -4,23 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- Microsoft Clarity (heatmaps + grabaciones de sesión) -->
-  <script type="text/javascript">
-    (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "x0ekhl9ur4");
-  </script>
 
-  <!-- Google tag (gtag.js) — GA4 claritystateai.com -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PSBH885840"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-PSBH885840');
-  </script>
 
   <title>Memoria de la operación — Clarity State AI</title>
   <meta name="description" content="Volvemos el conocimiento que tu empresa ya produce (manuales, históricos, políticas, bitácoras, correos) en una memoria que responde preguntas en segundos. La primera capa operando en 90 días." />
@@ -33,7 +17,6 @@
   <meta property="og:description" content="El conocimiento de tu empresa, consultable en segundos. Una memoria que toma manuales, históricos, políticas y correos, y responde preguntas en segundos." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://claritystateai.com/operacion" />
-  <!-- og-image: fuente editable en assets/og-image.png. PENDIENTE rasterizar a og-image.png (1200x630) antes de desplegar; WhatsApp/LinkedIn/Facebook no renderizan SVG en OG. -->
   <meta property="og:image" content="https://claritystateai.com/assets/og-image.png" />
   <meta name="twitter:card" content="summary_large_image" />
 
@@ -45,6 +28,8 @@
   <link rel="stylesheet" href="css/styles.css" />
   <link rel="stylesheet" href="css/multipagina.css" />
   <link rel="stylesheet" href="css/premium.css" />
+  <link rel="stylesheet" href="css/producto-demo.css" />
+  <link rel="stylesheet" href="css/hero-console-anim.css" />
 </head>
 <body>
 
@@ -67,7 +52,9 @@
         <a href="contacto.html" class="navbar-link">Contacto</a>
       </div>
       <div class="navbar-cta">
-        <a href="https://wa.me/573134925711?text=Hola%20Juan%20Manuel%2C%20vi%20la%20web%20de%20Clarity%20State%20y%20me%20gustar%C3%ADa%20agendar%20un%20diagn%C3%B3stico%20de%2030%20minutos." class="btn btn-primary" data-loc="navbar" target="_blank" rel="noopener">Diagnóstico 30 min</a>
+        <span class="navbar-divider" aria-hidden="true"></span>
+        <a href="acceso.html" class="navbar-access" target="_blank" rel="noopener">Ingreso</a>
+        <a href="https://wa.me/573134925711?text=Hola%20Juan%20Manuel%2C%20vi%20la%20web%20de%20Clarity%20State%20y%20me%20gustar%C3%ADa%20agendar%20un%20diagn%C3%B3stico%20de%2030%20minutos." class="btn btn-primary" data-loc="navbar" target="_blank" rel="noopener">Pedir demo</a>
         <button class="nav-toggle" aria-label="Abrir menú" aria-controls="navbar-links" aria-expanded="false">
           <span></span><span></span><span></span>
         </button>
@@ -76,25 +63,94 @@
   </nav>
 
   <!-- ============ HERO ============ -->
-  <section class="page-hero">
+  <section class="page-hero page-hero--showcase">
     <div class="container">
-      <span class="eyebrow">Núcleo operativo · La operación</span>
-      <h1 class="page-hero-title">El conocimiento de tu empresa, consultable en segundos.</h1>
-      <p class="page-hero-lede">
-        Un sistema que toma el conocimiento que tu empresa ya produce (manuales,
-        históricos de decisiones, políticas, bitácoras, correos) y lo vuelve una
-        memoria que responde preguntas en segundos.
-      </p>
+      <div class="page-hero-head">
+        <span class="eyebrow">Núcleo operativo · La operación</span>
+        <h1 class="page-hero-title">El conocimiento de tu empresa, al alcance de un clic.</h1>
+        <p class="page-hero-lede">Un agente de IA que responde, vigila tu operación y actúa, 24/7.</p>
+      </div>
 
-      <div class="hero-buttons">
-        <a href="https://wa.me/573134925711?text=Hola%20Juan%20Manuel%2C%20vi%20la%20web%20de%20Clarity%20State%20y%20me%20gustar%C3%ADa%20agendar%20un%20diagn%C3%B3stico%20de%2030%20minutos." class="btn btn-primary btn-lg" data-loc="hero-operacion" target="_blank" rel="noopener">Iniciar diagnóstico de 30 minutos</a>
-        <a href="contacto.html" class="btn-text" data-loc="hero-operacion">Contáctanos</a>
+      <!-- Consola Clarity animada (maqueta de producto, loop) -->
+      <div class="hca" aria-hidden="true">
+        <div class="hca-glow"></div>
+        <div class="hca-grid"></div>
+        <div class="hca-window">
+          <div class="hca-bar">
+            <span class="hca-title">Clarity · Núcleo operativo</span>
+            <span class="hca-live"><i></i> En línea</span>
+          </div>
+          <div class="hca-tabs" aria-hidden="true">
+            <button class="hca-tab is-active" data-mode="0">Consulta</button>
+            <button class="hca-tab" data-mode="1">Monitoreo</button>
+            <button class="hca-tab" data-mode="2">Automatización</button>
+          </div>
+          <div class="hca-body">
+
+            <!-- Modo 0 · Consulta (responde) -->
+            <div class="hca-mode is-active" data-mode="0">
+              <div class="hca-ask">
+                <span class="hca-ask-icon">?</span>
+                <span class="hca-ask-text" id="hca-q"></span>
+                <span class="hca-caret" id="hca-caret"></span>
+              </div>
+              <div class="hca-answer">
+                <div class="hca-think" id="hca-think"><i></i><i></i><i></i></div>
+                <div class="hca-resp" id="hca-resp">
+                  <p class="hca-resp-text" id="hca-a"></p>
+                  <div id="hca-viz"></div>
+                  <div class="hca-source" id="hca-source">
+                    <span id="hca-src-label">Fuente</span>
+                    <span class="hca-cited">Citado</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Modo 1 · Monitoreo (anticipa / monitorea) -->
+            <div class="hca-mode" data-mode="1">
+              <div class="hca-kpis">
+                <div class="hca-kpi">
+                  <div class="hca-kpi-label">Costo unitario</div>
+                  <div class="hca-kpi-val">$1.240</div>
+                  <div class="hca-kpi-trend up">&#9650; +8%</div>
+                </div>
+                <div class="hca-kpi">
+                  <div class="hca-kpi-label">Cumplimiento despachos</div>
+                  <div class="hca-kpi-val">96%</div>
+                  <div class="hca-kpi-trend good">&#9650; +2 pts</div>
+                </div>
+                <div class="hca-kpi">
+                  <div class="hca-kpi-label">Inventario crítico</div>
+                  <div class="hca-kpi-val">3 SKU</div>
+                  <div class="hca-kpi-trend flat">&#9660; &minus;1</div>
+                </div>
+              </div>
+              <div class="hca-alert">
+                <span class="hca-alert-txt"><span class="hca-alert-ic">&#9888;</span><span><b>Desviación detectada</b> · empaque +8% vs. presupuesto</span></span>
+                <span class="hca-alert-chip">Revisar</span>
+              </div>
+            </div>
+
+            <!-- Modo 2 · Automatización (recomienda / actúa) -->
+            <div class="hca-mode" data-mode="2">
+              <div class="hca-task">Despacho urgente · <b>B-2271</b></div>
+              <div class="hca-flow">
+                <div class="hca-fstep"><span class="hca-fic"></span><span>Validar inventario en bodega</span></div>
+                <div class="hca-fstep"><span class="hca-fic"></span><span>Aprobar salida con jefe de planta</span></div>
+                <div class="hca-fstep"><span class="hca-fic"></span><span>Generar la guía de despacho</span></div>
+              </div>
+              <div class="hca-output"><b>Guía #4471</b> lista · 38 min</div>
+            </div>
+
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- ============ EL DOLOR ============ -->
-  <section class="section">
+  <section class="section section-light">
     <div class="container">
       <p class="eyebrow">El dolor</p>
       <h2 class="section-headline">El conocimiento de tu empresa vive en cabezas.</h2>
@@ -125,73 +181,175 @@
     </div>
   </section>
 
+  <!-- ============ EL PRODUCTO EN ACCIÓN (demo consola) ============ -->
+  <section class="section pd-section" id="producto-accion">
+    <div class="container">
+      <p class="eyebrow">El producto en acción</p>
+      <h2 class="section-headline">Pregúntale a tu operación. Responde en segundos, con su fuente.</h2>
+      <p class="section-lead">
+        Las mismas preguntas que hoy toman días, respondidas al instante y siempre
+        con el documento que las respalda. Elige una y míralo:
+      </p>
+
+      <div class="pd-grid">
+        <!-- escenarios seleccionables -->
+        <div class="pd-scenarios" role="tablist" aria-label="Escenarios de la consola">
+          <button class="pd-scn is-active" data-pd="0" role="tab" aria-selected="true">
+            <span class="pd-scn-mark">1</span>
+            <span>¿Por qué subió el costo de producción en marzo?</span>
+          </button>
+          <button class="pd-scn" data-pd="1" role="tab" aria-selected="false">
+            <span class="pd-scn-mark">2</span>
+            <span>¿Cuál es el procedimiento para un despacho urgente?</span>
+          </button>
+          <button class="pd-scn" data-pd="2" role="tab" aria-selected="false">
+            <span class="pd-scn-mark">3</span>
+            <span>¿Qué decidimos sobre el proveedor de empaque y cómo nos fue?</span>
+          </button>
+        </div>
+
+        <!-- consola -->
+        <div class="pd-console">
+          <div class="pd-console-bar">
+            <span>Memoria de la operación</span>
+            <span class="pd-chip">Consola de conocimiento</span>
+          </div>
+          <div class="pd-console-body">
+
+            <!-- escenario 1: costo -->
+            <div class="pd-panel is-active" data-pd="0">
+              <div class="pd-row">
+                <span class="pd-avatar pd-avatar--q">?</span>
+                <span class="pd-q-text">¿Por qué subió el costo de producción en marzo?</span>
+              </div>
+              <div class="pd-row">
+                <span class="pd-avatar pd-avatar--a">C</span>
+                <span class="pd-a-text">Subió <span class="pd-hl">8%</span>, concentrado en el <b>empaque</b> por el alza del proveedor Cartón S.A. Materia prima y mano de obra se mantuvieron estables.</span>
+              </div>
+              <div class="pd-source">
+                <div class="pd-source-head"><span>Fuente · Informe de costos, marzo</span><span class="pd-cited">Citado</span></div>
+                <div class="pd-source-body">
+                  <div class="pd-data-row"><span>Materia prima</span><span class="pd-var-flat">+1%</span></div>
+                  <div class="pd-data-row is-key"><span>Empaque (Cartón S.A.)</span><span class="pd-var-up">+8%</span></div>
+                  <div class="pd-data-row"><span>Mano de obra</span><span class="pd-var-flat">+2%</span></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- escenario 2: despacho urgente -->
+            <div class="pd-panel" data-pd="1">
+              <div class="pd-row">
+                <span class="pd-avatar pd-avatar--q">?</span>
+                <span class="pd-q-text">¿Cuál es el procedimiento para un despacho urgente?</span>
+              </div>
+              <div class="pd-row">
+                <span class="pd-avatar pd-avatar--a">C</span>
+                <span class="pd-a-text"><span class="pd-hl">3 pasos</span>: validar inventario, aprobar con planta y generar la guía. Tiempo objetivo del protocolo: 40 minutos.</span>
+              </div>
+              <div class="pd-source">
+                <div class="pd-source-head"><span>Fuente · Manual de operaciones, v4</span><span class="pd-cited">Citado</span></div>
+                <div class="pd-source-body">
+                  <div class="pd-step"><span class="pd-step-n">1</span><span>Validar inventario disponible en bodega.</span></div>
+                  <div class="pd-step"><span class="pd-step-n">2</span><span>Aprobar la salida con el jefe de planta.</span></div>
+                  <div class="pd-step"><span class="pd-step-n">3</span><span>Generar la guía de despacho en el sistema.</span></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- escenario 3: decisión histórica -->
+            <div class="pd-panel" data-pd="2">
+              <div class="pd-row">
+                <span class="pd-avatar pd-avatar--q">?</span>
+                <span class="pd-q-text">¿Qué decidimos sobre el proveedor de empaque y cómo nos fue?</span>
+              </div>
+              <div class="pd-row">
+                <span class="pd-avatar pd-avatar--a">C</span>
+                <span class="pd-a-text">Se cambió a <b>Cartón S.A.</b> en marzo. La merma bajó <span class="pd-hl">12%</span> y el costo unitario subió 8%. Balance del trimestre: positivo.</span>
+              </div>
+              <div class="pd-source">
+                <div class="pd-source-head"><span>Fuente · Acta de comité, marzo + cierre Q</span><span class="pd-cited">Citado</span></div>
+                <div class="pd-source-body">
+                  <div class="pd-data-row is-key"><span>Merma de empaque</span><span class="pd-var-flat">−12%</span></div>
+                  <div class="pd-data-row"><span>Costo unitario</span><span class="pd-var-up">+8%</span></div>
+                  <div class="pd-data-row"><span>Balance neto del trimestre</span><span>Positivo</span></div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <div class="pd-dots" aria-hidden="true">
+            <button class="pd-dot is-active" data-pd="0"></button>
+            <button class="pd-dot" data-pd="1"></button>
+            <button class="pd-dot" data-pd="2"></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ============ QUÉ INCLUYE ============ -->
   <section class="section section-light">
     <div class="container">
-      <p class="eyebrow">Qué incluye</p>
-      <h2 class="section-headline">Entregables tangibles en cerca de 90 días.</h2>
+      <div class="incluye-grid">
+        <div class="incluye-lead">
+          <p class="eyebrow">Qué incluye</p>
+          <h2 class="section-headline">Entregables tangibles en cerca de 90 días.</h2>
+          <p class="incluye-sublead">Cada implementación deja capacidades que tu equipo usa todos los días, integradas a tu operación.</p>
+        </div>
 
-      <ul class="includes-list">
-        <li>Ingesta del conocimiento crítico de un proceso concreto.</li>
-        <li>De 10 a 15 consultas ejecutivas listas para usar.</li>
-        <li>Un asistente que responde con la memoria de la empresa.</li>
-        <li>Integración con las herramientas que ya usas.</li>
-        <li>Capacitación al equipo, manual y soporte.</li>
-      </ul>
-
-      <p class="section-lead" style="margin-top:28px">
-        Inversión desde USD $10.000. Aproximadamente 90 días. ROI medible.
-      </p>
-    </div>
-  </section>
-
-  <!-- ============ LA PRUEBA ============ -->
-  <section class="section">
-    <div class="container">
-      <p class="eyebrow">La prueba</p>
-      <h2 class="section-headline">Lo operamos a diario en empresas que se la juegan.</h2>
-
-      <p class="section-lead" style="max-width:720px">
-        En un exportador agroindustrial B2B de cerca de 40 años, el sistema clasifica
-        el proceso operativo crítico con alta precisión, validada fuera de muestra.
-        Decisiones que tomaban de 15 a 20 días se resuelven en minutos.
-      </p>
-
-      <div class="stat">
-        <span class="stat-num">90,2%</span>
-        <span class="stat-label">de precisión del núcleo de clasificación, en datos que el sistema nunca vio durante el entrenamiento.</span>
-        <span class="stat-source">Validación interna Clarity, muestra fuera de entrenamiento (out-of-sample).</span>
+        <ul class="incluye-list">
+          <li class="incluye-item">
+            <span class="incluye-check">&#10003;</span>
+            <span class="incluye-text">Ingesta del conocimiento crítico de un proceso concreto.</span>
+          </li>
+          <li class="incluye-item">
+            <span class="incluye-check">&#10003;</span>
+            <span class="incluye-text">Casos de uso ejecutivos, listos para responder las preguntas que más pesan en tu operación.</span>
+          </li>
+          <li class="incluye-item">
+            <span class="incluye-check">&#10003;</span>
+            <span class="incluye-text">Un <b>asistente agéntico</b>: subagentes que responden desde la memoria de tu empresa y ejecutan tareas para acelerar la operación.</span>
+          </li>
+          <li class="incluye-item">
+            <span class="incluye-check">&#10003;</span>
+            <span class="incluye-text">Integración con las herramientas que ya usas.</span>
+          </li>
+          <li class="incluye-item">
+            <span class="incluye-check">&#10003;</span>
+            <span class="incluye-text">Capacitación al equipo, manual y soporte.</span>
+          </li>
+        </ul>
       </div>
 
-      <blockquote class="pull-quote pull-quote--testimonio">
-        "Lo que más tranquilidad me da: si mañana la gente que sostiene esto no está,
-        alguien más toma esa memoria y la empresa sigue caminando igual."
-        <cite>Gerente General, exportador agroindustrial B2B (~40 años de oficio)</cite>
-      </blockquote>
+      <!-- Ecuación de valor -->
+      <div class="valor-eq">
+        <div class="valor-tile">
+          <span class="valor-label">Inversión</span>
+          <span class="valor-val">Desde USD $10.000</span>
+          <span class="valor-note">Alcance acordado desde el inicio, sin sorpresas.</span>
+        </div>
+        <div class="valor-tile">
+          <span class="valor-label">Tiempo</span>
+          <span class="valor-val">90 días a la primera capa</span>
+          <span class="valor-note">De diagnóstico a operación real con tu equipo.</span>
+        </div>
+        <div class="valor-tile valor-tile--roi">
+          <span class="valor-label">Retorno</span>
+          <span class="valor-val">Medible desde el primer trimestre</span>
+          <span class="valor-note">En roles clave, el tiempo que hoy se va buscando y repitiendo se recupera; suele cubrir la inversión en los primeros meses.</span>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- ============ CÓMO SE ENTREGA / 90 DÍAS ============ -->
-  <section class="section section-light">
+  <!-- ============ PRUEBA SLIM (un solo stat; el resto vive en el home) ============ -->
+  <section class="section-proof">
     <div class="container">
-      <p class="eyebrow">Cómo se entrega</p>
-      <h2 class="section-headline">La primera capa operando en 90 días.</h2>
-
-      <div class="metodologia-fases">
-        <div class="fase-card">
-          <span class="fase-num">Días 1–30</span>
-          <h3 class="fase-title">Lectura</h3>
-          <p>Mapeamos cómo se decide hoy.</p>
-        </div>
-        <div class="fase-card">
-          <span class="fase-num">Días 31–60</span>
-          <h3 class="fase-title">Semilla</h3>
-          <p>Construimos la primera capa con datos reales.</p>
-        </div>
-        <div class="fase-card">
-          <span class="fase-num">Días 61–90</span>
-          <h3 class="fase-title">En operación</h3>
-          <p>Tu equipo la usa todos los días.</p>
+      <div class="proof-band">
+        <span class="proof-num">90,2%</span>
+        <div class="proof-copy">
+          <span class="proof-label">de precisión del núcleo de clasificación operativa, en datos que el sistema nunca vio durante el entrenamiento (out-of-sample).</span>
+          <span class="proof-note">Validado en una operación real. Decisiones que tomaban de 15 a 20 días se resuelven en minutos.</span>
         </div>
       </div>
     </div>
@@ -200,44 +358,43 @@
   <!-- ============ FAQ / OBJECIONES ============ -->
   <section class="section">
     <div class="container">
-      <p class="eyebrow">Antes de la llamada</p>
+      <p class="eyebrow">Antes del demo</p>
       <h2 class="section-headline">Lo que un gerente suele preguntar.</h2>
 
       <div class="faq-list">
         <div class="faq-item">
-          <p class="faq-question">¿Esto reemplaza a mi gente?</p>
-          <p class="faq-answer">No. El humano decide. La memoria le da el contexto para decidir mejor y más rápido. Tu equipo deja de buscar entre correos y carpetas, y se dedica a analizar.</p>
+          <p class="faq-question">¿Y si nuestros procesos no están bien documentados?</p>
+          <p class="faq-answer">Justo ahí ayuda más. Parte del trabajo es capturar lo que hoy vive en la cabeza de tu gente y en correos sueltos, y volverlo memoria consultable. No necesitas tener todo ordenado para empezar.</p>
         </div>
         <div class="faq-item">
-          <p class="faq-question">¿Qué pasa con la seguridad de mis datos?</p>
-          <p class="faq-answer">Trabajamos con acuerdo de confidencialidad (NDA) desde el inicio, una política clara de datos y un roadmap de seguridad. Tus datos son tuyos.</p>
+          <p class="faq-question">¿De dónde saca la información para responder?</p>
+          <p class="faq-answer">De tus propias fuentes: manuales, históricos, políticas, bitácoras, hojas de cálculo y correos. Cada respuesta cita el documento del que sale, para que tu equipo la verifique en un clic.</p>
         </div>
         <div class="faq-item">
-          <p class="faq-question">¿Y si no funciona en mi empresa?</p>
-          <p class="faq-answer">Por eso el primer paso es un diagnóstico de 30 minutos. En esa conversación sabemos si tiene sentido seguir, sin compromiso.</p>
+          <p class="faq-question">¿Qué tan precisa es? ¿Puede equivocarse?</p>
+          <p class="faq-answer">Por eso cada respuesta viene con su fuente: se verifica al instante. En el núcleo de clasificación operativa medimos 90,2% de precisión out-of-sample, y el alcance se acota a procesos donde la respuesta es defendible.</p>
         </div>
         <div class="faq-item">
-          <p class="faq-question">¿Con qué herramientas se integra?</p>
-          <p class="faq-answer">Con las que ya usas: correo, hojas de cálculo, gestores de archivos y las plataformas internas del negocio. La memoria se conecta a tu flujo actual y lo respeta.</p>
+          <p class="faq-question">¿Cuánto tiempo de mi equipo necesita?</p>
+          <p class="faq-answer">Poco y acotado: sesiones cortas para mapear el proceso y validar respuestas. El grueso del trabajo lo hacemos nosotros; tu gente confirma y empieza a usarla.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ============ CTA FINAL ============ -->
-  <section class="section section-cta">
+  <!-- ============ CTA FINAL (demo, fondo claro) ============ -->
+  <section class="section section-light section-light--white cta-demo">
     <div class="container">
-      <p class="eyebrow">Conversemos</p>
-      <h2 class="section-headline">El primer paso es un diagnóstico de 30 minutos.</h2>
+      <p class="eyebrow">Pide tu demo</p>
+      <h2 class="section-headline">Ve tu memoria operativa en acción, gratis.</h2>
 
       <p class="cta-lead">
-        Si quieres entender cómo se vería la memoria de tu operación, escríbenos por
-        WhatsApp. La conversación es directa con Juan Manuel, sin formularios ni embudos.
-        En 30 minutos sabemos si tiene sentido seguir.
+        Te mostramos la consola con un caso de tu propia operación: cómo responde,
+        vigila y ejecuta. Una demo corta y directa con Juan Manuel, sin formularios ni embudos.
       </p>
 
       <div class="cta-buttons">
-        <a href="https://wa.me/573134925711?text=Hola%20Juan%20Manuel%2C%20vi%20la%20web%20de%20Clarity%20State%20y%20me%20gustar%C3%ADa%20agendar%20un%20diagn%C3%B3stico%20de%2030%20minutos." class="btn btn-primary btn-xl" data-loc="cta-final-operacion" target="_blank" rel="noopener">Iniciar diagnóstico de 30 minutos</a>
+        <a href="https://wa.me/573134925711?text=Hola%20Juan%20Manuel%2C%20vi%20la%20web%20de%20Clarity%20State%20y%20me%20gustar%C3%ADa%20pedir%20una%20demo%20de%20N%C3%BAcleo%20operativo." class="btn btn-primary btn-xl" data-loc="cta-final-operacion" target="_blank" rel="noopener">Pedir mi demo</a>
         <a href="contacto.html" class="btn-text" data-loc="cta-final-operacion">Contáctanos</a>
       </div>
     </div>
@@ -268,6 +425,7 @@
               <li><a href="nosotros.html" class="footer-link">Nosotros</a></li>
               <li><a href="recursos.html" class="footer-link">Recursos</a></li>
               <li><a href="contacto.html" class="footer-link">Contacto</a></li>
+              <li><a href="privacidad.html" class="footer-link">Aviso de privacidad</a></li>
             </ul>
           </div>
 
@@ -300,5 +458,8 @@
 
   <script src="js/main.js"></script>
   <script src="js/main-multipagina.js"></script>
+  <script src="js/producto-demo.js"></script>
+  <script src="js/hero-console-anim.js"></script>
+  <script src="/js/cookie-consent.js" defer></script>
 </body>
 </html>
