@@ -1596,3 +1596,9 @@ h1, h2 {
 }
 .navbar-access:hover { border-color: #fff; background: rgba(255, 255, 255, 0.12); transform: translateY(-1px); }
 @media (max-width: 680px) { .navbar-divider, .navbar-access { display: none; } }
+
+/* Enlaces a 27 Risk Lab (aliado) — subrayado sutil adaptable a fondo claro/oscuro */
+.link-27rl { color: inherit; text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; text-decoration-color: rgba(128,128,128,.55); transition: text-decoration-color .2s ease; }
+.link-27rl:hover { text-decoration-color: currentColor; }
+.logo-link-27rl { display: inline-block; transition: opacity .2s ease; }
+.logo-link-27rl:hover { opacity: .82; }
