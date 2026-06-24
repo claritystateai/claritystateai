@@ -76,13 +76,16 @@
 
     <!-- Panel de video para móvil: video contenido + tarjeta que rota + nodo/línea ligeros -->
     <div class="hero-mpanel" aria-hidden="true">
-      <video class="hero-mvideo" autoplay loop muted playsinline poster="assets/hero/hero-poster.jpg">
+      <video class="hero-mvideo" id="hero-mvid" autoplay loop muted playsinline poster="assets/hero/hero-poster.jpg">
         <source src="assets/hero/hero-mobile.mp4" type="video/mp4" />
       </video>
+      <svg class="hero-mline" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+        <line x1="50" y1="84" x2="50" y2="40" vector-effect="non-scaling-stroke" />
+      </svg>
       <span class="hero-mdot"></span>
       <div class="hero-mcard" id="hero-mcard">
-        <span class="hero-mcard-lbl">Energía · operación</span>
-        <span class="hero-mcard-val">La causa de la caída, en minutos</span>
+        <span class="hero-mcard-lbl">Energía · continuidad</span>
+        <span class="hero-mcard-val">Detecta la falla antes de la parada</span>
       </div>
     </div>
 

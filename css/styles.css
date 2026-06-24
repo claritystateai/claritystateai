@@ -1611,12 +1611,25 @@ h1, h2 {
 /* Guard de overflow horizontal (iOS Safari necesita html, no solo body) */
 html { overflow-x: hidden; }
 
-/* Navbar logo: tamaño sano en móvil/tablet (raíz del desborde de 48px en el home) */
+/* Navbar logo: el SVG tiene ~69% de whitespace vertical (el contenido real ocupa
+   solo el 31% central de la altura). Recortamos ese espacio en móvil con un
+   contenedor de altura fija + overflow:hidden, para que la marca se vea grande
+   sin agrandar la barra. */
 @media (max-width: 768px){
-  .navbar-logo img, .navbar-logo .logo-img{ height: 52px !important; max-width: 230px !important; width: auto; }
+  .navbar-logo{ display: flex; align-items: center; height: 30px; max-width: 60vw; overflow: hidden; }
+  .navbar-logo img, .navbar-logo .logo-img{ height: 92px !important; width: auto !important; max-width: none !important; }
 }
 @media (max-width: 480px){
-  .navbar-logo img, .navbar-logo .logo-img{ height: 40px !important; max-width: 165px !important; }
+  .navbar-logo{ height: 28px; }
+  .navbar-logo img, .navbar-logo .logo-img{ height: 86px !important; }
+}
+
+/* Menú hamburguesa: el drawer vive DENTRO de .navbar (contexto z-index 100), así que
+   en iOS Safari el overlay (a nivel body) quedaba encima y se comía los toques.
+   Al abrir, elevamos toda la navbar sobre el overlay y el banner de cookies. */
+.navbar.menu-open{ z-index: 10001 !important; }
+@media (max-width: 768px){
+  .nav-overlay{ z-index: 10000 !important; }
 }
 
 /* Banner de cookies: que no se salga en pantallas chicas */

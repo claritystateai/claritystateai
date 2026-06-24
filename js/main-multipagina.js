@@ -21,26 +21,29 @@
   }
 
   // "Ingreso" (acceso) se oculta en la barra en móvil; lo reponemos DENTRO del menú.
+  // Sin target=_blank: en iOS la apertura de pestaña nueva al cerrar el menú es poco fiable.
   if (!links.querySelector('.navbar-link--access')) {
     const accessBtn = document.querySelector('.navbar-access');
     const ing = document.createElement('a');
     ing.className = 'navbar-link navbar-link--access';
     ing.href = (accessBtn && accessBtn.getAttribute('href')) || 'acceso.html';
-    ing.target = '_blank';
-    ing.rel = 'noopener';
     ing.textContent = 'Ingreso';
     links.appendChild(ing);
   }
 
+  const navbar = document.querySelector('.navbar');
+
   function open() {
     links.classList.add('is-open');
     overlay.classList.add('is-open');
+    if (navbar) navbar.classList.add('menu-open');
     toggle.setAttribute('aria-expanded', 'true');
     document.body.style.overflow = 'hidden';
   }
   function close() {
     links.classList.remove('is-open');
     overlay.classList.remove('is-open');
+    if (navbar) navbar.classList.remove('menu-open');
     toggle.setAttribute('aria-expanded', 'false');
     document.body.style.overflow = '';
   }

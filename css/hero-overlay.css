@@ -108,16 +108,19 @@
     background:linear-gradient(180deg, rgba(6,6,10,.04) 0%, rgba(6,6,10,.20) 45%, rgba(6,6,10,.74) 100%);
   }
 
-  /* nodo (punto) + línea ligera */
-  .hero-mdot{
-    position:absolute; top:28%; left:25%; width:10px; height:10px; z-index:3;
-    border-radius:50%; background:#cfe3ff;
-    animation:heroMdot 2.4s ease-in-out infinite;
+  /* línea (SVG) que conecta el punto del video con la tarjeta */
+  .hero-mpanel .hero-mline{
+    position:absolute; inset:0; width:100%; height:100%; z-index:3; pointer-events:none;
   }
-  .hero-mdot::after{
-    content:""; position:absolute; left:50%; top:9px; width:1px; height:58px;
-    background:linear-gradient(180deg, rgba(190,222,255,.8), rgba(190,222,255,0));
-    transform:translateX(-.5px);
+  .hero-mpanel .hero-mline line{
+    stroke:rgba(190,222,255,.85); stroke-width:1.3; stroke-linecap:round;
+  }
+
+  /* nodo (punto) anclado al sujeto del video; se reubica por beat */
+  .hero-mdot{
+    position:absolute; top:40%; left:50%; width:11px; height:11px; z-index:4;
+    border-radius:50%; background:#cfe3ff; transform:translate(-50%,-50%);
+    animation:heroMdot 2.4s ease-in-out infinite;
   }
   @keyframes heroMdot{
     0%,100%{ box-shadow:0 0 0 5px rgba(96,165,250,.28); }
