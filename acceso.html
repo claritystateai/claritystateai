@@ -3,96 +3,29 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <!-- GA4 -->
-
   <title>Acceso — Clarity State AI</title>
-  <meta name="description" content="Acceso a tu portal Clarity. Escribe tu correo y te enviamos un enlace de acceso, sin contraseñas." />
+  <meta name="description" content="Acceso a tu portal Clarity." />
   <meta name="robots" content="noindex" />
-
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%230a0a0f'/><circle cx='16' cy='13' r='5' fill='none' stroke='%233b82f6' stroke-width='2'/><rect x='14' y='16' width='4' height='7' rx='2' fill='%233b82f6'/><circle cx='16' cy='19' r='1.5' fill='%230a0a0f'/></svg>" />
-
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Spectral:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
-
-  <link rel="stylesheet" href="css/styles.css" />
-  <link rel="stylesheet" href="css/multipagina.css" />
-  <link rel="stylesheet" href="css/premium.css" />
-  <link rel="stylesheet" href="css/producto-demo.css" />
-  <link rel="stylesheet" href="css/hero-console-anim.css" />
+  <!-- El acceso ahora vive en el portal de operaciones. Redirigimos allí. -->
+  <meta http-equiv="refresh" content="0; url=https://operaciones.claritystateai.com/login" />
+  <link rel="canonical" href="https://operaciones.claritystateai.com/login" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%230a0a0f'/><circle cx='16' cy='13' r='5' fill='none' stroke='%233b82f6' stroke-width='2'/><rect x='14' y='16' width='4' height='7' rx='2' fill='%233b82f6'/></svg>" />
+  <style>
+    body { margin:0; min-height:100vh; display:flex; align-items:center; justify-content:center;
+           background:#0a0a0f; color:#e8e8ef; font-family:Inter,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; }
+    .box { text-align:center; padding:24px; }
+    .box a { color:#3b82f6; text-decoration:none; }
+    .box a:hover { text-decoration:underline; }
+    .muted { color:#8a8a9a; font-size:14px; margin-top:8px; }
+  </style>
 </head>
-<body class="page-ainet">
-
-  <!-- Red viva animada de fondo -->
-  <canvas id="ainet" class="ainet-fixed" aria-hidden="true"></canvas>
-  <div class="ainet-scrim" aria-hidden="true"></div>
-
-  <!-- Navbar mínima -->
-  <nav class="navbar" aria-label="Navegación">
-    <div class="container">
-      <a href="index.html" class="navbar-logo">
-        <img src="assets/img/logo.svg" alt="Clarity State AI" class="logo-img" />
-      </a>
-      <div class="navbar-cta">
-        <a href="index.html" class="navbar-link">&#8592; Volver al sitio</a>
-      </div>
-    </div>
-  </nav>
-
-  <!-- Formulario oculto para que Netlify detecte el form en el build -->
-  <form name="acceso" data-netlify="true" netlify-honeypot="bot-field" hidden>
-    <input type="email" name="correo" />
-    <input name="bot-field" />
-  </form>
-
-  <main class="acceso-wrap">
-    <div class="acceso-card" id="acceso-card">
-      <div class="acceso-key" aria-hidden="true">
-        <svg viewBox="0 0 24 24" width="26" height="26" fill="none"><circle cx="12" cy="9" r="5" stroke="currentColor" stroke-width="2"/><rect x="10" y="12" width="4" height="8" rx="2" fill="currentColor"/></svg>
-      </div>
-      <p class="eyebrow">Acceso</p>
-      <h1 class="acceso-title">Entra a tu portal Clarity</h1>
-      <p class="acceso-lede">Escribe tu correo y te enviamos un enlace de acceso. Sin contraseñas.</p>
-
-      <form class="acceso-form" name="acceso" method="POST" data-netlify="true" netlify-honeypot="bot-field" id="acceso-form">
-        <input type="hidden" name="form-name" value="acceso" />
-        <p hidden><label>No llenar: <input name="bot-field" /></label></p>
-        <label class="acceso-label" for="acceso-correo">Correo</label>
-        <input class="acceso-input" id="acceso-correo" type="email" name="correo" placeholder="tucorreo@empresa.com" required autocomplete="email" />
-        <button class="acceso-btn" type="submit">Enviar enlace de acceso</button>
-      </form>
-
-      <p class="acceso-note">El acceso es solo para correos habilitados. ¿No tienes acceso todavía? <a href="contacto.html">Escríbenos</a>.</p>
-
-      <div class="acceso-success" aria-live="polite">
-        <div class="acceso-success-ic" aria-hidden="true">&#10003;</div>
-        <h2 class="acceso-title" style="font-size:1.4rem">Revisa tu correo</h2>
-        <p>Si <b id="acceso-shown-mail">tu correo</b> está habilitado, te llega el enlace de acceso en unos minutos. Revisa también spam o promociones.</p>
-      </div>
-    </div>
-  </main>
-
-  <script>
-    (function () {
-      var form = document.getElementById('acceso-form');
-      var card = document.getElementById('acceso-card');
-      if (!form) return;
-      form.addEventListener('submit', async function (e) {
-        e.preventDefault();
-        var mail = (form.querySelector('[name="correo"]').value || '').trim();
-        var body = new URLSearchParams(new FormData(form)).toString();
-        try {
-          await fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: body });
-        } catch (_) {}
-        var shown = document.getElementById('acceso-shown-mail');
-        if (shown && mail) shown.textContent = mail;
-        card.classList.add('sent');
-      });
-    })();
-  </script>
-
-  <script src="js/ainet.js"></script>
-  <script src="/js/cookie-consent.js" defer></script>
+<body>
+  <div class="box">
+    <p>Llevándote al acceso de Clarity…</p>
+    <p class="muted">Si no avanza, entra aquí:
+      <a href="https://operaciones.claritystateai.com/login">operaciones.claritystateai.com/login</a>
+    </p>
+  </div>
+  <script>location.replace("https://operaciones.claritystateai.com/login");</script>
 </body>
 </html>
