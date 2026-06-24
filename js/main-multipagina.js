@@ -20,6 +20,18 @@
     document.body.appendChild(overlay);
   }
 
+  // "Ingreso" (acceso) se oculta en la barra en móvil; lo reponemos DENTRO del menú.
+  if (!links.querySelector('.navbar-link--access')) {
+    const accessBtn = document.querySelector('.navbar-access');
+    const ing = document.createElement('a');
+    ing.className = 'navbar-link navbar-link--access';
+    ing.href = (accessBtn && accessBtn.getAttribute('href')) || 'acceso.html';
+    ing.target = '_blank';
+    ing.rel = 'noopener';
+    ing.textContent = 'Ingreso';
+    links.appendChild(ing);
+  }
+
   function open() {
     links.classList.add('is-open');
     overlay.classList.add('is-open');

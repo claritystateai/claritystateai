@@ -1602,3 +1602,55 @@ h1, h2 {
 .link-27rl:hover { text-decoration-color: currentColor; }
 .logo-link-27rl { display: inline-block; transition: opacity .2s ease; }
 .logo-link-27rl:hover { opacity: .82; }
+
+/* =================================================================
+   RESPONSIVE FIXES + MOBILE ENHANCEMENTS — 2026-06-24
+   Navbar logo, guard de overflow, crossfade de logos en móvil.
+   ================================================================= */
+
+/* Guard de overflow horizontal (iOS Safari necesita html, no solo body) */
+html { overflow-x: hidden; }
+
+/* Navbar logo: tamaño sano en móvil/tablet (raíz del desborde de 48px en el home) */
+@media (max-width: 768px){
+  .navbar-logo img, .navbar-logo .logo-img{ height: 52px !important; max-width: 230px !important; width: auto; }
+}
+@media (max-width: 480px){
+  .navbar-logo img, .navbar-logo .logo-img{ height: 40px !important; max-width: 165px !important; }
+}
+
+/* Banner de cookies: que no se salga en pantallas chicas */
+@media (max-width: 480px){
+  .csai-cc{ left: 12px !important; right: 12px !important; max-width: none !important; }
+}
+
+/* "Tres frentes": el grid 1fr (=minmax(auto,1fr)) se expandía al min-content del
+   demo (462px) y cortaba el texto. minmax(0,1fr) deja encoger la columna. */
+@media (max-width: 768px){
+  .frentes .frente-panel.is-active{ grid-template-columns: minmax(0, 1fr) !important; }
+  .frentes .frente-panel, .frentes .frente-info, .frentes .frente-visual{ max-width: 100%; min-width: 0; }
+  .frentes .frente-visual{ overflow: hidden; }
+  .frentes .fm-carousel, .frentes .fm-portal{ max-width: 100%; min-width: 0; }
+}
+
+/* ---- Trust logos: crossfade de 1 logo a la vez en móvil ---- */
+@media (max-width: 640px){
+  .trust-logos{ position: relative; min-height: 60px; gap: 0; flex-wrap: nowrap; }
+  .trust-logos .trust-logo{
+    position: absolute; inset: 0; margin: auto; justify-content: center;
+    opacity: 0; transition: opacity .7s ease; pointer-events: none;
+  }
+  .trust-logos .trust-logo.is-on{ opacity: .95; pointer-events: auto; }
+  .trust-logos .trust-logo img{ height: 44px !important; }
+  .trust-logos .trust-logo--27rl img{ height: 54px !important; }
+}
+
+/* "Ingreso" dentro del menú hamburguesa (sólo móvil); oculto en desktop para no duplicar */
+.navbar-link--access{ display: none; }
+@media (max-width: 768px){
+  .navbar-links .navbar-link--access{
+    display: block; margin-top: 10px; padding-top: 16px;
+    border-top: 1px solid var(--border, rgba(255,255,255,.14));
+    color: #93c5fd; font-weight: 600;
+  }
+}

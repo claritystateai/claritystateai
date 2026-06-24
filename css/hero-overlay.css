@@ -74,3 +74,76 @@
   .hero--video .hero-title { font-size: 1.5rem; line-height: 1.16; }
   .hero--video .hero-subtitle { font-size: 0.97rem; }
 }
+
+/* ============================================================
+   HERO MÓVIL — panel de video contenido + tarjeta que rota
+   (2026-06-24). Sustituye el video full-bleed en ≤768px.
+   ============================================================ */
+.hero-mpanel{ display:none; }
+
+@media (max-width: 768px){
+  /* la sección pasa a flujo vertical: panel arriba, texto debajo */
+  .hero--video{ display:block; min-height:0; padding-top:84px; padding-bottom:40px; }
+  .hero--video .hero-video,
+  .hero--video #hero-net,
+  .hero--video #hero-card,
+  .hero--video .hero-shade-grad,
+  .hero--video .hero-shade-vig,
+  .hero--video .hero-shade-top{ display:none !important; }
+
+  .hero--video .container{ position:relative; z-index:5; padding-left:22px; padding-right:22px; }
+  .hero--video .hero-text{ max-width:none; }
+
+  /* panel de video contenido */
+  .hero-mpanel{
+    display:block; position:relative; width:100%; aspect-ratio:16/10;
+    border-radius:16px; overflow:hidden; margin:0 0 22px;
+    border:1px solid rgba(147,197,253,.20);
+    box-shadow:0 12px 40px rgba(0,0,0,.4);
+    background:#06060a;
+  }
+  .hero-mpanel .hero-mvideo{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
+  .hero-mpanel::after{
+    content:""; position:absolute; inset:0; pointer-events:none;
+    background:linear-gradient(180deg, rgba(6,6,10,.04) 0%, rgba(6,6,10,.20) 45%, rgba(6,6,10,.74) 100%);
+  }
+
+  /* nodo (punto) + línea ligera */
+  .hero-mdot{
+    position:absolute; top:28%; left:25%; width:10px; height:10px; z-index:3;
+    border-radius:50%; background:#cfe3ff;
+    animation:heroMdot 2.4s ease-in-out infinite;
+  }
+  .hero-mdot::after{
+    content:""; position:absolute; left:50%; top:9px; width:1px; height:58px;
+    background:linear-gradient(180deg, rgba(190,222,255,.8), rgba(190,222,255,0));
+    transform:translateX(-.5px);
+  }
+  @keyframes heroMdot{
+    0%,100%{ box-shadow:0 0 0 5px rgba(96,165,250,.28); }
+    50%{ box-shadow:0 0 0 9px rgba(96,165,250,.10); }
+  }
+
+  /* tarjeta que rota (crossfade) */
+  .hero-mcard{
+    position:absolute; left:14px; right:14px; bottom:14px; z-index:4;
+    border:1px solid rgba(147,197,253,.30); border-radius:13px;
+    background:rgba(8,12,19,.46);
+    backdrop-filter:blur(10px) saturate(1.1); -webkit-backdrop-filter:blur(10px) saturate(1.1);
+    padding:12px 14px; opacity:1; transition:opacity .5s ease;
+  }
+  .hero-mcard.is-fading{ opacity:0; }
+  .hero-mcard .hero-mcard-lbl{
+    display:block; font-family:var(--f-mono,'IBM Plex Mono',monospace);
+    font-size:10px; letter-spacing:.12em; text-transform:uppercase; color:#93c5fd; margin-bottom:5px;
+  }
+  .hero-mcard .hero-mcard-val{
+    display:block; font-family:var(--f-serif,'Spectral',serif); font-weight:600;
+    font-size:16px; line-height:1.2; color:#fff; letter-spacing:-.01em;
+  }
+
+  /* texto del hero (en flujo, debajo del panel) */
+  .hero--video .eyebrow{ display:block; margin-bottom:10px; }
+  .hero--video .hero-buttons{ margin-top:18px; }
+  .hero--video .hero-buttons .btn-lg{ width:100%; text-align:center; justify-content:center; }
+}
