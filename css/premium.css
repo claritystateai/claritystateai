@@ -11,7 +11,9 @@
    ============================================================ */
 
 :root {
-  --f-mono: 'IBM Plex Mono', ui-monospace, 'SF Mono', 'Cascadia Code', monospace;
+  /* Fuente de etiquetas/eyebrows: Hanken Grotesk (neutra, cálida). Reemplazó a IBM Plex Mono
+     para quitar el aire "de plantilla de IA". Se mantiene el nombre --f-mono por compatibilidad. */
+  --f-mono: 'Hanken Grotesk', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 /* ---------- Tipografía editorial ---------- */
