@@ -5,6 +5,7 @@
 (function () {
   var KEY = 'csai-cookie-consent';        // 'granted' | 'denied'
   var CLARITY_ID = 'x0ekhl9ur4';          // Microsoft Clarity
+  var META_PIXEL_ID = '1912429919449506'; // Meta Pixel (Clarity State AI) — gateado por consentimiento
   var PRIVACY_URL = '/privacidad.html';
 
   function getDecision() { try { return localStorage.getItem(KEY); } catch (e) { return null; } }
@@ -18,6 +19,50 @@
       t = l.createElement(r); t.async = 1; t.src = 'https://www.clarity.ms/tag/' + i;
       y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
     })(window, document, 'clarity', 'script', CLARITY_ID);
+  }
+
+  function loadPixel() {
+    if (window.__pixelLoaded) return;
+    window.__pixelLoaded = true;
+    !function (f, b, e, v, n, t, s) {
+      if (f.fbq) return; n = f.fbq = function () {
+        n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments);
+      };
+      if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+      n.queue = []; t = b.createElement(e); t.async = !0; t.src = v;
+      s = b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t, s);
+    }(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+    window.fbq('init', META_PIXEL_ID);
+    window.fbq('track', 'PageView');
+  }
+
+  // Dispara un evento estándar de Meta SOLO si el visitante dio consentimiento (pixel cargado).
+  window.csaiTrack = function (ev, params) {
+    if (window.fbq && window.__pixelLoaded) {
+      try { window.fbq('track', ev, params || {}); } catch (e) {}
+    }
+  };
+
+  // Listeners de conversión. Se enganchan siempre; csaiTrack no hace nada sin consentimiento.
+  function wireEvents() {
+    if (window.__csaiEventsWired) return;
+    window.__csaiEventsWired = true;
+    document.addEventListener('click', function (e) {
+      var a = e.target && e.target.closest ? e.target.closest('a[href]') : null;
+      if (!a) return;
+      var href = a.getAttribute('href') || '';
+      if (/wa\.me|api\.whatsapp\.com/i.test(href)) {
+        window.csaiTrack('Contact', { content_name: 'whatsapp', source: a.getAttribute('data-loc') || '' });
+      } else if (/calendly\.com/i.test(href)) {
+        window.csaiTrack('Lead', { content_name: 'calendly' });
+      }
+    }, true);
+    var form = document.querySelector('form.contact-form');
+    if (form) {
+      form.addEventListener('submit', function () {
+        window.csaiTrack('Lead', { content_name: 'form_contacto' });
+      });
+    }
   }
 
   function injectStyles() {
@@ -76,7 +121,7 @@
       el.classList.remove('csai-show');
       document.body.classList.remove('csai-cc-open');
       setTimeout(function () { if (el.parentNode) el.parentNode.removeChild(el); }, 450);
-      if (decision === 'granted') loadClarity();
+      if (decision === 'granted') { loadClarity(); loadPixel(); }
     }
     el.querySelector('.csai-cc-accept').addEventListener('click', function () { close('granted'); });
     el.querySelector('.csai-cc-reject').addEventListener('click', function () { close('denied'); });
@@ -88,8 +133,9 @@
   };
 
   function init() {
+    wireEvents();                                     // listeners siempre; no rastrean sin consentimiento
     var d = getDecision();
-    if (d === 'granted') { loadClarity(); return; }   // ya aceptó: cargar sin banner
+    if (d === 'granted') { loadClarity(); loadPixel(); return; }   // ya aceptó: cargar sin banner
     if (d === 'denied') { return; }                   // ya rechazó: nada
     showBanner();                                     // sin decisión: preguntar
   }
