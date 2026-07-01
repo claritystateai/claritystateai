@@ -6,7 +6,8 @@
 
 .demo-choice {
   position: relative;
-  padding: clamp(64px, 10vh, 120px) 0 clamp(72px, 12vh, 140px);
+  /* padding-top alto para que el titular respire bajo el navbar fijo (igual que .page-hero) */
+  padding: 160px 0 clamp(72px, 12vh, 140px);
   overflow: hidden;
 }
 
@@ -78,6 +79,7 @@
 }
 
 @media (max-width: 760px) {
+  .demo-choice { padding-top: 116px; }
   .demo-cards { grid-template-columns: 1fr; }
 }
 
@@ -162,7 +164,8 @@
   margin-bottom: 12px;
 }
 
-.demo-card h2 {
+.demo-card h2,
+.demo-card h3 {
   font-family: var(--f-serif, 'Spectral', serif);
   font-weight: 600;
   font-size: clamp(1.35rem, 2.4vw, 1.7rem);

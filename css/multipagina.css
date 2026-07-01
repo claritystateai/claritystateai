@@ -153,6 +153,81 @@ a.pilar-card:hover {
   pointer-events: none;
 }
 
+/* ---------- VÍAS DE CONTACTO (chooser rápido, priorizado por velocidad) ---------- */
+.vias {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  max-width: 780px;
+  margin-top: 8px;
+}
+.via {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 20px;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+  color: var(--text-primary);
+  text-decoration: none;
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.via:hover {
+  transform: translateY(-3px);
+  border-color: var(--border-accent);
+  box-shadow: 0 22px 44px -26px rgba(0, 0, 0, 0.75);
+}
+.via-ic {
+  flex: none;
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(180deg, rgba(59, 130, 246, 0.18), rgba(59, 130, 246, 0.05));
+  border: 1px solid var(--border-accent);
+  color: var(--accent-light);
+}
+.via-ic svg { width: 22px; height: 22px; }
+.via-body { flex: 1; min-width: 0; }
+.via-title { display: block; font-weight: 600; font-size: 1.03rem; line-height: 1.25; }
+.via-desc { display: block; margin-top: 3px; font-size: 0.88rem; line-height: 1.4; color: var(--text-muted); }
+.via-arrow { flex: none; width: 20px; height: 20px; color: var(--text-muted); transition: transform 0.2s ease, color 0.2s ease; }
+.via:hover .via-arrow { transform: translateX(3px); color: var(--accent-light); }
+.via-tag {
+  position: absolute;
+  top: -9px;
+  left: 20px;
+  font-family: var(--f-mono);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: #0a0a0f;
+  background: var(--accent-light);
+  padding: 3px 9px;
+  border-radius: 999px;
+}
+/* Vías rápidas (prioridad visual) */
+.via-fast {
+  border-color: var(--border-accent);
+  background:
+    linear-gradient(160deg, rgba(59, 130, 246, 0.10) 0%, rgba(18, 26, 36, 0) 60%),
+    var(--bg-card);
+}
+/* WhatsApp en su color de marca */
+.via-wa .via-ic {
+  background: linear-gradient(180deg, rgba(37, 211, 102, 0.22), rgba(37, 211, 102, 0.06));
+  border-color: rgba(37, 211, 102, 0.42);
+  color: #25d366;
+}
+.via-wa .via-tag { background: #25d366; }
+@media (max-width: 760px) {
+  .vias { grid-template-columns: 1fr; }
+}
+
 /* ---------- BLOQUE DE CIFRA (la prueba honesta) ---------- */
 .stat {
   margin: 36px 0;

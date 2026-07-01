@@ -30,7 +30,8 @@
 .rm-index-wrap b { color: #f0a868; font-size: 12px; margin-left: 5px; }
 
 .rm-map-canvas { position: relative; height: 296px; display: grid; place-items: center; overflow: hidden; }
-.rm-map-svg { height: 100%; width: 100%; display: block; }
+.rm-map-svg { grid-area: 1 / 1; height: 100%; width: 100%; display: block; opacity: 0; transition: opacity 0.8s ease; }
+.rm-map-svg.is-active { opacity: 1; }
 .rm-country { fill: rgba(96, 165, 250, 0.06); stroke: rgba(147, 197, 253, 0.34); stroke-width: 1.2; stroke-linejoin: round; }
 
 .rm-hot { opacity: 0.20; transition: opacity 0.5s ease; }

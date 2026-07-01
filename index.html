@@ -29,6 +29,7 @@
   <link rel="stylesheet" href="css/styles.css" />
   <link rel="stylesheet" href="css/multipagina.css" />
   <link rel="stylesheet" href="css/premium.css" />
+  <link rel="stylesheet" href="css/pedir-demo.css" />
   <link rel="stylesheet" href="css/hero-overlay.css" />
   <link rel="stylesheet" href="css/frente-mockups.css" />
 </head>
@@ -151,28 +152,46 @@
 
   <!-- ============ CÓMO FUNCIONA (el motor en 3 pasos) ============ -->
   <section class="section section-light como-funciona" id="como-funciona">
-    <div class="container">
-      <p class="eyebrow">Cómo funciona</p>
-      <h2 class="section-headline">Capturamos lo que tu empresa ya sabe, lo volvemos memoria y la ponemos a decidir.</h2>
-      <p class="section-lead" style="max-width:780px">La memoria viva funciona como una capa cognitiva sobre tu operación y cubre el ciclo de extremo a extremo (E2E): ingesta y clasificación, gestión de casos, análisis y ejecución, y supervisión con KPIs. De la captura del dato a la decisión y su seguimiento, con trazabilidad de punta a punta.</p>
-
-      <div class="pasos-grid">
-        <div class="paso">
-          <span class="paso-label">01 · Ingesta y clasificación</span>
-          <h3 class="paso-title">Reunimos y ordenamos lo disperso</h3>
-          <p class="paso-desc">Correos, Excel, ERP, actas y documentos: ingeridos, leídos y clasificados con IA.</p>
-        </div>
-        <div class="paso">
-          <span class="paso-label">02 · Estructuración y memoria</span>
-          <h3 class="paso-title">Lo volvemos una memoria que responde</h3>
-          <p class="paso-desc">Consultable en lenguaje natural, en segundos y siempre con su fuente.</p>
-        </div>
-        <div class="paso">
-          <span class="paso-label">03 · Análisis, ejecución y KPIs</span>
-          <h3 class="paso-title">Anticipa, ejecuta y mide</h3>
-          <p class="paso-desc">Recomienda, genera acciones y monitorea indicadores sobre tus tres frentes: operación, riesgo y cliente.</p>
-        </div>
+    <div class="container cf-grid">
+      <div class="cf-intro">
+        <p class="eyebrow">Cómo funciona</p>
+        <h2 class="section-headline">Capturamos lo que tu empresa ya sabe, lo volvemos memoria y la ponemos a decidir.</h2>
+        <p class="cf-lede">De la captura del dato a la decisión, con seguimiento de punta a punta.</p>
+        <!-- Botón "En un minuto" (video) retirado a la espera de grabar el video (~viernes). El CSS .cf-minuto queda dormido en styles.css para reintroducirlo. -->
       </div>
+
+      <ol class="cf-steps">
+        <li class="cf-step">
+          <span class="cf-step-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7l9-4 9 4-9 4-9-4z"/><path d="M3 12l9 4 9-4"/><path d="M3 17l9 4 9-4"/></svg>
+          </span>
+          <div class="cf-step-body">
+            <span class="cf-step-label">01 · Captura</span>
+            <h3 class="cf-step-title">Reunimos lo disperso</h3>
+            <p class="cf-step-desc">Correos, Excel, ERP, actas y documentos: leídos y ordenados por IA.</p>
+          </div>
+        </li>
+        <li class="cf-step">
+          <span class="cf-step-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-8.5 8.5 8.5 8.5 0 0 1-3.8-.9L3 21l1.9-5.7A8.5 8.5 0 0 1 12.5 3 8.38 8.38 0 0 1 21 11.5z"/></svg>
+          </span>
+          <div class="cf-step-body">
+            <span class="cf-step-label">02 · Memoria</span>
+            <h3 class="cf-step-title">Le preguntas, responde</h3>
+            <p class="cf-step-desc">En lenguaje natural, en segundos y siempre con su fuente.</p>
+          </div>
+        </li>
+        <li class="cf-step">
+          <span class="cf-step-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 7-8"/><path d="M17 7h4v4"/></svg>
+          </span>
+          <div class="cf-step-body">
+            <span class="cf-step-label">03 · Decisión</span>
+            <h3 class="cf-step-title">Anticipa, ejecuta y mide</h3>
+            <p class="cf-step-desc">Recomienda, dispara acciones y vigila tus indicadores de operación, riesgo y cliente.</p>
+          </div>
+        </li>
+      </ol>
     </div>
   </section>
 
@@ -845,39 +864,53 @@
   </section>
 
   <!-- ============ CÓMO SE ENTREGA / 90 DÍAS + ECUACIÓN DE VALOR ============ -->
-  <section class="section section-light" id="metodologia">
-    <div class="container">
-      <p class="eyebrow">Cómo se entrega</p>
-      <h2 class="section-headline">La primera capa operando en 90 días.</h2>
-
-      <div class="metodologia-fases">
-        <div class="fase-card">
-          <span class="fase-num">Días 1–30</span>
-          <h3 class="fase-title">Lectura</h3>
-          <p>Mapeamos cómo se decide hoy.</p>
-        </div>
-        <div class="fase-card">
-          <span class="fase-num">Días 31–60</span>
-          <h3 class="fase-title">Semilla</h3>
-          <p>Construimos la primera capa con datos reales.</p>
-        </div>
-        <div class="fase-card">
-          <span class="fase-num">Días 61–90</span>
-          <h3 class="fase-title">En operación</h3>
-          <p>Tu equipo la usa todos los días.</p>
-        </div>
+  <section class="section section-light como-funciona" id="metodologia">
+    <div class="container cf-grid">
+      <div class="cf-intro">
+        <p class="eyebrow">Cómo se entrega</p>
+        <h2 class="section-headline">La primera capa de tu memoria viva, operando con tu equipo en 90 días.</h2>
+        <p class="cf-lede">Un método claro y medible: del diagnóstico a un sistema que tu gente usa cada día.</p>
       </div>
 
-      <ul class="includes-list">
-        <li>El conocimiento crítico de un proceso, en una memoria consultable.</li>
-        <li>Un asistente que responde con la memoria de tu empresa.</li>
-        <li>Capacitación, integración y soporte.</li>
-      </ul>
+      <ol class="cf-steps">
+        <li class="cf-step">
+          <span class="cf-step-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+          </span>
+          <div class="cf-step-body">
+            <span class="cf-step-label">01 · Días 1–30</span>
+            <h3 class="cf-step-title">Lectura</h3>
+            <p class="cf-step-desc">Mapeamos cómo decide tu operación hoy: datos, documentos y criterios.</p>
+          </div>
+        </li>
+        <li class="cf-step">
+          <span class="cf-step-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22V12"/><path d="M12 12C12 8 9 6 5 6c0 4 3 6 7 6z"/><path d="M12 12c0-3 2-5 6-5 0 3-2 5-6 5z"/></svg>
+          </span>
+          <div class="cf-step-body">
+            <span class="cf-step-label">02 · Días 31–60</span>
+            <h3 class="cf-step-title">Semilla</h3>
+            <p class="cf-step-desc">Construimos la primera capa con tus datos reales: consultable y siempre con su fuente.</p>
+          </div>
+        </li>
+        <li class="cf-step">
+          <span class="cf-step-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l3 8 4-16 3 8h4"/></svg>
+          </span>
+          <div class="cf-step-body">
+            <span class="cf-step-label">03 · Días 61–90</span>
+            <h3 class="cf-step-title">En operación</h3>
+            <p class="cf-step-desc">Tu equipo la usa a diario. Incluye capacitación, integración y soporte.</p>
+          </div>
+        </li>
+      </ol>
+    </div>
 
+    <div class="container">
       <div class="value-eq">
         <div class="value-eq-item"><span class="value-eq-k">Qué entrega</span><span class="value-eq-v">La primera capa de la memoria viva, operando con tu equipo.</span></div>
         <div class="value-eq-item"><span class="value-eq-k">En cuánto tiempo</span><span class="value-eq-v">Aproximadamente 90 días.</span></div>
-        <div class="value-eq-item"><span class="value-eq-k">Inversión</span><span class="value-eq-v">Desde USD $10.000. ROI medible.</span></div>
+        <div class="value-eq-item"><span class="value-eq-k">Inversión</span><span class="value-eq-v">Desde USD $10.000, con ROI medible.</span></div>
       </div>
     </div>
   </section>
@@ -888,23 +921,52 @@
       <p class="eyebrow">Antes de la llamada</p>
       <h2 class="section-headline">Lo que un gerente suele preguntar.</h2>
 
-      <div class="faq-list">
-        <div class="faq-item">
-          <p class="faq-question">¿Esto reemplaza a mi gente?</p>
-          <p class="faq-answer">El humano decide. La memoria viva le da el contexto para decidir mejor y más rápido. Tu equipo deja de buscar entre correos y carpetas, y dedica su tiempo a analizar.</p>
-        </div>
-        <div class="faq-item">
-          <p class="faq-question">¿Qué pasa con la seguridad de mis datos?</p>
-          <p class="faq-answer">Trabajamos con acuerdo de confidencialidad (NDA) desde el inicio, una política clara de datos y un roadmap de seguridad. Tus datos son tuyos.</p>
-        </div>
-        <div class="faq-item">
-          <p class="faq-question">¿Y si no funciona en mi empresa?</p>
-          <p class="faq-answer">Por eso el primer paso es un diagnóstico de 30 minutos. En esa conversación sabemos si tiene sentido seguir, sin compromiso.</p>
-        </div>
-        <div class="faq-item">
-          <p class="faq-question">¿Cuánto cuesta?</p>
-          <p class="faq-answer">Los proyectos arrancan desde USD $10.000, con un alcance acordado y entregables tangibles en cerca de 90 días.</p>
-        </div>
+      <div class="faq-accordion">
+        <details class="faq-item">
+          <summary>
+            ¿Esto solo sirve para empresas, o también para instituciones?
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </summary>
+          <div class="faq-answer">
+            <p>El valor no depende del sector. Cualquier organización que opere sobre información dispersa —empresas, fundaciones, instituciones— gana lo mismo: una memoria viva de su operación para decidir mejor y más rápido. Para entregar en cerca de 90 días necesitamos dos cosas: un responsable que decida y un alcance acotado.</p>
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary>
+            ¿Esto reemplaza a mi gente?
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </summary>
+          <div class="faq-answer">
+            <p>El humano decide. La memoria viva le da el contexto para decidir mejor y más rápido. Tu equipo deja de buscar entre correos y carpetas, y dedica su tiempo a analizar.</p>
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary>
+            ¿Qué pasa con la seguridad de mis datos?
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </summary>
+          <div class="faq-answer">
+            <p>Trabajamos con acuerdo de confidencialidad (NDA) desde el inicio, una política clara de datos y un roadmap de seguridad. Tus datos son tuyos.</p>
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary>
+            ¿Y si no funciona en mi empresa?
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </summary>
+          <div class="faq-answer">
+            <p>Por eso el primer paso es un diagnóstico de 30 minutos. En esa conversación sabemos si tiene sentido seguir, sin compromiso.</p>
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary>
+            ¿Cuánto cuesta?
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </summary>
+          <div class="faq-answer">
+            <p>Los proyectos arrancan desde USD $10.000, con un alcance acordado y entregables tangibles en cerca de 90 días.</p>
+          </div>
+        </details>
       </div>
     </div>
   </section>
@@ -913,18 +975,58 @@
   <section class="section section-cta" id="cta-final">
     <div class="container">
       <p class="eyebrow">Conversemos</p>
-      <h2 class="section-headline">El primer paso es un diagnóstico de 30 minutos.</h2>
+      <h2 class="section-headline">Dos formas de dar tu primer paso.</h2>
 
       <p class="cta-lead">
-        Tres formas de empezar: agenda el diagnóstico por WhatsApp, escríbenos por el mismo
-        canal, o déjanos tus datos en el formulario. La conversación es directa con el equipo
-        de Clarity. En 30 minutos sabemos si tiene sentido seguir.
+        Empieza cuando quieras: deja que el agente de Clarity te arme una primera propuesta
+        a la medida de tu empresa, o agenda 30 minutos con un experto para revisar tu caso.
+        Sin compromiso.
       </p>
 
-      <div class="cta-buttons">
-        <a href="https://wa.me/573134925711?text=Hola%20Juan%20Manuel%2C%20vi%20la%20web%20de%20Clarity%20State%20y%20me%20gustar%C3%ADa%20agendar%20un%20diagn%C3%B3stico%20de%2030%20minutos." class="btn btn-primary btn-xl" data-loc="cta-final" target="_blank" rel="noopener">Iniciar diagnóstico de 30 minutos</a>
-        <a href="#contacto-form" class="btn-text" data-loc="cta-final">o déjanos tus datos →</a>
+      <div class="demo-cards">
+
+        <!-- VÍA 1 · Agente Clarity (Opus) -->
+        <article class="demo-card">
+          <div class="demo-card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+            </svg>
+          </div>
+          <span class="card-eyebrow">Opción 1 · Ahora mismo</span>
+          <h3>Habla con el agente de Clarity</h3>
+          <p>Responde unas preguntas sobre tu empresa y tu negocio. Con eso, el agente te genera una primera propuesta inicial, ajustada a lo que estás buscando.</p>
+          <div class="demo-card-mock" aria-hidden="true">
+            <span class="dot"></span>
+            <span>Cuéntame de tu empresa…</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </div>
+          <a href="https://propuesta.claritystateai.com/intake" class="btn btn-primary card-cta" data-loc="home-cta-agente" target="_blank" rel="noopener">Generar mi propuesta →</a>
+        </article>
+
+        <!-- VÍA 2 · Diagnóstico 30 min (videollamada) -->
+        <article class="demo-card">
+          <div class="demo-card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="4" width="18" height="18" rx="2"></rect>
+              <line x1="16" y1="2" x2="16" y2="6"></line>
+              <line x1="8" y1="2" x2="8" y2="6"></line>
+              <line x1="3" y1="10" x2="21" y2="10"></line>
+              <path d="M9 15l2 2 4-4"></path>
+            </svg>
+          </div>
+          <span class="card-eyebrow">Opción 2 · Con un experto</span>
+          <h3>Agenda 30 minutos</h3>
+          <p>Una videollamada con un experto de Clarity para revisar tu caso y ver cómo se implementa dentro de tu operación. Un primer acercamiento, sin compromiso.</p>
+          <div class="demo-card-mock" aria-hidden="true">
+            <span class="dot"></span>
+            <span>Diagnóstico · 30 min · videollamada</span>
+          </div>
+          <a href="https://calendly.com/juanmanuelplazas-claritystateai/30min" class="btn btn-primary card-cta" data-loc="home-cta-calendly" target="_blank" rel="noopener">Agendar llamada →</a>
+        </article>
+
       </div>
+
+      <p class="demo-foot">¿Prefieres escribirnos directo? <a href="https://wa.me/573134925711?text=Hola%20Juan%20Manuel%2C%20vi%20la%20web%20de%20Clarity%20State%20y%20me%20gustar%C3%ADa%20agendar%20un%20diagn%C3%B3stico%20de%2030%20minutos." data-loc="home-cta-whatsapp" target="_blank" rel="noopener">Escríbenos por WhatsApp</a> y te respondemos hoy.</p>
     </div>
   </section>
 

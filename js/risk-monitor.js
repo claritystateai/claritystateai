@@ -12,14 +12,19 @@
       alertTxt = root.querySelector('#rm-alert-txt'),
       fsteps = Array.prototype.slice.call(root.querySelectorAll('.rm-flow .hca-fstep')),
       output = root.querySelector('#rm-output'),
+      maps = Array.prototype.slice.call(root.querySelectorAll('.rm-map-svg')),
       hots = Array.prototype.slice.call(root.querySelectorAll('.rm-hot'));
+
+  function setMap(which) {
+    maps.forEach(function (m) { m.classList.toggle('is-active', m.getAttribute('data-map') === which); });
+  }
 
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var wait = function (ms) { return new Promise(function (r) { setTimeout(r, ms); }); };
 
   var SITU = [
     {
-      name: 'Monitoreo electoral', hots: ['bogota', 'medellin', 'cali', 'barranquilla'], index: 62, level: 'Medio-alto',
+      name: 'Monitoreo electoral', map: 'co', hots: ['bogota', 'medellin', 'cali', 'barranquilla'], index: 62, level: 'Medio-alto',
       feed: [
         { tag: 'electoral', label: 'Electoral', src: 'Prensa', t: 'hace 6m', txt: 'Tensión social tras los resultados electorales.', sev: 'Severidad media' },
         { tag: 'medios', label: 'Medios', src: 'Medios', t: 'hace 3m', txt: 'Cobertura nacional intensa, narrativa polarizada.', sev: 'Reputacional' },
@@ -29,7 +34,7 @@
       output: 'Monitoreo reforzado · comunicación interna lista'
     },
     {
-      name: 'Paro / bloqueo sindical', hots: ['corredor', 'bogota'], index: 78, level: 'Alto',
+      name: 'Paro / bloqueo sindical', map: 'co', hots: ['corredor', 'bogota'], index: 78, level: 'Alto',
       feed: [
         { tag: 'laboral', label: 'Laboral', src: 'Prensa', t: 'hace 8m', txt: 'Sindicato anuncia paro nacional para el día 25.', sev: 'Severidad alta' },
         { tag: 'laboral', label: 'Laboral', src: 'Redes · X', t: 'ahora', txt: 'Reportan bloqueo en el corredor Bogotá–Medellín.', sev: 'Operación en riesgo', crit: true },
@@ -39,7 +44,7 @@
       output: 'Rutas alternas activadas · operación protegida'
     },
     {
-      name: 'Catástrofe natural', hots: ['plantaNorte'], index: 84, level: 'Crítico',
+      name: 'Catástrofe natural', map: 'co', hots: ['plantaNorte'], index: 84, level: 'Crítico',
       feed: [
         { tag: 'natural', label: 'Natural', src: 'Prensa', t: 'hace 4m', txt: 'Sismo de magnitud 5,8 sentido en la región.', sev: 'Severidad alta' },
         { tag: 'natural', label: 'Natural', src: 'Redes · X', t: 'ahora', txt: 'Reportan incendio forestal cerca de la planta Norte.', sev: 'Continuidad en riesgo', crit: true },
@@ -47,6 +52,16 @@
       ],
       alert: 'Evento natural cerca de una instalación crítica.',
       output: 'Continuidad asegurada · respaldo operando'
+    },
+    {
+      name: 'Riesgo regional · multipaís', map: 'latam', hots: ['rBogota', 'rSaopaulo', 'rBaires'], index: 71, level: 'Alto',
+      feed: [
+        { tag: 'medios', label: 'Regional', src: 'Prensa', t: 'hace 7m', txt: 'Volatilidad cambiaria golpea a proveedores en la región.', sev: 'Severidad media' },
+        { tag: 'laboral', label: 'Logística', src: 'Redes · X', t: 'ahora', txt: 'Paro portuario en São Paulo frena despachos de exportación.', sev: 'Operación en riesgo', crit: true },
+        { tag: 'electoral', label: 'Social', src: 'Medios', t: 'hace 2m', txt: 'Protestas en Buenos Aires afectan la distribución.', sev: 'Reputacional' }
+      ],
+      alert: 'Señales simultáneas en tres países donde operas.',
+      output: 'Coordinación regional activada · operación protegida'
     }
   ];
 
@@ -73,6 +88,7 @@
     await wait(300);
 
     situEl.textContent = s.name;
+    setMap(s.map || 'co');
     setHots(s.hots);
     if (idxFill) idxFill.style.width = s.index + '%';
     if (idxVal) idxVal.textContent = s.level;
@@ -106,7 +122,7 @@
   if (reduce) {
     // estado compuesto de la situación 1
     var s0 = SITU[0];
-    situEl.textContent = s0.name; setHots(s0.hots);
+    situEl.textContent = s0.name; setMap(s0.map || 'co'); setHots(s0.hots);
     if (idxFill) idxFill.style.width = s0.index + '%';
     if (idxVal) idxVal.textContent = s0.level;
     s0.feed.forEach(function (c) { var d = document.createElement('div'); d.className = 'rm-card show' + (c.crit ? ' crit' : ''); d.innerHTML = cardHTML(c); feedEl.appendChild(d); });
